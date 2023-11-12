@@ -16,21 +16,19 @@ public class UserProfileServiceImpl implements UserProfileService {
 
     private final UserProfileRepository usersProfileRepository;
 
-    @Autowired
-    private ModelMapper modelMapper;
+    private final ModelMapper modelMapper;
 
     @Autowired
-    public UserProfileServiceImpl(UserProfileRepository usersProfileRepository) {
+    public UserProfileServiceImpl(UserProfileRepository usersProfileRepository, ModelMapper modelMapper) {
         this.usersProfileRepository = usersProfileRepository;
+        this.modelMapper = modelMapper;
     }
 
 
     @Override
     public List<UserProfileDto> getAllUsers() {
 
-        List<UserProfile> entities = usersProfileRepository.findAll();
-
-        return Stream.of(entities)
+        return Stream.of(usersProfileRepository.findAll())
                 .flatMap(entityList -> entityList.stream()
                         .map(entity -> modelMapper.map(entity, UserProfileDto.class))).toList();
 

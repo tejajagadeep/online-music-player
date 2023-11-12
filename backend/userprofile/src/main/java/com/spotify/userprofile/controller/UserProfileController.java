@@ -10,7 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api/v1/userProfile")
+@RequestMapping("/api/v1.0/userProfile")
 public class UserProfileController {
 
     private final UserProfileService usersProfileService;
