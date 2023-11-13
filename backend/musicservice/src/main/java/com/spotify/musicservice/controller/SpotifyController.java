@@ -3,17 +3,19 @@ package com.spotify.musicservice.controller;
 import java.io.IOException;
 import java.net.URI;
 
+import com.spotify.musicservice.config.SpotifyConfiguration;
+import com.spotify.musicservice.entity.UserDetails;
+import com.spotify.musicservice.entity.UserDetailsRepository;
+import com.spotify.musicservice.service.UserProfileService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.jts.config.SpotifyConfiguration;
-import com.jts.entity.UserDetails;
-import com.jts.entity.UserDetailsRepository;
-import com.jts.service.UserProfileService;
 
 import jakarta.servlet.http.HttpServletResponse;
 import se.michaelthelin.spotify.SpotifyApi;
@@ -30,6 +32,8 @@ import se.michaelthelin.spotify.requests.data.users_profile.GetCurrentUsersProfi
 
 @RestController
 @RequestMapping("/api")
+//@Configuration
+//@ComponentScan("com.spotify.musicservice")
 public class SpotifyController {
 
 	@Value("${custom.server.ip}")

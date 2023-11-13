@@ -1,4 +1,4 @@
-package com.jts.entity;
+package com.spotify.musicservice.entity;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

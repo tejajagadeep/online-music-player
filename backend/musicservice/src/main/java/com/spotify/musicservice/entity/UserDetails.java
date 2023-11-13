@@ -1,17 +1,27 @@
-package com.jts.entity;
+package com.spotify.musicservice.entity;
 
 import java.io.Serializable;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
 @Table(name = "USER_DETAILS")
+@Getter
+@Setter
 public class UserDetails implements Serializable {
 	private static final long serialVersionUID = 3937414011943770889L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "ID")
-	private Integer id;
+	private long id;
 
 	@Column(name = "ACCESS_TOKEN")
 	private String accessToken;
