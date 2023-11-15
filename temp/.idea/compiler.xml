@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="eurekaserver" />
+        <module name="musicservice" />
+        <module name="config-server" />
+        <module name="userprofile" />
+        <module name="wishlistservice" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="config-server" target="17" />
+      <module name="eurekaserver" target="1.8" />
+      <module name="musicservice" target="17" />
+      <module name="userprofile" target="17" />
+      <module name="wishlistservice" target="17" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="config-server" options="-parameters" />
+      <module name="eurekaserver" options="-parameters" />
+      <module name="musicservice" options="-parameters" />
+      <module name="userprofile" options="-parameters" />
+      <module name="wishlistservice" options="-parameters" />
+    </option>
+  </component>
+</project>
