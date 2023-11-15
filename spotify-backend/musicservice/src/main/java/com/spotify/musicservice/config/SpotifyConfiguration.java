@@ -13,8 +13,8 @@ import se.michaelthelin.spotify.SpotifyHttpManager;
 @Configuration
 public class SpotifyConfiguration {
 	
-	@Value("${redirect.server.ip}")
-	private String customIp;
+//	@Value("${redirect.server.ip}")
+	private String customIp="http://localhost:8083";
 	
 	public SpotifyApi getSpotifyObject() {
 		 URI redirectedURL =  SpotifyHttpManager.makeUri(customIp + "/api/get-user-code/");

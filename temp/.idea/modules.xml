@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../../../authorizationservice/authorizationservice.iml" filepath="$PROJECT_DIR$/../../../authorizationservice/authorizationservice.iml" />
       <module fileurl="file://$PROJECT_DIR$/../spotify-backend/config-server/config-server.iml" filepath="$PROJECT_DIR$/../spotify-backend/config-server/config-server.iml" />
       <module fileurl="file://$PROJECT_DIR$/../spotify-backend/eurekaserver/eurekaserver.iml" filepath="$PROJECT_DIR$/../spotify-backend/eurekaserver/eurekaserver.iml" />
       <module fileurl="file://$PROJECT_DIR$/../spotify-backend/musicservice/musicservice.iml" filepath="$PROJECT_DIR$/../spotify-backend/musicservice/musicservice.iml" />

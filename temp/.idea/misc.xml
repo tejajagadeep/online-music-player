@@ -8,6 +8,7 @@
         <option value="$PROJECT_DIR$/../spotify-backend/userprofile/pom.xml" />
         <option value="$PROJECT_DIR$/../spotify-backend/musicservice/pom.xml" />
         <option value="$PROJECT_DIR$/../spotify-backend/wishlistservice/pom.xml" />
+        <option value="$PROJECT_DIR$/../../../authorizationservice/pom.xml" />
       </list>
     </option>
   </component>

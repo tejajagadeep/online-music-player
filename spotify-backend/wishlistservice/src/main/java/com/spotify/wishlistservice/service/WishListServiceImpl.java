@@ -32,6 +32,13 @@ public class WishListServiceImpl implements WishListService{
     }
 
     @Override
+    public List<WishListDto> getAllByUsername(String username) {
+        return Stream.of(wishListRepository.findAllByUsername(username))
+                .flatMap(entityList -> entityList.stream()
+                        .map(entity -> modelMapper.map(entity, WishListDto.class))).toList();
+    }
+
+    @Override
     public WishListDto saveWishList(WishList wishList) {
         return modelMapper.map(wishListRepository.save(wishList),WishListDto.class);
     }

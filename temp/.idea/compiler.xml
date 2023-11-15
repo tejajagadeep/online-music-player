@@ -9,12 +9,14 @@
         <outputRelativeToContentRoot value="true" />
         <module name="eurekaserver" />
         <module name="musicservice" />
+        <module name="authorizationservice" />
         <module name="config-server" />
         <module name="userprofile" />
         <module name="wishlistservice" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="authorizationservice" target="17" />
       <module name="config-server" target="17" />
       <module name="eurekaserver" target="1.8" />
       <module name="musicservice" target="17" />
@@ -24,6 +26,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="authorizationservice" options="-parameters" />
       <module name="config-server" options="-parameters" />
       <module name="eurekaserver" options="-parameters" />
       <module name="musicservice" options="-parameters" />

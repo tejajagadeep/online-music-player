@@ -23,39 +23,22 @@ public class UserProfileController {
 
     @GetMapping
     public ResponseEntity<Object> getAllUsers(){
-        try {
             return new ResponseEntity<>(usersProfileService.getAllUsers(),HttpStatus.OK);
-        } catch (Exception e){
-            return new ResponseEntity<>(new Exception(), HttpStatus.INTERNAL_SERVER_ERROR);
-        }
     }
 
     @GetMapping("/{id}")
     public ResponseEntity<Object> getUserProfileById(@PathVariable long id){
-        try {
             return new ResponseEntity<>(usersProfileService.getUserProfileById(id),HttpStatus.OK);
-        } catch (ResourceNotFoundException e){
-            return new ResponseEntity<>(new ResourceNotFoundException("Resource not found"), HttpStatus.NOT_FOUND);
-        }
     }
 
     @PostMapping
     public ResponseEntity<Object> saveUserProfile(@RequestBody UserProfile userProfile){
-        try {
             return new ResponseEntity<>(usersProfileService.saveUserProfile(userProfile),HttpStatus.OK);
-        } catch (Exception e){
-            return new ResponseEntity<>(new Exception(), HttpStatus.INTERNAL_SERVER_ERROR);
-        }
     }
 
     @PutMapping("/{id}")
     public ResponseEntity<Object> updateUserProfile(@RequestBody UserProfileDto userProfileDto, @PathVariable long id){
-        try {
             return new ResponseEntity<>(usersProfileService.updateUserProfile(userProfileDto, id),HttpStatus.OK);
-        } catch (Exception e){
-            return new ResponseEntity<>(new Exception(), HttpStatus.INTERNAL_SERVER_ERROR);
-        }
     }
-
 
 }

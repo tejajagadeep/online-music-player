@@ -7,7 +7,6 @@ import com.spotify.musicservice.config.SpotifyConfiguration;
 import com.spotify.musicservice.entity.UserDetails;
 import com.spotify.musicservice.entity.UserDetailsRepository;
 import com.spotify.musicservice.service.UserProfileService;
-import lombok.extern.log4j.Log4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -31,7 +30,6 @@ import se.michaelthelin.spotify.requests.data.users_profile.GetCurrentUsersProfi
 
 @RestController
 @RequestMapping("/api")
-@Log4j
 //@Configuration
 //@ComponentScan("com.spotify.musicservice")
 public class SpotifyController {
@@ -79,7 +77,6 @@ public class SpotifyController {
 
 			userProfileService.insertOrUpdateUserDetails(user, authorizationCode.getAccessToken(), authorizationCode.getRefreshToken());
 		} catch (Exception e) {
-			lo
 			System.out.println("Exception occured while getting user code: " + e);
 		}
 

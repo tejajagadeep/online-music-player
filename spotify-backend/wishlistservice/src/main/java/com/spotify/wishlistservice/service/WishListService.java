@@ -8,7 +8,10 @@ import java.util.List;
 public interface WishListService {
     List<WishListDto> getAllUsers();
 
+    List<WishListDto> getAllByUsername(String username);
+
     WishListDto saveWishList(WishList wishList);
 
     WishListDto removeWishList(long id);
+
 }
