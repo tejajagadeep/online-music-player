@@ -7,6 +7,7 @@ import com.spotify.userprofile.exception.ResourceNotFoundException;
 import com.spotify.userprofile.repository.UserProfileRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -50,7 +51,8 @@ public class UserProfileServiceImpl implements UserProfileService {
             throw new ResourceAlreadyExistsException("UserProfile resource already exists");
         }
 
-
+        BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
+        userProfile.setPassword(bCryptPasswordEncoder.encode(userProfile.getPassword()));
         return modelMapper.map(usersProfileRepository.save(userProfile), UserProfileDto.class);
     }
 

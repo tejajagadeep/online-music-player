@@ -1,6 +1,6 @@
 package com.spotify.wishlistservice.repository;
 
-import com.spotify.wishlistservice.entity.WishList;
+import com.spotify.wishlistservice.model.WishList;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

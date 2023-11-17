@@ -29,14 +29,16 @@ import se.michaelthelin.spotify.requests.data.personalization.simplified.GetUser
 import se.michaelthelin.spotify.requests.data.users_profile.GetCurrentUsersProfileRequest;
 
 @RestController
-@RequestMapping("/api")
-//@Configuration
-//@ComponentScan("com.spotify.musicservice")
+@RequestMapping("/api/v1/music")
 public class SpotifyController {
 
 	@Value("${custom.server.ip}")
 	private String customIp;
-	
+
+	/*
+	cd77iwz4fqzq5fqfj4wdklfd7
+Dashboard
+	 */
 	@Autowired
 	private UserProfileService userProfileService;
 
@@ -49,12 +51,12 @@ public class SpotifyController {
 	@GetMapping("/login")
 	public String spotifyLogin() {
 		SpotifyApi object = spotifyConfiguration.getSpotifyObject();
-		
+
 		AuthorizationCodeUriRequest authorizationCodeUriRequest = object.authorizationCodeUri()
 				.scope("user-library-read")
 				.show_dialog(true)
 				.build();
-		
+
 		final URI uri = authorizationCodeUriRequest.execute();
 		return uri.toString();
 	}
@@ -62,7 +64,7 @@ public class SpotifyController {
 	@GetMapping(value = "/get-user-code")
 	public void getSpotifyUserCode(@RequestParam("code") String userCode, HttpServletResponse response)	throws IOException {
 		SpotifyApi object = spotifyConfiguration.getSpotifyObject();
-		
+
 		AuthorizationCodeRequest authorizationCodeRequest = object.authorizationCode(userCode).build();
 		User user = null;
 		
@@ -74,7 +76,7 @@ public class SpotifyController {
 			
 			final GetCurrentUsersProfileRequest getCurrentUsersProfile = object.getCurrentUsersProfile().build();
 			user = getCurrentUsersProfile.execute();
-
+			System.out.println(user.toString());
 			userProfileService.insertOrUpdateUserDetails(user, authorizationCode.getAccessToken(), authorizationCode.getRefreshToken());
 		} catch (Exception e) {
 			System.out.println("Exception occured while getting user code: " + e);

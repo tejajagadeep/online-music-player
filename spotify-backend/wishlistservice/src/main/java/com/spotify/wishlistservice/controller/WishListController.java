@@ -1,6 +1,6 @@
 package com.spotify.wishlistservice.controller;
 
-import com.spotify.wishlistservice.entity.WishList;
+import com.spotify.wishlistservice.model.WishList;
 import com.spotify.wishlistservice.service.WishListService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
