@@ -1,8 +1,8 @@
 package com.spotify.musicservice.service;
 
-import com.example.sporifyservicedemo.configuration.SpotifyConfiguration;
-import com.example.sporifyservicedemo.model.UserDetails;
-import com.example.sporifyservicedemo.repository.UserDetailsRepository;
+import com.spotify.musicservice.configuration.SpotifyConfiguration;
+import com.spotify.musicservice.model.UserDetails;
+import com.spotify.musicservice.repository.UserDetailsRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;

@@ -1,6 +1,6 @@
 package com.spotify.musicservice.repository;
 
-import com.example.sporifyservicedemo.model.UserDetails;
+import com.spotify.musicservice.model.UserDetails;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

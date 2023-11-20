@@ -1,6 +1,6 @@
 package com.spotify.musicservice.controller;
 
-import com.example.sporifyservicedemo.service.SpotifyService;
+import com.spotify.musicservice.service.SpotifyService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
