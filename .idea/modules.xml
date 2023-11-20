@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/spotify-backend/api-gateway/api-gateway.iml" filepath="$PROJECT_DIR$/spotify-backend/api-gateway/api-gateway.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spotify-backend/authentication-service/authentication-service.iml" filepath="$PROJECT_DIR$/spotify-backend/authentication-service/authentication-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/spotify-backend/config-server/config-server.iml" filepath="$PROJECT_DIR$/spotify-backend/config-server/config-server.iml" />
       <module fileurl="file://$PROJECT_DIR$/spotify-backend/eureka-server/eureka-server.iml" filepath="$PROJECT_DIR$/spotify-backend/eureka-server/eureka-server.iml" />
       <module fileurl="file://$PROJECT_DIR$/spotify-backend/musicservice/musicservice.iml" filepath="$PROJECT_DIR$/spotify-backend/musicservice/musicservice.iml" />
