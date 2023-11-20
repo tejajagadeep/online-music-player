@@ -9,6 +9,7 @@ import com.spotify.musicservice.entity.UserDetailsRepository;
 import com.spotify.musicservice.service.UserProfileService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -28,6 +29,7 @@ import se.michaelthelin.spotify.requests.data.library.GetCurrentUsersSavedAlbums
 import se.michaelthelin.spotify.requests.data.personalization.simplified.GetUsersTopTracksRequest;
 import se.michaelthelin.spotify.requests.data.users_profile.GetCurrentUsersProfileRequest;
 
+@RefreshScope
 @RestController
 @RequestMapping("/api/v1/music")
 public class SpotifyController {
