@@ -11,7 +11,7 @@ import lombok.Setter;
 @AllArgsConstructor
 public class WishListDto {
 
-    private long id;
+    private String id;
     private String username;
     private String songName;
     private String songUri;

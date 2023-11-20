@@ -1,17 +1,15 @@
 package com.spotify.wishlistservice.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.List;
-
-@Entity
+@Document
 @Getter
 @Setter
 @NoArgsConstructor
@@ -19,10 +17,9 @@ import java.util.List;
 public class WishList {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
+    private String id;
 
     private String username;
     private String songName;
-    private List<SpotifyAlbumInfo> spotifyAlbumInfos;
+    //private List<SpotifyAlbumInfo> spotifyAlbumInfos;
 }

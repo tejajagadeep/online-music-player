@@ -1,10 +1,11 @@
 package com.spotify.musicservice.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import jakarta.persistence.*;
 import lombok.*;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-@Entity
+@Document
 @Getter
 @Setter
 @AllArgsConstructor
@@ -12,8 +13,6 @@ import lombok.*;
 @ToString
 public class UserDetails {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "ID")
     private long id;
 
     @JsonProperty("access_token")
@@ -25,7 +24,7 @@ public class UserDetails {
     @JsonProperty("refresh_token")
     private String refreshToken;
 
-    @Column(name = "REF_ID")
+
     private String refId;
 
 }
