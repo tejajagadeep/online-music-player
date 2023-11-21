@@ -1,6 +1,8 @@
 package com.spotify.musicservice.controller;
 
 import ch.qos.logback.core.model.Model;
+import com.spotify.musicservice.exception.ResourceAlreadyExistsException;
+import com.spotify.musicservice.exception.ResourceNotFoundException;
 import com.spotify.musicservice.model.SpotifyAccessToken;
 import com.spotify.musicservice.service.SpotifyService;
 import lombok.extern.slf4j.Slf4j;
@@ -31,30 +33,18 @@ public class SpotifyController {
     @GetMapping("/access-token")
     public ResponseEntity<Object> getSpotifyAccessToken() {
         // Obtain the access token
-        try {
             return new ResponseEntity<>(spotifyService.getSpotifyAccessToken(), HttpStatus.OK);
-        } catch (Exception e){
-            throw new RuntimeException();
-        }
 
     }
 
     @GetMapping("/bill-board-100-playlist")
     public Object getBillBoard100Playlist() {
-        try {
             return new ResponseEntity<>(spotifyService.getBillBoard100Playlist(), HttpStatus.OK);
-        } catch (Exception e){
-            throw new RuntimeException();
-        }
     }
 
     @GetMapping("/today-top-hits-playlist")
     public Object getTodayTopHits() {
-        try {
             return new ResponseEntity<>(spotifyService.getTodayTopHits(), HttpStatus.OK);
-        } catch (Exception e){
-            throw new RuntimeException();
-        }
     }
 
 }

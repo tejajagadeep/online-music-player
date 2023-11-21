@@ -24,6 +24,9 @@ public class Track {
     @JsonProperty("id")
     private String id;
 
+    @JsonProperty("images")
+    private List<Image> images;
+
     @JsonProperty("name")
     private String name;
 

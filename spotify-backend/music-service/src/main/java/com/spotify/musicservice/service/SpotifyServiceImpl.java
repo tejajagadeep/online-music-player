@@ -66,8 +66,9 @@ public class SpotifyServiceImpl implements SpotifyService{
 
         // Make a POST request to the Spotify token endpoint to obtain the access token
         ResponseEntity<SpotifyAccessToken> responseEntity = restTemplate.postForEntity(accountApiUrl + "/token", requestEntity, SpotifyAccessToken.class);
-        return spotifyAccessTokenRepository.save(Optional.ofNullable(responseEntity.getBody()).orElseThrow());
+//        return spotifyAccessTokenRepository.save(Optional.ofNullable(responseEntity.getBody()).orElseThrow());
 
+        return spotifyAccessTokenRepository.save(responseEntity.getBody());
     }
 
     @Override
