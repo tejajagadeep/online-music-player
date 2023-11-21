@@ -1,12 +1,15 @@
 package com.spotify.wishlistservice.service;
 
+import com.spotify.wishlistservice.dto.TrackDto;
 import com.spotify.wishlistservice.dto.WishListDto;
 import com.spotify.wishlistservice.model.WishList;
 import com.spotify.wishlistservice.exception.ResourceNotFoundException;
 import com.spotify.wishlistservice.repository.WishListRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
 import java.util.stream.Stream;
@@ -18,17 +21,13 @@ public class WishListServiceImpl implements WishListService{
 
     private final ModelMapper modelMapper;
 
+    private final RestTemplate restTemplate;
+
     @Autowired
-    public WishListServiceImpl(WishListRepository wishListRepository, ModelMapper modelMapper) {
+    public WishListServiceImpl(WishListRepository wishListRepository, ModelMapper modelMapper, RestTemplate restTemplate) {
         this.wishListRepository = wishListRepository;
         this.modelMapper = modelMapper;
-    }
-
-    @Override
-    public List<WishListDto> getAllUsers() {
-        return Stream.of(wishListRepository.findAll())
-                .flatMap(entityList -> entityList.stream()
-                        .map(entity -> modelMapper.map(entity, WishListDto.class))).toList();
+        this.restTemplate = restTemplate;
     }
 
     @Override
@@ -40,6 +39,7 @@ public class WishListServiceImpl implements WishListService{
 
     @Override
     public WishListDto saveWishList(WishList wishList) {
+
         return modelMapper.map(wishListRepository.save(wishList),WishListDto.class);
     }
 
@@ -51,4 +51,15 @@ public class WishListServiceImpl implements WishListService{
         wishListRepository.deleteById(id);
         return modelMapper.map(wishListRepository.save(wishList),WishListDto.class);
     }
+
+    @Override
+    public TrackDto getTrack(String trackId) {
+
+        String serviceUrl = "http://localhost:8901/api/v1/music/get-track/4OMJGnvZfDvsePyCwRGO7X";
+        ResponseEntity<TrackDto> responseEntity = restTemplate.getForEntity(serviceUrl, TrackDto.class);
+
+        return responseEntity.getBody();
+    }
+
+
 }

@@ -9,10 +9,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import se.michaelthelin.spotify.model_objects.specification.Track;
 
 import java.util.List;
@@ -30,21 +27,42 @@ public class SpotifyController {
         this.spotifyService = spotifyService;
     }
 
-    @GetMapping("/access-token")
+    @GetMapping("/login")
     public ResponseEntity<Object> getSpotifyAccessToken() {
         // Obtain the access token
+        try {
             return new ResponseEntity<>(spotifyService.getSpotifyAccessToken(), HttpStatus.OK);
+
+        } catch (Exception e){
+            throw new ResourceNotFoundException("");
+        }
 
     }
 
     @GetMapping("/bill-board-100-playlist")
-    public Object getBillBoard100Playlist() {
+    public ResponseEntity<Object> getBillBoard100Playlist() {
+        try {
             return new ResponseEntity<>(spotifyService.getBillBoard100Playlist(), HttpStatus.OK);
+    } catch (Exception e){
+        throw new ResourceNotFoundException("");
+    }
     }
 
     @GetMapping("/today-top-hits-playlist")
-    public Object getTodayTopHits() {
+    public ResponseEntity<Object> getTodayTopHits() {
+        try {
             return new ResponseEntity<>(spotifyService.getTodayTopHits(), HttpStatus.OK);
+        } catch (Exception e){
+            throw new ResourceNotFoundException("");
+            }
     }
 
+    @GetMapping("/get-track/{trackId}")
+    public ResponseEntity<Object> getTrack(@PathVariable String trackId ) {
+        try {
+        return new ResponseEntity<>(spotifyService.getTrack(trackId), HttpStatus.OK);
+        } catch (Exception e){
+            throw new ResourceNotFoundException("");
+            }
+    }
 }

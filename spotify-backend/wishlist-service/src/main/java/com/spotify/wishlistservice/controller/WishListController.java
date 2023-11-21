@@ -18,15 +18,16 @@ public class WishListController {
         this.wishListService = wishListService;
     }
 
-    @GetMapping
-    public ResponseEntity<Object> getAllWishList(){
-            return new ResponseEntity<>(wishListService.getAllUsers(), HttpStatus.OK);
-    }
-
     @GetMapping("/username/{username}")
     public ResponseEntity<Object> getAllByUsername(@PathVariable String username){
         return new ResponseEntity<>(wishListService.getAllByUsername(username), HttpStatus.OK);
     }
+
+    @GetMapping("/get-track/{trackId}")
+    public ResponseEntity<Object> getTrack(@PathVariable String trackId ) {
+        return new ResponseEntity<>(wishListService.getTrack(trackId), HttpStatus.OK);
+    }
+
 
     @PostMapping
     public ResponseEntity<Object> saveWishList(@RequestBody WishList wishList){

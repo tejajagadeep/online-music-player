@@ -1,6 +1,7 @@
 package com.spotify.musicservice.service;
 
 import com.spotify.musicservice.dto.SpotifyPlaylist;
+import com.spotify.musicservice.dto.Track;
 import com.spotify.musicservice.model.SpotifyAccessToken;
 import se.michaelthelin.spotify.model_objects.specification.Playlist;
 import se.michaelthelin.spotify.model_objects.specification.PlaylistTrack;
@@ -13,4 +14,6 @@ public interface SpotifyService {
     SpotifyPlaylist getBillBoard100Playlist();
 
     SpotifyPlaylist getTodayTopHits();
+
+    Track getTrack(String trackId);
 }

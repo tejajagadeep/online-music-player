@@ -1,22 +1,20 @@
-package com.spotify.musicservice.dto;
+package com.spotify.wishlistservice.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
-import se.michaelthelin.spotify.enums.ModelObjectType;
 
 import java.util.List;
 
 @Data
-public class Track {
-
-    @JsonProperty("album")
-    private Album album;
+public class AlbumDto {
+    @JsonProperty("album_type")
+    private String albumType;
 
     @JsonProperty("artists")
-    private List<Artist> artists;
+    private List<ArtistDto> artistDtos;
 
     @JsonProperty("external_urls")
-    private ExternalUrls externalUrls;
+    private ExternalUrlsDto externalUrls;
 
     @JsonProperty("href")
     private String href;
@@ -24,8 +22,14 @@ public class Track {
     @JsonProperty("id")
     private String id;
 
+    @JsonProperty("images")
+    private List<ImageDto> imageDtos;
+
     @JsonProperty("name")
     private String name;
+
+    @JsonProperty("release_date")
+    private String releaseDate;
 
     @JsonProperty("type")
     private String type;
