@@ -1,4 +1,4 @@
-package com.shalem.authenticationservice.entity;
+package com.auth.authenticationservice.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

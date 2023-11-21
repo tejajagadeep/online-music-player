@@ -1,7 +1,7 @@
-package com.shalem.authenticationservice.securityConfig;
+package com.auth.authenticationservice.securityConfig;
 
-import com.shalem.authenticationservice.security.JwtAuthenticationEntryPoint;
-import com.shalem.authenticationservice.security.JwtAuthenticationFilter;
+import com.auth.authenticationservice.security.JwtAuthenticationEntryPoint;
+import com.auth.authenticationservice.security.JwtAuthenticationFilter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

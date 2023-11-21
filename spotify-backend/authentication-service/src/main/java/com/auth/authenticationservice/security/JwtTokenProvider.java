@@ -1,6 +1,6 @@
-package com.shalem.authenticationservice.security;
+package com.auth.authenticationservice.security;
 
-import com.shalem.authenticationservice.exceptiion.AuthenticationException;
+import com.auth.authenticationservice.exceptiion.AuthenticationException;
 import io.jsonwebtoken.*;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;

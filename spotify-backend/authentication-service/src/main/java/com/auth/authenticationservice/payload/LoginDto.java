@@ -1,4 +1,4 @@
-package com.shalem.authenticationservice.payload;
+package com.auth.authenticationservice.payload;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

@@ -1,10 +1,10 @@
-package com.shalem.authenticationservice.controller;
+package com.auth.authenticationservice.controller;
 
-import com.shalem.authenticationservice.entity.User;
-import com.shalem.authenticationservice.payload.JwtResponse;
-import com.shalem.authenticationservice.payload.LoginDto;
-import com.shalem.authenticationservice.payload.RegisterDto;
-import com.shalem.authenticationservice.service.AuthService;
+import com.auth.authenticationservice.entity.User;
+import com.auth.authenticationservice.payload.JwtResponse;
+import com.auth.authenticationservice.payload.LoginDto;
+import com.auth.authenticationservice.payload.RegisterDto;
+import com.auth.authenticationservice.service.AuthService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

@@ -1,6 +1,6 @@
-package com.shalem.authenticationservice.payload;
+package com.auth.authenticationservice.payload;
 
-import com.shalem.authenticationservice.entity.Role;
+import com.auth.authenticationservice.entity.Role;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;

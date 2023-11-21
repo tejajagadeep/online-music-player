@@ -1,9 +1,9 @@
-package com.shalem.authenticationservice.service;
+package com.auth.authenticationservice.service;
 
-import com.shalem.authenticationservice.entity.User;
-import com.shalem.authenticationservice.payload.JwtResponse;
-import com.shalem.authenticationservice.payload.LoginDto;
-import com.shalem.authenticationservice.payload.RegisterDto;
+import com.auth.authenticationservice.entity.User;
+import com.auth.authenticationservice.payload.JwtResponse;
+import com.auth.authenticationservice.payload.LoginDto;
+import com.auth.authenticationservice.payload.RegisterDto;
 
 import java.util.List;
 

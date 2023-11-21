@@ -1,6 +1,6 @@
-package com.shalem.authenticationservice.payload;
+package com.auth.authenticationservice.payload;
 
-import com.shalem.authenticationservice.entity.User;
+import com.auth.authenticationservice.entity.User;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

@@ -1,7 +1,7 @@
-package com.shalem.authenticationservice.security;
+package com.auth.authenticationservice.security;
 
-import com.shalem.authenticationservice.entity.User;
-import com.shalem.authenticationservice.repository.UserRepository;
+import com.auth.authenticationservice.entity.User;
+import com.auth.authenticationservice.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;

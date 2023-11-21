@@ -1,4 +1,4 @@
-package com.shalem.authenticationservice.security;
+package com.auth.authenticationservice.security;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;

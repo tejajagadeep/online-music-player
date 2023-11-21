@@ -1,6 +1,6 @@
-package com.shalem.authenticationservice.repository;
+package com.auth.authenticationservice.repository;
 
-import com.shalem.authenticationservice.entity.User;
+import com.auth.authenticationservice.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

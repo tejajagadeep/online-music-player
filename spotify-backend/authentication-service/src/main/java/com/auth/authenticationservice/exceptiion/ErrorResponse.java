@@ -1,4 +1,4 @@
-package com.shalem.authenticationservice.exceptiion;
+package com.auth.authenticationservice.exceptiion;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

@@ -1,4 +1,4 @@
-package com.shalem.authenticationservice.exceptiion;
+package com.auth.authenticationservice.exceptiion;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;
