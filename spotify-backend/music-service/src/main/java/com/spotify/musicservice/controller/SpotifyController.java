@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import se.michaelthelin.spotify.model_objects.specification.Track;
@@ -14,6 +15,7 @@ import java.util.List;
 
 @RestController
 @Slf4j
+@RequestMapping("/api/v1/music")
 public class SpotifyController {
 
 
@@ -50,6 +52,33 @@ public class SpotifyController {
         return null;
     }
 
+    @GetMapping("/billboard-hot-100")
+    public ResponseEntity<Object> getBillBoard100Tracks() {
+        try {
+            return new ResponseEntity<>(spotifyService.getBillBoard100(), HttpStatus.OK);
+        } catch (Exception e) {
+            log.info("Exception occurred while fetching top songs: " + e);
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+    @GetMapping("/billboard-hot-100-playlist")
+    public ResponseEntity<Object> getBillBoard100Playlist(){
+        try {
+            return new ResponseEntity<>(spotifyService.getBillBoard100Playlist(), HttpStatus.OK);
+        } catch (Exception e) {
+            log.info("Exception occurred while fetching top songs: " + e);
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+    @GetMapping("/billboard-hot-100-playlist-obj")
+    public ResponseEntity<Object> getBillBoard100PlaylistObj(){
+        try {
+            return new ResponseEntity<>(spotifyService.getBillBoard100PlaylistObj(), HttpStatus.OK);
+        } catch (Exception e) {
+            log.info("Exception occurred while fetching top songs: " + e);
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
 
     @GetMapping(value = "/user-top-songs")
     public ResponseEntity<List<Track>> getUserTopSongs(@RequestParam String userId) {
