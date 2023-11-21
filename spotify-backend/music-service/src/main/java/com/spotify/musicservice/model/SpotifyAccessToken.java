@@ -1,17 +1,14 @@
 package com.spotify.musicservice.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import lombok.*;
+import lombok.Data;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+@Data
 @Document
-@Getter
-@Setter
-@AllArgsConstructor
-@NoArgsConstructor
-@ToString
-public class UserDetails {
+public class SpotifyAccessToken {
+
     @Id
     private long id;
 
@@ -21,10 +18,6 @@ public class UserDetails {
     @JsonProperty("token_type")
     private String tokenType;
 
-    @JsonProperty("refresh_token")
-    private String refreshToken;
-
-
-    private String refId;
-
+    @JsonProperty("expires_in")
+    private String expires_in;
 }

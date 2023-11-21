@@ -1,5 +1,7 @@
 package com.spotify.musicservice.controller;
 
+import ch.qos.logback.core.model.Model;
+import com.spotify.musicservice.model.SpotifyAccessToken;
 import com.spotify.musicservice.service.SpotifyService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,68 +28,32 @@ public class SpotifyController {
         this.spotifyService = spotifyService;
     }
 
-
-    @GetMapping("/authorize")
-    public String authorize() {
-        // Redirect the user to Spotify authorization endpoint
-        return spotifyService.authorize();
-
-    }
-
-    @GetMapping("/callback")
-    public String callback(@RequestParam("code") String code) {
-        return spotifyService.callback(code);
-    }
-
-
-    @GetMapping(value = "/home")
-    public String home(@RequestParam String userId) {
+    @GetMapping("/access-token")
+    public ResponseEntity<Object> getSpotifyAccessToken() {
+        // Obtain the access token
         try {
-
-            return userId;
-        } catch (Exception e) {
-            log.info("Exception while landing to home page: " + e);
+            return new ResponseEntity<>(spotifyService.getSpotifyAccessToken(), HttpStatus.OK);
+        } catch (Exception e){
+            throw new RuntimeException();
         }
 
-        return null;
     }
 
-    @GetMapping("/billboard-hot-100")
-    public ResponseEntity<Object> getBillBoard100Tracks() {
-        try {
-            return new ResponseEntity<>(spotifyService.getBillBoard100(), HttpStatus.OK);
-        } catch (Exception e) {
-            log.info("Exception occurred while fetching top songs: " + e);
-            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
-        }
-    }
-    @GetMapping("/billboard-hot-100-playlist")
-    public ResponseEntity<Object> getBillBoard100Playlist(){
+    @GetMapping("/bill-board-100-playlist")
+    public Object getBillBoard100Playlist() {
         try {
             return new ResponseEntity<>(spotifyService.getBillBoard100Playlist(), HttpStatus.OK);
-        } catch (Exception e) {
-            log.info("Exception occurred while fetching top songs: " + e);
-            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
-        }
-    }
-    @GetMapping("/billboard-hot-100-playlist-obj")
-    public ResponseEntity<Object> getBillBoard100PlaylistObj(){
-        try {
-            return new ResponseEntity<>(spotifyService.getBillBoard100PlaylistObj(), HttpStatus.OK);
-        } catch (Exception e) {
-            log.info("Exception occurred while fetching top songs: " + e);
-            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        } catch (Exception e){
+            throw new RuntimeException();
         }
     }
 
-    @GetMapping(value = "/user-top-songs")
-    public ResponseEntity<List<Track>> getUserTopSongs(@RequestParam String userId) {
-
+    @GetMapping("/today-top-hits-playlist")
+    public Object getTodayTopHits() {
         try {
-            return new ResponseEntity<>(spotifyService.getUserTopSongs(userId), HttpStatus.OK);
-        } catch (Exception e) {
-            log.info("Exception occurred while fetching top songs: " + e);
-            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+            return new ResponseEntity<>(spotifyService.getTodayTopHits(), HttpStatus.OK);
+        } catch (Exception e){
+            throw new RuntimeException();
         }
     }
 

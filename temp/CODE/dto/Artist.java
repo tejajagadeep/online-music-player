@@ -1,26 +1,20 @@
 package com.spotify.musicservice.dto;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
+
+import java.util.List;
 
 @Data
 public class Artist {
-    @JsonProperty("external_urls")
     private ExternalUrls externalUrls;
-
-    @JsonProperty("href")
+    private Followers followers;
+    private List<String> genres;
     private String href;
-
-    @JsonProperty("id")
     private String id;
-
-    @JsonProperty("name")
+    private List<Images> images;
     private String name;
-
-    @JsonProperty("type")
+    private int popularity;
     private String type;
-
-    @JsonProperty("uri")
     private String uri;
 
     // Getters and setters

@@ -27,5 +27,6 @@ public class SpotifyConfiguration {
                 .setRedirectUri(URI.create(redirectUri))
                 .build();
     }
+
 }
 
