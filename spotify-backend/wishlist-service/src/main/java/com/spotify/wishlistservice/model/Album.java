@@ -1,32 +1,43 @@
 package com.spotify.wishlistservice.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.Data;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.List;
 
-@Getter
-@Setter
-@AllArgsConstructor
-@NoArgsConstructor
+@Data
+@Document
 public class Album {
+    @JsonProperty("album_type")
     private String albumType;
-    private int totalTracks;
-    private List<String> availableMarkets;
-    private ExternalUrls externalUrls;
-    private String href;
-    private String id;
-    private List<Image> images;
-    private String name;
-    private String releaseDate;
-    private String releaseDatePrecision;
-    private Restrictions restrictions;
-    private String type;
-    private String uri;
+
+    @JsonProperty("artists")
     private List<Artist> artists;
-    // Other fields and methods
+
+    @JsonProperty("external_urls")
+    private ExternalUrls externalUrls;
+
+    @JsonProperty("href")
+    private String href;
+
+    @JsonProperty("id")
+    private String id;
+
+    @JsonProperty("images")
+    private List<Image> images;
+
+    @JsonProperty("name")
+    private String name;
+
+    @JsonProperty("release_date")
+    private String releaseDate;
+
+    @JsonProperty("type")
+    private String type;
+
+    @JsonProperty("uri")
+    private String uri;
 
     // Getters and setters
 }

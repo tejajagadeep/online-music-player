@@ -4,15 +4,16 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.util.List;
+
 @Data
 @Document
-public class Image {
-    @JsonProperty("height")
-    private Integer height;
-    @JsonProperty("url")
-    private String url;
-    @JsonProperty("width")
-    private Integer width;
+public class Tracks {
+    @JsonProperty("href")
+    private String href;
+
+    @JsonProperty("items")
+    private List<Item> items;
 
     // Getters and setters
 }

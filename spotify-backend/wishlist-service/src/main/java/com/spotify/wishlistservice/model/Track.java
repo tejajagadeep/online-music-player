@@ -4,9 +4,18 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.util.List;
+
 @Data
 @Document
-public class Artist {
+public class Track {
+
+    @JsonProperty("album")
+    private Album album;
+
+    @JsonProperty("artists")
+    private List<Artist> artists;
+
     @JsonProperty("external_urls")
     private ExternalUrls externalUrls;
 

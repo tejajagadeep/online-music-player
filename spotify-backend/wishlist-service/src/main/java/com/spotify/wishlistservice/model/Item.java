@@ -6,13 +6,12 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 @Data
 @Document
-public class Image {
-    @JsonProperty("height")
-    private Integer height;
-    @JsonProperty("url")
-    private String url;
-    @JsonProperty("width")
-    private Integer width;
+public class Item {
+    @JsonProperty("added_at")
+    private String addedAt;
+
+    @JsonProperty("track")
+    private Track track;
 
     // Getters and setters
 }

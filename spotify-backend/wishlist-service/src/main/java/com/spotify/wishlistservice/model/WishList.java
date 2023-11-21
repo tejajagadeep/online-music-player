@@ -21,5 +21,6 @@ public class WishList {
 
     private String username;
     private String songName;
-    //private List<SpotifyAlbumInfo> spotifyAlbumInfos;
+
+    private List<SpotifyPlaylist> spotifyAlbumInfos;
 }

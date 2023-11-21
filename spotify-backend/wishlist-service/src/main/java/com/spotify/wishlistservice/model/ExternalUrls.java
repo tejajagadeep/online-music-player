@@ -1,15 +1,21 @@
 package com.spotify.wishlistservice.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.Data;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-@Getter
-@Setter
-@AllArgsConstructor
-@NoArgsConstructor
+@Data
+@Document
 public class ExternalUrls {
+    @JsonProperty("spotify")
     private String spotify;
-    // Getters and setters
+
+//    public String getExternalUrls() {
+//        return externalUrls.replace("{spotify=","").replace("}","");
+//
+//    }
+//
+//    public void setExternalUrls(String externalUrls) {
+//        this.externalUrls = externalUrls;
+//    }
 }

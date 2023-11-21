@@ -12,7 +12,7 @@ public class SpotifyPlaylist {
     @JsonProperty("description")
     private String description;
 
-    @JsonProperty("external-urls")
+    @JsonProperty("external_urls")
     private ExternalUrls externalUrls;
 
     @JsonProperty("followers")
