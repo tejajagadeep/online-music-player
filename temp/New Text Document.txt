@@ -1,0 +1,1 @@
+spring.data.mongodb.uri=mongodb+srv://sahajpreetsingh:sahajps@atlascluster.papblz5.mongodb.net/wishlist?retryWrites=true&w=majority
