@@ -1,0 +1,64 @@
+{
+    "album": {
+        "album_type": "single",
+        "artists": [
+            {
+                "external_urls": {
+                    "spotify": "https://open.spotify.com/artist/6M2wZ9GZgrQXHCFfjv46we"
+                },
+                "href": "https://api.spotify.com/v1/artists/6M2wZ9GZgrQXHCFfjv46we",
+                "id": "6M2wZ9GZgrQXHCFfjv46we",
+                "name": "Dua Lipa",
+                "type": "artist",
+                "uri": "spotify:artist:6M2wZ9GZgrQXHCFfjv46we"
+            }
+        ],
+        "external_urls": {
+            "spotify": "https://open.spotify.com/album/5pTaRVLwZOFObIbRBubmeb"
+        },
+        "href": "https://api.spotify.com/v1/albums/5pTaRVLwZOFObIbRBubmeb",
+        "id": "5pTaRVLwZOFObIbRBubmeb",
+        "images": [
+            {
+                "height": 640,
+                "url": "https://i.scdn.co/image/ab67616d0000b273001d5706fddc72561f6488af",
+                "width": 640
+            },
+            {
+                "height": 300,
+                "url": "https://i.scdn.co/image/ab67616d00001e02001d5706fddc72561f6488af",
+                "width": 300
+            },
+            {
+                "height": 64,
+                "url": "https://i.scdn.co/image/ab67616d00004851001d5706fddc72561f6488af",
+                "width": 64
+            }
+        ],
+        "name": "Houdini",
+        "release_date": "2023-11-09",
+        "type": "album",
+        "uri": "spotify:album:5pTaRVLwZOFObIbRBubmeb"
+    },
+    "artists": [
+        {
+            "external_urls": {
+                "spotify": "https://open.spotify.com/artist/6M2wZ9GZgrQXHCFfjv46we"
+            },
+            "href": "https://api.spotify.com/v1/artists/6M2wZ9GZgrQXHCFfjv46we",
+            "id": "6M2wZ9GZgrQXHCFfjv46we",
+            "name": "Dua Lipa",
+            "type": "artist",
+            "uri": "spotify:artist:6M2wZ9GZgrQXHCFfjv46we"
+        }
+    ],
+    "external_urls": {
+        "spotify": "https://open.spotify.com/track/4OMJGnvZfDvsePyCwRGO7X"
+    },
+    "href": "https://api.spotify.com/v1/tracks/4OMJGnvZfDvsePyCwRGO7X",
+    "id": "4OMJGnvZfDvsePyCwRGO7X",
+    "name": "Houdini",
+    "preview_url": "https://p.scdn.co/mp3-preview/df4af86970ffb1a7042d1d228bcea7b4aabfdba4?cid=cfdbd6448f364fca80b7aa03228c64c9",
+    "type": "track",
+    "uri": "spotify:track:4OMJGnvZfDvsePyCwRGO7X"
+}

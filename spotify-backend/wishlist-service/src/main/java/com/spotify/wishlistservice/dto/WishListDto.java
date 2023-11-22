@@ -1,18 +1,16 @@
 package com.spotify.wishlistservice.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
+import lombok.Data;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+import java.util.List;
+@Document
+@Data
 public class WishListDto {
 
-    private String id;
+    @Id
     private String username;
-    private String songName;
-    private String songUri;
+    private List<SpotifyTrackDto> tracks;
 }

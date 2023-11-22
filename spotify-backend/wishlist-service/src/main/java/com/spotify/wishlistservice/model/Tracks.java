@@ -15,5 +15,4 @@ public class Tracks {
     @JsonProperty("items")
     private List<Item> items;
 
-    // Getters and setters
 }

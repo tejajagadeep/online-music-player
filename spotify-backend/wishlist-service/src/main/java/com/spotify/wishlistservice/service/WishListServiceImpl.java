@@ -3,6 +3,7 @@ package com.spotify.wishlistservice.service;
 import com.spotify.wishlistservice.dto.TrackDto;
 import com.spotify.wishlistservice.dto.WishListDto;
 import com.spotify.wishlistservice.fiegnClient.MusicFeignClient;
+import com.spotify.wishlistservice.model.Track;
 import com.spotify.wishlistservice.model.WishList;
 import com.spotify.wishlistservice.exception.ResourceNotFoundException;
 import com.spotify.wishlistservice.repository.WishListRepository;
@@ -60,7 +61,7 @@ public class WishListServiceImpl implements WishListService{
     @Override
     public TrackDto getTrack(String trackId) {
         return modelMapper.map(musicFeignClient.getTrack(trackId),TrackDto.class);
+//        return musicFeignClient.getTrack(trackId);
     }
-
 
 }

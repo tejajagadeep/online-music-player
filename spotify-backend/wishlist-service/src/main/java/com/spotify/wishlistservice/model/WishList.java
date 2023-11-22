@@ -14,5 +14,5 @@ public class WishList {
 
     @Id
     private String username;
-    private List<Track> tracks;
+    private List<SpotifyTrack> tracks;
 }

@@ -1,7 +1,7 @@
 package com.spotify.musicservice.service;
 
 import com.spotify.musicservice.dto.SpotifyPlaylist;
-import com.spotify.musicservice.dto.SpotifySearchTrack;
+import com.spotify.musicservice.dto.SpotifyTrack;
 import com.spotify.musicservice.dto.Track;
 import com.spotify.musicservice.exception.ResourceNotFoundException;
 import com.spotify.musicservice.model.SpotifyAccessToken;
@@ -101,7 +101,7 @@ public class SpotifyServiceImpl implements SpotifyService{
 
     @Override
     public Object search(String query) {
-        return restTemplate.exchange(searchRequest(query), SpotifySearchTrack.class).getBody();
+        return restTemplate.exchange(searchRequest(query), SpotifyTrack.class).getBody();
     }
 
     private RequestEntity<Void> searchRequest(String query){

@@ -1,9 +1,6 @@
 package com.spotify.wishlistservice.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
 import lombok.Data;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -12,7 +9,6 @@ import java.util.List;
 @Data
 @Document
 public class Track {
-
 
     @JsonProperty("album")
     private Album album;
@@ -26,12 +22,14 @@ public class Track {
     @JsonProperty("href")
     private String href;
 
-    @Id
     @JsonProperty("id")
     private String id;
 
     @JsonProperty("name")
     private String name;
+
+    @JsonProperty("preview_url")
+    private String previewUrl;
 
     @JsonProperty("type")
     private String type;

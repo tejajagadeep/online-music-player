@@ -1,8 +1,8 @@
 package com.spotify.wishlistservice.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import jakarta.persistence.Id;
 import lombok.Data;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.List;
 
@@ -21,12 +21,14 @@ public class TrackDto {
     @JsonProperty("href")
     private String href;
 
-    @Id
     @JsonProperty("id")
     private String id;
 
     @JsonProperty("name")
     private String name;
+
+    @JsonProperty("preview_url")
+    private String previewUrl;
 
     @JsonProperty("type")
     private String type;

@@ -1,12 +1,12 @@
-package com.spotify.wishlistservice.model;
+package com.spotify.wishlistservice.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Data
-@Document
-public class ExternalUrls {
-    @JsonProperty("spotify")
-    private String spotify;
+public class SpotifyTrackDto {
+
+    @JsonProperty("tracks")
+    private TracksDto tracks;
 }
