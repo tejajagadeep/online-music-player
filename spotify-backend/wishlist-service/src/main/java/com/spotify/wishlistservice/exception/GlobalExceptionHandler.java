@@ -14,8 +14,6 @@ import java.util.Date;
 @ControllerAdvice
 public class GlobalExceptionHandler extends ResponseEntityExceptionHandler{
 
-//    Logger log = (Logger) LoggerFactory.getLogger(GlobalExceptionHandler.class);
-
     @ResponseStatus(HttpStatus.NOT_FOUND)
     @ExceptionHandler(ResourceNotFoundException.class)
     public ResponseEntity<ErrorMessage> handleInvalidUserException(ResourceNotFoundException ex) {
@@ -36,15 +34,6 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler{
         messageResponse.setTimeStamp(new Date());
         return new ResponseEntity<>(messageResponse, HttpStatus.INTERNAL_SERVER_ERROR);
 
-    }
-
-    @ExceptionHandler(ResourceAlreadyExistsException.class)
-    public ResponseEntity<Object> handleResourceAlreadyExistsException(ResourceAlreadyExistsException ex, WebRequest request) {
-        ErrorMessage messageResponse = new ErrorMessage();
-        messageResponse.setMessage(ex.getMessage());
-        messageResponse.setStatus(HttpStatus.CONFLICT);
-        messageResponse.setTimeStamp(new Date());
-        return new ResponseEntity<>(messageResponse, HttpStatus.CONFLICT);
     }
 
     @ExceptionHandler(NullPointerException.class)

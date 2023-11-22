@@ -1,0 +1,153 @@
+{
+    "username": "jagadeep",
+    "tracks": [
+        {
+            "album": {
+                "album_type": "single",
+                "artists": [
+                    {
+                        "external_urls": {
+                            "spotify": "https://open.spotify.com/artist/6M2wZ9GZgrQXHCFfjv46we"
+                        },
+                        "href": "https://api.spotify.com/v1/artists/6M2wZ9GZgrQXHCFfjv46we",
+                        "id": "6M2wZ9GZgrQXHCFfjv46we",
+                        "name": "Dua Lipa",
+                        "type": "artist",
+                        "uri": "spotify:artist:6M2wZ9GZgrQXHCFfjv46we"
+                    }
+                ],
+                "external_urls": {
+                    "spotify": "https://open.spotify.com/album/5pTaRVLwZOFObIbRBubmeb"
+                },
+                "href": "https://api.spotify.com/v1/albums/5pTaRVLwZOFObIbRBubmeb",
+                "id": "5pTaRVLwZOFObIbRBubmeb",
+                "images": [
+                    {
+                        "height": 640,
+                        "url": "https://i.scdn.co/image/ab67616d0000b273001d5706fddc72561f6488af",
+                        "width": 640
+                    },
+                    {
+                        "height": 300,
+                        "url": "https://i.scdn.co/image/ab67616d00001e02001d5706fddc72561f6488af",
+                        "width": 300
+                    },
+                    {
+                        "height": 64,
+                        "url": "https://i.scdn.co/image/ab67616d00004851001d5706fddc72561f6488af",
+                        "width": 64
+                    }
+                ],
+                "name": "Houdini",
+                "release_date": "2023-11-09",
+                "type": "album",
+                "uri": "spotify:album:5pTaRVLwZOFObIbRBubmeb"
+            },
+            "artists": [
+                {
+                    "external_urls": {
+                        "spotify": "https://open.spotify.com/artist/6M2wZ9GZgrQXHCFfjv46we"
+                    },
+                    "href": "https://api.spotify.com/v1/artists/6M2wZ9GZgrQXHCFfjv46we",
+                    "id": "6M2wZ9GZgrQXHCFfjv46we",
+                    "name": "Dua Lipa",
+                    "type": "artist",
+                    "uri": "spotify:artist:6M2wZ9GZgrQXHCFfjv46we"
+                }
+            ],
+            "external_urls": {
+                "spotify": "https://open.spotify.com/track/4OMJGnvZfDvsePyCwRGO7X"
+            },
+            "href": "https://api.spotify.com/v1/tracks/4OMJGnvZfDvsePyCwRGO7X",
+            "id": "4OMJGnvZfDvsePyCwRGO7X",
+            "name": "Houdini",
+            "preview_url": "https://p.scdn.co/mp3-preview/df4af86970ffb1a7042d1d228bcea7b4aabfdba4?cid=cfdbd6448f364fca80b7aa03228c64c9",
+            "type": "track",
+            "uri": "spotify:track:4OMJGnvZfDvsePyCwRGO7X"
+        },
+        {
+            "album": {
+                "album_type": "single",
+                "artists": [
+                    {
+                        "external_urls": {
+                            "spotify": "https://open.spotify.com/artist/4zCH9qm4R2DADamUHMCa6O"
+                        },
+                        "href": "https://api.spotify.com/v1/artists/4zCH9qm4R2DADamUHMCa6O",
+                        "id": "4zCH9qm4R2DADamUHMCa6O",
+                        "name": "Anirudh Ravichander",
+                        "type": "artist",
+                        "uri": "spotify:artist:4zCH9qm4R2DADamUHMCa6O"
+                    },
+                    {
+                        "external_urls": {
+                            "spotify": "https://open.spotify.com/artist/3tPQOjkxO3mrYrrgkTeXgH"
+                        },
+                        "href": "https://api.spotify.com/v1/artists/3tPQOjkxO3mrYrrgkTeXgH",
+                        "id": "3tPQOjkxO3mrYrrgkTeXgH",
+                        "name": "Nikhita Gandhi",
+                        "type": "artist",
+                        "uri": "spotify:artist:3tPQOjkxO3mrYrrgkTeXgH"
+                    }
+                ],
+                "external_urls": {
+                    "spotify": "https://open.spotify.com/album/0qOjC3f9sN8JWr1SOz7m9Z"
+                },
+                "href": "https://api.spotify.com/v1/albums/0qOjC3f9sN8JWr1SOz7m9Z",
+                "id": "0qOjC3f9sN8JWr1SOz7m9Z",
+                "images": [
+                    {
+                        "height": 640,
+                        "url": "https://i.scdn.co/image/ab67616d0000b27329369874cd836dc35a40a980",
+                        "width": 640
+                    },
+                    {
+                        "height": 300,
+                        "url": "https://i.scdn.co/image/ab67616d00001e0229369874cd836dc35a40a980",
+                        "width": 300
+                    },
+                    {
+                        "height": 64,
+                        "url": "https://i.scdn.co/image/ab67616d0000485129369874cd836dc35a40a980",
+                        "width": 64
+                    }
+                ],
+                "name": "Ordinary Person (From \"Leo\")",
+                "release_date": "2023-10-24",
+                "type": "album",
+                "uri": "spotify:album:0qOjC3f9sN8JWr1SOz7m9Z"
+            },
+            "artists": [
+                {
+                    "external_urls": {
+                        "spotify": "https://open.spotify.com/artist/4zCH9qm4R2DADamUHMCa6O"
+                    },
+                    "href": "https://api.spotify.com/v1/artists/4zCH9qm4R2DADamUHMCa6O",
+                    "id": "4zCH9qm4R2DADamUHMCa6O",
+                    "name": "Anirudh Ravichander",
+                    "type": "artist",
+                    "uri": "spotify:artist:4zCH9qm4R2DADamUHMCa6O"
+                },
+                {
+                    "external_urls": {
+                        "spotify": "https://open.spotify.com/artist/3tPQOjkxO3mrYrrgkTeXgH"
+                    },
+                    "href": "https://api.spotify.com/v1/artists/3tPQOjkxO3mrYrrgkTeXgH",
+                    "id": "3tPQOjkxO3mrYrrgkTeXgH",
+                    "name": "Nikhita Gandhi",
+                    "type": "artist",
+                    "uri": "spotify:artist:3tPQOjkxO3mrYrrgkTeXgH"
+                }
+            ],
+            "external_urls": {
+                "spotify": "https://open.spotify.com/track/6FahmzZYKH0zb2f9hrVsvw"
+            },
+            "href": "https://api.spotify.com/v1/tracks/6FahmzZYKH0zb2f9hrVsvw",
+            "id": "6FahmzZYKH0zb2f9hrVsvw",
+            "name": "Ordinary Person (From \"Leo\")",
+            "preview_url": "https://p.scdn.co/mp3-preview/ab2cc69d76a3e390cc878c6dadd21ac6b7b365a6?cid=cfdbd6448f364fca80b7aa03228c64c9",
+            "type": "track",
+            "uri": "spotify:track:6FahmzZYKH0zb2f9hrVsvw"
+        }
+    ]
+}

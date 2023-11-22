@@ -4,7 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a2504401-f241-4a58-ab09-902bb2951c1e" name="Changes" comment="Commit message [date: %Y-%m-%d] [time: %H:%M:%S]" />
+    <list default="true" id="a2504401-f241-4a58-ab09-902bb2951c1e" name="Changes" comment="Commit message [date: %Y-%m-%d] [time: %H:%M:%S]">
+      <change afterPath="$PROJECT_DIR$/api-gateway/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_fileupload_commons_fileupload_1_5.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_io_commons_io_2_11_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_github_openfeign_feign_core_12_4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_github_openfeign_feign_slf4j_12_4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_github_openfeign_form_feign_form_3_8_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_github_openfeign_form_feign_form_spring_3_8_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_openfeign_core_4_0_4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_starter_openfeign_4_0_4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/java/com/university/apigateway/CustomFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/java/com/university/apigateway/CustomFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/music-service/src/main/java/com/spotify/musicservice/dto/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/music-service/src/main/java/com/spotify/musicservice/dto/Item.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/music-service/src/main/java/com/spotify/musicservice/service/SpotifyServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/music-service/src/main/java/com/spotify/musicservice/service/SpotifyServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/userprofile-service/src/main/java/com/spotify/userprofile/controller/UserProfileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/userprofile-service/src/main/java/com/spotify/userprofile/controller/UserProfileController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wishlist-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/wishlist-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wishlist-service/src/main/java/com/spotify/wishlistservice/WishlistserviceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/wishlist-service/src/main/java/com/spotify/wishlistservice/WishlistserviceApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wishlist-service/src/main/java/com/spotify/wishlistservice/exception/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/wishlist-service/src/main/java/com/spotify/wishlistservice/exception/GlobalExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wishlist-service/src/main/java/com/spotify/wishlistservice/exception/ResourceAlreadyExistsException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../temp/json/search.json" beforeDir="false" afterPath="$PROJECT_DIR$/../temp/json/search.json" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -58,7 +79,7 @@
       <recent name="C:\Users\tejaj\Downloads\git\spotify\spotify-backend\wishlist-service\src\main\java\com\spotify\wishlistservice\model" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.UserprofileApplication">
+  <component name="RunManager" selected="Application.ApiGatewayApplication">
     <configuration name="ApiGatewayApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.university.apigateway.ApiGatewayApplication" />
       <module name="api-gateway" />
@@ -126,11 +147,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.UserprofileApplication" />
+        <item itemvalue="Application.ApiGatewayApplication" />
         <item itemvalue="Application.MusicserviceApplication" />
+        <item itemvalue="Application.UserprofileApplication" />
         <item itemvalue="Application.WishlistserviceApplication" />
         <item itemvalue="Application.AuthenticationServiceApplication" />
-        <item itemvalue="Application.ApiGatewayApplication" />
       </list>
     </recent_temporary>
   </component>

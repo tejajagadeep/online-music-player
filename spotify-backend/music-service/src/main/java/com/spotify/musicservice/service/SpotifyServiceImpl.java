@@ -28,18 +28,15 @@ public class SpotifyServiceImpl implements SpotifyService{
 
     private final RestTemplate restTemplate;
     @Value("${spotify.account.url}")
-    private String accountApiUrl;
+    String accountApiUrl;
 
     @Value("${spotify.api.url}")
-    private String apiUrl;
+    String apiUrl;
     @Value("${spotify.client.id}")
-    private String clientId;
-
-    @Value("${spotify.redirect.uri}")
-    private String redirectUri;
+    String clientId;
 
     @Value("${spotify.client.secret}")
-    private String clientSecret;
+    String clientSecret;
 
     @Autowired
     public SpotifyServiceImpl(SpotifyAccessTokenRepository spotifyAccessTokenRepository, RestTemplate restTemplate) {

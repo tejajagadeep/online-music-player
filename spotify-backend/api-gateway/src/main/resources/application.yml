@@ -1,0 +1,17 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: WISHLIST-SERVICE
+          uri: lb://WISHLIST-SERVICE
+          predicates:
+            - Path=/api/**
+
+        - id: MUSIC-SERVICE
+          uri: lb://MUSIC-SERVICE
+          predicates:
+            - Path=/**
+        - id: MUSIC-SERVICE
+          uri: lb://MUSIC-SERVICE
+          predicates:
+            - Path=/**
