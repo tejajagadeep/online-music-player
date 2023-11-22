@@ -14,7 +14,5 @@ public class WishList {
 
     @Id
     private String username;
-    private String songName;
-
-    private List<SpotifyPlaylist> spotifyAlbumInfos;
+    private List<Track> tracks;
 }

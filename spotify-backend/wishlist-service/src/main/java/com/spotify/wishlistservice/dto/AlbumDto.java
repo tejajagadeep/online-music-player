@@ -11,7 +11,7 @@ public class AlbumDto {
     private String albumType;
 
     @JsonProperty("artists")
-    private List<ArtistDto> artistDtos;
+    private List<ArtistDto> artists;
 
     @JsonProperty("external_urls")
     private ExternalUrlsDto externalUrls;
@@ -23,7 +23,7 @@ public class AlbumDto {
     private String id;
 
     @JsonProperty("images")
-    private List<ImageDto> imageDtos;
+    private List<ImageDto> images;
 
     @JsonProperty("name")
     private String name;

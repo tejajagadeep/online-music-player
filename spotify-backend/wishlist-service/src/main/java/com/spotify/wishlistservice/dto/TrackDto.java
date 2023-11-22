@@ -1,6 +1,7 @@
 package com.spotify.wishlistservice.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import jakarta.persistence.Id;
 import lombok.Data;
 
 import java.util.List;
@@ -9,10 +10,10 @@ import java.util.List;
 public class TrackDto {
 
     @JsonProperty("album")
-    private AlbumDto albumDto;
+    private AlbumDto album;
 
     @JsonProperty("artists")
-    private List<ArtistDto> artistDtos;
+    private List<ArtistDto> artists;
 
     @JsonProperty("external_urls")
     private ExternalUrlsDto externalUrls;
@@ -20,6 +21,7 @@ public class TrackDto {
     @JsonProperty("href")
     private String href;
 
+    @Id
     @JsonProperty("id")
     private String id;
 

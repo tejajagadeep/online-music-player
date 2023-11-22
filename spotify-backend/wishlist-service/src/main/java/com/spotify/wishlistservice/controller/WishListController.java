@@ -1,5 +1,6 @@
 package com.spotify.wishlistservice.controller;
 
+import com.spotify.wishlistservice.exception.ResourceNotFoundException;
 import com.spotify.wishlistservice.model.WishList;
 import com.spotify.wishlistservice.service.WishListService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,22 +21,42 @@ public class WishListController {
 
     @GetMapping("/username/{username}")
     public ResponseEntity<Object> getAllByUsername(@PathVariable String username){
-        return new ResponseEntity<>(wishListService.getAllByUsername(username), HttpStatus.OK);
+        try {
+            return new ResponseEntity<>(wishListService.getAllByUsername(username), HttpStatus.OK);
+
+        } catch (Exception e){
+            throw new ResourceNotFoundException("Resource not found");
+        }
     }
 
     @GetMapping("/get-track/{trackId}")
     public ResponseEntity<Object> getTrack(@PathVariable String trackId ) {
+        try {
         return new ResponseEntity<>(wishListService.getTrack(trackId), HttpStatus.OK);
+
+    } catch (Exception e){
+        return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+    }
     }
 
 
-    @PostMapping
+    @PostMapping()
     public ResponseEntity<Object> saveWishList(@RequestBody WishList wishList){
+        try {
             return new ResponseEntity<>(wishListService.saveWishList(wishList), HttpStatus.OK);
+
+    } catch (Exception e){
+        throw new ResourceNotFoundException("Resource not found");
+        }
     }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Object> removeWishList(@PathVariable long id){
+        try {
             return new ResponseEntity<>(wishListService.removeWishList(id), HttpStatus.OK);
+
+        } catch (Exception e){
+        throw new ResourceNotFoundException("Resource not found");
+        }
     }
 }

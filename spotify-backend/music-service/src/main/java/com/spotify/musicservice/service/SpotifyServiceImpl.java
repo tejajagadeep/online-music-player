@@ -67,11 +67,12 @@ public class SpotifyServiceImpl implements SpotifyService{
 
         // Make a POST request to the Spotify token endpoint to obtain the access token
         ResponseEntity<SpotifyAccessToken> responseEntity = restTemplate.postForEntity(accountApiUrl + "/token", requestEntity, SpotifyAccessToken.class);
-        try {
+        SpotifyAccessToken spotifyAccessToken = responseEntity.getBody();
 
-            responseEntity.getBody().setId(1L);
-            return spotifyAccessTokenRepository.save(responseEntity.getBody());
-        } catch (Exception e){
+        if (spotifyAccessToken != null) {
+            spotifyAccessToken.setId(1L);
+            return spotifyAccessTokenRepository.save(spotifyAccessToken);
+        } else {
             throw new ResourceNotFoundException("Resource Not Found");
         }
     }
@@ -92,8 +93,29 @@ public class SpotifyServiceImpl implements SpotifyService{
 
     @Override
     public Track getTrack(String trackId) {
+        log.info("get Track: "+trackId);
         RequestEntity<Void> requestEntity = trackRequest(trackId);
         return restTemplate.exchange(requestEntity, Track.class).getBody();
+    }
+
+    @Override
+    public Object search(String query, String type) {
+
+        return restTemplate.exchange(searchRequest(query,type),Object.class).getBody();
+    }
+
+    private RequestEntity<Void> searchRequest(String query, String type){
+        HttpHeaders headers = httpHeaders();
+        URI uri = UriComponentsBuilder.fromUriString(apiUrl + "/search")
+                .queryParam("q", query)
+                .queryParam("type", type)
+                .build()
+                .toUri();
+        log.info(uri.toString());
+        return RequestEntity
+                .get(uri)
+                .headers(headers)
+                .build();
     }
 
     private RequestEntity<Void> playListRequest(String playlistId){
@@ -120,10 +142,10 @@ public class SpotifyServiceImpl implements SpotifyService{
 
     private HttpHeaders httpHeaders(){
         String accessToken = spotifyAccessTokenRepository.findById(1L).orElseThrow().getAccessToken();
-        log.info(accessToken);
         HttpHeaders headers = new HttpHeaders();
         headers.set("Authorization", "Bearer " + accessToken);
         headers.setContentType(MediaType.APPLICATION_JSON);
         return headers;
     }
+
 }

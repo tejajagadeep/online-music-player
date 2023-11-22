@@ -16,4 +16,6 @@ public interface SpotifyService {
     SpotifyPlaylist getTodayTopHits();
 
     Track getTrack(String trackId);
+
+    Object search(String query, String type);
 }

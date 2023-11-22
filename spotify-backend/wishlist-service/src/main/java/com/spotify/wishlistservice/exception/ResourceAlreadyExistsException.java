@@ -2,16 +2,16 @@ package com.spotify.wishlistservice.exception;
 
 import java.io.Serial;
 
-public class ResourceNotFoundException extends RuntimeException{
+public class ResourceAlreadyExistsException extends RuntimeException{
 
     @Serial
     private static final long serialVersionUID = 1L;
 
-    public ResourceNotFoundException(String message) {
+    public ResourceAlreadyExistsException(String message) {
         super(message);
     }
 
-//    public ResourceNotFoundException(String message, Throwable throwable) {
+//    public ResourceAlreadyExistsException(String message, Throwable throwable) {
 //        super(message, throwable);
 //    }
 

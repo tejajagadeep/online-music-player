@@ -13,9 +13,6 @@ import java.util.List;
 @Document
 public class Track {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long trackId;
 
     @JsonProperty("album")
     private Album album;
@@ -29,6 +26,7 @@ public class Track {
     @JsonProperty("href")
     private String href;
 
+    @Id
     @JsonProperty("id")
     private String id;
 

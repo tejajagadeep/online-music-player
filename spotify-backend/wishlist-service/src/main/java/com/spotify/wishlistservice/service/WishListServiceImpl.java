@@ -2,12 +2,13 @@ package com.spotify.wishlistservice.service;
 
 import com.spotify.wishlistservice.dto.TrackDto;
 import com.spotify.wishlistservice.dto.WishListDto;
+import com.spotify.wishlistservice.fiegnClient.MusicFeignClient;
 import com.spotify.wishlistservice.model.WishList;
 import com.spotify.wishlistservice.exception.ResourceNotFoundException;
 import com.spotify.wishlistservice.repository.WishListRepository;
+import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
@@ -15,18 +16,22 @@ import java.util.List;
 import java.util.stream.Stream;
 
 @Service
+@Slf4j
 public class WishListServiceImpl implements WishListService{
 
     private final WishListRepository wishListRepository;
 
     private final ModelMapper modelMapper;
 
+    private final MusicFeignClient musicFeignClient;
+
     private final RestTemplate restTemplate;
 
     @Autowired
-    public WishListServiceImpl(WishListRepository wishListRepository, ModelMapper modelMapper, RestTemplate restTemplate) {
+    public WishListServiceImpl(WishListRepository wishListRepository, ModelMapper modelMapper, MusicFeignClient musicFeignClient, RestTemplate restTemplate) {
         this.wishListRepository = wishListRepository;
         this.modelMapper = modelMapper;
+        this.musicFeignClient = musicFeignClient;
         this.restTemplate = restTemplate;
     }
 
@@ -54,11 +59,7 @@ public class WishListServiceImpl implements WishListService{
 
     @Override
     public TrackDto getTrack(String trackId) {
-
-        String serviceUrl = "http://localhost:8901/api/v1/music/get-track/4OMJGnvZfDvsePyCwRGO7X";
-        ResponseEntity<TrackDto> responseEntity = restTemplate.getForEntity(serviceUrl, TrackDto.class);
-
-        return responseEntity.getBody();
+        return modelMapper.map(musicFeignClient.getTrack(trackId),TrackDto.class);
     }
 
 
