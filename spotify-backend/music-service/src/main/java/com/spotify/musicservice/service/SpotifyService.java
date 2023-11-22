@@ -17,5 +17,5 @@ public interface SpotifyService {
 
     Track getTrack(String trackId);
 
-    Object search(String query, String type);
+    Object search(String query);
 }

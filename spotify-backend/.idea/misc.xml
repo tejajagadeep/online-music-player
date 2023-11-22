@@ -3,16 +3,15 @@
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
-        <option value="$PROJECT_DIR$/../backend/userprofile/pom.xml" />
-        <option value="$PROJECT_DIR$/../backend/eurekaserver/pom.xml" />
-        <option value="$PROJECT_DIR$/../backend/config-server/pom.xml" />
-        <option value="$PROJECT_DIR$/../backend/wishlistservice/pom.xml" />
-        <option value="$PROJECT_DIR$/../backend/musicservice/pom.xml" />
-        <option value="$PROJECT_DIR$/musicservice/pom.xml" />
+        <option value="$PROJECT_DIR$/api-gateway/pom.xml" />
+        <option value="$PROJECT_DIR$/config-server/pom.xml" />
+        <option value="$PROJECT_DIR$/eureka-server/pom.xml" />
+        <option value="$PROJECT_DIR$/music-service/pom.xml" />
+        <option value="$PROJECT_DIR$/wishlist-service/pom.xml" />
+        <option value="$PROJECT_DIR$/userprofile-service/pom.xml" />
+        <option value="$PROJECT_DIR$/authentication-service/pom.xml" />
       </list>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="20" project-jdk-type="JavaSDK">
-    <output url="file://$PROJECT_DIR$/out" />
-  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="20" project-jdk-type="JavaSDK" />
 </project>

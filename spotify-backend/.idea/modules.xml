@@ -2,8 +2,14 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/../backend/musicservice/musicservice.iml" filepath="$PROJECT_DIR$/../backend/musicservice/musicservice.iml" />
+      <module fileurl="file://$PROJECT_DIR$/api-gateway/api-gateway.iml" filepath="$PROJECT_DIR$/api-gateway/api-gateway.iml" />
+      <module fileurl="file://$PROJECT_DIR$/authentication-service/authentication-service.iml" filepath="$PROJECT_DIR$/authentication-service/authentication-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/config-server/config-server.iml" filepath="$PROJECT_DIR$/config-server/config-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eureka-server/eureka-server.iml" filepath="$PROJECT_DIR$/eureka-server/eureka-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/music-service/music-service.iml" filepath="$PROJECT_DIR$/music-service/music-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/spotify-backend.iml" filepath="$PROJECT_DIR$/.idea/spotify-backend.iml" />
+      <module fileurl="file://$PROJECT_DIR$/userprofile-service/userprofile-service.iml" filepath="$PROJECT_DIR$/userprofile-service/userprofile-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/wishlist-service/wishlist-service.iml" filepath="$PROJECT_DIR$/wishlist-service/wishlist-service.iml" />
     </modules>
   </component>
 </project>

@@ -67,9 +67,9 @@ public class SpotifyController {
     }
 
     @GetMapping("/search")
-    public ResponseEntity<Object> search(@RequestParam String query, @RequestParam String type ) {
+    public ResponseEntity<Object> search(@RequestParam String query) {
         try {
-            return new ResponseEntity<>(spotifyService.search(query,type), HttpStatus.OK);
+            return new ResponseEntity<>(spotifyService.search(query), HttpStatus.OK);
         } catch (Exception e){
             throw new ResourceNotFoundException("");
         }
