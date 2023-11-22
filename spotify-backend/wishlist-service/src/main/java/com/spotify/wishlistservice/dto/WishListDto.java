@@ -12,5 +12,5 @@ public class WishListDto {
 
     @Id
     private String username;
-    private List<SpotifyTrackDto> tracks;
+    private List<TrackDto> tracks;
 }
