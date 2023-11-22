@@ -6,16 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="a2504401-f241-4a58-ab09-902bb2951c1e" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/music-service/src/main/java/com/spotify/musicservice/controller/SpotifyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/music-service/src/main/java/com/spotify/musicservice/controller/SpotifyController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/music-service/src/main/java/com/spotify/musicservice/dto/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/music-service/src/main/java/com/spotify/musicservice/dto/Item.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wishlist-service/src/main/java/com/spotify/wishlistservice/controller/WishListController.java" beforeDir="false" afterPath="$PROJECT_DIR$/wishlist-service/src/main/java/com/spotify/wishlistservice/controller/WishListController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wishlist-service/src/main/java/com/spotify/wishlistservice/dto/ItemDto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wishlist-service/src/main/java/com/spotify/wishlistservice/fiegnClient/MusicFeignClient.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wishlist-service/src/main/java/com/spotify/wishlistservice/model/Item.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wishlist-service/src/main/java/com/spotify/wishlistservice/model/Track.java" beforeDir="false" afterPath="$PROJECT_DIR$/wishlist-service/src/main/java/com/spotify/wishlistservice/model/Track.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wishlist-service/src/main/java/com/spotify/wishlistservice/repository/TrackRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wishlist-service/src/main/java/com/spotify/wishlistservice/repository/WishListRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/wishlist-service/src/main/java/com/spotify/wishlistservice/repository/WishListRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wishlist-service/src/main/java/com/spotify/wishlistservice/service/WishListService.java" beforeDir="false" afterPath="$PROJECT_DIR$/wishlist-service/src/main/java/com/spotify/wishlistservice/service/WishListService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/userprofile-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/userprofile-service/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wishlist-service/src/main/java/com/spotify/wishlistservice/service/WishListServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/wishlist-service/src/main/java/com/spotify/wishlistservice/service/WishListServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -71,7 +62,7 @@
       <recent name="C:\Users\tejaj\Downloads\git\spotify\spotify-backend\wishlist-service\src\main\java\com\spotify\wishlistservice\model" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.MusicserviceApplication">
+  <component name="RunManager" selected="Application.UserprofileApplication">
     <configuration name="ApiGatewayApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.university.apigateway.ApiGatewayApplication" />
       <module name="api-gateway" />
@@ -139,9 +130,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.UserprofileApplication" />
         <item itemvalue="Application.MusicserviceApplication" />
         <item itemvalue="Application.WishlistserviceApplication" />
-        <item itemvalue="Application.UserprofileApplication" />
         <item itemvalue="Application.AuthenticationServiceApplication" />
         <item itemvalue="Application.ApiGatewayApplication" />
       </list>
