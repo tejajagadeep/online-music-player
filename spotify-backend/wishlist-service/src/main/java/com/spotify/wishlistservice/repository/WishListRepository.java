@@ -7,6 +7,6 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface WishListRepository extends MongoRepository<WishList, Long> {
-    List<WishList> findAllByUsername(String username);
+public interface WishListRepository extends MongoRepository<WishList, String> {
+    void deleteTrackByUsernameAndTracksId(String username, String trackId);
 }

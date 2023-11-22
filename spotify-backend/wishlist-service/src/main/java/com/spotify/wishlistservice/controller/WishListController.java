@@ -1,7 +1,7 @@
 package com.spotify.wishlistservice.controller;
 
-import com.spotify.wishlistservice.exception.ResourceNotFoundException;
-import com.spotify.wishlistservice.model.WishList;
+import com.spotify.wishlistservice.dto.TrackDto;
+import com.spotify.wishlistservice.model.Track;
 import com.spotify.wishlistservice.service.WishListService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -19,44 +19,20 @@ public class WishListController {
         this.wishListService = wishListService;
     }
 
-    @GetMapping("/username/{username}")
-    public ResponseEntity<Object> getAllByUsername(@PathVariable String username){
-        try {
-            return new ResponseEntity<>(wishListService.getAllByUsername(username), HttpStatus.OK);
-
-        } catch (Exception e){
-            throw new ResourceNotFoundException("Resource not found");
-        }
+    @GetMapping("/get-user-wishlist")
+    public ResponseEntity<Object> getUserWishList(@RequestParam String username){
+        return new ResponseEntity<>(wishListService.getUserWishList(username), HttpStatus.OK);
     }
 
-    @GetMapping("/get-track/{trackId}")
-    public ResponseEntity<Object> getTrack(@PathVariable String trackId ) {
-        try {
-        return new ResponseEntity<>(wishListService.getTrack(trackId), HttpStatus.OK);
-
-    } catch (Exception e){
-        return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
-    }
+    @PostMapping("/save-track-to-wishList")
+    public ResponseEntity<Object> saveTrackToWishList(@RequestParam String username, @RequestBody TrackDto trackDto){
+        return new ResponseEntity<>(wishListService.saveTrackToWishList(username,trackDto),HttpStatus.OK);
     }
 
 
-    @PostMapping()
-    public ResponseEntity<Object> saveWishList(@RequestBody WishList wishList){
-        try {
-            return new ResponseEntity<>(wishListService.saveWishList(wishList), HttpStatus.OK);
-
-    } catch (Exception e){
-        throw new ResourceNotFoundException("Resource not found");
-        }
+    @DeleteMapping("/remove-track")
+    public  ResponseEntity<Object> deleteTrackByUsernameAndTrackId(@RequestParam String username, @RequestParam String trackId){
+        return new ResponseEntity<>(wishListService.deleteTrackByUsernameAndTrackId(username, trackId),HttpStatus.OK);
     }
 
-    @DeleteMapping("/{id}")
-    public ResponseEntity<Object> removeWishList(@PathVariable long id){
-        try {
-            return new ResponseEntity<>(wishListService.removeWishList(id), HttpStatus.OK);
-
-        } catch (Exception e){
-        throw new ResourceNotFoundException("Resource not found");
-        }
-    }
 }

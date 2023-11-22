@@ -1,6 +1,7 @@
 package com.spotify.wishlistservice.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import jakarta.persistence.Id;
 import lombok.Data;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -22,6 +23,7 @@ public class Track {
     @JsonProperty("href")
     private String href;
 
+    @Id
     @JsonProperty("id")
     private String id;
 

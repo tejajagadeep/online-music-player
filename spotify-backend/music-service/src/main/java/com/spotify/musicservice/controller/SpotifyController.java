@@ -1,18 +1,13 @@
 package com.spotify.musicservice.controller;
 
-import ch.qos.logback.core.model.Model;
-import com.spotify.musicservice.exception.ResourceAlreadyExistsException;
 import com.spotify.musicservice.exception.ResourceNotFoundException;
-import com.spotify.musicservice.model.SpotifyAccessToken;
 import com.spotify.musicservice.service.SpotifyService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import se.michaelthelin.spotify.model_objects.specification.Track;
 
-import java.util.List;
 
 @RestController
 @Slf4j
@@ -57,8 +52,8 @@ public class SpotifyController {
             }
     }
 
-    @GetMapping("/get-track/{trackId}")
-    public ResponseEntity<Object> getTrack(@PathVariable String trackId ) {
+    @GetMapping("/get-track")
+    public ResponseEntity<Object> getTrack(@RequestParam String trackId ) {
         try {
         return new ResponseEntity<>(spotifyService.getTrack(trackId), HttpStatus.OK);
         } catch (Exception e){

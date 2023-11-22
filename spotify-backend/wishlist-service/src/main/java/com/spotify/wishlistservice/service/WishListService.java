@@ -8,11 +8,9 @@ import com.spotify.wishlistservice.model.WishList;
 import java.util.List;
 
 public interface WishListService {
-    List<WishListDto> getAllByUsername(String username);
+    WishListDto getUserWishList(String username);
 
-    WishListDto saveWishList(WishList wishList);
+    TrackDto saveTrackToWishList(String username, TrackDto trackDto);
 
-    WishListDto removeWishList(long id);
-
-    TrackDto getTrack(String trackId);
+    String deleteTrackByUsernameAndTrackId(String username, String trackId);
 }
