@@ -1,11 +1,10 @@
 package com.spotify.userprofile.controller;
 
-import com.spotify.userprofile.dto.UserDto;
+import com.spotify.userprofile.dto.UserProfileDto;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.*;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.Map;
@@ -17,7 +16,7 @@ import java.util.Map;
 public class ConsumerController
 {
     @PostMapping(value="/login")
-    public ResponseEntity<Object> consumeLogin(@RequestBody UserDto userdto)
+    public ResponseEntity<Object> consumeLogin(@RequestBody UserProfileDto userdto)
     {
         String baseUrl ="http://localhost:8083/auth/v1/login";
 
@@ -43,7 +42,7 @@ public class ConsumerController
 
 
 
-    private static HttpEntity<UserDto> getHeaders(UserDto userdto)
+    private static HttpEntity<UserProfileDto> getHeaders(UserProfileDto userdto)
     {
         HttpHeaders header = new HttpHeaders();
 

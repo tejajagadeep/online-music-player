@@ -1,6 +1,6 @@
 package com.spotify.userprofile.controller;
 
-import com.spotify.userprofile.dto.UserDto;
+import com.spotify.userprofile.dto.UserProfileDto;
 import com.spotify.userprofile.kafka.DataPublisherServiceImpl;
 import com.spotify.userprofile.model.UserDetails;
 import com.spotify.userprofile.model.UserProfile;
@@ -62,8 +62,8 @@ public class UserProfileController {
     }
 
     @PutMapping("/update/{username}")
-    public ResponseEntity<Object> updateUserProfile(@RequestBody UserDto userDto, @PathVariable String username){
-            return new ResponseEntity<>(userProfileService.updateUserProfile(userDto, username),HttpStatus.OK);
+    public ResponseEntity<Object> updateUserProfile(@RequestBody UserProfileDto userProfileDto, @PathVariable String username){
+            return new ResponseEntity<>(userProfileService.updateUserProfile(userProfileDto, username),HttpStatus.OK);
     }
 
 

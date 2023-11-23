@@ -5,49 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a2504401-f241-4a58-ab09-902bb2951c1e" name="Changes" comment="Commit message [date: %Y-%m-%d] [time: %H:%M:%S]">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_fileupload_commons_fileupload_1_5.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_io_commons_io_2_11_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_github_openfeign_feign_core_12_4.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_github_openfeign_feign_slf4j_12_4.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_github_openfeign_form_feign_form_3_8_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_github_openfeign_form_feign_form_spring_3_8_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_openfeign_core_4_0_4.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_starter_openfeign_4_0_4.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_kafka_spring_kafka_3_0_12.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_retry_spring_retry_2_0_4.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_messaging_6_0_13.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/authentication-service/src/main/java/com/auth/authenticationservice/exception/CustomExceptionHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/authentication-service/src/main/java/com/auth/authenticationservice/exception/ErrorMessage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/userprofile-service/src/main/java/com/spotify/userprofile/configuration/KafkaProducerConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/userprofile-service/src/main/java/com/spotify/userprofile/controller/ConsumerController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/userprofile-service/src/main/java/com/spotify/userprofile/dto/UserDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/userprofile-service/src/main/java/com/spotify/userprofile/exception/ServerConnectionException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/userprofile-service/src/main/java/com/spotify/userprofile/exception/UnAuthorizedException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/userprofile-service/src/main/java/com/spotify/userprofile/feignclient/AuthenticationClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/userprofile-service/src/main/java/com/spotify/userprofile/filter/JWTFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/userprofile-service/src/main/java/com/spotify/userprofile/kafka/DataPublisherServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/userprofile-service/src/main/java/com/spotify/userprofile/kafka/kafkaConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/userprofile-service/src/main/java/com/spotify/userprofile/model/UserDetails.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/userprofile-service/src/main/java/com/spotify/userprofile/service/AuthService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authentication-service/src/main/java/com/auth/authenticationservice/controller/AuthenticationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/authentication-service/src/main/java/com/auth/authenticationservice/controller/AuthenticationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authentication-service/src/main/java/com/auth/authenticationservice/model/UserCredentials.java" beforeDir="false" afterPath="$PROJECT_DIR$/authentication-service/src/main/java/com/auth/authenticationservice/model/UserCredentials.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authentication-service/src/main/java/com/auth/authenticationservice/service/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/authentication-service/src/main/java/com/auth/authenticationservice/service/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/userprofile-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/userprofile-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/userprofile-service/src/main/java/com/spotify/userprofile/UserprofileApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/userprofile-service/src/main/java/com/spotify/userprofile/UserprofileApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/userprofile-service/src/main/java/com/spotify/userprofile/configuration/UserProfileConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/userprofile-service/src/main/java/com/spotify/userprofile/configuration/UserProfileConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/userprofile-service/src/main/java/com/spotify/userprofile/controller/ConsumerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/userprofile-service/src/main/java/com/spotify/userprofile/controller/ConsumerController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/userprofile-service/src/main/java/com/spotify/userprofile/controller/UserProfileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/userprofile-service/src/main/java/com/spotify/userprofile/controller/UserProfileController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/userprofile-service/src/main/java/com/spotify/userprofile/dto/UserDto.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/userprofile-service/src/main/java/com/spotify/userprofile/dto/UserProfileDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/userprofile-service/src/main/java/com/spotify/userprofile/dto/UserProfileDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/userprofile-service/src/main/java/com/spotify/userprofile/exception/ErrorMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/userprofile-service/src/main/java/com/spotify/userprofile/exception/ErrorMessage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/userprofile-service/src/main/java/com/spotify/userprofile/exception/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/userprofile-service/src/main/java/com/spotify/userprofile/exception/CustomExceptionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/userprofile-service/src/main/java/com/spotify/userprofile/exception/ResourceAlreadyExistsException.java" beforeDir="false" afterPath="$PROJECT_DIR$/userprofile-service/src/main/java/com/spotify/userprofile/exception/ResourceAlreadyExistsException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/userprofile-service/src/main/java/com/spotify/userprofile/exception/ResourceNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/userprofile-service/src/main/java/com/spotify/userprofile/exception/ResourceNotFoundException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/userprofile-service/src/main/java/com/spotify/userprofile/model/UserProfile.java" beforeDir="false" afterPath="$PROJECT_DIR$/userprofile-service/src/main/java/com/spotify/userprofile/model/UserProfile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/userprofile-service/src/main/java/com/spotify/userprofile/repository/UserProfileRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/userprofile-service/src/main/java/com/spotify/userprofile/repository/UserProfileRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/userprofile-service/src/main/java/com/spotify/userprofile/response/ResponseHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/userprofile-service/src/main/java/com/spotify/userprofile/response/ResponseHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/userprofile-service/src/main/java/com/spotify/userprofile/service/UserProfileService.java" beforeDir="false" afterPath="$PROJECT_DIR$/userprofile-service/src/main/java/com/spotify/userprofile/service/UserProfileService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/userprofile-service/src/main/java/com/spotify/userprofile/service/UserProfileServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/userprofile-service/src/main/java/com/spotify/userprofile/service/UserProfileServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wishlist-service/src/main/java/com/spotify/wishlistservice/exception/ResourceNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/wishlist-service/src/main/java/com/spotify/wishlistservice/exception/ResourceNotFoundException.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,7 +70,20 @@
       <recent name="C:\Users\tejaj\Downloads\git\spotify\spotify-backend\wishlist-service\src\main\java\com\spotify\wishlistservice\model" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.WishlistserviceApplication">
+  <component name="RunManager" selected="Application.ApiGatewayApplication">
+    <configuration name="ApiGatewayApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.university.apigateway.ApiGatewayApplication" />
+      <module name="api-gateway" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.university.apigateway.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="AuthenticationServiceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.auth.authenticationservice.AuthenticationServiceApplication" />
       <module name="authentication-service" />
@@ -126,19 +103,6 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.sshalem.configserver.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="EurekaServerApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.university.eurekaserver.EurekaServerApplication" />
-      <module name="eureka-server" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.university.eurekaserver.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -174,11 +138,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ApiGatewayApplication" />
         <item itemvalue="Application.WishlistserviceApplication" />
         <item itemvalue="Application.UserprofileApplication" />
         <item itemvalue="Application.AuthenticationServiceApplication" />
         <item itemvalue="Application.ConfigServerApplication" />
-        <item itemvalue="Application.EurekaServerApplication" />
       </list>
     </recent_temporary>
   </component>

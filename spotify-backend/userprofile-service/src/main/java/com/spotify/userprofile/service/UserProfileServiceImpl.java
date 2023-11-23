@@ -1,6 +1,6 @@
 package com.spotify.userprofile.service;
 
-import com.spotify.userprofile.dto.UserDto;
+import com.spotify.userprofile.dto.UserProfileDto;
 import com.spotify.userprofile.exception.ResourceAlreadyExistsException;
 import com.spotify.userprofile.model.UserProfile;
 import com.spotify.userprofile.repository.UserProfileRepository;
@@ -27,25 +27,25 @@ public class UserProfileServiceImpl implements UserProfileService {
 
 
     @Override
-    public List<UserDto> getAllUsers() {
+    public List<UserProfileDto> getAllUsers() {
 
         return Stream.of(usersProfileRepository.findAll())
                 .flatMap(entityList -> entityList.stream()
-                        .map(entity -> modelMapper.map(entity, UserDto.class))).toList();
+                        .map(entity -> modelMapper.map(entity, UserProfileDto.class))).toList();
 
     }
 
     @Override
-    public UserDto getUserProfileById(String username) {
+    public UserProfileDto getUserProfileById(String username) {
         UserProfile entity = usersProfileRepository.findById(username)
                 .orElseThrow(() ->
                         new ResourceNotFoundException("Entity not found with ID: " + username));
 
-        return modelMapper.map(entity, UserDto.class);
+        return modelMapper.map(entity, UserProfileDto.class);
     }
 
     @Override
-    public UserDto saveUserProfile(UserProfile userProfile) {
+    public UserProfileDto saveUserProfile(UserProfile userProfile) {
 
 
         if (usersProfileRepository.existsById(userProfile.getUsername())) {
@@ -62,11 +62,11 @@ public class UserProfileServiceImpl implements UserProfileService {
 
         userProfile.setRole("User");
 
-        return modelMapper.map(usersProfileRepository.save(userProfile), UserDto.class);
+        return modelMapper.map(usersProfileRepository.save(userProfile), UserProfileDto.class);
     }
 
     @Override
-    public UserDto updateUserProfile(UserDto userProfileDto, String username) {
+    public UserProfileDto updateUserProfile(UserProfileDto userProfileDto, String username) {
         UserProfile entity = usersProfileRepository.findById(username)
                 .orElseThrow(() ->
                         new ResourceNotFoundException("Entity not found with ID: " + username)
@@ -80,7 +80,7 @@ public class UserProfileServiceImpl implements UserProfileService {
 
         usersProfileRepository.save(entity);
 
-        return modelMapper.map(entity, UserDto.class);
+        return modelMapper.map(entity, UserProfileDto.class);
     }
 
 }
