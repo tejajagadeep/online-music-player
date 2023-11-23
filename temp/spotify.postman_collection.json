@@ -16,7 +16,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n        \"username\": \"meghana\",\r\n        \"password\":\"Abcabc@123\"\r\n    }",
+							"raw": "{\r\n        \"username\": \"jagadeep\",\r\n        \"password\":\"Abcabc@123\"\r\n    }",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -24,15 +24,16 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:9090/auth/v1/login",
+							"raw": "http://localhost:9090/api/v1.0/auth/login",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "9090",
 							"path": [
+								"api",
+								"v1.0",
 								"auth",
-								"v1",
 								"login"
 							]
 						}
@@ -52,7 +53,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZWphamFnYWRlZXAiLCJyb2xlIjoiQWRtaW4iLCJpYXQiOjE3MDA3MTg3MTUsImV4cCI6MTcwMDcyMjMxNX0.VI76OO8Fv2nOgBUXLww0R-eeJjN_Yv7dwIc3OIJVNgk",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZWphamFnYWRlZXAiLCJyb2xlIjoiQWRtaW4iLCJpYXQiOjE3MDA3NTM3ODQsImV4cCI6MTcwMDc1NzM4NH0.LCzFkPH0ret-0b27NkX3kxUMbfhpkad1g2LVjRFoypw",
 									"type": "string"
 								}
 							]
@@ -79,10 +80,20 @@
 				{
 					"name": "getById",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtZWdoYW5hIiwicm9sZSI6IlVzZXIiLCJpYXQiOjE3MDA3NTUyNTksImV4cCI6MTcwMDc1ODg1OX0.pXFyECQN2GlZyRnvVZpdtI2up0TkhSIdl3cjMdNUYHE",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:9090/api/v1.0/userProfile/getUserById/jagadeep",
+							"raw": "http://localhost:9090/api/v1.0/userProfile/getUserById/meghana",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -93,7 +104,7 @@
 								"v1.0",
 								"userProfile",
 								"getUserById",
-								"jagadeep"
+								"meghana"
 							]
 						}
 					},
@@ -138,10 +149,20 @@
 				{
 					"name": "getuserWishList",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqYWdhZGVlcCIsInJvbGUiOiJVc2VyIiwiaWF0IjoxNzAwNzU3OTE3LCJleHAiOjE3MDA3NjE1MTd9.3HsuhhfTwr9U_nTkc1rrQ1VQrN6ii-BpdqHRi7hRBLg",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:9090/api/v1.0/wishlist/get-user-wishlist?username=jagadeep",
+							"raw": "http://localhost:9090/api/v1.0/wishlist/get-user-wishlist?username=meghana",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -156,7 +177,7 @@
 							"query": [
 								{
 									"key": "username",
-									"value": "jagadeep"
+									"value": "meghana"
 								}
 							]
 						}
@@ -166,15 +187,25 @@
 				{
 					"name": "removesong",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqYWdhZGVlcCIsInJvbGUiOiJVc2VyIiwiaWF0IjoxNzAwNzU4MzA5LCJleHAiOjE3MDA3NjE5MDl9.zQC6FVryIWf5c5VLDPtdedCUagVtFTc-_JwjYen9pBM",
+									"type": "string"
+								}
+							]
+						},
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8084/api/v1.0/wishlist/remove-track?username=jagadeep&trackId=4OMJGnvZfDvsePyCwRGO7X",
+							"raw": "http://localhost:9090/api/v1.0/wishlist/remove-track?username=jagadeep&trackId=5DgY6Ab0vpyUMKnY9ubFOF",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "8084",
+							"port": "9090",
 							"path": [
 								"api",
 								"v1.0",
@@ -188,7 +219,7 @@
 								},
 								{
 									"key": "trackId",
-									"value": "4OMJGnvZfDvsePyCwRGO7X"
+									"value": "5DgY6Ab0vpyUMKnY9ubFOF"
 								}
 							]
 						}
@@ -202,7 +233,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"album\": {\r\n        \"album_type\": \"single\",\r\n        \"artists\": [\r\n            {\r\n                \"external_urls\": {\r\n                    \"spotify\": \"https://open.spotify.com/artist/4zCH9qm4R2DADamUHMCa6O\"\r\n                },\r\n                \"href\": \"https://api.spotify.com/v1/artists/4zCH9qm4R2DADamUHMCa6O\",\r\n                \"id\": \"4zCH9qm4R2DADamUHMCa6O\",\r\n                \"name\": \"Anirudh Ravichander\",\r\n                \"type\": \"artist\",\r\n                \"uri\": \"spotify:artist:4zCH9qm4R2DADamUHMCa6O\"\r\n            },\r\n            {\r\n                \"external_urls\": {\r\n                    \"spotify\": \"https://open.spotify.com/artist/3tPQOjkxO3mrYrrgkTeXgH\"\r\n                },\r\n                \"href\": \"https://api.spotify.com/v1/artists/3tPQOjkxO3mrYrrgkTeXgH\",\r\n                \"id\": \"3tPQOjkxO3mrYrrgkTeXgH\",\r\n                \"name\": \"Nikhita Gandhi\",\r\n                \"type\": \"artist\",\r\n                \"uri\": \"spotify:artist:3tPQOjkxO3mrYrrgkTeXgH\"\r\n            }\r\n        ],\r\n        \"external_urls\": {\r\n            \"spotify\": \"https://open.spotify.com/album/0qOjC3f9sN8JWr1SOz7m9Z\"\r\n        },\r\n        \"href\": \"https://api.spotify.com/v1/albums/0qOjC3f9sN8JWr1SOz7m9Z\",\r\n        \"id\": \"0qOjC3f9sN8JWr1SOz7m9Z\",\r\n        \"images\": [\r\n            {\r\n                \"height\": 640,\r\n                \"url\": \"https://i.scdn.co/image/ab67616d0000b27329369874cd836dc35a40a980\",\r\n                \"width\": 640\r\n            },\r\n            {\r\n                \"height\": 300,\r\n                \"url\": \"https://i.scdn.co/image/ab67616d00001e0229369874cd836dc35a40a980\",\r\n                \"width\": 300\r\n            },\r\n            {\r\n                \"height\": 64,\r\n                \"url\": \"https://i.scdn.co/image/ab67616d0000485129369874cd836dc35a40a980\",\r\n                \"width\": 64\r\n            }\r\n        ],\r\n        \"name\": \"Ordinary Person (From \\\"Leo\\\")\",\r\n        \"release_date\": \"2023-10-24\",\r\n        \"type\": \"album\",\r\n        \"uri\": \"spotify:album:0qOjC3f9sN8JWr1SOz7m9Z\"\r\n    },\r\n    \"artists\": [\r\n        {\r\n            \"external_urls\": {\r\n                \"spotify\": \"https://open.spotify.com/artist/4zCH9qm4R2DADamUHMCa6O\"\r\n            },\r\n            \"href\": \"https://api.spotify.com/v1/artists/4zCH9qm4R2DADamUHMCa6O\",\r\n            \"id\": \"4zCH9qm4R2DADamUHMCa6O\",\r\n            \"name\": \"Anirudh Ravichander\",\r\n            \"type\": \"artist\",\r\n            \"uri\": \"spotify:artist:4zCH9qm4R2DADamUHMCa6O\"\r\n        },\r\n        {\r\n            \"external_urls\": {\r\n                \"spotify\": \"https://open.spotify.com/artist/3tPQOjkxO3mrYrrgkTeXgH\"\r\n            },\r\n            \"href\": \"https://api.spotify.com/v1/artists/3tPQOjkxO3mrYrrgkTeXgH\",\r\n            \"id\": \"3tPQOjkxO3mrYrrgkTeXgH\",\r\n            \"name\": \"Nikhita Gandhi\",\r\n            \"type\": \"artist\",\r\n            \"uri\": \"spotify:artist:3tPQOjkxO3mrYrrgkTeXgH\"\r\n        }\r\n    ],\r\n    \"external_urls\": {\r\n        \"spotify\": \"https://open.spotify.com/track/6FahmzZYKH0zb2f9hrVsvw\"\r\n    },\r\n    \"href\": \"https://api.spotify.com/v1/tracks/6FahmzZYKH0zb2f9hrVsvw\",\r\n    \"id\": \"6FahmzZYKH0zb2f9hrVsvw\",\r\n    \"name\": \"Ordinary Person (From \\\"Leo\\\")\",\r\n    \"preview_url\": \"https://p.scdn.co/mp3-preview/ab2cc69d76a3e390cc878c6dadd21ac6b7b365a6?cid=cfdbd6448f364fca80b7aa03228c64c9\",\r\n    \"type\": \"track\",\r\n    \"uri\": \"spotify:track:6FahmzZYKH0zb2f9hrVsvw\"\r\n}",
+							"raw": "{\r\n    \"album\": {\r\n        \"album_type\": \"album\",\r\n        \"artists\": [\r\n            {\r\n                \"external_urls\": {\r\n                    \"spotify\": \"https://open.spotify.com/artist/4zCH9qm4R2DADamUHMCa6O\"\r\n                },\r\n                \"href\": \"https://api.spotify.com/v1/artists/4zCH9qm4R2DADamUHMCa6O\",\r\n                \"id\": \"4zCH9qm4R2DADamUHMCa6O\",\r\n                \"name\": \"Anirudh Ravichander\",\r\n                \"type\": \"artist\",\r\n                \"uri\": \"spotify:artist:4zCH9qm4R2DADamUHMCa6O\"\r\n            }\r\n        ],\r\n        \"external_urls\": {\r\n            \"spotify\": \"https://open.spotify.com/album/0zRUzTXH7GtGLxt6uVdARD\"\r\n        },\r\n        \"href\": \"https://api.spotify.com/v1/albums/0zRUzTXH7GtGLxt6uVdARD\",\r\n        \"id\": \"0zRUzTXH7GtGLxt6uVdARD\",\r\n        \"images\": [\r\n            {\r\n                \"height\": 640,\r\n                \"url\": \"https://i.scdn.co/image/ab67616d0000b2736d7009c6abdb966deac1fa86\",\r\n                \"width\": 640\r\n            },\r\n            {\r\n                \"height\": 300,\r\n                \"url\": \"https://i.scdn.co/image/ab67616d00001e026d7009c6abdb966deac1fa86\",\r\n                \"width\": 300\r\n            },\r\n            {\r\n                \"height\": 64,\r\n                \"url\": \"https://i.scdn.co/image/ab67616d000048516d7009c6abdb966deac1fa86\",\r\n                \"width\": 64\r\n            }\r\n        ],\r\n        \"name\": \"Jailer (Original Motion Picture Soundtrack)\",\r\n        \"release_date\": \"2023-07-28\",\r\n        \"type\": \"album\",\r\n        \"uri\": \"spotify:album:0zRUzTXH7GtGLxt6uVdARD\"\r\n    },\r\n    \"artists\": [\r\n        {\r\n            \"external_urls\": {\r\n                \"spotify\": \"https://open.spotify.com/artist/4zCH9qm4R2DADamUHMCa6O\"\r\n            },\r\n            \"href\": \"https://api.spotify.com/v1/artists/4zCH9qm4R2DADamUHMCa6O\",\r\n            \"id\": \"4zCH9qm4R2DADamUHMCa6O\",\r\n            \"name\": \"Anirudh Ravichander\",\r\n            \"type\": \"artist\",\r\n            \"uri\": \"spotify:artist:4zCH9qm4R2DADamUHMCa6O\"\r\n        },\r\n        {\r\n            \"external_urls\": {\r\n                \"spotify\": \"https://open.spotify.com/artist/6sXT8Cggm4tmoxhVjaUVs0\"\r\n            },\r\n            \"href\": \"https://api.spotify.com/v1/artists/6sXT8Cggm4tmoxhVjaUVs0\",\r\n            \"id\": \"6sXT8Cggm4tmoxhVjaUVs0\",\r\n            \"name\": \"Super Subu\",\r\n            \"type\": \"artist\",\r\n            \"uri\": \"spotify:artist:6sXT8Cggm4tmoxhVjaUVs0\"\r\n        }\r\n    ],\r\n    \"external_urls\": {\r\n        \"spotify\": \"https://open.spotify.com/track/5DgY6Ab0vpyUMKnY9ubFOF\"\r\n    },\r\n    \"href\": \"https://api.spotify.com/v1/tracks/5DgY6Ab0vpyUMKnY9ubFOF\",\r\n    \"id\": \"5DgY6Ab0vpyUMKnY9ubFOF\",\r\n    \"name\": \"Hukum - Thalaivar Alappara\",\r\n    \"preview_url\": \"https://p.scdn.co/mp3-preview/25de2a42aced5bd37e33eab44d0aa5aba04305e8?cid=cfdbd6448f364fca80b7aa03228c64c9\",\r\n    \"type\": \"track\",\r\n    \"uri\": \"spotify:track:5DgY6Ab0vpyUMKnY9ubFOF\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -210,12 +241,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8084/api/v1.0/wishlist/save-track-to-wishList?username=jagadeep",
+							"raw": "http://localhost:9090/api/v1.0/wishlist/save-track-to-wishList?username=meghana",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "8084",
+							"port": "9090",
 							"path": [
 								"api",
 								"v1.0",
@@ -225,7 +256,7 @@
 							"query": [
 								{
 									"key": "username",
-									"value": "jagadeep"
+									"value": "meghana"
 								}
 							]
 						}
@@ -243,7 +274,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:9090/api/v1/music/login",
+							"raw": "http://localhost:9090/api/v1.0/music/login",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -251,7 +282,7 @@
 							"port": "9090",
 							"path": [
 								"api",
-								"v1",
+								"v1.0",
 								"music",
 								"login"
 							]
@@ -265,7 +296,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:9090/api/v1/music/search?query=leo",
+							"raw": "http://localhost:9090/api/v1.0/music/search?query=leo",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -273,7 +304,7 @@
 							"port": "9090",
 							"path": [
 								"api",
-								"v1",
+								"v1.0",
 								"music",
 								"search"
 							],
@@ -293,7 +324,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:9090/api/v1/music/bill-board-100-playlist",
+							"raw": "http://localhost:9090/api/v1.0/music/bill-board-100-playlist",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -301,7 +332,7 @@
 							"port": "9090",
 							"path": [
 								"api",
-								"v1",
+								"v1.0",
 								"music",
 								"bill-board-100-playlist"
 							]
@@ -315,15 +346,15 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8901/api/v1/music/today-top-hits-playlist",
+							"raw": "http://localhost:9090/api/v1.0/music/today-top-hits-playlist",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "8901",
+							"port": "9090",
 							"path": [
 								"api",
-								"v1",
+								"v1.0",
 								"music",
 								"today-top-hits-playlist"
 							]
@@ -337,22 +368,22 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8901/api/v1/music/get-track?trackId=6FahmzZYKH0zb2f9hrVsvw",
+							"raw": "http://localhost:9090/api/v1.0/music/get-track?trackId=2wAJTrFhCnQyNSD3oUgTZO",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "8901",
+							"port": "9090",
 							"path": [
 								"api",
-								"v1",
+								"v1.0",
 								"music",
 								"get-track"
 							],
 							"query": [
 								{
 									"key": "trackId",
-									"value": "6FahmzZYKH0zb2f9hrVsvw"
+									"value": "2wAJTrFhCnQyNSD3oUgTZO"
 								}
 							]
 						}
@@ -367,12 +398,12 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8083/home",
+					"raw": "http://localhost:9090/home",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "8083",
+					"port": "9090",
 					"path": [
 						"home"
 					]
@@ -423,31 +454,6 @@
 						{
 							"key": "limit",
 							"value": "2"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "login",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:8901/user-top-songs?userId=cd77iwz4fqzq5fqfj4wdklfd7",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8901",
-					"path": [
-						"user-top-songs"
-					],
-					"query": [
-						{
-							"key": "userId",
-							"value": "cd77iwz4fqzq5fqfj4wdklfd7"
 						}
 					]
 				}
