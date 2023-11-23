@@ -12,8 +12,30 @@
 				{
 					"name": "auth",
 					"request": {
-						"method": "GET",
-						"header": []
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"username\": \"meghana\",\r\n        \"password\":\"Abcabc@123\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9090/auth/v1/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"auth",
+								"v1",
+								"login"
+							]
+						}
 					},
 					"response": []
 				}
@@ -25,19 +47,30 @@
 				{
 					"name": "getall",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZWphamFnYWRlZXAiLCJyb2xlIjoiQWRtaW4iLCJpYXQiOjE3MDA3MTg3MTUsImV4cCI6MTcwMDcyMjMxNX0.VI76OO8Fv2nOgBUXLww0R-eeJjN_Yv7dwIc3OIJVNgk",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/api/v1.0/userProfile",
+							"raw": "http://localhost:9090/api/v1.0/userProfile/getAllUser",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "8080",
+							"port": "9090",
 							"path": [
 								"api",
 								"v1.0",
-								"userProfile"
+								"userProfile",
+								"getAllUser"
 							]
 						}
 					},
@@ -49,17 +82,18 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8081/api/v1.0/userProfile/4",
+							"raw": "http://localhost:9090/api/v1.0/userProfile/getUserById/jagadeep",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "8081",
+							"port": "9090",
 							"path": [
 								"api",
 								"v1.0",
 								"userProfile",
-								"4"
+								"getUserById",
+								"jagadeep"
 							]
 						}
 					},
@@ -72,7 +106,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"id\": 1,\r\n        \"username\": \"johndoE1e\",\r\n        \"firstName\": \"John\",\r\n        \"lastName\": \"Doe\",\r\n        \"number\": 123456789,\r\n        \"dateOfBirth\": \"1989-12-31T18:30:00.000+00:00\",\r\n        \"email\": \"john.do1Ee@example.com\",\r\n        \"password\":\"Abcabc@123\"\r\n    }",
+							"raw": "{\r\n        \"username\": \"meghana\",\r\n        \"firstName\": \"meghana\",\r\n        \"lastName\": \"priya\",\r\n        \"number\": 7893649285,\r\n        \"dateOfBirth\": \"1989-12-31T18:30:00.000+00:00\",\r\n        \"email\": \"meghana.priya@example.com\",\r\n        \"password\":\"Abcabc@123\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -80,16 +114,17 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8081/api/v1.0/userProfile",
+							"raw": "http://localhost:9090/api/v1.0/userProfile/addUser",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "8081",
+							"port": "9090",
 							"path": [
 								"api",
 								"v1.0",
-								"userProfile"
+								"userProfile",
+								"addUser"
 							]
 						}
 					},
@@ -104,7 +139,27 @@
 					"name": "getuserWishList",
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/api/v1.0/wishlist/get-user-wishlist?username=jagadeep",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"v1.0",
+								"wishlist",
+								"get-user-wishlist"
+							],
+							"query": [
+								{
+									"key": "username",
+									"value": "jagadeep"
+								}
+							]
+						}
 					},
 					"response": []
 				},
@@ -114,7 +169,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8084/api/v1.0/whishlist/1",
+							"raw": "http://localhost:8084/api/v1.0/wishlist/remove-track?username=jagadeep&trackId=4OMJGnvZfDvsePyCwRGO7X",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -123,8 +178,18 @@
 							"path": [
 								"api",
 								"v1.0",
-								"whishlist",
-								"1"
+								"wishlist",
+								"remove-track"
+							],
+							"query": [
+								{
+									"key": "username",
+									"value": "jagadeep"
+								},
+								{
+									"key": "trackId",
+									"value": "4OMJGnvZfDvsePyCwRGO7X"
+								}
 							]
 						}
 					},
@@ -137,7 +202,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"album\": {\r\n        \"album_type\": \"single\",\r\n        \"artists\": [\r\n            {\r\n                \"external_urls\": {\r\n                    \"spotify\": \"https://open.spotify.com/artist/6M2wZ9GZgrQXHCFfjv46we\"\r\n                },\r\n                \"href\": \"https://api.spotify.com/v1/artists/6M2wZ9GZgrQXHCFfjv46we\",\r\n                \"id\": \"6M2wZ9GZgrQXHCFfjv46we\",\r\n                \"name\": \"Dua Lipa\",\r\n                \"type\": \"artist\",\r\n                \"uri\": \"spotify:artist:6M2wZ9GZgrQXHCFfjv46we\"\r\n            }\r\n        ],\r\n        \"external_urls\": {\r\n            \"spotify\": \"https://open.spotify.com/album/5pTaRVLwZOFObIbRBubmeb\"\r\n        },\r\n        \"href\": \"https://api.spotify.com/v1/albums/5pTaRVLwZOFObIbRBubmeb\",\r\n        \"id\": \"5pTaRVLwZOFObIbRBubmeb\",\r\n        \"images\": [\r\n            {\r\n                \"height\": 640,\r\n                \"url\": \"https://i.scdn.co/image/ab67616d0000b273001d5706fddc72561f6488af\",\r\n                \"width\": 640\r\n            },\r\n            {\r\n                \"height\": 300,\r\n                \"url\": \"https://i.scdn.co/image/ab67616d00001e02001d5706fddc72561f6488af\",\r\n                \"width\": 300\r\n            },\r\n            {\r\n                \"height\": 64,\r\n                \"url\": \"https://i.scdn.co/image/ab67616d00004851001d5706fddc72561f6488af\",\r\n                \"width\": 64\r\n            }\r\n        ],\r\n        \"name\": \"Houdini\",\r\n        \"release_date\": \"2023-11-09\",\r\n        \"type\": \"album\",\r\n        \"uri\": \"spotify:album:5pTaRVLwZOFObIbRBubmeb\"\r\n    },\r\n    \"artists\": [\r\n        {\r\n            \"external_urls\": {\r\n                \"spotify\": \"https://open.spotify.com/artist/6M2wZ9GZgrQXHCFfjv46we\"\r\n            },\r\n            \"href\": \"https://api.spotify.com/v1/artists/6M2wZ9GZgrQXHCFfjv46we\",\r\n            \"id\": \"6M2wZ9GZgrQXHCFfjv46we\",\r\n            \"name\": \"Dua Lipa\",\r\n            \"type\": \"artist\",\r\n            \"uri\": \"spotify:artist:6M2wZ9GZgrQXHCFfjv46we\"\r\n        }\r\n    ],\r\n    \"external_urls\": {\r\n        \"spotify\": \"https://open.spotify.com/track/4OMJGnvZfDvsePyCwRGO7X\"\r\n    },\r\n    \"href\": \"https://api.spotify.com/v1/tracks/4OMJGnvZfDvsePyCwRGO7X\",\r\n    \"id\": \"4OMJGnvZfDvsePyCwRGO7X\",\r\n    \"name\": \"Houdini\",\r\n    \"preview_url\": \"https://p.scdn.co/mp3-preview/df4af86970ffb1a7042d1d228bcea7b4aabfdba4?cid=cfdbd6448f364fca80b7aa03228c64c9\",\r\n    \"type\": \"track\",\r\n    \"uri\": \"spotify:track:4OMJGnvZfDvsePyCwRGO7X\"\r\n}",
+							"raw": "{\r\n    \"album\": {\r\n        \"album_type\": \"single\",\r\n        \"artists\": [\r\n            {\r\n                \"external_urls\": {\r\n                    \"spotify\": \"https://open.spotify.com/artist/4zCH9qm4R2DADamUHMCa6O\"\r\n                },\r\n                \"href\": \"https://api.spotify.com/v1/artists/4zCH9qm4R2DADamUHMCa6O\",\r\n                \"id\": \"4zCH9qm4R2DADamUHMCa6O\",\r\n                \"name\": \"Anirudh Ravichander\",\r\n                \"type\": \"artist\",\r\n                \"uri\": \"spotify:artist:4zCH9qm4R2DADamUHMCa6O\"\r\n            },\r\n            {\r\n                \"external_urls\": {\r\n                    \"spotify\": \"https://open.spotify.com/artist/3tPQOjkxO3mrYrrgkTeXgH\"\r\n                },\r\n                \"href\": \"https://api.spotify.com/v1/artists/3tPQOjkxO3mrYrrgkTeXgH\",\r\n                \"id\": \"3tPQOjkxO3mrYrrgkTeXgH\",\r\n                \"name\": \"Nikhita Gandhi\",\r\n                \"type\": \"artist\",\r\n                \"uri\": \"spotify:artist:3tPQOjkxO3mrYrrgkTeXgH\"\r\n            }\r\n        ],\r\n        \"external_urls\": {\r\n            \"spotify\": \"https://open.spotify.com/album/0qOjC3f9sN8JWr1SOz7m9Z\"\r\n        },\r\n        \"href\": \"https://api.spotify.com/v1/albums/0qOjC3f9sN8JWr1SOz7m9Z\",\r\n        \"id\": \"0qOjC3f9sN8JWr1SOz7m9Z\",\r\n        \"images\": [\r\n            {\r\n                \"height\": 640,\r\n                \"url\": \"https://i.scdn.co/image/ab67616d0000b27329369874cd836dc35a40a980\",\r\n                \"width\": 640\r\n            },\r\n            {\r\n                \"height\": 300,\r\n                \"url\": \"https://i.scdn.co/image/ab67616d00001e0229369874cd836dc35a40a980\",\r\n                \"width\": 300\r\n            },\r\n            {\r\n                \"height\": 64,\r\n                \"url\": \"https://i.scdn.co/image/ab67616d0000485129369874cd836dc35a40a980\",\r\n                \"width\": 64\r\n            }\r\n        ],\r\n        \"name\": \"Ordinary Person (From \\\"Leo\\\")\",\r\n        \"release_date\": \"2023-10-24\",\r\n        \"type\": \"album\",\r\n        \"uri\": \"spotify:album:0qOjC3f9sN8JWr1SOz7m9Z\"\r\n    },\r\n    \"artists\": [\r\n        {\r\n            \"external_urls\": {\r\n                \"spotify\": \"https://open.spotify.com/artist/4zCH9qm4R2DADamUHMCa6O\"\r\n            },\r\n            \"href\": \"https://api.spotify.com/v1/artists/4zCH9qm4R2DADamUHMCa6O\",\r\n            \"id\": \"4zCH9qm4R2DADamUHMCa6O\",\r\n            \"name\": \"Anirudh Ravichander\",\r\n            \"type\": \"artist\",\r\n            \"uri\": \"spotify:artist:4zCH9qm4R2DADamUHMCa6O\"\r\n        },\r\n        {\r\n            \"external_urls\": {\r\n                \"spotify\": \"https://open.spotify.com/artist/3tPQOjkxO3mrYrrgkTeXgH\"\r\n            },\r\n            \"href\": \"https://api.spotify.com/v1/artists/3tPQOjkxO3mrYrrgkTeXgH\",\r\n            \"id\": \"3tPQOjkxO3mrYrrgkTeXgH\",\r\n            \"name\": \"Nikhita Gandhi\",\r\n            \"type\": \"artist\",\r\n            \"uri\": \"spotify:artist:3tPQOjkxO3mrYrrgkTeXgH\"\r\n        }\r\n    ],\r\n    \"external_urls\": {\r\n        \"spotify\": \"https://open.spotify.com/track/6FahmzZYKH0zb2f9hrVsvw\"\r\n    },\r\n    \"href\": \"https://api.spotify.com/v1/tracks/6FahmzZYKH0zb2f9hrVsvw\",\r\n    \"id\": \"6FahmzZYKH0zb2f9hrVsvw\",\r\n    \"name\": \"Ordinary Person (From \\\"Leo\\\")\",\r\n    \"preview_url\": \"https://p.scdn.co/mp3-preview/ab2cc69d76a3e390cc878c6dadd21ac6b7b365a6?cid=cfdbd6448f364fca80b7aa03228c64c9\",\r\n    \"type\": \"track\",\r\n    \"uri\": \"spotify:track:6FahmzZYKH0zb2f9hrVsvw\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -178,17 +243,17 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8901/api/v1/music/authorize",
+							"raw": "http://localhost:9090/api/v1/music/login",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "8901",
+							"port": "9090",
 							"path": [
 								"api",
 								"v1",
 								"music",
-								"authorize"
+								"login"
 							]
 						}
 					},
@@ -200,12 +265,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8901/api/v1/music/search?userId=cd77iwz4fqzq5fqfj4wdklfd7&query=remaster%2520track%3ADoxy%2520artist%3AMiles%2520Davis",
+							"raw": "http://localhost:9090/api/v1/music/search?query=leo",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "8901",
+							"port": "9090",
 							"path": [
 								"api",
 								"v1",
@@ -214,12 +279,8 @@
 							],
 							"query": [
 								{
-									"key": "userId",
-									"value": "cd77iwz4fqzq5fqfj4wdklfd7"
-								},
-								{
 									"key": "query",
-									"value": "remaster%2520track%3ADoxy%2520artist%3AMiles%2520Davis"
+									"value": "leo"
 								}
 							]
 						}
@@ -232,12 +293,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8901/api/v1/music/bill-board-100-playlist",
+							"raw": "http://localhost:9090/api/v1/music/bill-board-100-playlist",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "8901",
+							"port": "9090",
 							"path": [
 								"api",
 								"v1",
@@ -276,7 +337,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8901/api/v1/music/get-track/4OMJGnvZfDvsePyCwRGO7X",
+							"raw": "http://localhost:8901/api/v1/music/get-track?trackId=6FahmzZYKH0zb2f9hrVsvw",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -286,8 +347,13 @@
 								"api",
 								"v1",
 								"music",
-								"get-track",
-								"4OMJGnvZfDvsePyCwRGO7X"
+								"get-track"
+							],
+							"query": [
+								{
+									"key": "trackId",
+									"value": "6FahmzZYKH0zb2f9hrVsvw"
+								}
 							]
 						}
 					},
@@ -322,7 +388,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "BQCtilXsI7aOleQ0sKeH3snIYT3FM46TTUPwseBjz-Zh46qHT-0wSFgCA5zNtdNM5klDUOzIp2DiQGHfMrwIQZ6uKWw0qToAm0pg3R3uT5bAsKgkaPE",
+							"value": "BQATFM0xomLm4sYMX3YmMkwLFvlYDwR9pb0Vzrg7DUs5cR0YcTVAks4Yusu0qwXD1IjExtl7cYxiNkdfAAPZ5cLpQFEZiWfj0DB4nBRR3nceKPhiMwo",
 							"type": "string"
 						}
 					]
@@ -330,7 +396,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://api.spotify.com/v1/tracks/11dFghVXANMlKmJXsNCbNl",
+					"raw": "https://api.spotify.com/v1/search?query=leo&type=track&offset=0&limit=2",
 					"protocol": "https",
 					"host": [
 						"api",
@@ -339,8 +405,25 @@
 					],
 					"path": [
 						"v1",
-						"tracks",
-						"11dFghVXANMlKmJXsNCbNl"
+						"search"
+					],
+					"query": [
+						{
+							"key": "query",
+							"value": "leo"
+						},
+						{
+							"key": "type",
+							"value": "track"
+						},
+						{
+							"key": "offset",
+							"value": "0"
+						},
+						{
+							"key": "limit",
+							"value": "2"
+						}
 					]
 				}
 			},
