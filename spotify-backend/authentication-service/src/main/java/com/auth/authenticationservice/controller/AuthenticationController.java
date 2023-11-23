@@ -18,7 +18,7 @@
   import java.util.HashMap;
   import java.util.Map;
 
-  @RequestMapping("auth/v1")
+  @RequestMapping("/auth/v1")
   @RestController
   @CrossOrigin(origins = "*")
   @Slf4j
@@ -79,13 +79,15 @@
       {
           log.info(user.getUsername()+"----");
           boolean check=userService.loginUser(user.getUsername(),user.getPassword());
-
+          log.info(check+"");
           if(check){
               String role=userService.getRoleByUserAndPass(user.getUsername(), user.getPassword());
               log.info(role);
               try
               {
+                  log.info(generateToken(user.getUsername(), user.getPassword()));
                   String jwtToken = generateToken(user.getUsername(), user.getPassword());
+                  log.info(user.getPassword());
                   log.info(jwtToken+"inside login");
                   if(role.equalsIgnoreCase("admin"))
                   {
