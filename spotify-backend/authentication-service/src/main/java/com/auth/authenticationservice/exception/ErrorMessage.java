@@ -1,4 +1,4 @@
-package com.spotify.userprofile.exception;
+package com.auth.authenticationservice.exception;
 
 import org.springframework.http.HttpStatus;
 

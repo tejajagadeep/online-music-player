@@ -11,8 +11,12 @@ import org.springframework.stereotype.Service;
 @Slf4j
 public class UserServiceImpl implements UserService
 {
+	private final UserRepo userRepo;
+
 	@Autowired
-	UserRepo userRepo;
+	public UserServiceImpl(UserRepo userRepo) {
+		this.userRepo = userRepo;
+	}
 
 	@Override
 	public boolean loginUser(String username, String password) {

@@ -11,7 +11,6 @@ import lombok.ToString;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@ToString
 public class UserCredentials {
     @Id
     private int userid;

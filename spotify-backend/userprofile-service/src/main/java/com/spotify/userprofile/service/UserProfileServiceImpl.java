@@ -1,13 +1,12 @@
 package com.spotify.userprofile.service;
 
-import com.spotify.userprofile.dto.UserProfileDto;
+import com.spotify.userprofile.dto.UserDto;
 import com.spotify.userprofile.exception.ResourceAlreadyExistsException;
 import com.spotify.userprofile.model.UserProfile;
-import com.spotify.userprofile.exception.ResourceNotFoundException;
 import com.spotify.userprofile.repository.UserProfileRepository;
+import org.apache.kafka.common.errors.ResourceNotFoundException;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -28,38 +27,50 @@ public class UserProfileServiceImpl implements UserProfileService {
 
 
     @Override
-    public List<UserProfileDto> getAllUsers() {
+    public List<UserDto> getAllUsers() {
 
         return Stream.of(usersProfileRepository.findAll())
                 .flatMap(entityList -> entityList.stream()
-                        .map(entity -> modelMapper.map(entity, UserProfileDto.class))).toList();
+                        .map(entity -> modelMapper.map(entity, UserDto.class))).toList();
 
     }
 
     @Override
-    public UserProfileDto getUserProfileById(long id) {
-        UserProfile entity = usersProfileRepository.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException("Entity not found with ID: " + id));
+    public UserDto getUserProfileById(String username) {
+        UserProfile entity = usersProfileRepository.findById(username)
+                .orElseThrow(() ->
+                        new ResourceNotFoundException("Entity not found with ID: " + username));
 
-        return modelMapper.map(entity, UserProfileDto.class);
+        return modelMapper.map(entity, UserDto.class);
     }
 
     @Override
-    public UserProfileDto saveUserProfile(UserProfile userProfile) {
+    public UserDto saveUserProfile(UserProfile userProfile) {
 
-        if (usersProfileRepository.existsByUsername(userProfile.getUsername()) || usersProfileRepository.existsByEmail(userProfile.getEmail())){
-            throw new ResourceAlreadyExistsException("UserProfile resource already exists");
+
+        if (usersProfileRepository.existsById(userProfile.getUsername())) {
+            throw new ResourceAlreadyExistsException("Username Already exists");
         }
 
-        BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
-        userProfile.setPassword(bCryptPasswordEncoder.encode(userProfile.getPassword()));
-        return modelMapper.map(usersProfileRepository.save(userProfile), UserProfileDto.class);
+        if (usersProfileRepository.existsByEmail(userProfile.getEmail())) {
+            throw new ResourceAlreadyExistsException("Email Already exists");
+        }
+
+        if (usersProfileRepository.existsByNumber(userProfile.getNumber())) {
+            throw new ResourceAlreadyExistsException("Number Already exists");
+        }
+
+        userProfile.setRole("User");
+
+        return modelMapper.map(usersProfileRepository.save(userProfile), UserDto.class);
     }
 
     @Override
-    public UserProfileDto updateUserProfile(UserProfileDto userProfileDto, long id) {
-        UserProfile entity = usersProfileRepository.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException("Entity not found with ID: " + id));
+    public UserDto updateUserProfile(UserDto userProfileDto, String username) {
+        UserProfile entity = usersProfileRepository.findById(username)
+                .orElseThrow(() ->
+                        new ResourceNotFoundException("Entity not found with ID: " + username)
+                       );
 
         entity.setEmail(userProfileDto.getEmail());
         entity.setFirstName(userProfileDto.getFirstName());
@@ -69,8 +80,7 @@ public class UserProfileServiceImpl implements UserProfileService {
 
         usersProfileRepository.save(entity);
 
-        return modelMapper.map(entity, UserProfileDto.class);
+        return modelMapper.map(entity, UserDto.class);
     }
-
 
 }

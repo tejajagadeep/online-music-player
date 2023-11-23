@@ -1,16 +1,19 @@
 package com.spotify.userprofile.service;
 
-import com.spotify.userprofile.dto.UserProfileDto;
+
+
+import com.spotify.userprofile.dto.UserDto;
 import com.spotify.userprofile.model.UserProfile;
 
 import java.util.List;
 
 public interface UserProfileService {
-    List<UserProfileDto> getAllUsers();
+    List<UserDto> getAllUsers();
 
-    UserProfileDto getUserProfileById(long id);
+    UserDto getUserProfileById(String username);
 
-    UserProfileDto saveUserProfile(UserProfile userProfile);
+    UserDto saveUserProfile(UserProfile userProfile);
 
-    UserProfileDto updateUserProfile(UserProfileDto userProfileDto, long id);
+    UserDto updateUserProfile(UserDto userProfileDto, String username);
+
 }

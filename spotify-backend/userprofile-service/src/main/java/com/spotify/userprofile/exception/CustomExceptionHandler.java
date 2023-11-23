@@ -8,13 +8,12 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
+import java.net.ConnectException;
 import java.util.Date;
 
 
 @ControllerAdvice
-public class GlobalExceptionHandler extends ResponseEntityExceptionHandler{
-
-//    Logger log = (Logger) LoggerFactory.getLogger(GlobalExceptionHandler.class);
+public class CustomExceptionHandler extends ResponseEntityExceptionHandler{
 
     @ResponseStatus(HttpStatus.NOT_FOUND)
     @ExceptionHandler(ResourceNotFoundException.class)
@@ -27,6 +26,7 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler{
 
     }
 
+    @ResponseStatus(HttpStatus.CONFLICT)
     @ExceptionHandler(ResourceAlreadyExistsException.class)
     public ResponseEntity<Object> handleResourceAlreadyExistsException(ResourceAlreadyExistsException ex, WebRequest request) {
         ErrorMessage messageResponse = new ErrorMessage();
@@ -36,6 +36,7 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler{
         return new ResponseEntity<>(messageResponse, HttpStatus.CONFLICT);
     }
 
+    @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
     @ExceptionHandler(NullPointerException.class)
     public ResponseEntity<Object> handleNullPointerException(NullPointerException ex, WebRequest request) {
         ErrorMessage messageResponse = new ErrorMessage();
@@ -44,6 +45,27 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler{
         messageResponse.setTimeStamp(new Date());
         return new ResponseEntity<>(messageResponse, HttpStatus.INTERNAL_SERVER_ERROR);
     }
+
+    @ResponseStatus(HttpStatus.UNAUTHORIZED)
+    @ExceptionHandler(UnAuthorizedException.class)
+    public ResponseEntity<Object> handleUnAuthorizedException(UnAuthorizedException ex, WebRequest request) {
+        ErrorMessage messageResponse = new ErrorMessage();
+        messageResponse.setMessage(ex.getMessage());
+        messageResponse.setStatus(HttpStatus.UNAUTHORIZED);
+        messageResponse.setTimeStamp(new Date());
+        return new ResponseEntity<>(messageResponse, HttpStatus.UNAUTHORIZED);
+    }
+
+    @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
+    @ExceptionHandler(ServerConnectionException.class)
+    public ResponseEntity<Object> handleServerConnectionException(ServerConnectionException ex, WebRequest request) {
+        ErrorMessage messageResponse = new ErrorMessage();
+        messageResponse.setMessage(ex.getMessage());
+        messageResponse.setStatus(HttpStatus.INTERNAL_SERVER_ERROR);
+        messageResponse.setTimeStamp(new Date());
+        return new ResponseEntity<>(messageResponse, HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+
 
 
 }
