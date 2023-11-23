@@ -15,7 +15,6 @@ import java.util.Date;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@ToString
 public class UserProfile {
 
     @Id
