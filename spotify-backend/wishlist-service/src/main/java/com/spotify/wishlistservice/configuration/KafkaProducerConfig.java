@@ -1,7 +1,7 @@
-package com.spotify.userprofile.configuration;
+package com.spotify.wishlistservice.configuration;
 
 
-import com.spotify.userprofile.dto.UserDetails;
+import com.spotify.wishlistservice.dto.UserDetails;
 import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.common.serialization.StringSerializer;
 import org.springframework.context.annotation.Bean;

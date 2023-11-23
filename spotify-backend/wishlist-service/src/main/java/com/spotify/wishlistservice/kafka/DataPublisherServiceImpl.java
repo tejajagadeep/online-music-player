@@ -1,6 +1,6 @@
-package com.spotify.userprofile.kafka;
+package com.spotify.wishlistservice.kafka;
 
-import com.spotify.userprofile.dto.UserDetails;
+import com.spotify.wishlistservice.dto.UserDetails;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.core.KafkaTemplate;

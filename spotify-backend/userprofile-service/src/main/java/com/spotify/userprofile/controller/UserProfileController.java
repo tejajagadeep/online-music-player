@@ -2,7 +2,7 @@ package com.spotify.userprofile.controller;
 
 import com.spotify.userprofile.dto.UserProfileDto;
 import com.spotify.userprofile.kafka.DataPublisherServiceImpl;
-import com.spotify.userprofile.model.UserDetails;
+import com.spotify.userprofile.dto.UserDetails;
 import com.spotify.userprofile.model.UserProfile;
 import com.spotify.userprofile.service.AuthService;
 import com.spotify.userprofile.service.UserProfileService;
