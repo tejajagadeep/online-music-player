@@ -1,12 +1,19 @@
 package com.spotify.musicservice.controller;
 
-import com.spotify.musicservice.exception.ResourceNotFoundException;
+import com.spotify.musicservice.dto.SpotifyPlaylist;
+import com.spotify.musicservice.dto.SpotifyTracks;
 import com.spotify.musicservice.service.SpotifyService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.media.Schema;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import se.michaelthelin.spotify.model_objects.specification.Track;
 
 
 @RestController
@@ -22,27 +29,74 @@ public class SpotifyController {
         this.spotifyService = spotifyService;
     }
 
+    @Operation(summary = "Store access Token")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Access Token Saved",
+                    content = { @Content(mediaType = "text/plain",
+                            schema = @Schema(implementation = String.class)) }),
+            @ApiResponse(responseCode = "500", description = "Internal Server Error Please try again after few some time",
+                    content = @Content) })
     @GetMapping("/login")
     public ResponseEntity<Object> getSpotifyAccessToken() {
         // Obtain the access token
             return new ResponseEntity<>(spotifyService.getSpotifyAccessToken(), HttpStatus.OK);
     }
 
+
+    @Operation(summary = "Get Bill Board 100 Playlist")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Found Bill Board 100 Playlist",
+                    content = { @Content(mediaType = "application/json",
+                            schema = @Schema(implementation = SpotifyPlaylist.class)) }),
+            @ApiResponse(responseCode = "404", description = "Playlist not found",
+                    content = @Content) })
     @GetMapping("/bill-board-100-playlist")
     public ResponseEntity<Object> getBillBoard100Playlist() {
             return new ResponseEntity<>(spotifyService.getBillBoard100Playlist(), HttpStatus.OK);
     }
 
+    @Operation(summary = "Get Top Hits Playlist")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Found Top Hits  Playlist",
+                    content = { @Content(mediaType = "application/json",
+                            schema = @Schema(implementation = SpotifyPlaylist.class)) }),
+            @ApiResponse(responseCode = "404", description = "Playlist not found",
+                    content = @Content) })
     @GetMapping("/today-top-hits-playlist")
-    public ResponseEntity<Object> getTodayTopHits() {
-            return new ResponseEntity<>(spotifyService.getTodayTopHits(), HttpStatus.OK);
+    public ResponseEntity<Object> getTodayTopHitsPlaylist() {
+            return new ResponseEntity<>(spotifyService.getTodayTopHitsPlaylist(), HttpStatus.OK);
+    }
+    @Operation(summary = "Get Discover Weekly Playlist")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Found Discover Weekly Playlist",
+                    content = { @Content(mediaType = "application/json",
+                            schema = @Schema(implementation = SpotifyPlaylist.class)) }),
+            @ApiResponse(responseCode = "404", description = "Playlist not found",
+                    content = @Content) })
+    @GetMapping("/today-discover-weekly-playlist")
+    public ResponseEntity<Object> getDiscoverWeeklyPlaylist() {
+            return new ResponseEntity<>(spotifyService.getDiscoverWeeklyPlaylist(), HttpStatus.OK);
     }
 
+    @Operation(summary = "Get a track by its id")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Found the track",
+                    content = { @Content(mediaType = "application/json",
+                            schema = @Schema(implementation = Track.class)) }),
+            @ApiResponse(responseCode = "404", description = "Track not found",
+                    content = @Content) })
     @GetMapping("/get-track")
     public ResponseEntity<Object> getTrack(@RequestParam String trackId ) {
         return new ResponseEntity<>(spotifyService.getTrack(trackId), HttpStatus.OK);
     }
 
+    @Operation(summary = "Search tracks by name")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Found tracks by name",
+                    content = { @Content(mediaType = "application/json",
+                            schema = @Schema(implementation = SpotifyTracks.class)) }),
+            @ApiResponse(responseCode = "404", description = "Track Not Found",
+                    content = @Content) })
     @GetMapping("/search")
     public ResponseEntity<Object> search(@RequestParam String query) {
             return new ResponseEntity<>(spotifyService.search(query), HttpStatus.OK);
