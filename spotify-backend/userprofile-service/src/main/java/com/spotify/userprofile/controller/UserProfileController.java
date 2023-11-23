@@ -52,13 +52,13 @@ public class UserProfileController {
     @PostMapping("/addUser")
     public ResponseEntity<Object> saveUserProfile(@RequestBody UserProfile userProfile){
         UserDetails userDetails=new UserDetails();
-
+        UserProfileDto userProfileDto=userProfileService.saveUserProfile(userProfile);
         userDetails.setUsername(userProfile.getUsername());
         userDetails.setPassword(userProfile.getPassword());
         userDetails.setRole("User");
         log.info("------"+userDetails+"--------");
         producer.sendMessage(userDetails);
-        return new ResponseEntity<>(userProfileService.saveUserProfile(userProfile),HttpStatus.OK);
+        return new ResponseEntity<>(userProfileDto,HttpStatus.OK);
     }
 
     @PutMapping("/update/{username}")
