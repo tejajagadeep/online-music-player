@@ -1,10 +1,12 @@
 package com.spotify.wishlistservice.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.spotify.wishlistservice.model.Album;
+import com.spotify.wishlistservice.model.Artist;
+import com.spotify.wishlistservice.model.ExternalUrls;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.List;
 
@@ -14,13 +16,13 @@ import java.util.List;
 public class TrackDto {
 
     @JsonProperty("album")
-    private AlbumDto album;
+    private Album album;
 
     @JsonProperty("artists")
-    private List<ArtistDto> artists;
+    private List<Artist> artists;
 
     @JsonProperty("external_urls")
-    private ExternalUrlsDto externalUrls;
+    private ExternalUrls externalUrls;
 
     @JsonProperty("href")
     private String href;

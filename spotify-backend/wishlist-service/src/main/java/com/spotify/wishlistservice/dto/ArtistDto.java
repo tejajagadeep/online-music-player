@@ -1,6 +1,7 @@
 package com.spotify.wishlistservice.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.spotify.wishlistservice.model.ExternalUrls;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -11,7 +12,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @NoArgsConstructor
 public class ArtistDto {
     @JsonProperty("external_urls")
-    private ExternalUrlsDto externalUrls;
+    private ExternalUrls externalUrls;
 
     @JsonProperty("href")
     private String href;

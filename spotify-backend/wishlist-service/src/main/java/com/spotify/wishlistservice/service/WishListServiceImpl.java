@@ -30,12 +30,14 @@ public class WishListServiceImpl implements WishListService{
 
     @Override
     public WishListDto getUserWishList(String username){
+        log.info("Service getUserWishList: "+ username);
         return modelMapper.map(wishListRepository.findById(username).orElseThrow(() -> new ResourceNotFoundException("Entity not found with ID: " + username)),WishListDto.class);
     }
 
 
     @Override
     public TrackDto saveTrackToWishList(String username, TrackDto trackDto) {
+        log.info("Service saveTrackToUsername: "+ username);
         Optional<WishList> wishListOptional = wishListRepository.findById(username);
         Track track = modelMapper.map(trackDto, Track.class);
         WishList wishList;
@@ -51,17 +53,21 @@ public class WishListServiceImpl implements WishListService{
         }
 
         // Save the updated wish list
-        return modelMapper.map(wishListRepository.save(wishList),TrackDto.class);
+        wishListRepository.save(wishList);
+        log.info("Track added"+trackDto.toString());
+        return trackDto;
     }
 
     @Override
     public String deleteTrackByUsernameAndTrackId(String username, String trackId) {
-        wishListRepository.findById(username).ifPresent(wishList -> {
+        log.info("Service deleteTrackByUsername: "+ username);
+        Optional<WishList> wishListOptional = Optional.ofNullable(wishListRepository.findById(username).orElseThrow(() -> new ResourceNotFoundException("Username not found")));
+        wishListOptional.ifPresent(wishList -> {
             // Find and remove the track with the specified id
             wishList.getTracks().removeIf(track -> track.getId().equals(trackId));
             wishListRepository.save(wishList);
         });
-
+        log.info("Service Track deleted with Id: "+ trackId);
         return "Track with Id: "+trackId+" deleted.";
     }
 

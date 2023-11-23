@@ -1,6 +1,9 @@
 package com.spotify.wishlistservice.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.spotify.wishlistservice.model.Artist;
+import com.spotify.wishlistservice.model.ExternalUrls;
+import com.spotify.wishlistservice.model.Image;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -16,10 +19,10 @@ public class AlbumDto {
     private String albumType;
 
     @JsonProperty("artists")
-    private List<ArtistDto> artists;
+    private List<Artist> artists;
 
     @JsonProperty("external_urls")
-    private ExternalUrlsDto externalUrls;
+    private ExternalUrls externalUrls;
 
     @JsonProperty("href")
     private String href;
@@ -28,7 +31,7 @@ public class AlbumDto {
     private String id;
 
     @JsonProperty("images")
-    private List<ImageDto> images;
+    private List<Image> images;
 
     @JsonProperty("name")
     private String name;
@@ -41,6 +44,7 @@ public class AlbumDto {
 
     @JsonProperty("uri")
     private String uri;
+
 
     // Getters and setters
 }

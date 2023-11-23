@@ -10,7 +10,7 @@ spring:
         - id: MUSIC-SERVICE
           uri: lb://MUSIC-SERVICE
           predicates:
-            - Path=/api/v1/music/**
+            - Path=/api/v1.0/music/**
 
         - id: WISHLIST-SERVICE
           uri: lb://WISHLIST-SERVICE
@@ -20,4 +20,4 @@ spring:
         - id: AUTHENTICATION-SERVICE
           uri: lb://AUTHENTICATION-SERVICE
           predicates:
-            - Path=/**
+            - Path=/api/v1.0/authentication/**
