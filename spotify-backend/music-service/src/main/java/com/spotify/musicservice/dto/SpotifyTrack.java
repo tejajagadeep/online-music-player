@@ -11,5 +11,5 @@ import lombok.NoArgsConstructor;
 public class SpotifyTrack {
 
     @JsonProperty("tracks")
-    private Tracks tracks;
+    private TrackTracks tracks;
 }

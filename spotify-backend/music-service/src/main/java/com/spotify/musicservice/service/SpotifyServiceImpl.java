@@ -68,7 +68,7 @@ public class SpotifyServiceImpl implements SpotifyService{
         SpotifyAccessToken spotifyAccessToken = responseEntity.getBody();
 
         if (spotifyAccessToken != null) {
-            spotifyAccessToken.setId(1L);
+            spotifyAccessToken.setId(1);
             return spotifyAccessTokenRepository.save(spotifyAccessToken);
         } else {
             throw new ResourceNotFoundException("Resource Not Found");
@@ -138,7 +138,7 @@ public class SpotifyServiceImpl implements SpotifyService{
     }
 
     private HttpHeaders httpHeaders(){
-        String accessToken = spotifyAccessTokenRepository.findById(1L).orElseThrow().getAccessToken();
+        String accessToken = spotifyAccessTokenRepository.findById(1).orElseThrow().getAccessToken();
         HttpHeaders headers = new HttpHeaders();
         headers.set("Authorization", "Bearer " + accessToken);
         headers.setContentType(MediaType.APPLICATION_JSON);

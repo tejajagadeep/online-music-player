@@ -14,7 +14,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class SpotifyAccessToken {
 
     @Id
-    private long id;
+    private int id;
 
     @JsonProperty("access_token")
     private String accessToken;
@@ -23,5 +23,5 @@ public class SpotifyAccessToken {
     private String tokenType;
 
     @JsonProperty("expires_in")
-    private String expires_in;
+    private String expiresIn;
 }
