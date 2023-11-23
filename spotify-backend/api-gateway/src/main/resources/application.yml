@@ -17,4 +17,4 @@ spring:
         - id: MUSIC-SERVICE
           uri: lb://MUSIC-SERVICE
           predicates:
-            - Path=/api/**
+            - Path=/api/v1/music/**
