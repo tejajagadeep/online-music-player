@@ -5,24 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a2504401-f241-4a58-ab09-902bb2951c1e" name="Changes" comment="Commit message [date: %Y-%m-%d] [time: %H:%M:%S]">
-      <change afterPath="$PROJECT_DIR$/wishlist-service/src/main/java/com/spotify/wishlistservice/configuration/KafkaProducerConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wishlist-service/src/main/java/com/spotify/wishlistservice/dto/UserDetails.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wishlist-service/src/main/java/com/spotify/wishlistservice/exception/ServerConnectionException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wishlist-service/src/main/java/com/spotify/wishlistservice/exception/UnAuthorizedException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wishlist-service/src/main/java/com/spotify/wishlistservice/feignclient/AuthenticationClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wishlist-service/src/main/java/com/spotify/wishlistservice/filter/JWTFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wishlist-service/src/main/java/com/spotify/wishlistservice/kafka/DataPublisherServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wishlist-service/src/main/java/com/spotify/wishlistservice/kafka/kafkaConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wishlist-service/src/main/java/com/spotify/wishlistservice/response/ResponseHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wishlist-service/src/main/java/com/spotify/wishlistservice/service/AuthService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wishlist-service/src/main/java/com/spotify/wishlistservice/exception/ResourceAlreadyExistsException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/userprofile-service/src/main/java/com/spotify/userprofile/configuration/KafkaProducerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/userprofile-service/src/main/java/com/spotify/userprofile/configuration/KafkaProducerConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/userprofile-service/src/main/java/com/spotify/userprofile/controller/UserProfileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/userprofile-service/src/main/java/com/spotify/userprofile/controller/UserProfileController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/userprofile-service/src/main/java/com/spotify/userprofile/kafka/DataPublisherServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/userprofile-service/src/main/java/com/spotify/userprofile/kafka/DataPublisherServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/userprofile-service/src/main/java/com/spotify/userprofile/model/UserDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/userprofile-service/src/main/java/com/spotify/userprofile/dto/UserDetails.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wishlist-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/wishlist-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wishlist-service/src/main/java/com/spotify/wishlistservice/WishlistserviceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/wishlist-service/src/main/java/com/spotify/wishlistservice/WishlistserviceApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/userprofile-service/src/main/java/com/spotify/userprofile/exception/CustomExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/userprofile-service/src/main/java/com/spotify/userprofile/exception/GlobalExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/userprofile-service/src/main/java/com/spotify/userprofile/exception/ErrorMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/userprofile-service/src/main/java/com/spotify/userprofile/exception/CustomResponse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wishlist-service/src/main/java/com/spotify/wishlistservice/controller/WishListController.java" beforeDir="false" afterPath="$PROJECT_DIR$/wishlist-service/src/main/java/com/spotify/wishlistservice/controller/WishListController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wishlist-service/src/main/java/com/spotify/wishlistservice/exception/ErrorMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/wishlist-service/src/main/java/com/spotify/wishlistservice/exception/CustomResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wishlist-service/src/main/java/com/spotify/wishlistservice/exception/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/wishlist-service/src/main/java/com/spotify/wishlistservice/exception/GlobalExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wishlist-service/src/main/java/com/spotify/wishlistservice/exception/ResourceNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/wishlist-service/src/main/java/com/spotify/wishlistservice/exception/ResourceNotFoundException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wishlist-service/src/main/java/com/spotify/wishlistservice/exception/ServerConnectionException.java" beforeDir="false" afterPath="$PROJECT_DIR$/wishlist-service/src/main/java/com/spotify/wishlistservice/exception/ServerConnectionException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wishlist-service/src/main/java/com/spotify/wishlistservice/exception/UnAuthorizedException.java" beforeDir="false" afterPath="$PROJECT_DIR$/wishlist-service/src/main/java/com/spotify/wishlistservice/exception/UnAuthorizedException.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,7 +62,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "C:/Users/tejaj/Downloads/git/spotify/spotify-backend/wishlist-service/src/main/java/com/spotify/wishlistservice/exception",
+    "last_opened_file_path": "C:/Users/tejaj/Downloads/git/spotify/spotify-backend/wishlist-service/src/main/java/com/spotify/wishlistservice",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
@@ -78,8 +71,8 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\tejaj\Downloads\git\spotify\spotify-backend\wishlist-service\src\main\java\com\spotify\wishlistservice\exception" />
       <recent name="C:\Users\tejaj\Downloads\git\spotify\spotify-backend\wishlist-service\src\main\java\com\spotify\wishlistservice" />
+      <recent name="C:\Users\tejaj\Downloads\git\spotify\spotify-backend\wishlist-service\src\main\java\com\spotify\wishlistservice\exception" />
       <recent name="C:\Users\tejaj\Downloads\git\spotify\spotify-backend\authentication-service\src\main\java\com\auth\authenticationservice" />
       <recent name="C:\Users\tejaj\Downloads\git\spotify\spotify-backend\userprofile-service\src\main\java\com\spotify\userprofile" />
       <recent name="C:\Users\tejaj\Downloads\git\spotify\spotify-backend\authentication-service\src\main\java\com\auth\authenticationservice\Configuration" />

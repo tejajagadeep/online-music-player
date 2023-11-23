@@ -14,12 +14,12 @@ import java.util.Date;
 
 
 @ControllerAdvice
-public class CustomExceptionHandler extends ResponseEntityExceptionHandler{
+public class GlobalExceptionHandler extends ResponseEntityExceptionHandler{
 
     @ResponseStatus(HttpStatus.NOT_FOUND)
     @ExceptionHandler(ResourceNotFoundException.class)
-    public ResponseEntity<ErrorMessage> handleInvalidUserException(ResourceNotFoundException ex) {
-        ErrorMessage messageResponse = new ErrorMessage();
+    public ResponseEntity<CustomResponse> handleInvalidUserException(ResourceNotFoundException ex) {
+        CustomResponse messageResponse = new CustomResponse();
         messageResponse.setMessage(ex.getMessage());
         messageResponse.setStatus(HttpStatus.NOT_FOUND);
         messageResponse.setTimeStamp(new Date());
@@ -30,7 +30,7 @@ public class CustomExceptionHandler extends ResponseEntityExceptionHandler{
     @ResponseStatus(HttpStatus.CONFLICT)
     @ExceptionHandler(ResourceAlreadyExistsException.class)
     public ResponseEntity<Object> handleResourceAlreadyExistsException(ResourceAlreadyExistsException ex, WebRequest request) {
-        ErrorMessage messageResponse = new ErrorMessage();
+        CustomResponse messageResponse = new CustomResponse();
         messageResponse.setMessage(ex.getMessage());
         messageResponse.setStatus(HttpStatus.CONFLICT);
         messageResponse.setTimeStamp(new Date());
@@ -40,7 +40,7 @@ public class CustomExceptionHandler extends ResponseEntityExceptionHandler{
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
     @ExceptionHandler(NullPointerException.class)
     public ResponseEntity<Object> handleNullPointerException(NullPointerException ex, WebRequest request) {
-        ErrorMessage messageResponse = new ErrorMessage();
+        CustomResponse messageResponse = new CustomResponse();
         messageResponse.setMessage(ex.getMessage());
         messageResponse.setStatus(HttpStatus.INTERNAL_SERVER_ERROR);
         messageResponse.setTimeStamp(new Date());
@@ -50,7 +50,7 @@ public class CustomExceptionHandler extends ResponseEntityExceptionHandler{
     @ResponseStatus(HttpStatus.UNAUTHORIZED)
     @ExceptionHandler(UnAuthorizedException.class)
     public ResponseEntity<Object> handleUnAuthorizedException(UnAuthorizedException ex, WebRequest request) {
-        ErrorMessage messageResponse = new ErrorMessage();
+        CustomResponse messageResponse = new CustomResponse();
         messageResponse.setMessage(ex.getMessage());
         messageResponse.setStatus(HttpStatus.UNAUTHORIZED);
         messageResponse.setTimeStamp(new Date());
@@ -60,7 +60,7 @@ public class CustomExceptionHandler extends ResponseEntityExceptionHandler{
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
     @ExceptionHandler(ServerConnectionException.class)
     public ResponseEntity<Object> handleServerConnectionException(ServerConnectionException ex, WebRequest request) {
-        ErrorMessage messageResponse = new ErrorMessage();
+        CustomResponse messageResponse = new CustomResponse();
         messageResponse.setMessage(ex.getMessage());
         messageResponse.setStatus(HttpStatus.INTERNAL_SERVER_ERROR);
         messageResponse.setTimeStamp(new Date());
@@ -70,7 +70,7 @@ public class CustomExceptionHandler extends ResponseEntityExceptionHandler{
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
     @ExceptionHandler(MalformedJwtException.class)
     public ResponseEntity<Object> handleMalformedJwtException(MalformedJwtException ex, WebRequest request) {
-        ErrorMessage messageResponse = new ErrorMessage();
+        CustomResponse messageResponse = new CustomResponse();
         messageResponse.setMessage(ex.getMessage());
         messageResponse.setStatus(HttpStatus.INTERNAL_SERVER_ERROR);
         messageResponse.setTimeStamp(new Date());
@@ -79,7 +79,7 @@ public class CustomExceptionHandler extends ResponseEntityExceptionHandler{
     @ResponseStatus(HttpStatus.UNAUTHORIZED)
     @ExceptionHandler(ExpiredJwtException.class)
     public ResponseEntity<Object> handleMalformedJwtException(ExpiredJwtException ex, WebRequest request) {
-        ErrorMessage messageResponse = new ErrorMessage();
+        CustomResponse messageResponse = new CustomResponse();
         messageResponse.setMessage(ex.getMessage());
         messageResponse.setStatus(HttpStatus.UNAUTHORIZED);
         messageResponse.setTimeStamp(new Date());

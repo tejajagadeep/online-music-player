@@ -1,6 +1,7 @@
 package com.spotify.userprofile.controller;
 
 import com.spotify.userprofile.dto.UserProfileDto;
+import com.spotify.userprofile.exception.UnAuthorizedException;
 import com.spotify.userprofile.kafka.DataPublisherServiceImpl;
 import com.spotify.userprofile.dto.UserDetails;
 import com.spotify.userprofile.model.UserProfile;
@@ -34,28 +35,30 @@ public class UserProfileController {
 
     @GetMapping("/getAllUser")
     public ResponseEntity<Object> getAllUsers(@RequestHeader("Authorization") String token){
-        log.info(token+"from front end");
+        log.info(token+" : token from authentication to access get all users");
         Map<String,String> info= authService.validateToken(token);
-        log.info(info+"------"+token+"inside method get all-----");
-        if(info.containsValue("Admin")) {
+        log.info("inside getAllUsers----info: "+info);
+        if(!info.containsValue("Admin")) {
             log.info(token+"inside method get all-----__---");
-            return new ResponseEntity<>(userProfileService.getAllUsers(), HttpStatus.OK);
+            throw new UnAuthorizedException("Un Authorized Please check the details.");
+
         }
-        return new ResponseEntity<>("UnAuthorized", HttpStatus.UNAUTHORIZED);
+        return new ResponseEntity<>(userProfileService.getAllUsers(), HttpStatus.OK);
+
     }
 
     @GetMapping("/getUserById/{username}")
     public ResponseEntity<Object> getUserProfileById(@RequestHeader("Authorization") String token,@PathVariable String username){
 
-        log.info(token+"from front end");
+        log.info(token+" : token from authentication to access getUserProfileById");
         Map<String,String> info= authService.validateToken(token);
-        log.info(info+"------"+token+"inside method get all-----");
-        if(info.containsKey(username)) {
-            log.info(token + "inside method get all-----__---");
+        log.info("inside getUserProfileById----info: "+info);
+        if(!info.containsKey(username)) {
+            log.info(token + "inside method getUserProfileById -----__---");
+            throw new UnAuthorizedException("Un Authorized Please check user the details.");
 
-            return new ResponseEntity<>(userProfileService.getUserProfileById(username), HttpStatus.OK);
         }
-        return new ResponseEntity<>("UnAuthorized", HttpStatus.UNAUTHORIZED);
+        return new ResponseEntity<>(userProfileService.getUserProfileById(username), HttpStatus.OK);
     }
 
     @PostMapping("/addUser")
@@ -73,15 +76,15 @@ public class UserProfileController {
     @PutMapping("/update/{username}")
     public ResponseEntity<Object> updateUserProfile(@RequestHeader("Authorization") String token,@RequestBody UserProfileDto userProfileDto, @PathVariable String username){
 
-        log.info(token+"from front end");
+        log.info(token+" : token from authentication to access updateUserProfile");
         Map<String,String> info= authService.validateToken(token);
-        log.info(info+"------"+token+"inside method get all-----");
-        if(info.containsKey(username)) {
-            log.info(token + "inside method get all-----__---");
-
-            return new ResponseEntity<>(userProfileService.updateUserProfile(userProfileDto, username),HttpStatus.OK);
+        log.info("info: "+info+"inside updateUserProfile----");
+        if(!info.containsKey(username)) {
+            log.info(token + "inside method updateUserProfile-----__---");
+            throw new UnAuthorizedException("Un Authorized Please check user the details to update.");
         }
-        return new ResponseEntity<>("UnAuthorized", HttpStatus.UNAUTHORIZED);
+        return new ResponseEntity<>(userProfileService.updateUserProfile(userProfileDto, username),HttpStatus.OK);
+
     }
 
 
