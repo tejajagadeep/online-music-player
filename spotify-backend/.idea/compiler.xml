@@ -9,8 +9,8 @@
         <outputRelativeToContentRoot value="true" />
         <module name="config-server" />
         <module name="authentication-service" />
-        <module name="api-gateway" />
         <module name="music-service" />
+        <module name="api-gateway" />
         <module name="userprofile-service" />
         <module name="eureka-server" />
         <module name="wishlist-service" />
