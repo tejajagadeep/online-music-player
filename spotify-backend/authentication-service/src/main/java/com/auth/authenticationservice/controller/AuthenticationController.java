@@ -18,7 +18,7 @@
   import java.util.HashMap;
   import java.util.Map;
 
-  @RequestMapping("/auth/v1")
+  @RequestMapping("/api/v1.0/authentication/auth/v1")
   @RestController
   @CrossOrigin(origins = "*")
   @Slf4j
