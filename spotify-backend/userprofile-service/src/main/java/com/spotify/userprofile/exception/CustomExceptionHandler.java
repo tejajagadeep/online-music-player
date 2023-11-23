@@ -1,5 +1,6 @@
 package com.spotify.userprofile.exception;
 
+import io.jsonwebtoken.ExpiredJwtException;
 import io.jsonwebtoken.MalformedJwtException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -9,7 +10,6 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
-import java.net.ConnectException;
 import java.util.Date;
 
 
@@ -75,6 +75,15 @@ public class CustomExceptionHandler extends ResponseEntityExceptionHandler{
         messageResponse.setStatus(HttpStatus.INTERNAL_SERVER_ERROR);
         messageResponse.setTimeStamp(new Date());
         return new ResponseEntity<>(messageResponse, HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+    @ResponseStatus(HttpStatus.UNAUTHORIZED)
+    @ExceptionHandler(ExpiredJwtException.class)
+    public ResponseEntity<Object> handleMalformedJwtException(ExpiredJwtException ex, WebRequest request) {
+        ErrorMessage messageResponse = new ErrorMessage();
+        messageResponse.setMessage(ex.getMessage());
+        messageResponse.setStatus(HttpStatus.UNAUTHORIZED);
+        messageResponse.setTimeStamp(new Date());
+        return new ResponseEntity<>(messageResponse, HttpStatus.UNAUTHORIZED);
     }
 
 

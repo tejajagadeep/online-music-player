@@ -67,20 +67,26 @@ public class UserProfileServiceImpl implements UserProfileService {
 
     @Override
     public UserProfileDto updateUserProfile(UserProfileDto userProfileDto, String username) {
-        UserProfile entity = usersProfileRepository.findById(username)
+        UserProfile userProfile = usersProfileRepository.findById(username)
                 .orElseThrow(() ->
                         new ResourceNotFoundException("Entity not found with ID: " + username)
                        );
+        if (usersProfileRepository.existsByEmail(userProfile.getEmail())) {
+            throw new ResourceAlreadyExistsException("Email Already exists");
+        }
 
-        entity.setEmail(userProfileDto.getEmail());
-        entity.setFirstName(userProfileDto.getFirstName());
-        entity.setLastName(userProfileDto.getLastName());
-        entity.setNumber(userProfileDto.getNumber());
-        entity.setDateOfBirth(userProfileDto.getDateOfBirth());
+        if (usersProfileRepository.existsByNumber(userProfile.getNumber())) {
+            throw new ResourceAlreadyExistsException("Number Already exists");
+        }
+        userProfile.setEmail(userProfileDto.getEmail());
+        userProfile.setFirstName(userProfileDto.getFirstName());
+        userProfile.setLastName(userProfileDto.getLastName());
+        userProfile.setNumber(userProfileDto.getNumber());
+        userProfile.setDateOfBirth(userProfileDto.getDateOfBirth());
 
-        usersProfileRepository.save(entity);
+        usersProfileRepository.save(userProfile);
 
-        return modelMapper.map(entity, UserProfileDto.class);
+        return modelMapper.map(userProfile, UserProfileDto.class);
     }
 
 }

@@ -45,8 +45,17 @@ public class UserProfileController {
     }
 
     @GetMapping("/getUserById/{username}")
-    public ResponseEntity<Object> getUserProfileById(@PathVariable String username){
-            return new ResponseEntity<>(userProfileService.getUserProfileById(username),HttpStatus.OK);
+    public ResponseEntity<Object> getUserProfileById(@RequestHeader("Authorization") String token,@PathVariable String username){
+
+        log.info(token+"from front end");
+        Map<String,String> info= authService.validateToken(token);
+        log.info(info+"------"+token+"inside method get all-----");
+        if(info.containsKey(username)) {
+            log.info(token + "inside method get all-----__---");
+
+            return new ResponseEntity<>(userProfileService.getUserProfileById(username), HttpStatus.OK);
+        }
+        return new ResponseEntity<>("UnAuthorized", HttpStatus.UNAUTHORIZED);
     }
 
     @PostMapping("/addUser")
@@ -62,8 +71,17 @@ public class UserProfileController {
     }
 
     @PutMapping("/update/{username}")
-    public ResponseEntity<Object> updateUserProfile(@RequestBody UserProfileDto userProfileDto, @PathVariable String username){
+    public ResponseEntity<Object> updateUserProfile(@RequestHeader("Authorization") String token,@RequestBody UserProfileDto userProfileDto, @PathVariable String username){
+
+        log.info(token+"from front end");
+        Map<String,String> info= authService.validateToken(token);
+        log.info(info+"------"+token+"inside method get all-----");
+        if(info.containsKey(username)) {
+            log.info(token + "inside method get all-----__---");
+
             return new ResponseEntity<>(userProfileService.updateUserProfile(userProfileDto, username),HttpStatus.OK);
+        }
+        return new ResponseEntity<>("UnAuthorized", HttpStatus.UNAUTHORIZED);
     }
 
 

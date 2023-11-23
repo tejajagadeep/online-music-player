@@ -20,4 +20,4 @@ spring:
         - id: AUTHENTICATION-SERVICE
           uri: lb://AUTHENTICATION-SERVICE
           predicates:
-            - Path=/api/v1.0/authentication/**
+            - Path=/api/v1.0/auth/**
