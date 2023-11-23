@@ -1,0 +1,375 @@
+{
+	"info": {
+		"_postman_id": "d6bccc8d-e429-4cf5-9273-d2b5ad7f5769",
+		"name": "spotify",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16529372"
+	},
+	"item": [
+		{
+			"name": "authentication",
+			"item": [
+				{
+					"name": "auth",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "userprofile",
+			"item": [
+				{
+					"name": "getall",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1.0/userProfile",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1.0",
+								"userProfile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/api/v1.0/userProfile/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"v1.0",
+								"userProfile",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createProfile",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n        \"username\": \"johndoE1e\",\r\n        \"firstName\": \"John\",\r\n        \"lastName\": \"Doe\",\r\n        \"number\": 123456789,\r\n        \"dateOfBirth\": \"1989-12-31T18:30:00.000+00:00\",\r\n        \"email\": \"john.do1Ee@example.com\",\r\n        \"password\":\"Abcabc@123\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/api/v1.0/userProfile",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"v1.0",
+								"userProfile"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "wishlist",
+			"item": [
+				{
+					"name": "getuserWishList",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "removesong",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8084/api/v1.0/whishlist/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"api",
+								"v1.0",
+								"whishlist",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "saveTrackToWishList",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"album\": {\r\n        \"album_type\": \"single\",\r\n        \"artists\": [\r\n            {\r\n                \"external_urls\": {\r\n                    \"spotify\": \"https://open.spotify.com/artist/6M2wZ9GZgrQXHCFfjv46we\"\r\n                },\r\n                \"href\": \"https://api.spotify.com/v1/artists/6M2wZ9GZgrQXHCFfjv46we\",\r\n                \"id\": \"6M2wZ9GZgrQXHCFfjv46we\",\r\n                \"name\": \"Dua Lipa\",\r\n                \"type\": \"artist\",\r\n                \"uri\": \"spotify:artist:6M2wZ9GZgrQXHCFfjv46we\"\r\n            }\r\n        ],\r\n        \"external_urls\": {\r\n            \"spotify\": \"https://open.spotify.com/album/5pTaRVLwZOFObIbRBubmeb\"\r\n        },\r\n        \"href\": \"https://api.spotify.com/v1/albums/5pTaRVLwZOFObIbRBubmeb\",\r\n        \"id\": \"5pTaRVLwZOFObIbRBubmeb\",\r\n        \"images\": [\r\n            {\r\n                \"height\": 640,\r\n                \"url\": \"https://i.scdn.co/image/ab67616d0000b273001d5706fddc72561f6488af\",\r\n                \"width\": 640\r\n            },\r\n            {\r\n                \"height\": 300,\r\n                \"url\": \"https://i.scdn.co/image/ab67616d00001e02001d5706fddc72561f6488af\",\r\n                \"width\": 300\r\n            },\r\n            {\r\n                \"height\": 64,\r\n                \"url\": \"https://i.scdn.co/image/ab67616d00004851001d5706fddc72561f6488af\",\r\n                \"width\": 64\r\n            }\r\n        ],\r\n        \"name\": \"Houdini\",\r\n        \"release_date\": \"2023-11-09\",\r\n        \"type\": \"album\",\r\n        \"uri\": \"spotify:album:5pTaRVLwZOFObIbRBubmeb\"\r\n    },\r\n    \"artists\": [\r\n        {\r\n            \"external_urls\": {\r\n                \"spotify\": \"https://open.spotify.com/artist/6M2wZ9GZgrQXHCFfjv46we\"\r\n            },\r\n            \"href\": \"https://api.spotify.com/v1/artists/6M2wZ9GZgrQXHCFfjv46we\",\r\n            \"id\": \"6M2wZ9GZgrQXHCFfjv46we\",\r\n            \"name\": \"Dua Lipa\",\r\n            \"type\": \"artist\",\r\n            \"uri\": \"spotify:artist:6M2wZ9GZgrQXHCFfjv46we\"\r\n        }\r\n    ],\r\n    \"external_urls\": {\r\n        \"spotify\": \"https://open.spotify.com/track/4OMJGnvZfDvsePyCwRGO7X\"\r\n    },\r\n    \"href\": \"https://api.spotify.com/v1/tracks/4OMJGnvZfDvsePyCwRGO7X\",\r\n    \"id\": \"4OMJGnvZfDvsePyCwRGO7X\",\r\n    \"name\": \"Houdini\",\r\n    \"preview_url\": \"https://p.scdn.co/mp3-preview/df4af86970ffb1a7042d1d228bcea7b4aabfdba4?cid=cfdbd6448f364fca80b7aa03228c64c9\",\r\n    \"type\": \"track\",\r\n    \"uri\": \"spotify:track:4OMJGnvZfDvsePyCwRGO7X\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8084/api/v1.0/wishlist/save-track-to-wishList?username=jagadeep",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"api",
+								"v1.0",
+								"wishlist",
+								"save-track-to-wishList"
+							],
+							"query": [
+								{
+									"key": "username",
+									"value": "jagadeep"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "spotify",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8901/api/v1/music/authorize",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8901",
+							"path": [
+								"api",
+								"v1",
+								"music",
+								"authorize"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "search",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8901/api/v1/music/search?userId=cd77iwz4fqzq5fqfj4wdklfd7&query=remaster%2520track%3ADoxy%2520artist%3AMiles%2520Davis",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8901",
+							"path": [
+								"api",
+								"v1",
+								"music",
+								"search"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "cd77iwz4fqzq5fqfj4wdklfd7"
+								},
+								{
+									"key": "query",
+									"value": "remaster%2520track%3ADoxy%2520artist%3AMiles%2520Davis"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "billboard-hot-100-playlist",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8901/api/v1/music/bill-board-100-playlist",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8901",
+							"path": [
+								"api",
+								"v1",
+								"music",
+								"bill-board-100-playlist"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "top-hitlist-playlist",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8901/api/v1/music/today-top-hits-playlist",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8901",
+							"path": [
+								"api",
+								"v1",
+								"music",
+								"today-top-hits-playlist"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-track",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8901/api/v1/music/get-track/4OMJGnvZfDvsePyCwRGO7X",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8901",
+							"path": [
+								"api",
+								"v1",
+								"music",
+								"get-track",
+								"4OMJGnvZfDvsePyCwRGO7X"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "beartoken",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8083/home",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"home"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "externallinks",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "BQCtilXsI7aOleQ0sKeH3snIYT3FM46TTUPwseBjz-Zh46qHT-0wSFgCA5zNtdNM5klDUOzIp2DiQGHfMrwIQZ6uKWw0qToAm0pg3R3uT5bAsKgkaPE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.spotify.com/v1/tracks/11dFghVXANMlKmJXsNCbNl",
+					"protocol": "https",
+					"host": [
+						"api",
+						"spotify",
+						"com"
+					],
+					"path": [
+						"v1",
+						"tracks",
+						"11dFghVXANMlKmJXsNCbNl"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8901/user-top-songs?userId=cd77iwz4fqzq5fqfj4wdklfd7",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8901",
+					"path": [
+						"user-top-songs"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "cd77iwz4fqzq5fqfj4wdklfd7"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
