@@ -60,8 +60,6 @@ public class UserProfileServiceImpl implements UserProfileService {
             throw new ResourceAlreadyExistsException("Number Already exists");
         }
 
-        userProfile.setRole("User");
-
         return modelMapper.map(usersProfileRepository.save(userProfile), UserProfileDto.class);
     }
 

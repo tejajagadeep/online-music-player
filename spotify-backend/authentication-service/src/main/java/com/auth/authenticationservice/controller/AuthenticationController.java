@@ -1,11 +1,12 @@
   package com.auth.authenticationservice.controller;
 
 
+  import com.auth.authenticationservice.dto.User;
   import com.auth.authenticationservice.filter.JwtUtils;
-  import com.auth.authenticationservice.model.UserDetails;
   import com.auth.authenticationservice.service.UserService;
   import io.jsonwebtoken.Jwts;
   import io.jsonwebtoken.SignatureAlgorithm;
+  import io.swagger.v3.oas.annotations.Operation;
   import jakarta.servlet.ServletException;
   import lombok.extern.slf4j.Slf4j;
   import org.springframework.beans.factory.annotation.Autowired;
@@ -40,6 +41,7 @@
           this.jwtUtils = jwtUtils;
       }
 
+      @Operation(summary = "Generate Token")
       public String generateToken(String username, String password) throws ServletException
       {
           String jwtToken;
@@ -74,8 +76,9 @@
           return jwtToken;
       }
 
+      @Operation(summary = "Generate Token")
       @PostMapping("/login")
-      public ResponseEntity<Object> performLogin(@RequestBody UserDetails user)
+      public ResponseEntity<Object> performLogin(@RequestBody User user)
       {
           log.info(user.getUsername()+"----");
           boolean check=userService.loginUser(user.getUsername(),user.getPassword());
@@ -121,6 +124,7 @@
 
       }
 
+      @Operation(summary = "Validate User")
       @PostMapping("/validate")
       public ResponseEntity<Object> validateToken(@RequestHeader("Authorization") String token) {
           log.info(token+"---------");

@@ -5,21 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a2504401-f241-4a58-ab09-902bb2951c1e" name="Changes" comment="Commit message [date: %Y-%m-%d] [time: %H:%M:%S]">
-      <change afterPath="$PROJECT_DIR$/userprofile-service/src/test/java/com/spotify/userprofile/controller/ConsumerControllerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/userprofile-service/src/test/java/com/spotify/userprofile/controller/UserProfileControllerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/userprofile-service/src/test/java/com/spotify/userprofile/dto/UserDetailsTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/userprofile-service/src/test/java/com/spotify/userprofile/dto/UserProfileDtoTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/userprofile-service/src/test/java/com/spotify/userprofile/filter/JWTFilterTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/userprofile-service/src/test/java/com/spotify/userprofile/kafka/DataPublisherServiceImplTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/userprofile-service/src/test/java/com/spotify/userprofile/model/UserProfileTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/userprofile-service/src/test/java/com/spotify/userprofile/service/AuthServiceTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/userprofile-service/src/test/java/com/spotify/userprofile/service/UserProfileServiceImplTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/userprofile-service/src/main/java/com/spotify/userprofile/controller/ConsumerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/userprofile-service/src/main/java/com/spotify/userprofile/controller/ConsumerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/userprofile-service/src/main/java/com/spotify/userprofile/controller/UserProfileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/userprofile-service/src/main/java/com/spotify/userprofile/controller/UserProfileController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/userprofile-service/src/main/java/com/spotify/userprofile/model/UserProfile.java" beforeDir="false" afterPath="$PROJECT_DIR$/userprofile-service/src/main/java/com/spotify/userprofile/model/UserProfile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/userprofile-service/src/test/java/com/spotify/userprofile/repository/UserProfileRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/userprofile-service/src/test/java/com/spotify/userprofile/repository/UserProfileRepositoryTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wishlist-service/src/main/java/com/spotify/wishlistservice/controller/WishListController.java" beforeDir="false" afterPath="$PROJECT_DIR$/wishlist-service/src/main/java/com/spotify/wishlistservice/controller/WishListController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication-service/src/main/java/com/auth/authenticationservice/AuthenticationServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/authentication-service/src/main/java/com/auth/authenticationservice/AuthenticationServiceApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication-service/src/main/java/com/auth/authenticationservice/controller/AuthenticationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/authentication-service/src/main/java/com/auth/authenticationservice/controller/AuthenticationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/userprofile-service/src/main/java/com/spotify/userprofile/service/UserProfileServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/userprofile-service/src/main/java/com/spotify/userprofile/service/UserProfileServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,11 +77,11 @@
       <recent name="" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.spotify.musicservice.service" />
+      <recent name="com.spotify.musicservice.model" />
+      <recent name="com.spotify.musicservice.controller" />
       <recent name="com.spotify.userprofile.service" />
       <recent name="com.spotify.userprofile.repository" />
-      <recent name="com.spotify.userprofile.model" />
-      <recent name="com.spotify.userprofile.kafka" />
-      <recent name="com.spotify.userprofile.filter" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.spotify.wishlistservice.service" />
@@ -100,7 +89,7 @@
       <recent name="com.spotify.wishlistservice.configuration" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.WishlistserviceApplication">
+  <component name="RunManager" selected="Application.AuthenticationServiceApplication">
     <configuration name="ApiGatewayApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.spotify.apigateway.ApiGatewayApplication" />
       <module name="api-gateway" />
@@ -127,12 +116,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ConfigServerApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.sshalem.configserver.ConfigServerApplication" />
-      <module name="config-server" />
+    <configuration name="MusicserviceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.spotify.musicservice.MusicserviceApplication" />
+      <module name="music-service" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.sshalem.configserver.*" />
+          <option name="PATTERN" value="com.spotify.musicservice.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -140,12 +129,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MusicserviceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.spotify.musicservice.MusicserviceApplication" />
-      <module name="music-service" />
+    <configuration name="UserprofileApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.spotify.userprofile.UserprofileApplication" />
+      <module name="userprofile-service" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.spotify.musicservice.*" />
+          <option name="PATTERN" value="com.spotify.userprofile.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -168,11 +157,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.AuthenticationServiceApplication" />
+        <item itemvalue="Application.UserprofileApplication" />
         <item itemvalue="Application.WishlistserviceApplication" />
         <item itemvalue="Application.MusicserviceApplication" />
-        <item itemvalue="Application.AuthenticationServiceApplication" />
         <item itemvalue="Application.ApiGatewayApplication" />
-        <item itemvalue="Application.ConfigServerApplication" />
       </list>
     </recent_temporary>
   </component>
