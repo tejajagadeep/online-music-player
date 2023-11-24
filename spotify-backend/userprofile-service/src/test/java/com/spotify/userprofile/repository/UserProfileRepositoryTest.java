@@ -27,23 +27,21 @@ class UserProfileRepositoryTest {
     @BeforeEach
     void setUp() throws ParseException {
         userProfile = new UserProfile(
-                1,
                 "johndoe",
                 "john.doe@example.com",
                 "password123",
                 "John",
                 "Doe",
-                123456789,
+                123456789L,
                 dateFormat.parse("1990-01-01")
         );
         userProfile = new UserProfile(
-                2,
                 "johndoe",
                 "john.doe@example.com",
                 "password123",
                 "John",
                 "Doe",
-                123456789,
+                123456789L,
                 dateFormat.parse("1990-01-01")
         );
         userProfileRepository.save(userProfile);
@@ -61,5 +59,13 @@ class UserProfileRepositoryTest {
         System.out.println(userProfileRepository.findAll());
         // Then
         assertEquals(2, userProfileRepository.findAll().size());
+    }
+
+    @Test
+    void existsByEmail() {
+    }
+
+    @Test
+    void existsByNumber() {
     }
 }

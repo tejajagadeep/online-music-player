@@ -58,7 +58,7 @@ public class WishListController {
     @ApiResponses(value = {
             @ApiResponse(responseCode = "201", description = "Track saved to favorite list",
                     content = { @Content(mediaType = "application/json",
-                            schema = @Schema(implementation = WishListDto.class)) }),
+                            schema = @Schema(implementation = TrackDto.class)) }),
             @ApiResponse(responseCode = "404", description = "Track not found",
                     content = @Content),
             @ApiResponse(responseCode = "401", description = "Unauthorized user",
@@ -79,8 +79,8 @@ public class WishListController {
     @Operation(summary = "Delete track from favorite Playlist")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Track deleted from favorite",
-                    content = { @Content(mediaType = "application/json",
-                            schema = @Schema(implementation = WishListDto.class)) }),
+                    content = { @Content(mediaType = "text/plain",
+                            schema = @Schema(implementation = String.class)) }),
             @ApiResponse(responseCode = "404", description = "Track not found",
                     content = @Content),
             @ApiResponse(responseCode = "401", description = "Unauthorized user",

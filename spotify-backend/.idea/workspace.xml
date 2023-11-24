@@ -5,52 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a2504401-f241-4a58-ab09-902bb2951c1e" name="Changes" comment="Commit message [date: %Y-%m-%d] [time: %H:%M:%S]">
-      <change afterPath="$PROJECT_DIR$/wishlist-service/src/test/java/com/spotify/wishlistservice/controller/WishListControllerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wishlist-service/src/test/java/com/spotify/wishlistservice/filter/JWTFilterTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wishlist-service/src/test/java/com/spotify/wishlistservice/kafka/DataPublisherServiceImplTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wishlist-service/src/test/java/com/spotify/wishlistservice/kafka/kafkaConfigTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wishlist-service/src/test/java/com/spotify/wishlistservice/model/AlbumTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wishlist-service/src/test/java/com/spotify/wishlistservice/model/ArtistTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wishlist-service/src/test/java/com/spotify/wishlistservice/model/ExternalUrlsTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wishlist-service/src/test/java/com/spotify/wishlistservice/model/ImageTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wishlist-service/src/test/java/com/spotify/wishlistservice/model/TrackTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wishlist-service/src/test/java/com/spotify/wishlistservice/model/WishlistTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wishlist-service/src/test/java/com/spotify/wishlistservice/repository/WishListRepositoryTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wishlist-service/src/test/java/com/spotify/wishlistservice/response/ResponseHandlerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wishlist-service/src/test/java/com/spotify/wishlistservice/service/AuthServiceTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wishlist-service/src/test/java/com/spotify/wishlistservice/service/WishListServiceImplTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/0/003a0aebd365c2e9c9d0a51810cd48b72e1fe052" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/0/003a0aebd365c2e9c9d0a51810cd48b72e1fe052" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/8/08eb5aa6053fd271f64f24bd326e314c37cc7858" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/8/08eb5aa6053fd271f64f24bd326e314c37cc7858" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/0/10dd25839972fc38d4f9b8849cca4e853e66ef40" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/0/10dd25839972fc38d4f9b8849cca4e853e66ef40" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/0/40d7ce05daf76790ecf8f4816e50f2aee43a027e" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/0/40d7ce05daf76790ecf8f4816e50f2aee43a027e" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/9/49b1603630f936045811c6ba32957ea5c807fc92" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/9/49b1603630f936045811c6ba32957ea5c807fc92" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/7/671517e621f7001522f34741b3f38b18e67bb502" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/7/671517e621f7001522f34741b3f38b18e67bb502" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/9/691e5e1890fc737385a29c6273a2968597dd42d2" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/9/691e5e1890fc737385a29c6273a2968597dd42d2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/f/7f5de85c873a1e8d6d81245624adf5fba35417ac" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/5/c53c6f274ddfd2d17aaac3a88f5c581b5d9cb5f9" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/5/c53c6f274ddfd2d17aaac3a88f5c581b5d9cb5f9" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/6/c6b5fab9fe207ac495311b2805e32b31aa75c37d" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/6/c6b5fab9fe207ac495311b2805e32b31aa75c37d" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/e/ce8acae6a6f5c065ce2ce6143af984dc9aff754c" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/e/ce8acae6a6f5c065ce2ce6143af984dc9aff754c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/2/d275183614f7c1e76472f241319ca32d8452e0b6" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/7/e74f45acee211dc426071fece4a00ee44f571784" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/7/e74f45acee211dc426071fece4a00ee44f571784" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/6/f6c38c17d366f7f6409ddfb8e80c774e1dc18d17" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/7/f/7f5de85c873a1e8d6d81245624adf5fba35417ac" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/d/2/d275183614f7c1e76472f241319ca32d8452e0b6" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/f/6/f6c38c17d366f7f6409ddfb8e80c774e1dc18d17" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/userprofile-service/src/test/java/com/spotify/userprofile/controller/ConsumerControllerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/userprofile-service/src/test/java/com/spotify/userprofile/controller/UserProfileControllerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/userprofile-service/src/test/java/com/spotify/userprofile/dto/UserDetailsTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/userprofile-service/src/test/java/com/spotify/userprofile/dto/UserProfileDtoTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/userprofile-service/src/test/java/com/spotify/userprofile/filter/JWTFilterTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/userprofile-service/src/test/java/com/spotify/userprofile/kafka/DataPublisherServiceImplTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/userprofile-service/src/test/java/com/spotify/userprofile/model/UserProfileTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/userprofile-service/src/test/java/com/spotify/userprofile/service/AuthServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/userprofile-service/src/test/java/com/spotify/userprofile/service/UserProfileServiceImplTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/music-service/src/main/java/com/spotify/musicservice/controller/SpotifyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/music-service/src/main/java/com/spotify/musicservice/controller/SpotifyController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/music-service/src/main/java/com/spotify/musicservice/dto/Album.java" beforeDir="false" afterPath="$PROJECT_DIR$/music-service/src/main/java/com/spotify/musicservice/dto/Album.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/music-service/src/main/java/com/spotify/musicservice/dto/Artist.java" beforeDir="false" afterPath="$PROJECT_DIR$/music-service/src/main/java/com/spotify/musicservice/dto/Artist.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/music-service/src/main/java/com/spotify/musicservice/service/SpotifyServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/music-service/src/main/java/com/spotify/musicservice/service/SpotifyServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/userprofile-service/src/main/java/com/spotify/userprofile/UserprofileApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/userprofile-service/src/main/java/com/spotify/userprofile/UserprofileApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/userprofile-service/src/main/java/com/spotify/userprofile/controller/ConsumerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/userprofile-service/src/main/java/com/spotify/userprofile/controller/ConsumerController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/userprofile-service/src/main/java/com/spotify/userprofile/controller/UserProfileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/userprofile-service/src/main/java/com/spotify/userprofile/controller/UserProfileController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wishlist-service/src/main/java/com/spotify/wishlistservice/WishlistserviceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/wishlist-service/src/main/java/com/spotify/wishlistservice/WishlistserviceApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/userprofile-service/src/main/java/com/spotify/userprofile/model/UserProfile.java" beforeDir="false" afterPath="$PROJECT_DIR$/userprofile-service/src/main/java/com/spotify/userprofile/model/UserProfile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/userprofile-service/src/test/java/com/spotify/userprofile/repository/UserProfileRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/userprofile-service/src/test/java/com/spotify/userprofile/repository/UserProfileRepositoryTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wishlist-service/src/main/java/com/spotify/wishlistservice/controller/WishListController.java" beforeDir="false" afterPath="$PROJECT_DIR$/wishlist-service/src/main/java/com/spotify/wishlistservice/controller/WishListController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wishlist-service/src/main/java/com/spotify/wishlistservice/model/WishList.java" beforeDir="false" afterPath="$PROJECT_DIR$/wishlist-service/src/main/java/com/spotify/wishlistservice/model/Wishlist.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wishlist-service/src/main/java/com/spotify/wishlistservice/repository/WishListRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/wishlist-service/src/main/java/com/spotify/wishlistservice/repository/WishListRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wishlist-service/src/main/java/com/spotify/wishlistservice/service/WishListService.java" beforeDir="false" afterPath="$PROJECT_DIR$/wishlist-service/src/main/java/com/spotify/wishlistservice/service/WishListService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wishlist-service/src/main/java/com/spotify/wishlistservice/service/WishListServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/wishlist-service/src/main/java/com/spotify/wishlistservice/service/WishListServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,11 +88,11 @@
       <recent name="" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
-      <recent name="com.spotify.wishlistservice.model" />
-      <recent name="com.spotify.wishlistservice.kafka" />
-      <recent name="com.spotify.wishlistservice.filter" />
-      <recent name="com.spotify.wishlistservice.controller" />
-      <recent name="com.spotify.wishlistservice.repository" />
+      <recent name="com.spotify.userprofile.service" />
+      <recent name="com.spotify.userprofile.repository" />
+      <recent name="com.spotify.userprofile.model" />
+      <recent name="com.spotify.userprofile.kafka" />
+      <recent name="com.spotify.userprofile.filter" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.spotify.wishlistservice.service" />

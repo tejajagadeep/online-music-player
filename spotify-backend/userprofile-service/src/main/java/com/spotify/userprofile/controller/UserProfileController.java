@@ -7,6 +7,11 @@ import com.spotify.userprofile.dto.UserDetails;
 import com.spotify.userprofile.model.UserProfile;
 import com.spotify.userprofile.service.AuthService;
 import com.spotify.userprofile.service.UserProfileService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.media.Schema;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -33,6 +38,10 @@ public class UserProfileController {
         this.producer = producer;
     }
 
+
+    @Operation(summary = "Admin Access Get Users Details")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "User Details Found",content =@Content) })
     @GetMapping("/getAllUser")
     public ResponseEntity<Object> getAllUsers(@RequestHeader("Authorization") String token){
         log.info(token+" : token from authentication to access get all users");
@@ -47,6 +56,15 @@ public class UserProfileController {
 
     }
 
+    @Operation(summary = "Get Users Details")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "User Details Found",
+                    content = { @Content(mediaType = "application/json",
+                            schema = @Schema(implementation = UserProfileDto.class)) }),
+            @ApiResponse(responseCode = "404", description = "User not found",
+                    content = @Content),
+            @ApiResponse(responseCode = "401", description = "Unauthorized user",
+                    content = @Content) })
     @GetMapping("/getUserById/{username}")
     public ResponseEntity<Object> getUserProfileById(@RequestHeader("Authorization") String token,@PathVariable String username){
 
@@ -61,6 +79,13 @@ public class UserProfileController {
         return new ResponseEntity<>(userProfileService.getUserProfileById(username), HttpStatus.OK);
     }
 
+    @Operation(summary = "Save User's Details")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "201", description = "User Details Saved",
+                    content = { @Content(mediaType = "application/json",
+                            schema = @Schema(implementation = UserProfileDto.class)) }),
+            @ApiResponse(responseCode = "409", description = "User Details already Exists",
+                    content = @Content) })
     @PostMapping("/addUser")
     public ResponseEntity<Object> saveUserProfile(@RequestBody UserProfile userProfile){
         UserDetails userDetails=new UserDetails();
@@ -73,6 +98,17 @@ public class UserProfileController {
         return new ResponseEntity<>(userProfileDto,HttpStatus.OK);
     }
 
+    @Operation(summary = "Update Users Details")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "User Details Updated",
+                    content = { @Content(mediaType = "application/json",
+                            schema = @Schema(implementation = UserProfileDto.class)) }),
+            @ApiResponse(responseCode = "404", description = "User not found",
+                    content = @Content),
+            @ApiResponse(responseCode = "409", description = "User Details already Exists",
+                    content = @Content),
+            @ApiResponse(responseCode = "401", description = "Unauthorized user",
+                    content = @Content) })
     @PutMapping("/update/{username}")
     public ResponseEntity<Object> updateUserProfile(@RequestHeader("Authorization") String token,@RequestBody UserProfileDto userProfileDto, @PathVariable String username){
 
