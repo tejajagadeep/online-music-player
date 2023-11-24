@@ -10,6 +10,7 @@ import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -42,6 +43,7 @@ public class WishlistController {
                     content = @Content),
             @ApiResponse(responseCode = "401", description = "Unauthorized user",
                     content = @Content) })
+    @SecurityRequirement(name = "Bearer Authentication")
     @GetMapping("/get-user-wishlist")
     public ResponseEntity<Object> getUserWishLisl(@RequestHeader("Authorization") String token, @RequestParam String username){
         log.trace("Controller getUserWishList: "+username);
@@ -63,6 +65,7 @@ public class WishlistController {
                     content = @Content),
             @ApiResponse(responseCode = "401", description = "Unauthorized user",
                     content = @Content) })
+    @SecurityRequirement(name = "Bearer Authentication")
     @PostMapping("/save-track-to-wishList")
     public ResponseEntity<Object> saveTrackToWishlist(@RequestHeader("Authorization") String token, @RequestParam String username, @RequestBody TrackDto trackDto){
         log.trace("Controller saveTrackToWishList: "+username);
@@ -85,6 +88,7 @@ public class WishlistController {
                     content = @Content),
             @ApiResponse(responseCode = "401", description = "Unauthorized user",
                     content = @Content) })
+    @SecurityRequirement(name = "Bearer Authentication")
     @DeleteMapping("/remove-track")
     public  ResponseEntity<Object> deleteTrackByUsernameAndTrackId(@RequestHeader("Authorization") String token,@RequestParam String username, @RequestParam String trackId){
         log.trace("Controller deleteTrackByUsernameAndTrackId: "+trackId);

@@ -12,6 +12,7 @@ import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -38,7 +39,7 @@ public class UserProfileController {
         this.producer = producer;
     }
 
-
+    @SecurityRequirement(name = "Bearer Authentication")
     @Operation(summary = "Admin Access Get Users Details")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "User Details Found",content =@Content) })
@@ -56,6 +57,7 @@ public class UserProfileController {
 
     }
 
+    @SecurityRequirement(name = "Bearer Authentication")
     @Operation(summary = "Get Users Details")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "User Details Found",
@@ -98,6 +100,7 @@ public class UserProfileController {
         return new ResponseEntity<>(userProfileDto,HttpStatus.OK);
     }
 
+    @SecurityRequirement(name = "Bearer Authentication")
     @Operation(summary = "Update Users Details")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "User Details Updated",
