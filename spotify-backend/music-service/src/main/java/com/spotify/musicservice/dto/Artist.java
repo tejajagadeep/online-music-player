@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Artist {
+
     @JsonProperty("external_urls")
     private ExternalUrls externalUrls;
 

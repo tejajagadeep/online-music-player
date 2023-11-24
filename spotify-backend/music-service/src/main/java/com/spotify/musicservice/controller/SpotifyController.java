@@ -39,7 +39,8 @@ public class SpotifyController {
     @GetMapping("/login")
     public ResponseEntity<Object> getSpotifyAccessToken() {
         // Obtain the access token
-            return new ResponseEntity<>(spotifyService.getSpotifyAccessToken(), HttpStatus.OK);
+        log.trace("Inside SpotifyController getSpotifyAccessToken");
+        return new ResponseEntity<>(spotifyService.getSpotifyAccessToken(), HttpStatus.OK);
     }
 
 
@@ -52,7 +53,8 @@ public class SpotifyController {
                     content = @Content) })
     @GetMapping("/bill-board-100-playlist")
     public ResponseEntity<Object> getBillBoard100Playlist() {
-            return new ResponseEntity<>(spotifyService.getBillBoard100Playlist(), HttpStatus.OK);
+        log.trace("Inside SpotifyController getBillBoard100Playlist");
+        return new ResponseEntity<>(spotifyService.getBillBoard100Playlist(), HttpStatus.OK);
     }
 
     @Operation(summary = "Get Top Hits Playlist")
@@ -64,7 +66,8 @@ public class SpotifyController {
                     content = @Content) })
     @GetMapping("/today-top-hits-playlist")
     public ResponseEntity<Object> getTodayTopHitsPlaylist() {
-            return new ResponseEntity<>(spotifyService.getTodayTopHitsPlaylist(), HttpStatus.OK);
+        log.trace("Inside SpotifyController getTodayTopHitsPlaylist");
+        return new ResponseEntity<>(spotifyService.getTodayTopHitsPlaylist(), HttpStatus.OK);
     }
     @Operation(summary = "Get Discover Weekly Playlist")
     @ApiResponses(value = {
@@ -75,7 +78,8 @@ public class SpotifyController {
                     content = @Content) })
     @GetMapping("/today-discover-weekly-playlist")
     public ResponseEntity<Object> getDiscoverWeeklyPlaylist() {
-            return new ResponseEntity<>(spotifyService.getDiscoverWeeklyPlaylist(), HttpStatus.OK);
+        log.trace("Inside SpotifyController getDiscoverWeeklyPlaylist");
+        return new ResponseEntity<>(spotifyService.getDiscoverWeeklyPlaylist(), HttpStatus.OK);
     }
 
     @Operation(summary = "Get a track by its id")
@@ -87,6 +91,7 @@ public class SpotifyController {
                     content = @Content) })
     @GetMapping("/get-track")
     public ResponseEntity<Object> getTrack(@RequestParam String trackId ) {
+        log.trace("Inside SpotifyController getTrack");
         return new ResponseEntity<>(spotifyService.getTrack(trackId), HttpStatus.OK);
     }
 
@@ -99,6 +104,7 @@ public class SpotifyController {
                     content = @Content) })
     @GetMapping("/search")
     public ResponseEntity<Object> search(@RequestParam String query) {
-            return new ResponseEntity<>(spotifyService.search(query), HttpStatus.OK);
+        log.trace("Inside SpotifyController search");
+        return new ResponseEntity<>(spotifyService.search(query), HttpStatus.OK);
     }
 }

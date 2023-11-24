@@ -66,12 +66,14 @@ public class SpotifyServiceImpl implements SpotifyService{
         // Make a POST request to the Spotify token endpoint to obtain the access token
         ResponseEntity<SpotifyAccessToken> responseEntity = restTemplate.postForEntity(accountApiUrl + "/token", requestEntity, SpotifyAccessToken.class);
         SpotifyAccessToken spotifyAccessToken = responseEntity.getBody();
-
+        log.trace("Inside SpotifyServiceImpl getSpotifyAccessToken");
         if (spotifyAccessToken != null) {
             spotifyAccessToken.setId(1);
             spotifyAccessTokenRepository.save(spotifyAccessToken);
+            log.info("saved: " +spotifyAccessToken);
             return "Access Token Saved";
         } else {
+            log.error("Resource not not found. returned null");
             throw new ResourceNotFoundException("Resource Not Found");
         }
     }
@@ -80,12 +82,13 @@ public class SpotifyServiceImpl implements SpotifyService{
     public SpotifyPlaylist getBillBoard100Playlist() {
         String playlistId="6UeSakyzhiEt4NB3UAd6NQ";
         RequestEntity<Void> requestEntity = playListRequest(playlistId);
-
+        log.trace("Inside SpotifyServiceImpl getBillBoard100Playlist");
         return restTemplate.exchange(requestEntity, SpotifyPlaylist.class).getBody();
     }
     @Override
     public SpotifyPlaylist getTodayTopHitsPlaylist() {
         String playlistId="37i9dQZF1DXcBWIGoYBM5M";
+        log.trace("Inside SpotifyServiceImpl getTodayTopHitsPlaylist");
         RequestEntity<Void> requestEntity = playListRequest(playlistId);
         return restTemplate.exchange(requestEntity, SpotifyPlaylist.class).getBody();
     }
@@ -93,12 +96,14 @@ public class SpotifyServiceImpl implements SpotifyService{
     @Override
     public SpotifyPlaylist getDiscoverWeeklyPlaylist() {
         String playlistId="1mjrbWPCpQdNcohvou99aJ";
+        log.trace("Inside SpotifyServiceImpl getDiscoverWeeklyPlaylist");
         RequestEntity<Void> requestEntity = playListRequest(playlistId);
         return restTemplate.exchange(requestEntity, SpotifyPlaylist.class).getBody();
     }
 
     @Override
     public Track getTrack(String trackId) {
+        log.trace("Inside SpotifyServiceImpl getTrack");
         log.info("get Track: "+trackId);
         RequestEntity<Void> requestEntity = trackRequest(trackId);
         return restTemplate.exchange(requestEntity, Track.class).getBody();
@@ -106,6 +111,8 @@ public class SpotifyServiceImpl implements SpotifyService{
 
     @Override
     public Object search(String query) {
+        log.trace("Inside SpotifyServiceImpl search");
+        log.info("search track: "+query);
         return restTemplate.exchange(searchRequest(query), SpotifyTracks.class).getBody();
     }
 
@@ -128,6 +135,7 @@ public class SpotifyServiceImpl implements SpotifyService{
         URI uri = UriComponentsBuilder.fromUriString(apiUrl + "/playlists/{playlistId}")
                 .buildAndExpand(playlistId)
                 .toUri();
+        log.info(uri.toString());
         return RequestEntity
                 .get(uri)
                 .headers(headers)
@@ -139,6 +147,7 @@ public class SpotifyServiceImpl implements SpotifyService{
         URI uri = UriComponentsBuilder.fromUriString(apiUrl + "/tracks/{trackId}")
                 .buildAndExpand(trackId)
                 .toUri();
+        log.info(uri.toString());
         return RequestEntity
                 .get(uri)
                 .headers(headers)

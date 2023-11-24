@@ -1,7 +1,3 @@
 
 p
-java:S1128"ZRemove this unused import 'se.michaelthelin.spotify.model_objects.specification.Playlist'.(™ÍÔñ
-z
-java:S1128"_Remove this unused import 'se.michaelthelin.spotify.model_objects.specification.PlaylistTrack'.(­¢ÍÅýÿÿÿÿ
-F
-java:S1128	"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ
+java:S1128"NRemove this unused import 'com.spotify.musicservice.model.SpotifyAccessToken'.(Ã½õ³úÿÿÿÿ8Ÿžîë¿1

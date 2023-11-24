@@ -1,12 +1,10 @@
 package com.spotify.wishlistservice.repository;
 
-import com.spotify.wishlistservice.model.WishList;
+import com.spotify.wishlistservice.model.Wishlist;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 
-import java.util.List;
-
 @Repository
-public interface WishListRepository extends MongoRepository<WishList, String> {
+public interface WishListRepository extends MongoRepository<Wishlist, String> {
     void deleteTrackByUsernameAndTracksId(String username, String trackId);
 }

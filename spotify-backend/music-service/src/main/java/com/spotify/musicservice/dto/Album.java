@@ -12,6 +12,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Album {
+
     @JsonProperty("album_type")
     private String albumType;
 
