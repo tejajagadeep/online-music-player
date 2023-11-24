@@ -6,6 +6,7 @@ import com.spotify.musicservice.dto.Track;
 import com.spotify.musicservice.exception.ResourceNotFoundException;
 import com.spotify.musicservice.model.SpotifyAccessToken;
 import com.spotify.musicservice.repository.SpotifyAccessTokenRepository;
+import io.micrometer.observation.annotation.Observed;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -22,6 +23,7 @@ import java.util.Base64;
 
 @Service
 @Slf4j
+@Observed(name = "spotify.service.impl")
 public class SpotifyServiceImpl implements SpotifyService{
 
     private final SpotifyAccessTokenRepository spotifyAccessTokenRepository;
@@ -46,6 +48,7 @@ public class SpotifyServiceImpl implements SpotifyService{
 
     @Override
     @Scheduled(fixedRate = 3599000)
+    @Observed(name = "get.spotify.access.token")
     public String getSpotifyAccessToken() {
 
         // Make the request
@@ -79,6 +82,7 @@ public class SpotifyServiceImpl implements SpotifyService{
     }
 
     @Override
+    @Observed(name = "get.bill.board.100.playlist")
     public SpotifyPlaylist getBillBoard100Playlist() {
         String playlistId="6UeSakyzhiEt4NB3UAd6NQ";
         RequestEntity<Void> requestEntity = playListRequest(playlistId);
@@ -86,6 +90,7 @@ public class SpotifyServiceImpl implements SpotifyService{
         return restTemplate.exchange(requestEntity, SpotifyPlaylist.class).getBody();
     }
     @Override
+    @Observed(name = "get.today.top.hits.playlist")
     public SpotifyPlaylist getTodayTopHitsPlaylist() {
         String playlistId="37i9dQZF1DXcBWIGoYBM5M";
         log.trace("Inside SpotifyServiceImpl getTodayTopHitsPlaylist");
@@ -94,6 +99,7 @@ public class SpotifyServiceImpl implements SpotifyService{
     }
 
     @Override
+    @Observed(name = "get.discover.weekly.playlist")
     public SpotifyPlaylist getDiscoverWeeklyPlaylist() {
         String playlistId="1mjrbWPCpQdNcohvou99aJ";
         log.trace("Inside SpotifyServiceImpl getDiscoverWeeklyPlaylist");
@@ -102,6 +108,7 @@ public class SpotifyServiceImpl implements SpotifyService{
     }
 
     @Override
+    @Observed(name = "get.track")
     public Track getTrack(String trackId) {
         log.trace("Inside SpotifyServiceImpl getTrack");
         log.info("get Track: "+trackId);
@@ -110,6 +117,7 @@ public class SpotifyServiceImpl implements SpotifyService{
     }
 
     @Override
+    @Observed(name = "search")
     public Object search(String query) {
         log.trace("Inside SpotifyServiceImpl search");
         log.info("search track: "+query);

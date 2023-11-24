@@ -1,10 +1,10 @@
-package com.spotify.wishlistservice.controller;
+package com.spotify.wishlistservice.service;
 
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class WishListControllerTest {
+class WishlistServiceImplTest {
 
     @Test
     void getUserWishList() {

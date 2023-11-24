@@ -5,10 +5,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a2504401-f241-4a58-ab09-902bb2951c1e" name="Changes" comment="Commit message [date: %Y-%m-%d] [time: %H:%M:%S]">
+      <change afterPath="$PROJECT_DIR$/authentication-service/src/main/java/com/auth/authenticationservice/aspects/PerformanceTrackerHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/authentication-service/src/main/java/com/auth/authenticationservice/configuration/AppConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/music-service/src/main/java/com/spotify/musicservice/aspects/PerformanceTrackerHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/userprofile-service/src/main/java/com/spotify/userprofile/aspects/PerformanceTrackerHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wishlist-service/src/main/java/com/spotify/wishlistservice/aspects/PerformanceTrackerHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authentication-service/src/main/java/com/auth/authenticationservice/AuthenticationServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/authentication-service/src/main/java/com/auth/authenticationservice/AuthenticationServiceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authentication-service/src/main/java/com/auth/authenticationservice/controller/AuthenticationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/authentication-service/src/main/java/com/auth/authenticationservice/controller/AuthenticationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/authentication-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/music-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/music-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/music-service/src/main/java/com/spotify/musicservice/configuration/AppConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/music-service/src/main/java/com/spotify/musicservice/configuration/AppConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/music-service/src/main/java/com/spotify/musicservice/service/SpotifyServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/music-service/src/main/java/com/spotify/musicservice/service/SpotifyServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/userprofile-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/userprofile-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/userprofile-service/src/main/java/com/spotify/userprofile/configuration/UserProfileConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/userprofile-service/src/main/java/com/spotify/userprofile/configuration/UserProfileConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/userprofile-service/src/main/java/com/spotify/userprofile/service/UserProfileServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/userprofile-service/src/main/java/com/spotify/userprofile/service/UserProfileServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wishlist-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/wishlist-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wishlist-service/src/main/java/com/spotify/wishlistservice/configuration/WishListConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/wishlist-service/src/main/java/com/spotify/wishlistservice/configuration/WishListConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wishlist-service/src/main/java/com/spotify/wishlistservice/controller/WishListController.java" beforeDir="false" afterPath="$PROJECT_DIR$/wishlist-service/src/main/java/com/spotify/wishlistservice/controller/WishlistController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wishlist-service/src/main/java/com/spotify/wishlistservice/repository/WishListRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/wishlist-service/src/main/java/com/spotify/wishlistservice/repository/WishlistRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wishlist-service/src/main/java/com/spotify/wishlistservice/service/WishListService.java" beforeDir="false" afterPath="$PROJECT_DIR$/wishlist-service/src/main/java/com/spotify/wishlistservice/service/WishlistService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wishlist-service/src/main/java/com/spotify/wishlistservice/service/WishListServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/wishlist-service/src/main/java/com/spotify/wishlistservice/service/WishlistServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wishlist-service/src/test/java/com/spotify/wishlistservice/controller/WishListControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/wishlist-service/src/test/java/com/spotify/wishlistservice/controller/WishlistControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wishlist-service/src/test/java/com/spotify/wishlistservice/repository/WishListRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/wishlist-service/src/test/java/com/spotify/wishlistservice/repository/WishlistRepositoryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wishlist-service/src/test/java/com/spotify/wishlistservice/service/WishListServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/wishlist-service/src/test/java/com/spotify/wishlistservice/service/WishlistServiceImplTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,8 +39,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -84,12 +102,14 @@
       <recent name="com.spotify.userprofile.repository" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.auth.authenticationservice.aspects" />
+      <recent name="com.spotify.userprofile.aspects" />
+      <recent name="com.spotify.wishlistservice.aspects" />
       <recent name="com.spotify.wishlistservice.service" />
       <recent name="com.spotify.wishlistservice.dto" />
-      <recent name="com.spotify.wishlistservice.configuration" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.AuthenticationServiceApplication">
+  <component name="RunManager" selected="Application.UserprofileApplication">
     <configuration name="ApiGatewayApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.spotify.apigateway.ApiGatewayApplication" />
       <module name="api-gateway" />
@@ -157,8 +177,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.AuthenticationServiceApplication" />
         <item itemvalue="Application.UserprofileApplication" />
+        <item itemvalue="Application.AuthenticationServiceApplication" />
         <item itemvalue="Application.WishlistserviceApplication" />
         <item itemvalue="Application.MusicserviceApplication" />
         <item itemvalue="Application.ApiGatewayApplication" />

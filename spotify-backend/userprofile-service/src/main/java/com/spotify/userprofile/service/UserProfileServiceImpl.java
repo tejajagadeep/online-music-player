@@ -4,6 +4,7 @@ import com.spotify.userprofile.dto.UserProfileDto;
 import com.spotify.userprofile.exception.ResourceAlreadyExistsException;
 import com.spotify.userprofile.model.UserProfile;
 import com.spotify.userprofile.repository.UserProfileRepository;
+import io.micrometer.observation.annotation.Observed;
 import org.apache.kafka.common.errors.ResourceNotFoundException;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +14,7 @@ import java.util.List;
 import java.util.stream.Stream;
 
 @Service
+@Observed(name = "user.profile.service.impl")
 public class UserProfileServiceImpl implements UserProfileService {
 
     private final UserProfileRepository usersProfileRepository;
@@ -27,6 +29,7 @@ public class UserProfileServiceImpl implements UserProfileService {
 
 
     @Override
+    @Observed(name = "get.all.users")
     public List<UserProfileDto> getAllUsers() {
 
         return Stream.of(usersProfileRepository.findAll())
@@ -36,6 +39,7 @@ public class UserProfileServiceImpl implements UserProfileService {
     }
 
     @Override
+    @Observed(name = "get.user.profile.by.id")
     public UserProfileDto getUserProfileById(String username) {
         UserProfile entity = usersProfileRepository.findById(username)
                 .orElseThrow(() ->
@@ -45,6 +49,7 @@ public class UserProfileServiceImpl implements UserProfileService {
     }
 
     @Override
+    @Observed(name = "save.user.profile")
     public UserProfileDto saveUserProfile(UserProfile userProfile) {
 
 
@@ -64,6 +69,7 @@ public class UserProfileServiceImpl implements UserProfileService {
     }
 
     @Override
+    @Observed(name = "update.user.profile")
     public UserProfileDto updateUserProfile(UserProfileDto userProfileDto, String username) {
         UserProfile userProfile = usersProfileRepository.findById(username)
                 .orElseThrow(() ->

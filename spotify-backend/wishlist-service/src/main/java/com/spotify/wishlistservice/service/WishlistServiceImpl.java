@@ -5,7 +5,8 @@ import com.spotify.wishlistservice.dto.WishListDto;
 import com.spotify.wishlistservice.exception.ResourceNotFoundException;
 import com.spotify.wishlistservice.model.Track;
 import com.spotify.wishlistservice.model.Wishlist;
-import com.spotify.wishlistservice.repository.WishListRepository;
+import com.spotify.wishlistservice.repository.WishlistRepository;
+import io.micrometer.observation.annotation.Observed;
 import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,27 +17,30 @@ import java.util.Optional;
 
 @Service
 @Slf4j
-public class WishListServiceImpl implements WishListService{
+@Observed(name = "wishlist.service.impl")
+public class WishlistServiceImpl implements WishlistService {
 
-    private final WishListRepository wishListRepository;
+    private final WishlistRepository wishListRepository;
 
     private final ModelMapper modelMapper;
 
     @Autowired
-    public WishListServiceImpl(WishListRepository wishListRepository, ModelMapper modelMapper) {
+    public WishlistServiceImpl(WishlistRepository wishListRepository, ModelMapper modelMapper) {
         this.wishListRepository = wishListRepository;
         this.modelMapper = modelMapper;
     }
 
     @Override
-    public WishListDto getUserWishList(String username){
+    @Observed(name = "get.user.wishlist")
+    public WishListDto getUserWishlist(String username){
         log.info("Service getUserWishList: "+ username);
         return modelMapper.map(wishListRepository.findById(username).orElseThrow(() -> new ResourceNotFoundException("Entity not found with ID: " + username)),WishListDto.class);
     }
 
 
     @Override
-    public TrackDto saveTrackToWishList(String username, TrackDto trackDto) {
+    @Observed(name = "save.track.to.wishlist")
+    public TrackDto saveTrackToWishlist(String username, TrackDto trackDto) {
         log.info("Service saveTrackToUsername: "+ username);
         Optional<Wishlist> wishListOptional = wishListRepository.findById(username);
         Track track = modelMapper.map(trackDto, Track.class);
@@ -59,6 +63,7 @@ public class WishListServiceImpl implements WishListService{
     }
 
     @Override
+    @Observed(name = "delete.track.by.username.and.track.id")
     public String deleteTrackByUsernameAndTrackId(String username, String trackId) {
         log.info("Service deleteTrackByUsername: "+ username);
         Optional<Wishlist> wishListOptional = Optional.ofNullable(wishListRepository.findById(username).orElseThrow(() -> new ResourceNotFoundException("Username not found")));

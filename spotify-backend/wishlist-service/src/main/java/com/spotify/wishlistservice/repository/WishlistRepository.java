@@ -5,6 +5,6 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface WishListRepository extends MongoRepository<Wishlist, String> {
+public interface WishlistRepository extends MongoRepository<Wishlist, String> {
     void deleteTrackByUsernameAndTracksId(String username, String trackId);
 }

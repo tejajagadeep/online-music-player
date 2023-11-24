@@ -3,10 +3,10 @@ package com.spotify.wishlistservice.service;
 import com.spotify.wishlistservice.dto.TrackDto;
 import com.spotify.wishlistservice.dto.WishListDto;
 
-public interface WishListService {
-    WishListDto getUserWishList(String username);
+public interface WishlistService {
+    WishListDto getUserWishlist(String username);
 
-    TrackDto saveTrackToWishList(String username, TrackDto trackDto);
+    TrackDto saveTrackToWishlist(String username, TrackDto trackDto);
 
     String deleteTrackByUsernameAndTrackId(String username, String trackId);
 }

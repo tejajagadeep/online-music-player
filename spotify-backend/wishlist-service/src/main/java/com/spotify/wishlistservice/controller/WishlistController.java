@@ -4,7 +4,7 @@ import com.spotify.wishlistservice.dto.TrackDto;
 import com.spotify.wishlistservice.dto.WishListDto;
 import com.spotify.wishlistservice.exception.UnAuthorizedException;
 import com.spotify.wishlistservice.service.AuthService;
-import com.spotify.wishlistservice.service.WishListService;
+import com.spotify.wishlistservice.service.WishlistService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
@@ -21,14 +21,14 @@ import java.util.Map;
 @Slf4j
 @RestController
 @RequestMapping("/api/v1.0/wishlist")
-public class WishListController {
+public class WishlistController {
 
-    private final WishListService wishListService;
+    private final WishlistService wishListService;
 
     private final AuthService authService;
 
     @Autowired
-    public WishListController(WishListService wishListService, AuthService authService) {
+    public WishlistController(WishlistService wishListService, AuthService authService) {
         this.wishListService = wishListService;
         this.authService = authService;
     }
@@ -43,7 +43,7 @@ public class WishListController {
             @ApiResponse(responseCode = "401", description = "Unauthorized user",
                     content = @Content) })
     @GetMapping("/get-user-wishlist")
-    public ResponseEntity<Object> getUserWishList(@RequestHeader("Authorization") String token,@RequestParam String username){
+    public ResponseEntity<Object> getUserWishLisl(@RequestHeader("Authorization") String token, @RequestParam String username){
         log.trace("Controller getUserWishList: "+username);
         Map<String,String> info= authService.validateToken(token);
         log.info(info+"------inside method getUserWishList-----");
@@ -51,7 +51,7 @@ public class WishListController {
             log.error(token + "inside method getUserWishList-----__---");
             throw new UnAuthorizedException("Please check User details");
         }
-        return new ResponseEntity<>(wishListService.getUserWishList(username), HttpStatus.OK);
+        return new ResponseEntity<>(wishListService.getUserWishlist(username), HttpStatus.OK);
     }
 
     @Operation(summary = "Save track to User")
@@ -64,7 +64,7 @@ public class WishListController {
             @ApiResponse(responseCode = "401", description = "Unauthorized user",
                     content = @Content) })
     @PostMapping("/save-track-to-wishList")
-    public ResponseEntity<Object> saveTrackToWishList(@RequestHeader("Authorization") String token,@RequestParam String username, @RequestBody TrackDto trackDto){
+    public ResponseEntity<Object> saveTrackToWishlist(@RequestHeader("Authorization") String token, @RequestParam String username, @RequestBody TrackDto trackDto){
         log.trace("Controller saveTrackToWishList: "+username);
         Map<String,String> info= authService.validateToken(token);
         log.info(info+"------inside method saveTrackToWishList-----");
@@ -72,7 +72,7 @@ public class WishListController {
             log.error(token + "inside method get all-----__---");
             throw new UnAuthorizedException("Please check User Id: "+username);
         }
-        return new ResponseEntity<>(wishListService.saveTrackToWishList(username,trackDto),HttpStatus.CREATED);
+        return new ResponseEntity<>(wishListService.saveTrackToWishlist(username,trackDto),HttpStatus.CREATED);
     }
 
 
