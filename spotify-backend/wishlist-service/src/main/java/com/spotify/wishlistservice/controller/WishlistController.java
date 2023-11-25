@@ -1,7 +1,7 @@
 package com.spotify.wishlistservice.controller;
 
 import com.spotify.wishlistservice.dto.TrackDto;
-import com.spotify.wishlistservice.dto.WishListDto;
+import com.spotify.wishlistservice.dto.WishlistDto;
 import com.spotify.wishlistservice.exception.UnAuthorizedException;
 import com.spotify.wishlistservice.service.AuthService;
 import com.spotify.wishlistservice.service.WishlistService;
@@ -38,13 +38,13 @@ public class WishlistController {
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Found Top Hits  Playlist",
                     content = { @Content(mediaType = "application/json",
-                            schema = @Schema(implementation = WishListDto.class)) }),
+                            schema = @Schema(implementation = WishlistDto.class)) }),
             @ApiResponse(responseCode = "404", description = "Wishlist not found",
                     content = @Content),
             @ApiResponse(responseCode = "401", description = "Unauthorized user",
                     content = @Content) })
     @SecurityRequirement(name = "Bearer Authentication")
-    @GetMapping("/get-user-wishlist")
+    @GetMapping("/getUserWishLisl")
     public ResponseEntity<Object> getUserWishLisl(@RequestHeader("Authorization") String token, @RequestParam String username){
         log.trace("Controller getUserWishList: "+username);
         Map<String,String> info= authService.validateToken(token);
@@ -66,7 +66,7 @@ public class WishlistController {
             @ApiResponse(responseCode = "401", description = "Unauthorized user",
                     content = @Content) })
     @SecurityRequirement(name = "Bearer Authentication")
-    @PostMapping("/save-track-to-wishList")
+    @PostMapping("/saveTrackToWishlist")
     public ResponseEntity<Object> saveTrackToWishlist(@RequestHeader("Authorization") String token, @RequestParam String username, @RequestBody TrackDto trackDto){
         log.trace("Controller saveTrackToWishList: "+username);
         Map<String,String> info= authService.validateToken(token);
@@ -89,7 +89,7 @@ public class WishlistController {
             @ApiResponse(responseCode = "401", description = "Unauthorized user",
                     content = @Content) })
     @SecurityRequirement(name = "Bearer Authentication")
-    @DeleteMapping("/remove-track")
+    @DeleteMapping("/removeTrack")
     public  ResponseEntity<Object> deleteTrackByUsernameAndTrackId(@RequestHeader("Authorization") String token,@RequestParam String username, @RequestParam String trackId){
         log.trace("Controller deleteTrackByUsernameAndTrackId: "+trackId);
         log.trace("Controller getUserWishList: "+username);

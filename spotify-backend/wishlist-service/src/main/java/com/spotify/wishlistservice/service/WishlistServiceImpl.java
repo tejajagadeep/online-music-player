@@ -1,7 +1,7 @@
 package com.spotify.wishlistservice.service;
 
 import com.spotify.wishlistservice.dto.TrackDto;
-import com.spotify.wishlistservice.dto.WishListDto;
+import com.spotify.wishlistservice.dto.WishlistDto;
 import com.spotify.wishlistservice.exception.ResourceNotFoundException;
 import com.spotify.wishlistservice.model.Track;
 import com.spotify.wishlistservice.model.Wishlist;
@@ -20,21 +20,21 @@ import java.util.Optional;
 @Observed(name = "wishlist.service.impl")
 public class WishlistServiceImpl implements WishlistService {
 
-    private final WishlistRepository wishListRepository;
+    private final WishlistRepository wishlistRepository;
 
     private final ModelMapper modelMapper;
 
     @Autowired
-    public WishlistServiceImpl(WishlistRepository wishListRepository, ModelMapper modelMapper) {
-        this.wishListRepository = wishListRepository;
+    public WishlistServiceImpl(WishlistRepository wishlistRepository, ModelMapper modelMapper) {
+        this.wishlistRepository = wishlistRepository;
         this.modelMapper = modelMapper;
     }
 
     @Override
     @Observed(name = "get.user.wishlist")
-    public WishListDto getUserWishlist(String username){
+    public WishlistDto getUserWishlist(String username){
         log.info("Service getUserWishList: "+ username);
-        return modelMapper.map(wishListRepository.findById(username).orElseThrow(() -> new ResourceNotFoundException("Entity not found with ID: " + username)),WishListDto.class);
+        return modelMapper.map(wishlistRepository.findById(username).orElseThrow(() -> new ResourceNotFoundException("Entity not found with ID: " + username)), WishlistDto.class);
     }
 
 
@@ -42,7 +42,7 @@ public class WishlistServiceImpl implements WishlistService {
     @Observed(name = "save.track.to.wishlist")
     public TrackDto saveTrackToWishlist(String username, TrackDto trackDto) {
         log.info("Service saveTrackToUsername: "+ username);
-        Optional<Wishlist> wishListOptional = wishListRepository.findById(username);
+        Optional<Wishlist> wishListOptional = wishlistRepository.findById(username);
         Track track = modelMapper.map(trackDto, Track.class);
         Wishlist wishList;
         if (wishListOptional.isPresent()) {
@@ -57,7 +57,7 @@ public class WishlistServiceImpl implements WishlistService {
         }
 
         // Save the updated wish list
-        wishListRepository.save(wishList);
+        wishlistRepository.save(wishList);
         log.info("Track added"+trackDto.toString());
         return trackDto;
     }
@@ -66,11 +66,11 @@ public class WishlistServiceImpl implements WishlistService {
     @Observed(name = "delete.track.by.username.and.track.id")
     public String deleteTrackByUsernameAndTrackId(String username, String trackId) {
         log.info("Service deleteTrackByUsername: "+ username);
-        Optional<Wishlist> wishListOptional = Optional.ofNullable(wishListRepository.findById(username).orElseThrow(() -> new ResourceNotFoundException("Username not found")));
+        Optional<Wishlist> wishListOptional = Optional.ofNullable(wishlistRepository.findById(username).orElseThrow(() -> new ResourceNotFoundException("Username not found")));
         wishListOptional.ifPresent(wishlist -> {
             // Find and remove the track with the specified id
             wishlist.getTracks().removeIf(track -> track.getId().equals(trackId));
-            wishListRepository.save(wishlist);
+            wishlistRepository.save(wishlist);
         });
         log.info("Service Track deleted with Id: "+ trackId);
         return "Track with Id: "+trackId+" deleted.";

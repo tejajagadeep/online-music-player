@@ -9,7 +9,7 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class WishListDto {
+public class WishlistDto {
 
     private String username;
     private List<TrackDto> tracks;
