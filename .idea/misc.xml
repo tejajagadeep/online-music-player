@@ -10,6 +10,9 @@
         <option value="$PROJECT_DIR$/spotify-backend/api-gateway/pom.xml" />
         <option value="$PROJECT_DIR$/spotify-backend/eureka-server/pom.xml" />
         <option value="$PROJECT_DIR$/spotify-backend/authentication-service/pom.xml" />
+        <option value="$PROJECT_DIR$/spotify-backend/userprofile-service/pom.xml" />
+        <option value="$PROJECT_DIR$/spotify-backend/music-service/pom.xml" />
+        <option value="$PROJECT_DIR$/spotify-backend/wishlist-service/pom.xml" />
       </list>
     </option>
   </component>
