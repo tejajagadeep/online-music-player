@@ -17,8 +17,6 @@ Cmusic-service/src/main/java/com/spotify/musicservice/dto/Image.java,8\4\84af7a
 Mmusic-service/src/main/java/com/spotify/musicservice/dto/SpotifyPlaylist.java,e\7\e74f45acee211dc426071fece4a00ee44f571784
 è
 _wishlist-service/src/test/java/com/spotify/wishlistservice/WishlistserviceApplicationTests.java,5\9\594315a2b77c8e7930dcb199239b88cb61282fa7
-Å
-Qwishlist-service/src/test/java/com/spotify/wishlist/WishlistApplicationTests.java,9\a\9a6e80233acf51f39d5b847f288519f0d889ca40
 É
 Swishlist-service/src/main/java/com/spotify/wishlistservice/dto/ExternalUrlsDto.java,c\e\ce8acae6a6f5c065ce2ce6143af984dc9aff754c
 |
@@ -271,3 +269,5 @@ Xauthentication-service/src/main/java/com/auth/authenticationservice/filter/JwtU
 \wishlist-service/src/main/java/com/spotify/wishlistservice/configuration/WishListConfig.java,9\e\9eec911c792b8a65d04ffb32325791951f731c9d
 ç
 ]wishlist-service/src/main/java/com/spotify/wishlistservice/controller/WishlistController.java,2\0\206ee6e571caf549781f272c50987dd4b8b68df5
+
+Owishlist-service/src/main/java/com/spotify/wishlistservice/dto/WishlistDto.java,e\d\ed0f7bba124197823dbabf801178f6cd9bbf0d8f

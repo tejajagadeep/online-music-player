@@ -21,7 +21,7 @@ public class DataPublisherServiceImpl
 	{
 		log.info(user.toString());
 
-		kafkaTemplate.send("EventApp", user);
+		kafkaTemplate.send("SpotifyApp", user);
 	}
 
 }

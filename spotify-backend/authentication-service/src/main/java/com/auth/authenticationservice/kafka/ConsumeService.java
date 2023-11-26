@@ -17,7 +17,7 @@ public class ConsumeService
 	 UserRepo userRepo;
 	 private UserDetails fromPublisher;
 
-	@KafkaListener(topics="EventApp", groupId="mygroup")
+	@KafkaListener(topics="SpotifyApp", groupId="mygroup")
 
 	public void consumeFromTopic(String message) throws JsonProcessingException {
 		try {

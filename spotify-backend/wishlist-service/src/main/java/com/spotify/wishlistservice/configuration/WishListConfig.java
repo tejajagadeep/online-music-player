@@ -3,9 +3,11 @@ package com.spotify.wishlistservice.configuration;
 import com.spotify.wishlistservice.aspects.PerformanceTrackerHandler;
 import io.micrometer.observation.ObservationRegistry;
 import io.micrometer.observation.aop.ObservedAspect;
+import org.apache.kafka.clients.admin.NewTopic;
 import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.kafka.config.TopicBuilder;
 import org.springframework.web.client.RestTemplate;
 
 @Configuration
@@ -24,5 +26,11 @@ public class WishListConfig {
     public ObservedAspect observedAspect(ObservationRegistry observationRegistry){
         observationRegistry.observationConfig().observationHandler(new PerformanceTrackerHandler());
         return new ObservedAspect(observationRegistry);
+    }
+
+    @Bean
+    public NewTopic newTopic(){
+
+        return TopicBuilder.name("SpotifyApp").build();
     }
 }
