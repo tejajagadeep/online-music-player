@@ -5,20 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a2504401-f241-4a58-ab09-902bb2951c1e" name="Changes" comment="Commit message [date: %Y-%m-%d] [time: %H:%M:%S]">
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/a/9a6e80233acf51f39d5b847f288519f0d889ca40" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/2/c2917126a81e58e518965fd536208354365e17fb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/2/c2917126a81e58e518965fd536208354365e17fb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/9/a/9a6e80233acf51f39d5b847f288519f0d889ca40" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authentication-service/src/main/java/com/auth/authenticationservice/kafka/ConsumeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/authentication-service/src/main/java/com/auth/authenticationservice/kafka/ConsumeService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/userprofile-service/src/main/java/com/spotify/userprofile/configuration/UserProfileConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/userprofile-service/src/main/java/com/spotify/userprofile/configuration/UserProfileConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/userprofile-service/src/main/java/com/spotify/userprofile/kafka/DataPublisherServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/userprofile-service/src/main/java/com/spotify/userprofile/kafka/DataPublisherServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/userprofile-service/src/main/java/com/spotify/userprofile/kafka/kafkaConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wishlist-service/src/main/java/com/spotify/wishlistservice/configuration/WishListConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/wishlist-service/src/main/java/com/spotify/wishlistservice/configuration/WishListConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wishlist-service/src/main/java/com/spotify/wishlistservice/kafka/DataPublisherServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/wishlist-service/src/main/java/com/spotify/wishlistservice/kafka/DataPublisherServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wishlist-service/src/main/java/com/spotify/wishlistservice/kafka/kafkaConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wishlist-service/src/test/java/com/spotify/wishlistservice/service/WishlistServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/wishlist-service/src/test/java/com/spotify/wishlistservice/service/WishlistServiceImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config-server/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/config-server/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/userprofile-service/src/main/java/com/spotify/userprofile/controller/UserProfileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/userprofile-service/src/main/java/com/spotify/userprofile/controller/UserProfileController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wishlist-service/src/main/java/com/spotify/wishlistservice/controller/WishlistController.java" beforeDir="false" afterPath="$PROJECT_DIR$/wishlist-service/src/main/java/com/spotify/wishlistservice/controller/WishlistController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,7 +91,7 @@
       <recent name="com.spotify.wishlistservice.dto" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.WishlistServiceImplTest.saveTrackToWishlist_UserExists_ShouldAddOrUpdateTrack">
+  <component name="RunManager" selected="Application.WishlistserviceApplication">
     <configuration name="ApiGatewayApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.spotify.apigateway.ApiGatewayApplication" />
       <module name="api-gateway" />
@@ -115,12 +105,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AuthenticationServiceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.auth.authenticationservice.AuthenticationServiceApplication" />
-      <module name="authentication-service" />
+    <configuration name="ConfigServerApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.sshalem.configserver.ConfigServerApplication" />
+      <module name="config-server" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.auth.authenticationservice.*" />
+          <option name="PATTERN" value="com.sshalem.configserver.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -175,11 +165,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.WishlistserviceApplication" />
+        <item itemvalue="Application.ConfigServerApplication" />
         <item itemvalue="JUnit.WishlistServiceImplTest.saveTrackToWishlist_UserExists_ShouldAddOrUpdateTrack" />
         <item itemvalue="JUnit.WishlistServiceImplTest.getUserWishlist_UserExists_ShouldReturnWishListDto" />
-        <item itemvalue="Application.WishlistserviceApplication" />
         <item itemvalue="Application.ApiGatewayApplication" />
-        <item itemvalue="Application.AuthenticationServiceApplication" />
       </list>
     </recent_temporary>
   </component>

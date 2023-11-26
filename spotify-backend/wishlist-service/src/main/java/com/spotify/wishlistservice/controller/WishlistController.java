@@ -49,11 +49,13 @@ public class WishlistController {
         log.trace("Controller getUserWishList: "+username);
         Map<String,String> info= authService.validateToken(token);
         log.info(info+"------inside method getUserWishList-----");
-        if(!info.containsKey(username)) {
+        if(info.containsKey(username)) {
             log.error(token + "inside method getUserWishList-----__---");
-            throw new UnAuthorizedException("Please check User details");
+            return new ResponseEntity<>(wishListService.getUserWishlist(username), HttpStatus.OK);
+
         }
-        return new ResponseEntity<>(wishListService.getUserWishlist(username), HttpStatus.OK);
+        throw new UnAuthorizedException("Please check User details");
+
     }
 
     @Operation(summary = "Save track to User")
@@ -71,11 +73,12 @@ public class WishlistController {
         log.trace("Controller saveTrackToWishList: "+username);
         Map<String,String> info= authService.validateToken(token);
         log.info(info+"------inside method saveTrackToWishList-----");
-        if(!info.containsKey(username)) {
+        if(info.containsKey(username)) {
             log.error(token + "inside method get all-----__---");
-            throw new UnAuthorizedException("Please check User Id: "+username);
+            return new ResponseEntity<>(wishListService.saveTrackToWishlist(username,trackDto),HttpStatus.CREATED);
         }
-        return new ResponseEntity<>(wishListService.saveTrackToWishlist(username,trackDto),HttpStatus.CREATED);
+        throw new UnAuthorizedException("Please check User Id: "+username);
+
     }
 
 
@@ -96,11 +99,12 @@ public class WishlistController {
         log.info(token+"from front end");
         Map<String,String> info= authService.validateToken(token);
         log.info(info+"------inside method get all-----");
-        if(!info.containsKey(username)) {
+        if(info.containsKey(username)) {
             log.error(token + "inside method get all-----__---");
-            throw new UnAuthorizedException("Please check User details");
+            return new ResponseEntity<>(wishListService.deleteTrackByUsernameAndTrackId(username, trackId), HttpStatus.OK);
         }
-        return new ResponseEntity<>(wishListService.deleteTrackByUsernameAndTrackId(username, trackId), HttpStatus.OK);
+        throw new UnAuthorizedException("Please check User details");
+
     }
 
 }

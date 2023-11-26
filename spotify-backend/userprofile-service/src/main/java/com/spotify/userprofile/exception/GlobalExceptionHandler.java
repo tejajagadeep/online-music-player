@@ -67,18 +67,18 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler{
         return new ResponseEntity<>(messageResponse, HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
-    @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
+    @ResponseStatus(HttpStatus.UNAUTHORIZED)
     @ExceptionHandler(MalformedJwtException.class)
     public ResponseEntity<Object> handleMalformedJwtException(MalformedJwtException ex, WebRequest request) {
         CustomResponse messageResponse = new CustomResponse();
         messageResponse.setMessage(ex.getMessage());
-        messageResponse.setStatus(HttpStatus.INTERNAL_SERVER_ERROR);
+        messageResponse.setStatus(HttpStatus.UNAUTHORIZED);
         messageResponse.setTimeStamp(new Date());
-        return new ResponseEntity<>(messageResponse, HttpStatus.INTERNAL_SERVER_ERROR);
+        return new ResponseEntity<>(messageResponse, HttpStatus.UNAUTHORIZED);
     }
     @ResponseStatus(HttpStatus.UNAUTHORIZED)
     @ExceptionHandler(ExpiredJwtException.class)
-    public ResponseEntity<Object> handleMalformedJwtException(ExpiredJwtException ex, WebRequest request) {
+    public ResponseEntity<Object> handleExpiredJwtException(ExpiredJwtException ex, WebRequest request) {
         CustomResponse messageResponse = new CustomResponse();
         messageResponse.setMessage(ex.getMessage());
         messageResponse.setStatus(HttpStatus.UNAUTHORIZED);
