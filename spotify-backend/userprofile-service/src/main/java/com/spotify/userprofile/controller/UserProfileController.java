@@ -17,6 +17,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
@@ -91,9 +92,13 @@ public class UserProfileController {
     @PostMapping("/addUser")
     public ResponseEntity<Object> saveUserProfile(@RequestBody UserProfile userProfile){
         UserDetails userDetails=new UserDetails();
-        UserProfileDto userProfileDto=userProfileService.saveUserProfile(userProfile);
+        BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+        String encodedPassword = encoder.encode(userProfile.getPassword());
         userDetails.setUsername(userProfile.getUsername());
-        userDetails.setPassword(userProfile.getPassword());
+        userDetails.setPassword(encodedPassword);
+        userProfile.setPassword(encodedPassword);
+        log.info(encoder.matches(userProfile.getPassword(), encodedPassword)+"");
+        UserProfileDto userProfileDto=userProfileService.saveUserProfile(userProfile);
         userDetails.setRole("User");
         log.info("------"+userDetails+"--------");
         producer.sendMessage(userDetails);

@@ -1,7 +1,8 @@
 package com.auth.authenticationservice.controller;
 
 
-import com.auth.authenticationservice.dto.User;
+import com.auth.authenticationservice.dto.AuthAccessToken;
+import com.auth.authenticationservice.exception.CustomUnAuthorizedException;
 import com.auth.authenticationservice.filter.JwtUtils;
 import com.auth.authenticationservice.service.UserService;
 import io.jsonwebtoken.Jwts;
@@ -25,7 +26,6 @@ import java.util.Map;
 @Slf4j
 public class AuthenticationController
 {
-    private Map<String,String> mapObj = new HashMap<>();
 
     @Value("${secret.key}")
     String secret;
@@ -78,35 +78,37 @@ public class AuthenticationController
 
     @Operation(summary = "Generate Token")
     @PostMapping("/login")
-    public ResponseEntity<Object> performLogin(@RequestBody User user)
+    public ResponseEntity<AuthAccessToken> performLogin(@RequestParam String username, @RequestParam String password)
     {
-        log.info(user.getUsername()+"----");
-        boolean check=userService.loginUser(user.getUsername(),user.getPassword());
+        AuthAccessToken authAccessToken = new AuthAccessToken();
+        log.info(username+"----");
+        boolean check=userService.loginUser(username,password);
         log.info(check+"");
         if(check){
-            String role=userService.getRoleByUserAndPass(user.getUsername(), user.getPassword());
+            String role=userService.getRoleByUserAndPass(username, password);
             log.info(role);
             try
             {
-                log.info(generateToken(user.getUsername(), user.getPassword()));
-                String jwtToken = generateToken(user.getUsername(), user.getPassword());
-                log.info(user.getPassword());
-                log.info(jwtToken+"inside login");
+                log.info(generateToken(username, password));
+                String jwtToken = generateToken(username, password);
+                log.info(password);
+                log.info(jwtToken+" inside login");
                 if(role.equalsIgnoreCase("admin"))
                 {
-                    mapObj.put("message", "Admin successfully logged in");
-                    mapObj.put("jwtToken",jwtToken);
-                    mapObj.put("role",role);
-                    return new ResponseEntity<>(mapObj, HttpStatus.CREATED);
+
+                    authAccessToken.setMessage("Admin successfully logged in");
+                    log.info(jwtToken);
+                    authAccessToken.setJwtToken(jwtToken);
+                    authAccessToken.setRole(role);
+                    return new ResponseEntity<>(authAccessToken, HttpStatus.CREATED);
 
                 }
                 else if(role.equalsIgnoreCase("User"))
                 {
-
-                    mapObj.put("message", "User successfully logged in");
-                    mapObj.put("jwtToken", jwtToken);
-                    mapObj.put("role",role);
-                    return new ResponseEntity<>(mapObj, HttpStatus.CREATED);
+                    authAccessToken.setMessage("User successfully logged in");
+                    authAccessToken.setJwtToken(jwtToken);
+                    authAccessToken.setRole(role);
+                    return new ResponseEntity<>(authAccessToken, HttpStatus.CREATED);
                 }
 
             }
@@ -114,13 +116,13 @@ public class AuthenticationController
             catch( ServletException e)
             {
                 log.info(e+"exception");
-                mapObj.put("message", "User not logged in!");
-                mapObj.put("jwtToken", null);
-                mapObj.put("user not found",null);
+                authAccessToken.setMessage("Failed to logged in");
+                authAccessToken.setJwtToken(null);
+                authAccessToken.setRole(null);
             }
 
         }
-        return new ResponseEntity<>(mapObj, HttpStatus.OK);
+        throw new CustomUnAuthorizedException("UnAuthorized User");
 
     }
 

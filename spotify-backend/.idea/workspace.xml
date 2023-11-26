@@ -5,10 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a2504401-f241-4a58-ab09-902bb2951c1e" name="Changes" comment="Commit message [date: %Y-%m-%d] [time: %H:%M:%S]">
+      <change beforePath="$PROJECT_DIR$/../backend/musicservice/musicservice.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spotify-app-frontend/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../spotify-app-frontend/src/app/app.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config-server/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/config-server/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication-service/src/main/java/com/auth/authenticationservice/controller/AuthenticationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/authentication-service/src/main/java/com/auth/authenticationservice/controller/AuthenticationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication-service/src/main/java/com/auth/authenticationservice/dto/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/authentication-service/src/main/java/com/auth/authenticationservice/dto/AuthAccessToken.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication-service/src/main/java/com/auth/authenticationservice/exception/CustomExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/authentication-service/src/main/java/com/auth/authenticationservice/exception/CustomExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication-service/src/main/java/com/auth/authenticationservice/repository/UserRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/authentication-service/src/main/java/com/auth/authenticationservice/repository/UserRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication-service/src/main/java/com/auth/authenticationservice/service/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/authentication-service/src/main/java/com/auth/authenticationservice/service/UserServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/userprofile-service/src/main/java/com/spotify/userprofile/controller/UserProfileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/userprofile-service/src/main/java/com/spotify/userprofile/controller/UserProfileController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wishlist-service/src/main/java/com/spotify/wishlistservice/controller/WishlistController.java" beforeDir="false" afterPath="$PROJECT_DIR$/wishlist-service/src/main/java/com/spotify/wishlistservice/controller/WishlistController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,7 +96,7 @@
       <recent name="com.spotify.wishlistservice.dto" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.WishlistserviceApplication">
+  <component name="RunManager" selected="Application.AuthenticationServiceApplication">
     <configuration name="ApiGatewayApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.spotify.apigateway.ApiGatewayApplication" />
       <module name="api-gateway" />
@@ -105,12 +110,38 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ConfigServerApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.sshalem.configserver.ConfigServerApplication" />
-      <module name="config-server" />
+    <configuration name="AuthenticationServiceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.auth.authenticationservice.AuthenticationServiceApplication" />
+      <module name="authentication-service" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.sshalem.configserver.*" />
+          <option name="PATTERN" value="com.auth.authenticationservice.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MusicserviceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.spotify.musicservice.MusicserviceApplication" />
+      <module name="music-service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.spotify.musicservice.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserprofileApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.spotify.userprofile.UserprofileApplication" />
+      <module name="userprofile-service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.spotify.userprofile.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -131,44 +162,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="WishlistServiceImplTest.getUserWishlist_UserExists_ShouldReturnWishListDto" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="wishlist-service" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.spotify.wishlistservice.service.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.spotify.wishlistservice.service" />
-      <option name="MAIN_CLASS_NAME" value="com.spotify.wishlistservice.service.WishlistServiceImplTest" />
-      <option name="METHOD_NAME" value="getUserWishlist_UserExists_ShouldReturnWishListDto" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="WishlistServiceImplTest.saveTrackToWishlist_UserExists_ShouldAddOrUpdateTrack" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="wishlist-service" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.spotify.wishlistservice.service.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.spotify.wishlistservice.service" />
-      <option name="MAIN_CLASS_NAME" value="com.spotify.wishlistservice.service.WishlistServiceImplTest" />
-      <option name="METHOD_NAME" value="saveTrackToWishlist_UserExists_ShouldAddOrUpdateTrack" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.AuthenticationServiceApplication" />
+        <item itemvalue="Application.UserprofileApplication" />
         <item itemvalue="Application.WishlistserviceApplication" />
-        <item itemvalue="Application.ConfigServerApplication" />
-        <item itemvalue="JUnit.WishlistServiceImplTest.saveTrackToWishlist_UserExists_ShouldAddOrUpdateTrack" />
-        <item itemvalue="JUnit.WishlistServiceImplTest.getUserWishlist_UserExists_ShouldReturnWishListDto" />
+        <item itemvalue="Application.MusicserviceApplication" />
         <item itemvalue="Application.ApiGatewayApplication" />
       </list>
     </recent_temporary>
