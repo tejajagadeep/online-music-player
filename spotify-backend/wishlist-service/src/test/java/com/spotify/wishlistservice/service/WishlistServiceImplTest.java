@@ -102,6 +102,7 @@ class WishlistServiceImplTest {
         wishlistRepository.deleteAll();
     }
 
+
     @Test
     void getUserWishlist_UserExists_ShouldReturnWishListDto() {
         // Arrange
