@@ -95,12 +95,8 @@ iauthentication-service/src/main/java/com/auth/authenticationservice/exception/C
 _authentication-service/src/main/java/com/auth/authenticationservice/exception/ErrorMessage.java,2\5\252e1c22a53f460621fb3c3a6b5d458cc0f060c4
 ç
 ]userprofile-service/src/main/java/com/spotify/userprofile/kafka/DataPublisherServiceImpl.java,6\a\6a9084eeef29fe6a2be7bc38dbe62e2d332b5825
-Ä
-Puserprofile-service/src/main/java/com/spotify/userprofile/kafka/kafkaConfig.java,9\3\9381d4ce3d0ca786cdce606580100eb4051454be
 
 Ouserprofile-service/src/main/java/com/spotify/userprofile/filter/JWTFilter.java,9\5\95c69b67da23f3edb9407a74ab0cb0e2a8023985
-Å
-Qauthentication-service/src/main/java/com/auth/authenticationservice/dto/User.java,4\6\461cff326bccbd392896716f96e031699e4ff93a
 ä
 Zauthentication-service/src/main/java/com/auth/authenticationservice/model/UserDetails.java,9\d\9de0bb314a816e96e12df29501542a9374f337bb
 é
@@ -167,8 +163,6 @@ awishlist-service/src/main/java/com/spotify/wishlistservice/configuration/KafkaP
 Pwishlist-service/src/main/java/com/spotify/wishlistservice/filter/JWTFilter.java,8\3\83f1f25e7753afbef322121e1ddf7c599e17e764
 é
 ^wishlist-service/src/main/java/com/spotify/wishlistservice/kafka/DataPublisherServiceImpl.java,d\8\d8197f48a0b64092e7eea1688dfb38eb21b1dc5d
-Å
-Qwishlist-service/src/main/java/com/spotify/wishlistservice/kafka/kafkaConfig.java,f\d\fd4c5be798fd3ddf7ffa97a4d0ce148ca3d5d5e9
 à
 Xwishlist-service/src/main/java/com/spotify/wishlistservice/response/ResponseHandler.java,7\0\70dd8747f64cf6adc025a9242707a99706ee8cb3
 à
@@ -271,3 +265,13 @@ Xauthentication-service/src/main/java/com/auth/authenticationservice/filter/JwtU
 ]wishlist-service/src/main/java/com/spotify/wishlistservice/controller/WishlistController.java,2\0\206ee6e571caf549781f272c50987dd4b8b68df5
 
 Owishlist-service/src/main/java/com/spotify/wishlistservice/dto/WishlistDto.java,e\d\ed0f7bba124197823dbabf801178f6cd9bbf0d8f
+å
+\authentication-service/src/main/java/com/auth/authenticationservice/service/UserService.java,4\b\4bad5b77b669006de7b489bb1db603b8a95aedaa
+ç
+]authentication-service/src/main/java/com/auth/authenticationservice/kafka/ConsumeService.java,5\5\553b3df9149bf0c51b88c1e96e026526b4ac4119
+å
+\authentication-service/src/main/java/com/auth/authenticationservice/repository/UserRepo.java,e\9\e98b268c5c78ec86ff56009fc3caf660d67d6cd8
+å
+\authentication-service/src/main/java/com/auth/authenticationservice/dto/AuthAccessToken.java,0\a\0af982f85e3a09af93cecea6a60cd7b29fada201
+û
+nauthentication-service/src/main/java/com/auth/authenticationservice/exception/CustomUnAuthorizedException.java,2\3\23763eff490858ca412c2cb84f2f1f7fa4cd0853
