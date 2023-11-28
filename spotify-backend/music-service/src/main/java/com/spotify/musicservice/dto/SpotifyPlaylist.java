@@ -16,7 +16,7 @@ public class SpotifyPlaylist {
     private String description;
 
     @JsonProperty("external_urls")
-    private ExternalUrls externalUrls;
+    private ExternalUrls external_urls;
 
     @JsonProperty("id")
     private String id;

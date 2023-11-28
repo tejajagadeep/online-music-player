@@ -3,6 +3,15 @@ import { Artist } from "./Artist";
 import { Image } from "./Image";
 
 export class Album{
+    albumType!: string;
+    artists!: Artist[];
+    externalUrls!: ExternalUrls;
+    images!: Image[];
+    id!: string;
+    name!: string;
+    releaseDate!: string;
+    type!: string;
+    /*
     constructor(
         public albumType: string,
         public artists: Artist[],
@@ -13,4 +22,5 @@ export class Album{
         public releaseDate: string,
         public type: string
     ) {}
+    */
 }

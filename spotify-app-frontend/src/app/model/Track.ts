@@ -3,6 +3,15 @@ import { Artist } from './Artist';
 import { ExternalUrls } from './ExternalUrls';
 
 export class Track{
+    album!: Album;
+    artists!: Artist[];
+    ExternalUrls!: ExternalUrls;
+    id!: string;
+    name!: string;
+    previewUrl!: string;
+    type!: string;
+    durationMs!: number;
+    /*
     constructor(
         public album: Album,
         public artists: Artist[],
@@ -12,4 +21,5 @@ export class Track{
         public previewUrl: string,
         public type: string
     ) {}
+    */
 }

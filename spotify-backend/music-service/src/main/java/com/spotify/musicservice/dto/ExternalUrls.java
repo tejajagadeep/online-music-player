@@ -5,10 +5,12 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.net.URI;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class ExternalUrls {
     @JsonProperty("spotify")
-    private String spotify;
+    private URI spotify;
 }

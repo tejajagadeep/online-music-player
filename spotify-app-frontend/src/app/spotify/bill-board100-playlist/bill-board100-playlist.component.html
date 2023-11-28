@@ -1,14 +1,46 @@
 <p>bill-board100-playlist works!</p>
 <div *ngIf="spotifyPlaylist">
-    <h2>{{ spotifyPlaylist.name }}</h2>
-    <p>{{ spotifyPlaylist.description }}</p>
-    
-    <div *ngFor="let image of spotifyPlaylist.images">
-        <br>
-      <img [src]="image?.url" [alt]="image?.url" width="{{ image?.width }}" height="{{ image?.height }}">
+  <h2>{{ spotifyPlaylist.name }}</h2>
+  <p>{{ spotifyPlaylist.description }}</p>
+
+
+  <a src="">{{urlString}} here</a>
+  <a href="{{urlString}}">{{spotifyPlaylist.externalUrls|json}} here</a>
+
+  <div class="container" id="main">
+    <div class="row">
+      <div class="col-sm-3" id="photo">
+        <!-- <img id="sm" src="{{spotifyPlaylist.externalUrls.spotify}}" alt=""> -->
+      </div>
+      <div class="col-sm-8" id="detail">
+        <p>Bill Board 10 Playlist</p>
+        <h1 id="shawn"><b>{{ spotifyPlaylist.name }}</b></h1>
+        <p>View artist page</p>
+        <button class="btn" id="play">Play</button>
+        <span><button class="btn" id="like"><i class="fa fa-heart-o"></i></button></span>
+        <span><button class="btn" id="more"><b>...</b></button></span>
+      </div>
     </div>
-    
-    <p>External URL: <a [href]="spotifyPlaylist.externalUrls.spotify" target="_blank">{{ spotifyPlaylist?.externalUrls?.spotify }}</a></p>
-    
-    
+
+    <table class="table table-transparent">
+      <thead>
+        <tr>
+          <td>Title</td>
+          <td>Album</td>
+          <td><i class="fa fa-clock-o"></i></td>
+
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let item of spotifyPlaylist.tracks.items">
+          <td>{{item.track.name}}</td>
+          <td>{{item.track.album.name}}</td>
+          <td>{{item.track.durationMs}}</td>
+        </tr>
+
+      </tbody>
+    </table>
+
   </div>
+</div>

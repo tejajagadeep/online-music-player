@@ -19,7 +19,7 @@ public class Album {
     private List<Artist> artists;
 
     @JsonProperty("external_urls")
-    private ExternalUrls externalUrls;
+    private ExternalUrls external_urls;
 
     @JsonProperty("images")
     private List<Image> images;

@@ -23,7 +23,7 @@ public class TrackDto {
     private List<Artist> artists = new ArrayList<>();
 
     @JsonProperty("external_urls")
-    private ExternalUrls externalUrls;
+    private ExternalUrls external_urls;
 
     @JsonProperty("id")
     private String id;

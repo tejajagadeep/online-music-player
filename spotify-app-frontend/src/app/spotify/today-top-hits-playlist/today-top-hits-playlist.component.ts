@@ -7,4 +7,7 @@ import { Component } from '@angular/core';
 })
 export class TodayTopHitsPlaylistComponent {
 
+  ngOnInit(): void {
+  }
+
 }

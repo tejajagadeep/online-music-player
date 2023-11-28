@@ -12,7 +12,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document
 public class Artist {
     @JsonProperty("external_urls")
-    private ExternalUrls externalUrls;
+    private ExternalUrls external_urls;
 
     @JsonProperty("id")
     private String id;

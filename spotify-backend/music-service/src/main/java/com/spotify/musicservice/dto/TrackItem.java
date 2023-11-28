@@ -18,7 +18,7 @@ public class TrackItem {
     private List<Artist> artists;
 
     @JsonProperty("external_urls")
-    private ExternalUrls externalUrls;
+    private ExternalUrls external_urls;
 
     @JsonProperty("id")
     private String id;

@@ -19,7 +19,7 @@ public class Track {
     private List<Artist> artists;
 
     @JsonProperty("external_urls")
-    private ExternalUrls externalUrls;
+    private ExternalUrls external_urls;
 
     @JsonProperty("id")
     private String id;
@@ -29,6 +29,9 @@ public class Track {
 
     @JsonProperty("preview_url")
     private String previewUrl;
+
+    @JsonProperty("duration_ms")
+    private long duration_ms;
 
     @JsonProperty("type")
     private String type;
