@@ -1,0 +1,239 @@
+* {
+	box-sizing: border-box;
+}
+
+html {
+	height: 100%;
+}
+
+a {
+	color: white; 
+	text-decoration: none;
+}
+
+body {
+	height: 100%;
+	padding: 0;
+	margin: 0;
+	font-family: sans-serif;
+}
+.black {
+	color: black; 
+}
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	margin: 0;
+	color: #222;
+	font-size: 0.9em;
+}
+
+main {
+	flex: 1 0 auto;
+	display: flex;
+	background: #666;
+}
+
+aside {
+	background: #f2f2f2;
+	flex: 0 0 40px;
+	padding: 5px;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+}
+
+aside i.fa {
+	font-size: 0.9em;
+}
+
+section.content {
+	flex: 1 1 auto;
+	background: #fff;
+	display: flex;
+	flex-direction: column;
+}
+
+.music-head {
+	flex: 0 0 280px;
+	background: #4e4e4e;
+
+	display: flex;
+	padding: 40px;
+}
+
+.catty-music {
+	flex: 1 1 auto;
+	display: flex;
+	flex-direction: column;
+	font-weight: 300;
+	color: #fff;
+	padding-left: 50px;
+}
+
+.catty-music div:nth-child(1) {
+	margin-bottom: auto;
+}
+
+.catty-music div:nth-child(2) {
+	margin-top: 0;
+}
+
+.catty-music div:nth-child(2) i.fa {
+	font-size: 0.9em;
+	padding: 0 0.7em;
+	font-weight: 300;
+}
+
+.catty-music div:nth-child(1) p:first-child {
+	font-size: 1.8em;
+	margin: 0 0 10px;
+}
+
+.catty-music div:nth-child(1) p:not(:first-child) {
+	font-size: 0.9em;
+	margin: 2px 0;
+}
+
+.music-list {
+	flex: 1 0 auto;
+	list-style-type: none;
+	padding: 5px 10px 0px;
+
+	display: flex;
+	flex-direction: column;
+}
+
+.music-list li {
+	display: flex;
+	padding: 0 20px;
+	min-height: 50px;
+}
+
+.music-list li p {
+	flex: 0 0 25%;
+	padding: 0px 5px;
+}
+
+.music-list td span.catty-cloud {
+	border: 1px solid black;
+	background-color: #1db954;
+	font-size: 0.6em;
+	padding: 3px;
+}
+
+.music-list li:nth-child(2n) {
+	background-color: #f2f2f2;
+}
+
+.content {
+	display: flex;
+	flex: 1 1 auto;
+	flex-direction: column;
+}
+
+footer {
+	flex: 0 0 90px;
+	background: rgba(61, 100, 158, 0.9);
+	color: #fff;
+	padding: 10px;
+
+	display: flex;
+	align-items: center;
+}
+
+.catty-music-small {
+	flex: 1 1 auto;
+
+	display: flex;
+	margin-right: auto;
+}
+
+.catty-music-small img {
+	padding-right: 10px;
+	width: 100px;
+}
+
+.catty-music-controls {
+	flex: 0 0 200px;
+}
+
+.catty-music-controls i.fa {
+	padding: 5px;
+	margin: 5px;
+}
+
+/*helper*/
+.text-right {
+	text-align: right;
+}
+
+@media screen and (max-width: 550px) {
+	aside {
+		display: none;
+	}
+
+	.music-head {
+		flex-direction: column;
+		flex: 0 0 220px;
+		padding: 20px;
+	}
+
+	.music-list li p {
+		flex: 0 0 33%;
+	}
+
+	.music-list li {
+		padding: 0 10px;
+	}
+
+	/*helper*/
+	.sm-hide {
+		display: none;
+	}
+}
+
+@media screen and (max-width: 400px) {
+
+	/*write your css in this code block*/
+	.music-head {
+		flex: 0 0 200px;
+	}
+
+	.catty-music {
+		padding-left: 0px;
+		text-align: center;
+	}
+
+	.catty-music div:nth-child(1) p:first-child {
+		font-size: 1em;
+		margin: 15px 0;
+	}
+
+	.music-list li p {
+		flex: 0 0 auto;
+	}
+
+	.music-list li p:first-child {
+		flex: 1 1 auto;
+	}
+
+	.catty-music-controls {
+		flex: 0 0 180px;
+		text-align: right;
+	}
+
+	.catty-music-controls i.fa {
+		padding: 5px 12px;
+		margin: 5px;
+		font-size: 1.2em;
+	}
+
+	/*helper*/
+	.m-hide {
+		display: none;
+	}
+}

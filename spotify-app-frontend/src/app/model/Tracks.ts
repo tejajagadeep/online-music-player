@@ -1,6 +1,6 @@
 import { Item } from './Item';
 export class Tracks{
-    item!: Item[];
+    items!: Item[];
     /*
     constructor(
         public items: Item[]

@@ -16,4 +16,12 @@ export class MusicDataService {
   }
 
 
+  getTodayTopHitsPlaylist(): Observable<SpotifyPlaylist>{
+    return this.httpClient.get<SpotifyPlaylist>(`${API_URL_MUSIC}/todayTopHitsPlaylist`);
+  }
+
+  
+  getDiscoverWeeklyPlaylist(): Observable<SpotifyPlaylist>{
+    return this.httpClient.get<SpotifyPlaylist>(`${API_URL_MUSIC}/discoverWeeklyPlaylist`);
+  }
 }

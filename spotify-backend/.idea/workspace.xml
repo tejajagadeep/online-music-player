@@ -4,7 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a2504401-f241-4a58-ab09-902bb2951c1e" name="Changes" comment="Commit message [date: %Y-%m-%d] [time: %H:%M:%S]" />
+    <list default="true" id="a2504401-f241-4a58-ab09-902bb2951c1e" name="Changes" comment="Commit message [date: %Y-%m-%d] [time: %H:%M:%S]">
+      <change beforePath="$PROJECT_DIR$/../spotify-app-frontend/src/app/model/Track.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../spotify-app-frontend/src/app/model/Track.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spotify-app-frontend/src/app/model/Tracks.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../spotify-app-frontend/src/app/model/Tracks.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spotify-app-frontend/src/app/service/data/music-data.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../spotify-app-frontend/src/app/service/data/music-data.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spotify-app-frontend/src/app/spotify/bill-board100-playlist/bill-board100-playlist.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../spotify-app-frontend/src/app/spotify/bill-board100-playlist/bill-board100-playlist.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spotify-app-frontend/src/app/spotify/today-top-hits-playlist/today-top-hits-playlist.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../spotify-app-frontend/src/app/spotify/today-top-hits-playlist/today-top-hits-playlist.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spotify-app-frontend/src/app/spotify/today-top-hits-playlist/today-top-hits-playlist.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../spotify-app-frontend/src/app/spotify/today-top-hits-playlist/today-top-hits-playlist.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spotify-app-frontend/src/app/spotify/today-top-hits-playlist/today-top-hits-playlist.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../spotify-app-frontend/src/app/spotify/today-top-hits-playlist/today-top-hits-playlist.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

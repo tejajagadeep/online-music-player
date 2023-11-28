@@ -5,7 +5,7 @@ import { ExternalUrls } from './ExternalUrls';
 export class Track{
     album!: Album;
     artists!: Artist[];
-    ExternalUrls!: ExternalUrls;
+    external_urls!: ExternalUrls;
     id!: string;
     name!: string;
     previewUrl!: string;

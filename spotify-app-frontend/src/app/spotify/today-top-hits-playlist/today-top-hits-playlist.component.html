@@ -1,12 +1,81 @@
-<div class="contain">
-    <div class="holder">
-      <div class="album"></div>
-      <div class="mejs-player">
-        <h1>Take Me Back (Until the End of Time Edit)</h1>
-        <h2>Active Child</h2>
-        <audio>
-          <source src="https://furrowthebrow.github.io/demo/TakesMeBack.mp3" type="audio/mpeg"/>
-        </audio>
-      </div>
-    </div>
-  </div>
+<div class="wrapper">
+    <main>
+        <aside>
+            <!--This represents the sidebar and contained in it are icon sets from font-awesome-->
+            <i class="fa fa-bars"></i>
+            <i class="fa fa-home"></i>
+            <i class="fa fa-search"></i>
+            <i class="fa fa-volume-up"></i>
+            <i class="fa fa-user"></i>
+            <i class="fa fa-spotify"></i>
+            <i class="fa fa-cog"></i>
+            <i class="fa fa-soundcloud"></i>
+        </aside>
+        <section class="content" *ngIf="spotifyPlaylist">
+            <div class="music-head">
+                <img src="" />
+                <!--Album art-->
+                <div class="music-head">
+                    <img src="https://i.imgur.com/xDSTaej.jpg" />
+                    <section class="catty-music">
+                        <div>
+                            <p class="sm-text-center">{{spotifyPlaylist.name}} (11.06.36)</p>
+                            <p class="sm-hide">Bill Board 100</p>
+                            <p class="sm-hide">{{spotifyPlaylist.description}}</p>
+                        </div>
+
+                        <div class="sm-text-center">
+                            <i class="fa fa-play"> &nbsp;Play all</i>
+                            <i class="fa fa-plus"> &nbsp;Add to</i>
+                            <i class="fa fa-ellipsis-h">&nbsp;&nbsp;More</i>
+                        </div>
+                    </section>
+                </div>
+
+            </div>
+            <table class="music-list">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Song Name</th>
+                        <th>Artist</th>
+                        <th>Duration</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of spotifyPlaylist.tracks.items; let i = index">
+                        <td>{{ i + 1 }}</td>
+                        <td>{{ item.track.name }}</td>
+                        <td class="m-hide">
+                            <div *ngFor="let artist of item.track.artists">{{ artist.name }}</div>
+                        </td>
+                        <td>{{ item.track.duration_ms | millisecondsToMinutes }}</td>
+                        <td>
+                            <p class="sm-hide text-right"><span class="catty-cloud"><a class="black" target="_blank"
+                                        href="{{item.track.external_urls.spotify}}">OPEN_SPOTIFY</a></span></p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </section>
+
+    </main>
+    <footer>
+        <div class="catty-music-small">
+            <img src="https://i.imgur.com/xDSTaej.jpg" class="m-hide">
+            <div>
+                <p>If It Ain't Love</p>
+                <p>Catson Derulo</p>
+            </div>
+        </div>
+        <div class="catty-music-controls">
+            <i class="fa fa-step-backward"></i>
+            <i class="fa fa-pause"></i>
+            <i class="fa fa-step-forward"></i>
+            <i class="fa fa-rotate-right m-hide"></i>
+            <i class="fa fa-random m-hide"></i>
+        </div>
+    </footer>
+</div>
