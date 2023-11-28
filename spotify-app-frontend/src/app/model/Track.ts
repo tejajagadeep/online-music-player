@@ -10,7 +10,7 @@ export class Track{
     name!: string;
     previewUrl!: string;
     type!: string;
-    durationMs!: number;
+    duration_ms!: number;
     /*
     constructor(
         public album: Album,

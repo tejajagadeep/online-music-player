@@ -4,41 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a2504401-f241-4a58-ab09-902bb2951c1e" name="Changes" comment="Commit message [date: %Y-%m-%d] [time: %H:%M:%S]">
-      <change afterPath="$PROJECT_DIR$/../spotify-app-frontend/src/app/model/user.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spotify-app-frontend/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/../spotify-app-frontend/angular.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spotify-app-frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../spotify-app-frontend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spotify-app-frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../spotify-app-frontend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spotify-app-frontend/src/app/model/Album.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../spotify-app-frontend/src/app/model/Album.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spotify-app-frontend/src/app/model/Artist.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../spotify-app-frontend/src/app/model/Artist.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spotify-app-frontend/src/app/model/AuthAccessToken.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../spotify-app-frontend/src/app/model/AuthAccessToken.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spotify-app-frontend/src/app/model/ExternalUrls.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../spotify-app-frontend/src/app/model/ExternalUrls.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spotify-app-frontend/src/app/model/Image.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../spotify-app-frontend/src/app/model/Image.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spotify-app-frontend/src/app/model/Item.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../spotify-app-frontend/src/app/model/Item.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spotify-app-frontend/src/app/model/SpotifyPlaylist.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../spotify-app-frontend/src/app/model/SpotifyPlaylist.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spotify-app-frontend/src/app/model/Track.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../spotify-app-frontend/src/app/model/Track.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spotify-app-frontend/src/app/model/Tracks.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../spotify-app-frontend/src/app/model/Tracks.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spotify-app-frontend/src/app/spotify/bill-board100-playlist/bill-board100-playlist.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../spotify-app-frontend/src/app/spotify/bill-board100-playlist/bill-board100-playlist.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spotify-app-frontend/src/app/spotify/bill-board100-playlist/bill-board100-playlist.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../spotify-app-frontend/src/app/spotify/bill-board100-playlist/bill-board100-playlist.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spotify-app-frontend/src/app/spotify/bill-board100-playlist/bill-board100-playlist.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../spotify-app-frontend/src/app/spotify/bill-board100-playlist/bill-board100-playlist.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spotify-app-frontend/src/app/spotify/today-top-hits-playlist/today-top-hits-playlist.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../spotify-app-frontend/src/app/spotify/today-top-hits-playlist/today-top-hits-playlist.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spotify-app-frontend/src/app/spotify/today-top-hits-playlist/today-top-hits-playlist.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../spotify-app-frontend/src/app/spotify/today-top-hits-playlist/today-top-hits-playlist.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spotify-app-frontend/src/app/spotify/today-top-hits-playlist/today-top-hits-playlist.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../spotify-app-frontend/src/app/spotify/today-top-hits-playlist/today-top-hits-playlist.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spotify-app-frontend/src/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/../spotify-app-frontend/src/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/music-service/src/main/java/com/spotify/musicservice/dto/Album.java" beforeDir="false" afterPath="$PROJECT_DIR$/music-service/src/main/java/com/spotify/musicservice/dto/Album.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/music-service/src/main/java/com/spotify/musicservice/dto/Artist.java" beforeDir="false" afterPath="$PROJECT_DIR$/music-service/src/main/java/com/spotify/musicservice/dto/Artist.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/music-service/src/main/java/com/spotify/musicservice/dto/ExternalUrls.java" beforeDir="false" afterPath="$PROJECT_DIR$/music-service/src/main/java/com/spotify/musicservice/dto/ExternalUrls.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/music-service/src/main/java/com/spotify/musicservice/dto/SpotifyPlaylist.java" beforeDir="false" afterPath="$PROJECT_DIR$/music-service/src/main/java/com/spotify/musicservice/dto/SpotifyPlaylist.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/music-service/src/main/java/com/spotify/musicservice/dto/Track.java" beforeDir="false" afterPath="$PROJECT_DIR$/music-service/src/main/java/com/spotify/musicservice/dto/Track.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/music-service/src/main/java/com/spotify/musicservice/dto/TrackItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/music-service/src/main/java/com/spotify/musicservice/dto/TrackItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wishlist-service/src/main/java/com/spotify/wishlistservice/dto/AlbumDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/wishlist-service/src/main/java/com/spotify/wishlistservice/dto/AlbumDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wishlist-service/src/main/java/com/spotify/wishlistservice/dto/ArtistDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/wishlist-service/src/main/java/com/spotify/wishlistservice/dto/ArtistDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wishlist-service/src/main/java/com/spotify/wishlistservice/dto/TrackDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/wishlist-service/src/main/java/com/spotify/wishlistservice/dto/TrackDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wishlist-service/src/main/java/com/spotify/wishlistservice/model/Album.java" beforeDir="false" afterPath="$PROJECT_DIR$/wishlist-service/src/main/java/com/spotify/wishlistservice/model/Album.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wishlist-service/src/main/java/com/spotify/wishlistservice/model/Artist.java" beforeDir="false" afterPath="$PROJECT_DIR$/wishlist-service/src/main/java/com/spotify/wishlistservice/model/Artist.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wishlist-service/src/main/java/com/spotify/wishlistservice/model/Track.java" beforeDir="false" afterPath="$PROJECT_DIR$/wishlist-service/src/main/java/com/spotify/wishlistservice/model/Track.java" afterDir="false" />
-    </list>
+    <list default="true" id="a2504401-f241-4a58-ab09-902bb2951c1e" name="Changes" comment="Commit message [date: %Y-%m-%d] [time: %H:%M:%S]" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

@@ -10,6 +10,7 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { TodayTopHitsPlaylistComponent } from './spotify/today-top-hits-playlist/today-top-hits-playlist.component';
 import { BillBoard100PlaylistComponent } from './spotify/bill-board100-playlist/bill-board100-playlist.component';
+import { MillisecondsToMinutesPipe } from './app-calculate';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { BillBoard100PlaylistComponent } from './spotify/bill-board100-playlist/
     HomeComponent,
     LoginComponent,
     TodayTopHitsPlaylistComponent,
-    BillBoard100PlaylistComponent
+    BillBoard100PlaylistComponent,
+    MillisecondsToMinutesPipe
   ],
   imports: [
     BrowserModule,
