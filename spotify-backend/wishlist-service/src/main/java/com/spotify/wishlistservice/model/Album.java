@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Data
@@ -22,14 +23,11 @@ public class Album {
     @JsonProperty("external_urls")
     private ExternalUrls externalUrls;
 
-    @JsonProperty("href")
-    private String href;
-
     @JsonProperty("id")
     private String id;
 
     @JsonProperty("images")
-    private List<Image> images;
+    private List<Image> images = new ArrayList<>();
 
     @JsonProperty("name")
     private String name;
@@ -40,8 +38,4 @@ public class Album {
     @JsonProperty("type")
     private String type;
 
-    @JsonProperty("uri")
-    private String uri;
-
-    // Getters and setters
 }

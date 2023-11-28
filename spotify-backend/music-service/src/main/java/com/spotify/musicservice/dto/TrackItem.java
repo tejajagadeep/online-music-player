@@ -1,9 +1,15 @@
 package com.spotify.musicservice.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.List;
 
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class TrackItem {
     @JsonProperty("album")
     private Album album;
@@ -13,9 +19,6 @@ public class TrackItem {
 
     @JsonProperty("external_urls")
     private ExternalUrls externalUrls;
-
-    @JsonProperty("href")
-    private String href;
 
     @JsonProperty("id")
     private String id;
@@ -28,8 +31,5 @@ public class TrackItem {
 
     @JsonProperty("type")
     private String type;
-
-    @JsonProperty("uri")
-    private String uri;
 
 }

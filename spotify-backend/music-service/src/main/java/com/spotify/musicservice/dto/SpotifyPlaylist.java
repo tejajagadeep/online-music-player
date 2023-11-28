@@ -18,9 +18,6 @@ public class SpotifyPlaylist {
     @JsonProperty("external_urls")
     private ExternalUrls externalUrls;
 
-    @JsonProperty("href")
-    private String href;
-
     @JsonProperty("id")
     private String id;
 
@@ -32,8 +29,5 @@ public class SpotifyPlaylist {
 
     @JsonProperty("tracks")
     private Tracks tracks;
-
-    @JsonProperty("uri")
-    private String uri;
 
 }

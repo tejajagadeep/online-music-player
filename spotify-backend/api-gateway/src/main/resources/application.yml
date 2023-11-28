@@ -21,3 +21,11 @@ spring:
           uri: lb://AUTHENTICATION-SERVICE
           predicates:
             - Path=/api/v1.0/auth/**
+      default-filters:
+        - DedupeResponseHeader=Access-Control-Allow-Credentials Access-Control-Allow-Origin
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins: "*"
+            allowedMethods: "*"
+            allowedHeaders: "*"

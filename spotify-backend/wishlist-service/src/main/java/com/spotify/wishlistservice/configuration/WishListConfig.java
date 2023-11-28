@@ -33,4 +33,6 @@ public class WishListConfig {
 
         return TopicBuilder.name("SpotifyApp").build();
     }
+
+
 }

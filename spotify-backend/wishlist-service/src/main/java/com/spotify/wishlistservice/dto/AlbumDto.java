@@ -7,8 +7,8 @@ import com.spotify.wishlistservice.model.Image;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Data
@@ -19,13 +19,11 @@ public class AlbumDto {
     private String albumType;
 
     @JsonProperty("artists")
-    private List<Artist> artists;
+    private List<Artist> artists = new ArrayList<>();
 
     @JsonProperty("external_urls")
     private ExternalUrls externalUrls;
 
-    @JsonProperty("href")
-    private String href;
 
     @JsonProperty("id")
     private String id;
@@ -42,9 +40,4 @@ public class AlbumDto {
     @JsonProperty("type")
     private String type;
 
-    @JsonProperty("uri")
-    private String uri;
-
-
-    // Getters and setters
 }

@@ -11,4 +11,5 @@ public class AuthAccessToken {
     private String message;
     private String jwtToken;
     private String role;
+    private String username;
 }

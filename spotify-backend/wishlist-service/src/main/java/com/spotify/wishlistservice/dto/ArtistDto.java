@@ -14,8 +14,6 @@ public class ArtistDto {
     @JsonProperty("external_urls")
     private ExternalUrls externalUrls;
 
-    @JsonProperty("href")
-    private String href;
 
     @JsonProperty("id")
     private String id;
@@ -26,8 +24,4 @@ public class ArtistDto {
     @JsonProperty("type")
     private String type;
 
-    @JsonProperty("uri")
-    private String uri;
-
-    // Getters and setters
 }

@@ -275,3 +275,5 @@ Owishlist-service/src/main/java/com/spotify/wishlistservice/dto/WishlistDto.java
 \authentication-service/src/main/java/com/auth/authenticationservice/dto/AuthAccessToken.java,0\a\0af982f85e3a09af93cecea6a60cd7b29fada201
 û
 nauthentication-service/src/main/java/com/auth/authenticationservice/exception/CustomUnAuthorizedException.java,2\3\23763eff490858ca412c2cb84f2f1f7fa4cd0853
+ê
+`wishlist-service/src/test/java/com/spotify/wishlistservice/service/WishlistServiceImplTest2.java,a\9\a990a38d0ddcee7896dbe53a53c60f5eb241d5a8

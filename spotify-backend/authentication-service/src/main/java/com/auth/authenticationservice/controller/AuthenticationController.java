@@ -100,6 +100,7 @@ public class AuthenticationController
                     log.info(jwtToken);
                     authAccessToken.setJwtToken(jwtToken);
                     authAccessToken.setRole(role);
+                    authAccessToken.setUsername(username);
                     return new ResponseEntity<>(authAccessToken, HttpStatus.CREATED);
 
                 }
@@ -108,6 +109,7 @@ public class AuthenticationController
                     authAccessToken.setMessage("User successfully logged in");
                     authAccessToken.setJwtToken(jwtToken);
                     authAccessToken.setRole(role);
+                    authAccessToken.setUsername(username);
                     return new ResponseEntity<>(authAccessToken, HttpStatus.CREATED);
                 }
 

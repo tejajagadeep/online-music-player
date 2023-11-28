@@ -11,8 +11,6 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Tracks {
-    @JsonProperty("href")
-    private String href;
 
     @JsonProperty("items")
     private List<Item> items;

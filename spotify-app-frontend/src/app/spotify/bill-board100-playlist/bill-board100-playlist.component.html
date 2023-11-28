@@ -1,0 +1,14 @@
+<p>bill-board100-playlist works!</p>
+<div *ngIf="spotifyPlaylist">
+    <h2>{{ spotifyPlaylist.name }}</h2>
+    <p>{{ spotifyPlaylist.description }}</p>
+    
+    <div *ngFor="let image of spotifyPlaylist.images">
+        <br>
+      <img [src]="image?.url" [alt]="image?.url" width="{{ image?.width }}" height="{{ image?.height }}">
+    </div>
+    
+    <p>External URL: <a [href]="spotifyPlaylist.externalUrls.spotify" target="_blank">{{ spotifyPlaylist?.externalUrls?.spotify }}</a></p>
+    
+    
+  </div>

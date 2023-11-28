@@ -1,22 +1,17 @@
 import { Injectable } from '@angular/core';
 import { AuthenticationService } from '../data/authentication.service';
-import { HttpHandler, HttpRequest } from '@angular/common/http';
-import { User } from 'src/app/model/user';
+import { HttpHandler, HttpInterceptor, HttpRequest } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
-export class HttpInterceptorBasicAuthService {
+export class HttpInterceptorBasicAuthService  implements HttpInterceptor {
 
-  user!: User;
-
-  constructor(private authService: AuthenticationService) { }
+  constructor() { }
 
   intercept(request: HttpRequest<any>, next: HttpHandler) {
-    let basicAuthHeaderString = this.authService.authenticate(this.user).subscribe(
-      response => localStorage.setItem('username', response.username)
-    );
-    let username = this.authService.getLoggedInUserName()
+    let basicAuthHeaderString = localStorage.getItem('authenticatedUser');
+    let username = localStorage.getItem('token')
 
     if (basicAuthHeaderString && username) {
       request = request.clone({
@@ -26,5 +21,6 @@ export class HttpInterceptorBasicAuthService {
       })
     }
     return next.handle(request);
+  }
 
 }

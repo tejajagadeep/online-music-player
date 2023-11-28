@@ -201,7 +201,7 @@ class WishlistServiceImplTest {
     @Test
     void deleteTrackByUsernameAndTrackId_UserExistsButTrackDoesNotExist_ShouldNotDeleteTrack() {
         // Arrange
-        String username = "testUser";
+        String username = "jagadeep";
         String trackIdToDelete = "nonexistentTrack";
         Track track = new Track();
         track.setId("track123");
@@ -209,6 +209,7 @@ class WishlistServiceImplTest {
         mockWishlist.setUsername(username);
         mockWishlist.setTracks(List.of(track));
 
+        wishlistRepository.save(wishlist);
         when(wishlistRepository.findById(username)).thenReturn(Optional.of(mockWishlist));
 
         // Act

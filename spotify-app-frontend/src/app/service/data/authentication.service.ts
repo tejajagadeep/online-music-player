@@ -1,7 +1,8 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { API_URL_AUTH } from 'src/app/app-contants';
-import { User } from 'src/app/model/user';
+import { map } from 'rxjs';
+import { API_URL_AUTH } from 'src/app/app-constants';
+import { AuthAccessToken } from 'src/app/model/AuthAccessToken';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,19 @@ export class AuthenticationService {
 
   constructor(private httpClient: HttpClient) { }
 
-  authenticate(user: User){
-    return this.httpClient.post<User>(`${API_URL_AUTH}/login`, user)
+  authAccessToken!: AuthAccessToken
+
+  authenticate(username: string, password: string) {
+    return this.httpClient.post<AuthAccessToken>(`${API_URL_AUTH}/login`, { username, password }).pipe(
+      map(
+        authAccessToken => {
+          localStorage.setItem('authenticatedUser', authAccessToken.username);
+          let tokenStr = 'Bearer ' + authAccessToken.jwtToken;
+          localStorage.setItem('token', tokenStr);
+          return authAccessToken;
+        }
+      )
+    );
   }
+
 }

@@ -51,7 +51,7 @@ public class SpotifyController {
                             schema = @Schema(implementation = SpotifyPlaylist.class)) }),
             @ApiResponse(responseCode = "404", description = "Playlist not found",
                     content = @Content) })
-    @GetMapping("/bill-board-100-playlist")
+    @GetMapping("/billBoard100Playlist")
     public ResponseEntity<Object> getBillBoard100Playlist() {
         log.trace("Inside SpotifyController getBillBoard100Playlist");
         return new ResponseEntity<>(spotifyService.getBillBoard100Playlist(), HttpStatus.OK);
@@ -64,7 +64,7 @@ public class SpotifyController {
                             schema = @Schema(implementation = SpotifyPlaylist.class)) }),
             @ApiResponse(responseCode = "404", description = "Playlist not found",
                     content = @Content) })
-    @GetMapping("/today-top-hits-playlist")
+    @GetMapping("/todayTopHitsPlaylist")
     public ResponseEntity<Object> getTodayTopHitsPlaylist() {
         log.trace("Inside SpotifyController getTodayTopHitsPlaylist");
         return new ResponseEntity<>(spotifyService.getTodayTopHitsPlaylist(), HttpStatus.OK);
@@ -76,7 +76,7 @@ public class SpotifyController {
                             schema = @Schema(implementation = SpotifyPlaylist.class)) }),
             @ApiResponse(responseCode = "404", description = "Playlist not found",
                     content = @Content) })
-    @GetMapping("/today-discover-weekly-playlist")
+    @GetMapping("/discoverWeeklyPlaylist")
     public ResponseEntity<Object> getDiscoverWeeklyPlaylist() {
         log.trace("Inside SpotifyController getDiscoverWeeklyPlaylist");
         return new ResponseEntity<>(spotifyService.getDiscoverWeeklyPlaylist(), HttpStatus.OK);
@@ -89,7 +89,7 @@ public class SpotifyController {
                             schema = @Schema(implementation = Track.class)) }),
             @ApiResponse(responseCode = "404", description = "Track not found",
                     content = @Content) })
-    @GetMapping("/get-track")
+    @GetMapping("/track")
     public ResponseEntity<Object> getTrack(@RequestParam String trackId ) {
         log.trace("Inside SpotifyController getTrack");
         return new ResponseEntity<>(spotifyService.getTrack(trackId), HttpStatus.OK);

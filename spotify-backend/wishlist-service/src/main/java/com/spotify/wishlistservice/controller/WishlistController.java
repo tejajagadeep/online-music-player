@@ -6,6 +6,8 @@ import com.spotify.wishlistservice.exception.UnAuthorizedException;
 import com.spotify.wishlistservice.service.AuthService;
 import com.spotify.wishlistservice.service.WishlistService;
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
+import io.swagger.v3.oas.annotations.enums.ParameterIn;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
@@ -13,6 +15,9 @@ import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
+import org.springframework.cache.annotation.Caching;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -34,6 +39,7 @@ public class WishlistController {
         this.authService = authService;
     }
 
+    @Cacheable(value = "wishlist", key = "#username")
     @Operation(summary = "Get User's Favorite Playlist")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Found Top Hits  Playlist",
@@ -58,6 +64,10 @@ public class WishlistController {
 
     }
 
+    @Caching(evict = {
+            @CacheEvict(value = "wishlist", key = "#username"),
+            @CacheEvict(value = "wishlist", key = "'all'")
+    })
     @Operation(summary = "Save track to User")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "201", description = "Track saved to favorite list",
@@ -81,7 +91,10 @@ public class WishlistController {
 
     }
 
-
+    @Caching(evict = {
+            @CacheEvict(value = "wishlist", key = "#username"),
+            @CacheEvict(value = "wishlist", key = "'all'")
+    })
     @Operation(summary = "Delete track from favorite Playlist")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Track deleted from favorite",
@@ -93,7 +106,9 @@ public class WishlistController {
                     content = @Content) })
     @SecurityRequirement(name = "Bearer Authentication")
     @DeleteMapping("/removeTrack")
-    public  ResponseEntity<Object> deleteTrackByUsernameAndTrackId(@RequestHeader("Authorization") String token,@RequestParam String username, @RequestParam String trackId){
+    public  ResponseEntity<Object> deleteTrackByUsernameAndTrackId(
+            @RequestHeader("Authorization") String token,
+            @RequestParam String username, @RequestParam String trackId){
         log.trace("Controller deleteTrackByUsernameAndTrackId: "+trackId);
         log.trace("Controller getUserWishList: "+username);
         log.info(token+"from front end");

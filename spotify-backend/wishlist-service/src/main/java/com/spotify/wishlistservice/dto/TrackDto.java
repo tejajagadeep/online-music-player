@@ -8,6 +8,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Data
@@ -19,13 +20,10 @@ public class TrackDto {
     private Album album;
 
     @JsonProperty("artists")
-    private List<Artist> artists;
+    private List<Artist> artists = new ArrayList<>();
 
     @JsonProperty("external_urls")
     private ExternalUrls externalUrls;
-
-    @JsonProperty("href")
-    private String href;
 
     @JsonProperty("id")
     private String id;
@@ -39,8 +37,4 @@ public class TrackDto {
     @JsonProperty("type")
     private String type;
 
-    @JsonProperty("uri")
-    private String uri;
-
-    // Getters and setters
 }

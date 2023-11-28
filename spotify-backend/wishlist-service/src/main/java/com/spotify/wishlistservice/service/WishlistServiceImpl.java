@@ -12,6 +12,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -65,16 +66,28 @@ public class WishlistServiceImpl implements WishlistService {
     @Override
     @Observed(name = "delete.track.by.username.and.track.id")
     public String deleteTrackByUsernameAndTrackId(String username, String trackId) {
-        log.info("Service deleteTrackByUsername: "+ username);
-        Optional<Wishlist> wishListOptional = Optional.ofNullable(wishlistRepository.findById(username).orElseThrow(() -> new ResourceNotFoundException("Username not found")));
-        wishListOptional.ifPresent(wishlist -> {
-            // Find and remove the track with the specified id
-            wishlist.getTracks().removeIf(track -> track.getId().equals(trackId));
-            wishlistRepository.save(wishlist);
-        });
-        log.info("Service Track deleted with Id: "+ trackId);
-        return "Track with Id: "+trackId+" deleted.";
+        log.info("Service deleteTrackByUsername: " + username);
+
+        Wishlist wishlist = wishlistRepository.findById(username)
+                .orElseThrow(() -> new ResourceNotFoundException("Username not found"));
+
+        // Create a new mutable list from the existing tracks
+        List<Track> mutableTracks = new ArrayList<>(wishlist.getTracks());
+
+        // Find and remove the track with the specified id
+        mutableTracks.removeIf(track -> track.getId().equals(trackId));
+
+        // Update the wishlist with the new list of tracks
+        wishlist.setTracks(mutableTracks);
+
+        // Save the updated wishlist
+        wishlistRepository.save(wishlist);
+
+        log.info("Service Track deleted with Id: " + trackId);
+        return "Track with Id: " + trackId + " deleted.";
     }
+
+
 
     private void addOrUpdateTrack(Wishlist wishList, Track newTrack) {
         // Check if the track with the same ID already exists in the wish list
@@ -95,9 +108,7 @@ public class WishlistServiceImpl implements WishlistService {
                         existingTrack.setPreviewUrl(newTrack.getPreviewUrl());
                         existingTrack.setAlbum(newTrack.getAlbum());
                         existingTrack.setExternalUrls(newTrack.getExternalUrls());
-                        existingTrack.setHref(newTrack.getHref());
                         existingTrack.setArtists(newTrack.getArtists());
-                        existingTrack.setUri(newTrack.getUri());
                         existingTrack.setType(newTrack.getType());
                         // Update other attributes as needed
                     });

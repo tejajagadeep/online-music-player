@@ -14,9 +14,6 @@ public class Artist {
     @JsonProperty("external_urls")
     private ExternalUrls externalUrls;
 
-    @JsonProperty("href")
-    private String href;
-
     @JsonProperty("id")
     private String id;
 
@@ -26,8 +23,4 @@ public class Artist {
     @JsonProperty("type")
     private String type;
 
-    @JsonProperty("uri")
-    private String uri;
-
-    // Getters and setters
 }

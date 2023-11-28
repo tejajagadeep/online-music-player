@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import se.michaelthelin.spotify.enums.ModelObjectType;
 
 import java.util.List;
 
@@ -22,14 +21,11 @@ public class Album {
     @JsonProperty("external_urls")
     private ExternalUrls externalUrls;
 
-    @JsonProperty("href")
-    private String href;
+    @JsonProperty("images")
+    private List<Image> images;
 
     @JsonProperty("id")
     private String id;
-
-    @JsonProperty("images")
-    private List<Image> images;
 
     @JsonProperty("name")
     private String name;
@@ -40,8 +36,4 @@ public class Album {
     @JsonProperty("type")
     private String type;
 
-    @JsonProperty("uri")
-    private String uri;
-
-    // Getters and setters
 }
