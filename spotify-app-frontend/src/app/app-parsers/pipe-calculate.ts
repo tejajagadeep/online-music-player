@@ -16,3 +16,4 @@ export class MillisecondsToMinutesPipe implements PipeTransform {
     return `${formattedMinutes}:${formattedSeconds}`;
   }
 }
+

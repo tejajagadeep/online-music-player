@@ -2,8 +2,8 @@ import { AfterViewInit, Component, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { ActivatedRoute } from '@angular/router';
-import { SpotifyPlaylist } from 'src/app/model/SpotifyPlaylist';
-import { MusicDataService } from 'src/app/service/data/music-data.service';
+import { SpotifyPlaylist } from '../../model/SpotifyPlaylist';
+import { MusicDataService } from '../../service/data/music-data.service';
 
 @Component({
   selector: 'app-today-top-hits-playlist',

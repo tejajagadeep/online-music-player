@@ -13,7 +13,7 @@ import java.util.List;
 public class TrackTracks {
 
     @JsonProperty("items")
-    private List<TrackItem> items;
+    private List<Track> items;
 
 
 }

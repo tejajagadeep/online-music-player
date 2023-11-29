@@ -1,0 +1,22 @@
+<div class="main background" *ngIf="spotifyPlaylist">
+    <div class="card-container">
+        <div class="card" id="card">
+            <div id="back">
+                <img src="https://res.cloudinary.com/trugamr/image/upload/v1534187015/Minimal%20Blur%20Cards/art_1.png">
+            </div>
+            <img src="https://res.cloudinary.com/trugamr/image/upload/v1534187015/Minimal%20Blur%20Cards/art_1.png"
+                id="art">
+            <div id="title">Divinity</div>
+            <div id="artist">Porter Robinson</div>
+        </div>
+        <div class="card" *ngFor="let item of spotifyPlaylist.tracks.items">
+            <div id="back">
+                <img src="{{item.track.album.images[1].url}}">
+            </div>
+            <img src="{{item.track.album.images[1].url}}"
+                id="art">
+            <div id="title">{{item.track.name}}</div>
+            <div id="artist">{{item.track.artists[0].name}}</div>
+        </div>
+    </div>
+</div>

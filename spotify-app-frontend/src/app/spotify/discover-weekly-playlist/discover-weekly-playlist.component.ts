@@ -6,16 +6,11 @@ import { SpotifyPlaylist } from 'src/app/model/SpotifyPlaylist';
 import { MusicDataService } from 'src/app/service/data/music-data.service';
 
 @Component({
-  selector: 'app-today-top-hits-playlist',
-  templateUrl: './today-top-hits-playlist.component.html',
-  styleUrls: ['./today-top-hits-playlist.component.css']
+  selector: 'app-discover-weekly-playlist',
+  templateUrl: './discover-weekly-playlist.component.html',
+  styleUrls: ['./discover-weekly-playlist.component.css']
 })
-
-
-
-export class TodayTopHitsPlaylistComponent implements AfterViewInit {
-
-
+export class DiscoverWeeklyPlaylistComponent implements AfterViewInit{
   spotifyPlaylist!: SpotifyPlaylist; // Adjust the type accordingly
   dataSource: MatTableDataSource<any> | undefined;
   pageSize = 10;
@@ -41,7 +36,7 @@ export class TodayTopHitsPlaylistComponent implements AfterViewInit {
     this.musicService.getTodayTopHitsPlaylist().subscribe({
       next: (v) => {
         this.spotifyPlaylist = v;
-        console.log(v.tracks.items[0].added_at)
+        console.log(v.tracks.items[0].track.album.images[1].url)
         this.dataSource = new MatTableDataSource(this.spotifyPlaylist.tracks.items);
         this.dataSource.paginator = this.paginator;
       },
@@ -59,5 +54,4 @@ export class TodayTopHitsPlaylistComponent implements AfterViewInit {
   // You can perform actions based on the page change, for example, fetching new data
   this.hot100();
   }
-  
 }
