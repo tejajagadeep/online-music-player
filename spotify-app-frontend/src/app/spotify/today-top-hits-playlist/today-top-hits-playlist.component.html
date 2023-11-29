@@ -33,31 +33,44 @@
                 </div>
 
             </div>
-            <table class="music-list">
-                <thead>
-                    <tr>
-                        <th>#</th>
-                        <th>Song Name</th>
-                        <th>Artist</th>
-                        <th>Duration</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr *ngFor="let item of spotifyPlaylist.tracks.items; let i = index">
-                        <td>{{ i + 1 }}</td>
-                        <td>{{ item.track.name }}</td>
-                        <td class="m-hide">
-                            <div *ngFor="let artist of item.track.artists">{{ artist.name }}</div>
-                        </td>
-                        <td>{{ item.track.duration_ms | millisecondsToMinutes }}</td>
-                        <td>
-                            <p class="sm-hide text-right"><span class="catty-cloud"><a class="black" target="_blank"
-                                        href="{{item.track.external_urls.spotify}}">OPEN_SPOTIFY</a></span></p>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+            <table mat-table class="music-list" [dataSource]="spotifyPlaylist.tracks.items">
+                <ng-container matColumnDef="index">
+                  <th mat-header-cell *matHeaderCellDef>#</th>
+                  <td mat-cell *matCellDef="let i = index">{{ i + 1 }}</td>
+                </ng-container>
+              
+                <ng-container matColumnDef="name">
+                  <th mat-header-cell *matHeaderCellDef>Song Name</th>
+                  <td mat-cell *matCellDef="let item">{{ item.track.name }}</td>
+                </ng-container>
+              
+                <ng-container matColumnDef="artists">
+                  <th mat-header-cell *matHeaderCellDef>Artist</th>
+                  <td mat-cell *matCellDef="let item">
+                    <div *ngFor="let artist of item.track.artists">{{ artist.name }}</div>
+                  </td>
+                </ng-container>
+              
+                <ng-container matColumnDef="duration">
+                  <th mat-header-cell *matHeaderCellDef>Duration</th>
+                  <td mat-cell *matCellDef="let item">{{ item.track.duration_ms | millisecondsToMinutes }}</td>
+                </ng-container>
+              
+                <ng-container matColumnDef="action">
+                  <th mat-header-cell *matHeaderCellDef>Action</th>
+                  <td mat-cell *matCellDef="let item">
+                    <p class="sm-hide text-right">
+                      <span class="catty-cloud">
+                        <a class="black" target="_blank" [href]="item.track.external_urls.spotify">OPEN_SPOTIFY</a>
+                      </span>
+                    </p>
+                  </td>
+                </ng-container>
+              
+                <tr mat-header-row *matHeaderRowDef="['index', 'name', 'artists', 'duration', 'action']"></tr>
+                <tr mat-row *matRowDef="let row; columns: ['index', 'name', 'artists', 'duration', 'action']"></tr>
+              </table>
+              
 
         </section>
 

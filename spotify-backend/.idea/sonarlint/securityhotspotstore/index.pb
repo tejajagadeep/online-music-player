@@ -117,8 +117,6 @@ F
 api-gateway/.gitignore,f\f\ff1c5d5433a8148c17672f6832c630bb2426e4e9
 {
 Kapi-gateway/src/main/java/com/spotify/apigateway/ApiGatewayApplication.java,7\3\734cb27a72450b002c6b99684f3e265c724b89a0
-u
-Emusic-service/src/main/java/com/spotify/musicservice/dto/AddedBy.java,1\6\164b697fd51afd8e476da707bb9a40d918a1af7e
 á
 Wuserprofile-service/src/main/java/com/spotify/userprofile/response/ResponseHandler.java,c\9\c9930b02735c4c12a9781965039094142778b1a6
 è
