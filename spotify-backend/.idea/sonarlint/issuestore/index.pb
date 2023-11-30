@@ -125,8 +125,6 @@ _userprofile-service/src/main/java/com/spotify/userprofile/repository/UserProfil
 amusic-service/src/main/java/com/spotify/musicservice/repository/SpotifyAccessTokenRepository.java,7\e\7eb306e54d309b5e695a97b7f2728ba16a50ef93
 Ç
 Rmusic-service/src/main/java/com/spotify/musicservice/model/SpotifyAccessToken.java,e\f\efa3cb7282ba2cd45f3990640c8e1fa47901a772
-w
-Gmusic-service/src/main/java/com/spotify/musicservice/dto/TrackItem.java,c\5\c5a6ef42b0e0fcf387ce9706053c7338a513e6e6
 {
 Kmusic-service/src/main/java/com/spotify/musicservice/dto/SpotifyTracks.java,b\5\b55faa626925200fc0c425f2468ef13627ea817a
 y
@@ -153,14 +151,8 @@ Owishlist-service/src/main/java/com/spotify/wishlistservice/dto/UserDetails.java
 Ruserprofile-service/src/main/java/com/spotify/userprofile/service/AuthService.java,3\0\3017f5b557e346719df110dda267e85e7eff34df
 É
 Swishlist-service/src/main/java/com/spotify/wishlistservice/service/AuthService.java,5\d\5dfb75b376d323941d2873394ae200d5622cb13c
-ë
-awishlist-service/src/main/java/com/spotify/wishlistservice/configuration/KafkaProducerConfig.java,d\2\d2edcdb3617ff8b106fcb25c5e6609f2e85b68a5
 ê
 `wishlist-service/src/main/java/com/spotify/wishlistservice/feignclient/AuthenticationClient.java,b\4\b4de22f29a070e635beb52b074ba1c3d095e8b28
-Ä
-Pwishlist-service/src/main/java/com/spotify/wishlistservice/filter/JWTFilter.java,8\3\83f1f25e7753afbef322121e1ddf7c599e17e764
-é
-^wishlist-service/src/main/java/com/spotify/wishlistservice/kafka/DataPublisherServiceImpl.java,d\8\d8197f48a0b64092e7eea1688dfb38eb21b1dc5d
 à
 Xwishlist-service/src/main/java/com/spotify/wishlistservice/response/ResponseHandler.java,7\0\70dd8747f64cf6adc025a9242707a99706ee8cb3
 à

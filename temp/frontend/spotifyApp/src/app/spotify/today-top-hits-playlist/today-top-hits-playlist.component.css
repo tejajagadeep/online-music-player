@@ -1,0 +1,38 @@
+table {
+	width: 100%;
+}
+
+/* Add this to your component's CSS or global styles */
+.music-head {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 10px;
+}
+
+.catty-music {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-grow: 1;
+}
+
+.catty-music div {
+	flex-grow: 1;
+	margin-right: 10px;
+}
+
+.sm-text-center {
+	text-align: center;
+}
+
+.music-list td span.catty-cloud {
+	border: 1px solid black;
+	background-color: #1db954;
+	font-size: 0.6em;
+	padding: 3px;
+}
+
+.black {
+	color: black; 
+}

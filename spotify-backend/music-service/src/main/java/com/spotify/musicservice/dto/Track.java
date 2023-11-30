@@ -27,6 +27,9 @@ public class Track {
     @JsonProperty("name")
     private String name;
 
+    @JsonProperty("release_date")
+    private String releaseDate;
+
     @JsonProperty("preview_url")
     private String previewUrl;
 

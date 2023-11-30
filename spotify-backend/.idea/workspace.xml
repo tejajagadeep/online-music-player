@@ -5,7 +5,174 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a2504401-f241-4a58-ab09-902bb2951c1e" name="Changes" comment="Commit message [date: %Y-%m-%d] [time: %H:%M:%S]">
+      <change beforePath="$PROJECT_DIR$/../spotify-app-frontend/.editorconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spotify-app-frontend/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spotify-app-frontend/.vscode/extensions.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spotify-app-frontend/.vscode/launch.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spotify-app-frontend/.vscode/tasks.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spotify-app-frontend/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spotify-app-frontend/angular.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spotify-app-frontend/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spotify-app-frontend/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spotify-app-frontend/src/app/app-constants.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spotify-app-frontend/src/app/app-parsers/pipe-calculate.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spotify-app-frontend/src/app/app-parsers/pipe-date.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spotify-app-frontend/src/app/app-parsers/pipe-remove.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spotify-app-frontend/src/app/app-routing.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spotify-app-frontend/src/app/app.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spotify-app-frontend/src/app/app.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spotify-app-frontend/src/app/app.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spotify-app-frontend/src/app/app.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spotify-app-frontend/src/app/app.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spotify-app-frontend/src/app/auth/login/login.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spotify-app-frontend/src/app/auth/login/login.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spotify-app-frontend/src/app/auth/login/login.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spotify-app-frontend/src/app/auth/login/login.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spotify-app-frontend/src/app/favorite-list/favorite-list.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spotify-app-frontend/src/app/favorite-list/favorite-list.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spotify-app-frontend/src/app/favorite-list/favorite-list.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spotify-app-frontend/src/app/favorite-list/favorite-list.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spotify-app-frontend/src/app/home/home.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spotify-app-frontend/src/app/home/home.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spotify-app-frontend/src/app/home/home.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spotify-app-frontend/src/app/home/home.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spotify-app-frontend/src/app/login/login.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spotify-app-frontend/src/app/login/login.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spotify-app-frontend/src/app/login/login.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spotify-app-frontend/src/app/login/login.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spotify-app-frontend/src/app/model/Album.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spotify-app-frontend/src/app/model/Artist.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spotify-app-frontend/src/app/model/AuthAccessToken.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spotify-app-frontend/src/app/model/ExternalUrls.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spotify-app-frontend/src/app/model/Image.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spotify-app-frontend/src/app/model/Item.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spotify-app-frontend/src/app/model/SpotifyPlaylist.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spotify-app-frontend/src/app/model/Track.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spotify-app-frontend/src/app/model/Tracks.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spotify-app-frontend/src/app/model/user.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spotify-app-frontend/src/app/service/data/authentication.service.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spotify-app-frontend/src/app/service/data/authentication.service.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spotify-app-frontend/src/app/service/data/music-data.service.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spotify-app-frontend/src/app/service/data/music-data.service.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spotify-app-frontend/src/app/service/http/auth-guard.service.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spotify-app-frontend/src/app/service/http/auth-guard.service.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spotify-app-frontend/src/app/service/http/http-interceptor-basic-auth.service.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spotify-app-frontend/src/app/service/http/http-interceptor-basic-auth.service.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spotify-app-frontend/src/app/spotify/bill-board100-playlist/bill-board100-playlist.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spotify-app-frontend/src/app/spotify/bill-board100-playlist/bill-board100-playlist.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spotify-app-frontend/src/app/spotify/bill-board100-playlist/bill-board100-playlist.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spotify-app-frontend/src/app/spotify/bill-board100-playlist/bill-board100-playlist.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spotify-app-frontend/src/app/spotify/discover-weekly-playlist/discover-weekly-playlist.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spotify-app-frontend/src/app/spotify/discover-weekly-playlist/discover-weekly-playlist.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spotify-app-frontend/src/app/spotify/discover-weekly-playlist/discover-weekly-playlist.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spotify-app-frontend/src/app/spotify/discover-weekly-playlist/discover-weekly-playlist.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spotify-app-frontend/src/app/spotify/today-top-hits-playlist/today-top-hits-playlist.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spotify-app-frontend/src/app/spotify/today-top-hits-playlist/today-top-hits-playlist.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spotify-app-frontend/src/app/spotify/today-top-hits-playlist/today-top-hits-playlist.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spotify-app-frontend/src/app/spotify/today-top-hits-playlist/today-top-hits-playlist.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spotify-app-frontend/src/assets/.gitkeep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spotify-app-frontend/src/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spotify-app-frontend/src/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spotify-app-frontend/src/main.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spotify-app-frontend/src/styles.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spotify-app-frontend/tsconfig.app.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spotify-app-frontend/tsconfig.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spotify-app-frontend/tsconfig.spec.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/3/83f1f25e7753afbef322121e1ddf7c599e17e764" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/5/c5a6ef42b0e0fcf387ce9706053c7338a513e6e6" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/2/d2edcdb3617ff8b106fcb25c5e6609f2e85b68a5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/8/d8197f48a0b64092e7eea1688dfb38eb21b1dc5d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/8/3/83f1f25e7753afbef322121e1ddf7c599e17e764" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/c/5/c5a6ef42b0e0fcf387ce9706053c7338a513e6e6" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/d/2/d2edcdb3617ff8b106fcb25c5e6609f2e85b68a5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/d/8/d8197f48a0b64092e7eea1688dfb38eb21b1dc5d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/music-service/src/main/java/com/spotify/musicservice/controller/SpotifyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/music-service/src/main/java/com/spotify/musicservice/controller/SpotifyController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/music-service/src/main/java/com/spotify/musicservice/dto/Track.java" beforeDir="false" afterPath="$PROJECT_DIR$/music-service/src/main/java/com/spotify/musicservice/dto/Track.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spotifyApp/src/app/app.config.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spotifyApp/src/app/app.routes.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spotifyApp/src/app/service/data/music-data.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../spotifyApp/src/app/service/data/music-data.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spotifyApp/src/app/spotify/bill-board100-playlist/bill-board100-playlist.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../spotifyApp/src/app/spotify/bill-board100-playlist/bill-board100-playlist.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spotifyApp/src/app/spotify/discover-weekly-playlist/discover-weekly-playlist.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../spotifyApp/src/app/spotify/discover-weekly-playlist/discover-weekly-playlist.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spotifyApp/src/app/spotify/today-top-hits-playlist/today-top-hits-playlist.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../spotifyApp/src/app/spotify/today-top-hits-playlist/today-top-hits-playlist.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../temp/userprofile-service/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../temp/userprofile-service/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../temp/userprofile-service/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../temp/userprofile-service/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../temp/userprofile-service/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../temp/userprofile-service/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../temp/userprofile-service/src/main/java/com/spotify/userprofile/UserprofileApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../temp/userprofile-service/src/main/java/com/spotify/userprofile/configuration/UserProfileConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../temp/userprofile-service/src/main/java/com/spotify/userprofile/controller/UserProfileController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../temp/userprofile-service/src/main/java/com/spotify/userprofile/dto/UserProfileDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../temp/userprofile-service/src/main/java/com/spotify/userprofile/exception/ErrorMessage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../temp/userprofile-service/src/main/java/com/spotify/userprofile/exception/GlobalExceptionHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../temp/userprofile-service/src/main/java/com/spotify/userprofile/exception/ResourceAlreadyExistsException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../temp/userprofile-service/src/main/java/com/spotify/userprofile/exception/ResourceNotFoundException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../temp/userprofile-service/src/main/java/com/spotify/userprofile/model/UserProfile.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../temp/userprofile-service/src/main/java/com/spotify/userprofile/repository/UserProfileRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../temp/userprofile-service/src/main/java/com/spotify/userprofile/response/ResponseHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../temp/userprofile-service/src/main/java/com/spotify/userprofile/service/UserProfileService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../temp/userprofile-service/src/main/java/com/spotify/userprofile/service/UserProfileServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../temp/userprofile-service/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../temp/userprofile-service/src/test/java/com/spotify/userprofile/UserprofileApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../temp/userprofile-service/src/test/java/com/spotify/userprofile/repository/UserProfileRepositoryTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../temp/wishlist-service/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../temp/wishlist-service/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../temp/wishlist-service/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../temp/wishlist-service/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../temp/wishlist-service/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../temp/wishlist-service/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../temp/wishlist-service/src/main/java/com/spotify/wishlistservice/WishlistserviceApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../temp/wishlist-service/src/main/java/com/spotify/wishlistservice/aspects/PerformanceTrackerHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../temp/wishlist-service/src/main/java/com/spotify/wishlistservice/configuration/KafkaProducerConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../temp/wishlist-service/src/main/java/com/spotify/wishlistservice/configuration/WishListConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../temp/wishlist-service/src/main/java/com/spotify/wishlistservice/controller/WishlistController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../temp/wishlist-service/src/main/java/com/spotify/wishlistservice/dto/AlbumDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../temp/wishlist-service/src/main/java/com/spotify/wishlistservice/dto/ArtistDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../temp/wishlist-service/src/main/java/com/spotify/wishlistservice/dto/ExternalUrlsDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../temp/wishlist-service/src/main/java/com/spotify/wishlistservice/dto/ImageDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../temp/wishlist-service/src/main/java/com/spotify/wishlistservice/dto/TrackDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../temp/wishlist-service/src/main/java/com/spotify/wishlistservice/dto/UserDetails.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../temp/wishlist-service/src/main/java/com/spotify/wishlistservice/dto/WishlistDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../temp/wishlist-service/src/main/java/com/spotify/wishlistservice/exception/CustomResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../temp/wishlist-service/src/main/java/com/spotify/wishlistservice/exception/GlobalExceptionHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../temp/wishlist-service/src/main/java/com/spotify/wishlistservice/exception/ResourceAlreadyExistsException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../temp/wishlist-service/src/main/java/com/spotify/wishlistservice/exception/ResourceNotFoundException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../temp/wishlist-service/src/main/java/com/spotify/wishlistservice/exception/ServerConnectionException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../temp/wishlist-service/src/main/java/com/spotify/wishlistservice/exception/UnAuthorizedException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../temp/wishlist-service/src/main/java/com/spotify/wishlistservice/feignclient/AuthenticationClient.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../temp/wishlist-service/src/main/java/com/spotify/wishlistservice/filter/JWTFilter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../temp/wishlist-service/src/main/java/com/spotify/wishlistservice/kafka/DataPublisherServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../temp/wishlist-service/src/main/java/com/spotify/wishlistservice/model/Album.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../temp/wishlist-service/src/main/java/com/spotify/wishlistservice/model/Artist.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../temp/wishlist-service/src/main/java/com/spotify/wishlistservice/model/ExternalUrls.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../temp/wishlist-service/src/main/java/com/spotify/wishlistservice/model/Image.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../temp/wishlist-service/src/main/java/com/spotify/wishlistservice/model/Track.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../temp/wishlist-service/src/main/java/com/spotify/wishlistservice/model/Wishlist.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../temp/wishlist-service/src/main/java/com/spotify/wishlistservice/repository/WishlistRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../temp/wishlist-service/src/main/java/com/spotify/wishlistservice/response/ResponseHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../temp/wishlist-service/src/main/java/com/spotify/wishlistservice/service/AuthService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../temp/wishlist-service/src/main/java/com/spotify/wishlistservice/service/WishlistService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../temp/wishlist-service/src/main/java/com/spotify/wishlistservice/service/WishlistServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../temp/wishlist-service/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../temp/wishlist-service/src/test/java/com/spotify/wishlistservice/WishlistserviceApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../temp/wishlist-service/src/test/java/com/spotify/wishlistservice/controller/WishlistControllerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../temp/wishlist-service/src/test/java/com/spotify/wishlistservice/filter/JWTFilterTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../temp/wishlist-service/src/test/java/com/spotify/wishlistservice/kafka/DataPublisherServiceImplTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../temp/wishlist-service/src/test/java/com/spotify/wishlistservice/kafka/kafkaConfigTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../temp/wishlist-service/src/test/java/com/spotify/wishlistservice/model/AlbumTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../temp/wishlist-service/src/test/java/com/spotify/wishlistservice/model/ArtistTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../temp/wishlist-service/src/test/java/com/spotify/wishlistservice/model/ExternalUrlsTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../temp/wishlist-service/src/test/java/com/spotify/wishlistservice/model/ImageTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../temp/wishlist-service/src/test/java/com/spotify/wishlistservice/model/TrackTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../temp/wishlist-service/src/test/java/com/spotify/wishlistservice/model/WishlistTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../temp/wishlist-service/src/test/java/com/spotify/wishlistservice/repository/WishlistRepositoryTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../temp/wishlist-service/src/test/java/com/spotify/wishlistservice/response/ResponseHandlerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../temp/wishlist-service/src/test/java/com/spotify/wishlistservice/service/AuthServiceTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../temp/wishlist-service/src/test/java/com/spotify/wishlistservice/service/WishlistServiceImplTest2.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,21 +214,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "last_opened_file_path": "C:/Users/tejaj/Downloads/git/spotify/spotify-backend/wishlist-service/src/main/java/com/spotify/wishlistservice",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "inlay.hints"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/tejaj/Downloads/git/spotify/spotify-backend/wishlist-service/src/main/java/com/spotify/wishlistservice&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;inlay.hints&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\tejaj\Downloads\git\spotify\spotify-backend\wishlist-service\src\main\java\com\spotify\wishlistservice" />
@@ -88,7 +255,7 @@
       <recent name="com.spotify.wishlistservice.dto" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.AuthenticationServiceApplication">
+  <component name="RunManager" selected="Application.MusicserviceApplication">
     <configuration name="ApiGatewayApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.spotify.apigateway.ApiGatewayApplication" />
       <module name="api-gateway" />
@@ -128,6 +295,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="EurekaServerApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.university.eurekaserver.EurekaServerApplication" />
+      <module name="eureka-server" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.university.eurekaserver.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="MusicserviceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.spotify.musicservice.MusicserviceApplication" />
       <module name="music-service" />
@@ -141,26 +321,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="WishlistserviceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.spotify.wishlistservice.WishlistserviceApplication" />
-      <module name="wishlist-service" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.spotify.wishlistservice.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.AuthenticationServiceApplication" />
-        <item itemvalue="Application.WishlistserviceApplication" />
         <item itemvalue="Application.MusicserviceApplication" />
-        <item itemvalue="Application.ApiGatewayApplication" />
         <item itemvalue="Application.ConfigServerApplication" />
+        <item itemvalue="Application.ApiGatewayApplication" />
+        <item itemvalue="Application.EurekaServerApplication" />
+        <item itemvalue="Application.AuthenticationServiceApplication" />
       </list>
     </recent_temporary>
   </component>

@@ -1,0 +1,20 @@
+
+@if(spotifyPlaylist){ <div class="background main" >
+    <div class="card-container">
+        
+        @for(item of spotifyPlaylist.tracks.items; track $index){
+        <div class="card">
+            <div id="back">
+                <img src="{{ item.track.album.images[0].url }}">
+            </div>
+            <img src="{{ item.track.album.images[0].url }}"
+                id="art">
+            <div id="title">{{ item.track.name }}</div>
+            <div id="artist">{{ item.track.artists[0].name }}</div>
+        </div>
+    }
+    </div>  
+</div>
+} @else {
+    <div>we don't have anything</div>
+}

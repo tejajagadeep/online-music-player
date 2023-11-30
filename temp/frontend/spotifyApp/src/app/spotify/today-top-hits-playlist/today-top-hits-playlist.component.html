@@ -1,0 +1,104 @@
+<div class="wrapper">
+    <main>
+        <aside>
+            <!--This represents the sidebar and contained in it are icon sets from font-awesome-->
+            <i class="fa fa-bars"></i>
+            <i class="fa fa-home"></i>
+            <i class="fa fa-search"></i>
+            <i class="fa fa-volume-up"></i>
+            <i class="fa fa-user"></i>
+            <i class="fa fa-spotify"></i>
+            <i class="fa fa-cog"></i>
+            <i class="fa fa-soundcloud"></i>
+        </aside>
+        <section class="content" *ngIf="spotifyPlaylist">
+            <div class="music-head">
+                <img src="" />
+                <!--Album art-->
+                <div class="music-head">
+                    <img src="https://i.imgur.com/xDSTaej.jpg" />
+                    <section class="catty-music">
+                      <div>
+                        <p class="sm-text-center">{{ spotifyPlaylist.name }} ({{spotifyPlaylist.tracks.items[0].added_at}})</p>
+                        <p class="sm-hide">Bill Board 100</p>
+                        <p class="sm-hide">{{ spotifyPlaylist.description }}</p>
+                      </div>
+                  
+                      <div class="sm-text-center">
+                        
+                      </div>
+                    </section>
+                  </div>
+                  
+                  
+
+            </div>
+            <table class="music-list">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Song Name</th>
+                        <th>Artist</th>
+                        <th>Duration</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of spotifyPlaylist.tracks.items; let i = index">
+                        <td>{{ i + 1 }}</td>
+                        <td>{{ item.track.name }}</td>
+                        <td class="m-hide">
+                            <div *ngFor="let artist of item.track.artists">{{ artist.name }}</div>
+                        </td>
+                        <td>{{ item.track.duration_ms | millisecondsToMinutes}}</td>
+                        <td>
+                            <p class="sm-hide text-right"><span class="catty-cloud"><a class="black" target="_blank"
+                                        href="{{item.track.external_urls.spotify}}">OPEN_SPOTIFY</a></span></p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table mat-table class="music-list" dataSource="spotifyPlaylist.tracks.items">
+                <ng-container matColumnDef="index">
+                    <th mat-header-cell *matHeaderCellDef>#</th>
+                    <td mat-cell *matCellDef="let i = index">{{ i + 1 }}</td>
+                </ng-container>
+
+                <ng-container matColumnDef="name">
+                    <th mat-header-cell *matHeaderCellDef>Song Name</th>
+                    <td mat-cell *matCellDef="let item">{{ item.track.name }}</td>
+                </ng-container>
+
+                <ng-container matColumnDef="artists">
+                    <th  mat-header-cell *matHeaderCellDef>Artist</th>
+                    <td  mat-cell *matCellDef="let item">
+                        <div *ngFor="let artist of item.track.artists">{{ artist.name }}</div>
+                    </td>
+                </ng-container>
+
+                <ng-container matColumnDef="duration">
+                    <th class="d-none d-sm-table-cell" mat-header-cell *matHeaderCellDef>Duration</th>
+                    <td class="d-none d-sm-table-cell" mat-cell *matCellDef="let item">{{ item.track.duration_ms }}</td>
+                </ng-container>
+
+                <ng-container matColumnDef="action">
+                    <th mat-header-cell *matHeaderCellDef>Action</th>
+                    <td mat-cell *matCellDef="let item">
+                        <p class="sm-hide text-right">
+                            <span class="catty-cloud">
+                                <a class="black" target="_blank"
+                                    [href]="item.track.external_urls.spotify">OPEN_SPOTIFY</a>
+                            </span>
+                        </p>
+                    </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+            </table>
+            
+
+        </section>
+
+    </main>
+</div>

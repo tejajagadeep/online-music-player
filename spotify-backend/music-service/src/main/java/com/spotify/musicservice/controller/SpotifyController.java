@@ -102,7 +102,7 @@ public class SpotifyController {
                             schema = @Schema(implementation = SpotifyTracks.class)) }),
             @ApiResponse(responseCode = "404", description = "Track Not Found",
                     content = @Content) })
-    @GetMapping("/search")
+    @GetMapping("/searchTracks")
     public ResponseEntity<Object> search(@RequestParam String query) {
         log.trace("Inside SpotifyController search");
         return new ResponseEntity<>(spotifyService.search(query), HttpStatus.OK);

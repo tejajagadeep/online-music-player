@@ -1,38 +1,41 @@
-<div *ngIf="spotifyPlaylist">
-  <div class="container" id="main">
-    <div class="row">
-      <div class="col-sm-3" id="photo">
-        <!-- <img id="sm" src="{{spotifyPlaylist.externalUrls.spotify}}" alt=""> -->
-      </div>
-      <div class="col-sm-8" id="detail">
-        <p>Bill Board 10 Playlist</p>
-        <h1 id="shawn"><b>{{ spotifyPlaylist.name }}</b></h1>
-        <p><a>View artist page</a></p>
-        <button class="btn" id="play">Play</button>
-        <span><button class="btn" id="like"><i class="fa fa-heart-o"></i></button></span>
-        <span><button class="btn" id="more"><b>...</b></button></span>
-      </div>
-    </div>
+<main *ngIf="spotifyPlaylist">
+  <h1><span class="blue">&lt;</span>Table<span class="blue">&gt;</span> <span class="yellow">Responsive</span></h1>
+  <h2>Created with love by <a href="https://github.com/pablorgarcia" target="_blank">Pablo García</a></h2>
 
-    <table class="table table-transparent">
-      <thead>
-        <tr>
-          <td>Title</td>
-          <td>Album</td>
-          <td><i class="fa fa-clock-o"></i></td>
+  <table mat-table [dataSource]="spotifyPlaylist.tracks.items" class="mat-elevation-z8">
 
-        </tr>
-      </thead>
-
-      <tbody>
-        <tr *ngFor="let item of spotifyPlaylist.tracks.items">
-          <td>{{item.track.name}}</td>
-          <td>{{item.track.album.name}}</td>
-          <td>{{item.track.duration_ms}}</td>
-        </tr>
-
-      </tbody>
-    </table>
-
-  </div>
-</div>
+    <!-- Album Column -->
+    <ng-container class="container" matColumnDef="album">
+      <th mat-header-cell *matHeaderCellDef><h1>Album</h1></th>
+      <td mat-cell *matCellDef="let item">{{ item.track.album.name }}</td>
+    </ng-container>
+  
+    <!-- Song Column -->
+    <ng-container matColumnDef="song">
+      <th mat-header-cell *matHeaderCellDef><h1>Song</h1></th>
+      <td mat-cell *matCellDef="let item">{{ item.track.name }}</td>
+    </ng-container>
+  
+    <!-- Artist Column -->
+    <ng-container matColumnDef="artist">
+      <th mat-header-cell *matHeaderCellDef><h1>Artist</h1></th>
+      <td mat-cell *matCellDef="let item">{{ item.track.artists[0].name }}</td>
+    </ng-container>
+  
+    <!-- Time Column -->
+    <ng-container matColumnDef="time">
+      <th mat-header-cell *matHeaderCellDef><h1>Time</h1></th>
+      <td mat-cell *matCellDef="let item">{{ item.track.duration_ms | millisecondsToMinutes }}</td>
+    </ng-container>
+  
+    <!-- Spotify Column -->
+    <ng-container matColumnDef="spotify">
+      <th mat-header-cell *matHeaderCellDef><h1>Spotify</h1></th>
+      <td mat-cell *matCellDef="let item">play</td>
+    </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="['album', 'song', 'artist', 'time', 'spotify']"></tr>
+    <tr mat-row *matRowDef="let row; columns: ['album', 'song', 'artist', 'time', 'spotify'];"></tr>
+  </table>
+  
+</main>

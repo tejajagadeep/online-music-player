@@ -1,8 +1,8 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map } from 'rxjs';
-import { API_URL_AUTH } from '../../app-constants';
-import { AuthAccessToken } from '../../model/AuthAccessToken';
+import { API_URL_AUTH } from 'src/app/app-constants';
+import { AuthAccessToken } from 'src/app/model/AuthAccessToken';
 
 @Injectable({
   providedIn: 'root'

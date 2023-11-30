@@ -1,0 +1,12 @@
+<div class="main background" *ngIf="spotifyTracks">
+    <div class="card-container">
+        <div class="card" *ngFor="let item of spotifyTracks.tracks.items">
+                <div id="back">
+                    <img src="{{item.album.images[0].url}}">
+                </div>
+                <img src="{{item.album.images[0].url}}" id="art">
+                <div id="title" [style.color]="'black'">{{item.name}}</div>
+                <div id="artist" [style.color]="'black'">{{item.artists[0].name}}</div>
+        </div>
+    </div>
+</div>
