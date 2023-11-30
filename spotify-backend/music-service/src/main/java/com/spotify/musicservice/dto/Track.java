@@ -13,7 +13,7 @@ import java.util.List;
 public class Track {
 
     @JsonProperty("album")
-    private Album album;
+    private Albums albums;
 
     @JsonProperty("artists")
     private List<Artist> artists;

@@ -22,7 +22,7 @@ const routes: Routes = [
   { path: 'discover-weekly-playlist', component: DiscoverWeeklyPlaylistComponent}, //
   { path: 'top-hits-playlist', component: TodayTopHitsPlaylistComponent},
   { path: 'favorites', component: FavoriteListComponent, canActivate: [canActivateTeam] },
-  { path: '**', redirectTo: 'home', pathMatch: 'full' }
+  // { path: '**', redirectTo: 'home', pathMatch: 'full' }
 ];
 
 @NgModule({

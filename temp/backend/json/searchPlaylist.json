@@ -1,0 +1,212 @@
+{
+    "playlists": {
+      "href": "https://api.spotify.com/v1/search?query=billboard&type=playlist&locale=en-US%2Cen%3Bq%3D0.9&offset=5&limit=5",
+      "items": [
+        {
+          "collaborative": false,
+          "description": "The BBMAs return with a fresh award show format and performances from the artists who dominated the year in music. Watch the 2023 Billboard Music Awards on November 19! Cover: KAROL G\n\n",
+          "external_urls": {
+            "spotify": "https://open.spotify.com/playlist/37i9dQZF1DWWGeEU3DbvDJ"
+          },
+          "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DWWGeEU3DbvDJ",
+          "id": "37i9dQZF1DWWGeEU3DbvDJ",
+          "images": [
+            {
+              "height": null,
+              "url": "https://i.scdn.co/image/ab67706f000000033bb018e6e8a2017ebb9f5d1a",
+              "width": null
+            }
+          ],
+          "name": "2023 Billboard Music Awards Official Playlist",
+          "owner": {
+            "display_name": "Spotify",
+            "external_urls": {
+              "spotify": "https://open.spotify.com/user/spotify"
+            },
+            "href": "https://api.spotify.com/v1/users/spotify",
+            "id": "spotify",
+            "type": "user",
+            "uri": "spotify:user:spotify"
+          },
+          "primary_color": null,
+          "public": null,
+          "snapshot_id": "MTY5OTg5OTYyNywwMDAwMDAwMDY1MzI3NDkxZTIyOGVkMzllNWZjZWJhNGQwNTRmNjRi",
+          "tracks": {
+            "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DWWGeEU3DbvDJ/tracks",
+            "total": 50
+          },
+          "type": "playlist",
+          "uri": "spotify:playlist:37i9dQZF1DWWGeEU3DbvDJ"
+        },
+        {
+          "collaborative": false,
+          "description": "The 100 most streamed songs on Spotify ever, in correct order (last updated November 27:th 2023)",
+          "external_urls": {
+            "spotify": "https://open.spotify.com/playlist/5ABHKGoOzxkaa28ttQV9sE"
+          },
+          "href": "https://api.spotify.com/v1/playlists/5ABHKGoOzxkaa28ttQV9sE",
+          "id": "5ABHKGoOzxkaa28ttQV9sE",
+          "images": [
+            {
+              "height": null,
+              "url": "https://image-cdn-ak.spotifycdn.com/image/ab67706c0000bebb2eaf0f839a819f531de060fd",
+              "width": null
+            }
+          ],
+          "name": "Top 100 most streamed songs on Spotify *Updated*",
+          "owner": {
+            "display_name": "hoolgerssson",
+            "external_urls": {
+              "spotify": "https://open.spotify.com/user/jonathan.holgersson"
+            },
+            "href": "https://api.spotify.com/v1/users/jonathan.holgersson",
+            "id": "jonathan.holgersson",
+            "type": "user",
+            "uri": "spotify:user:jonathan.holgersson"
+          },
+          "primary_color": null,
+          "public": null,
+          "snapshot_id": "MTMxNzAsY2E2ZGVjZDdmNGY4Y2U3ZWEwMDUwYWQyZGFjYmM0NDdkMGM5NjQxMA==",
+          "tracks": {
+            "href": "https://api.spotify.com/v1/playlists/5ABHKGoOzxkaa28ttQV9sE/tracks",
+            "total": 100
+          },
+          "type": "playlist",
+          "uri": "spotify:playlist:5ABHKGoOzxkaa28ttQV9sE"
+        },
+        {
+          "collaborative": false,
+          "description": "",
+          "external_urls": {
+            "spotify": "https://open.spotify.com/playlist/3090lTTISONgxLxHj7Ni6A"
+          },
+          "href": "https://api.spotify.com/v1/playlists/3090lTTISONgxLxHj7Ni6A",
+          "id": "3090lTTISONgxLxHj7Ni6A",
+          "images": [
+            {
+              "height": 640,
+              "url": "https://mosaic.scdn.co/640/ab67616d0000b27347eb3ea5a92904c19e102e54ab67616d0000b2738863bc11d2aa12b54f5aeb36ab67616d0000b273971d65161da7086711799bbbab67616d0000b273e419ccba0baa8bd3f3d7abf2",
+              "width": 640
+            },
+            {
+              "height": 300,
+              "url": "https://mosaic.scdn.co/300/ab67616d0000b27347eb3ea5a92904c19e102e54ab67616d0000b2738863bc11d2aa12b54f5aeb36ab67616d0000b273971d65161da7086711799bbbab67616d0000b273e419ccba0baa8bd3f3d7abf2",
+              "width": 300
+            },
+            {
+              "height": 60,
+              "url": "https://mosaic.scdn.co/60/ab67616d0000b27347eb3ea5a92904c19e102e54ab67616d0000b2738863bc11d2aa12b54f5aeb36ab67616d0000b273971d65161da7086711799bbbab67616d0000b273e419ccba0baa8bd3f3d7abf2",
+              "width": 60
+            }
+          ],
+          "name": "Billboards Greatest Hits of All Time!",
+          "owner": {
+            "display_name": "danpoliak",
+            "external_urls": {
+              "spotify": "https://open.spotify.com/user/danpoliak"
+            },
+            "href": "https://api.spotify.com/v1/users/danpoliak",
+            "id": "danpoliak",
+            "type": "user",
+            "uri": "spotify:user:danpoliak"
+          },
+          "primary_color": null,
+          "public": null,
+          "snapshot_id": "MTE1OCw0MGQ4NzhjNWJiNGJmZDFiMjgxYzJmYjBkY2U3MjA2YzZjZjM2OGJk",
+          "tracks": {
+            "href": "https://api.spotify.com/v1/playlists/3090lTTISONgxLxHj7Ni6A/tracks",
+            "total": 1011
+          },
+          "type": "playlist",
+          "uri": "spotify:playlist:3090lTTISONgxLxHj7Ni6A"
+        },
+        {
+          "collaborative": false,
+          "description": "",
+          "external_urls": {
+            "spotify": "https://open.spotify.com/playlist/7DLOY8utZgknNyE2QqfrVP"
+          },
+          "href": "https://api.spotify.com/v1/playlists/7DLOY8utZgknNyE2QqfrVP",
+          "id": "7DLOY8utZgknNyE2QqfrVP",
+          "images": [
+            {
+              "height": null,
+              "url": "https://image-cdn-ak.spotifycdn.com/image/ab67706c0000bebbfe18bb7ffbf2929c82600563",
+              "width": null
+            }
+          ],
+          "name": "Billboard Christmas: 1955 - Present",
+          "owner": {
+            "display_name": "Jesse Nolan",
+            "external_urls": {
+              "spotify": "https://open.spotify.com/user/tbsrules2"
+            },
+            "href": "https://api.spotify.com/v1/users/tbsrules2",
+            "id": "tbsrules2",
+            "type": "user",
+            "uri": "spotify:user:tbsrules2"
+          },
+          "primary_color": null,
+          "public": null,
+          "snapshot_id": "MTQsMzc0YTAwNmZjNDJhNDM2NGFlYjlhNzBjMDVkZmNkN2NhMTEzZGViOA==",
+          "tracks": {
+            "href": "https://api.spotify.com/v1/playlists/7DLOY8utZgknNyE2QqfrVP/tracks",
+            "total": 10
+          },
+          "type": "playlist",
+          "uri": "spotify:playlist:7DLOY8utZgknNyE2QqfrVP"
+        },
+        {
+          "collaborative": false,
+          "description": "",
+          "external_urls": {
+            "spotify": "https://open.spotify.com/playlist/1lsC23oCFD7rOjqNfSDmNK"
+          },
+          "href": "https://api.spotify.com/v1/playlists/1lsC23oCFD7rOjqNfSDmNK",
+          "id": "1lsC23oCFD7rOjqNfSDmNK",
+          "images": [
+            {
+              "height": 640,
+              "url": "https://mosaic.scdn.co/640/ab67616d0000b2731e16437256a31843ed3fe9cfab67616d0000b2732b6d78c5a3f6247aa997b812ab67616d0000b273ab5c9cd818ad6ed3e9b79cd1ab67616d0000b273dc0bb68a08c069cf8467f1bd",
+              "width": 640
+            },
+            {
+              "height": 300,
+              "url": "https://mosaic.scdn.co/300/ab67616d0000b2731e16437256a31843ed3fe9cfab67616d0000b2732b6d78c5a3f6247aa997b812ab67616d0000b273ab5c9cd818ad6ed3e9b79cd1ab67616d0000b273dc0bb68a08c069cf8467f1bd",
+              "width": 300
+            },
+            {
+              "height": 60,
+              "url": "https://mosaic.scdn.co/60/ab67616d0000b2731e16437256a31843ed3fe9cfab67616d0000b2732b6d78c5a3f6247aa997b812ab67616d0000b273ab5c9cd818ad6ed3e9b79cd1ab67616d0000b273dc0bb68a08c069cf8467f1bd",
+              "width": 60
+            }
+          ],
+          "name": "2023 billboard latino",
+          "owner": {
+            "display_name": "jdam345821",
+            "external_urls": {
+              "spotify": "https://open.spotify.com/user/jdani3"
+            },
+            "href": "https://api.spotify.com/v1/users/jdani3",
+            "id": "jdani3",
+            "type": "user",
+            "uri": "spotify:user:jdani3"
+          },
+          "primary_color": null,
+          "public": null,
+          "snapshot_id": "MjUsMDZiMzVlZDI2ZDgwYTVlMWI0MjE2Y2E2ZjljZGJlNjZlZTA5MWFhOA==",
+          "tracks": {
+            "href": "https://api.spotify.com/v1/playlists/1lsC23oCFD7rOjqNfSDmNK/tracks",
+            "total": 24
+          },
+          "type": "playlist",
+          "uri": "spotify:playlist:1lsC23oCFD7rOjqNfSDmNK"
+        }
+      ],
+      "limit": 5,
+      "next": "https://api.spotify.com/v1/search?query=billboard&type=playlist&locale=en-US%2Cen%3Bq%3D0.9&offset=10&limit=5",
+      "offset": 5,
+      "previous": "https://api.spotify.com/v1/search?query=billboard&type=playlist&locale=en-US%2Cen%3Bq%3D0.9&offset=0&limit=5",
+      "total": 381
+    }
+  }

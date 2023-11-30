@@ -4,15 +4,13 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.List;
 
-public class Album {
-    @JsonProperty("album_type")
-    private String albumType;
+public class AlbumItemSearch {
 
     @JsonProperty("artists")
     private List<Artist> artists;
 
     @JsonProperty("external_urls")
-    private ExternalUrls external_urls;
+    private ExternalUrls externalUrls;
 
     @JsonProperty("images")
     private List<Image> images;
@@ -25,13 +23,4 @@ public class Album {
 
     @JsonProperty("release_date")
     private String releaseDate;
-
-    @JsonProperty("type")
-    private String type;
-
-    @JsonProperty("total_tracks")
-    private int totalTracks;
-
-    @JsonProperty("tracks")
-    private TrackTracks tracks;
 }

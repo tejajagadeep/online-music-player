@@ -1,8 +1,6 @@
 package com.spotify.musicservice.service;
 
-import com.spotify.musicservice.dto.SpotifyPlaylist;
-import com.spotify.musicservice.dto.SpotifyTracks;
-import com.spotify.musicservice.dto.Track;
+import com.spotify.musicservice.dto.*;
 import com.spotify.musicservice.exception.ResourceNotFoundException;
 import com.spotify.musicservice.model.SpotifyAccessToken;
 import com.spotify.musicservice.repository.SpotifyAccessTokenRepository;
@@ -108,6 +106,12 @@ public class SpotifyServiceImpl implements SpotifyService{
     }
 
     @Override
+    public SpotifyPlaylist getPlaylist(String playlistId) {
+        RequestEntity<Void> requestEntity = playListRequest(playlistId);
+        return restTemplate.exchange(requestEntity, SpotifyPlaylist.class).getBody();
+    }
+
+    @Override
     @Observed(name = "get.track")
     public Track getTrack(String trackId) {
         log.trace("Inside SpotifyServiceImpl getTrack");
@@ -117,18 +121,45 @@ public class SpotifyServiceImpl implements SpotifyService{
     }
 
     @Override
-    @Observed(name = "search")
-    public Object search(String query) {
-        log.trace("Inside SpotifyServiceImpl search");
-        log.info("search track: "+query);
-        return restTemplate.exchange(searchRequest(query), SpotifyTracks.class).getBody();
+    public Album getAlbum(String albumId) {
+        HttpHeaders headers = httpHeaders();
+        URI uri = UriComponentsBuilder.fromUriString(apiUrl + "/albums/{albumId}")
+                .buildAndExpand(albumId)
+                .toUri();
+        log.info(uri.toString());
+        RequestEntity<Void> requestEntity = RequestEntity
+                .get(uri)
+                .headers(headers)
+                .build();
+        return restTemplate.exchange(requestEntity, Album.class).getBody();
     }
 
-    private RequestEntity<Void> searchRequest(String query){
+    @Override
+    @Observed(name = "search")
+    public Object searchTracks(String query) {
+        log.trace("Inside SpotifyServiceImpl search");
+        log.info("search track: "+query);
+        return restTemplate.exchange(searchRequest(query, "track"), SpotifyTracksSearch.class).getBody();
+    }
+
+    @Override
+    public Object searchPlaylists(String query) {
+        log.trace("Inside searchPlaylists search");
+        log.info("search Playlist: "+query);
+        return restTemplate.exchange(searchRequest(query, "playlist"), SpotifyPlaylistSearch.class).getBody();
+    }
+    @Override
+    public Object searchAlbums(String query) {
+        log.trace("Inside searchPlaylists search");
+        log.info("search Playlist: "+query);
+        return restTemplate.exchange(searchRequest(query, "album"), SpotifyAlbumSearch.class).getBody();
+    }
+
+    private RequestEntity<Void> searchRequest(String query, String type){
         HttpHeaders headers = httpHeaders();
         URI uri = UriComponentsBuilder.fromUriString(apiUrl + "/search")
                 .queryParam("q", query)
-                .queryParam("type", "track")
+                .queryParam("type", type)
                 .build()
                 .toUri();
         log.info(uri.toString());

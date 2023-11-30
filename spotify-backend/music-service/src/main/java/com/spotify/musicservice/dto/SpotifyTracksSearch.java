@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class SpotifyTracks {
+public class SpotifyTracksSearch {
 
     @JsonProperty("tracks")
     private TrackTracks tracks;
