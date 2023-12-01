@@ -5,9 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a2504401-f241-4a58-ab09-902bb2951c1e" name="Changes" comment="Commit message [date: %Y-%m-%d] [time: %H:%M:%S]">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wishlist-service/src/main/java/com/spotify/wishlistservice/controller/WishlistController.java" beforeDir="false" afterPath="$PROJECT_DIR$/wishlist-service/src/main/java/com/spotify/wishlistservice/controller/WishlistController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wishlist-service/src/main/java/com/spotify/wishlistservice/repository/WishlistRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/wishlist-service/src/main/java/com/spotify/wishlistservice/repository/WishlistRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spotifyApp/src/app/navigation/home/home.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../spotifyApp/src/app/navigation/home/home.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spotifyApp/src/app/navigation/home/home.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../spotifyApp/src/app/navigation/home/home.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

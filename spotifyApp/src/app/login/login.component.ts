@@ -9,9 +9,21 @@ import { AuthenticationService } from '../service/data/authentication.service';
 export class LoginComponent {
   username: string = '';
   password: string = '';
-
+  email: string = '';
+  loginEmail: string = '';
+  loginPassword: string = '';
   constructor(private authService: AuthenticationService){
 
+  }
+
+  signUp() {
+    console.log('Sign up clicked');
+    // Add your sign-up logic here using this.userName, this.email, this.password
+  }
+
+  login() {
+    console.log('Login clicked');
+    // Add your login logic here using this.loginEmail and this.loginPassword
   }
 
   onSubmit() {

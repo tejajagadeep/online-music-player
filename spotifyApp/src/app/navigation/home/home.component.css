@@ -1,4 +1,3 @@
-
 * {
     box-sizing: border-box;
 }
@@ -216,6 +215,20 @@ body {
     font-size: 18px;
     margin-right: 15px;
     color: rgb(187, 181, 181);
+    cursor: pointer;
+}
+
+.scroll-container {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth; /* Optional: Add smooth scrolling effect */
+  }
+  
+.cards-container {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: thin;
 }
 
 #grid {
@@ -226,6 +239,7 @@ body {
 .popstar-cards {
     text-align: start;
     margin-right: 20px;
+    
 }
 
 .pop-img {
@@ -264,7 +278,7 @@ body {
 }
 
 #most-popular-wrapper {
-    width: 58%;
+    width: 100%;
 }
 
 #most-popular-wrapper h3 {

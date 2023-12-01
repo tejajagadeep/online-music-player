@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { SpotifyPlaylist } from 'src/app/model/SpotifyPlaylist';
 import { MusicDataService } from 'src/app/service/data/music-data.service';
@@ -11,6 +11,8 @@ import { MusicDataService } from 'src/app/service/data/music-data.service';
 export class HomeComponent implements OnInit {
   spotifyPlaylistBillBoard: SpotifyPlaylist | any;
   spotifyPlaylistHot100: SpotifyPlaylist | any;
+  @ViewChild('cardsContainer') cardsContainer!: ElementRef;
+  
   constructor( private route: ActivatedRoute, private musicService: MusicDataService) {}
 
   ngOnInit(): void {
@@ -39,7 +41,16 @@ export class HomeComponent implements OnInit {
       complete: () => console.info('complete')
     });
   }
+  scrollCards(direction: 'left' | 'right'): void {
+    const container = this.cardsContainer.nativeElement;
+    const scrollAmount = 300; // Adjust the scroll amount as needed
 
+    if (direction === 'left') {
+      container.scrollLeft -= scrollAmount;
+    } else {
+      container.scrollLeft += scrollAmount;
+    }
+  }
 
   
 }

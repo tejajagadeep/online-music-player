@@ -78,139 +78,23 @@
             </div>
             <section id="topchart-section" *ngIf="spotifyPlaylistBillBoard">
                 <div class="heading-part">
-                    <h3>{{spotifyPlaylistBillBoard.name}}</h3>
-                    <div class="angles">
-                        <i class="fas fa-angle-left"></i>
-                        <i class="fas fa-angle-right"></i>
-                    </div>
+                  <h3>{{spotifyPlaylistBillBoard.name}}</h3>
+                  <div class="angles">
+                    <i class="fas fa-angle-left" (click)="scrollCards('left')"></i>
+                    <i class="fas fa-angle-right" (click)="scrollCards('right')"></i>
+                  </div>
                 </div>
-                <div id="grid">
-                    <div class="popstar-cards" *ngFor="let item of spotifyPlaylistBillBoard.tracks.items">
-                        <div class="pop-img">
-                            <img src="{{item.track.album.images[0].url}}" alt="pop-img">
-                        </div>
-                        <h4>{{item.track.name}}
-
-                        </h4>
-                        <p>{{item.track.artists[0].name}}</p>
+                <div id="grid" class="cards-container  scroll-container">
+                  <div class="popstar-cards" *ngFor="let item of spotifyPlaylistBillBoard.tracks.items">
+                    <div class="pop-img">
+                      <img src="{{item.track.album.images[0].url}}" alt="pop-img">
                     </div>
-
-
+                    <h4>{{item.track.name}}</h4>
+                    <p>{{item.track.artists[0].name}}</p>
+                  </div>
                 </div>
-            </section>
-            <section id="playlist-section">
-                <div id="most-popular-wrapper" *ngIf="spotifyPlaylistHot100">
-                    <h3>{{spotifyPlaylistHot100.name}}</h3>
-                    <p class="songs-no">{{spotifyPlaylistHot100.tracks.items.length}} Songs</p>
-                    <div class="song-list-wrapper" style="padding-top: 0;">
-                        <!-- <div class="songs"  *ngFor="let item of spotifyPlaylistHot100.tracks.items; let i = index">
-                            <div class="left-icons">
-                                <span>{{i+1}}</span>
-                                <img src="{{item.track.album.images[0].url}}"
-                                    alt="artist-img">
-                                <i class="fas fa-caret-right"></i>
-                                <h5>Mirage</h5>
-                            </div>
-                            <p>Else Twin</p>
-                            <p>4:34</p>
-                            <i class="fas fa-heart"></i>
-                        </div> -->
-                        <div class="songs">
-                            <div class="left-icons">
-                              <span>01</span>
-                              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQCNCPkOqQ4-y6lb8FlIFg6tyPzY47UadSsNA&usqp=CAU" alt="artist-img">
-                              <i class="fas fa-caret-right"></i>
-                              <h5>My Stress</h5>
-                            </div>
-                            <p>NF Real Music</p>
-                            <p>3:22</p>
-                            <i class="fas fa-heart red"></i>
-                          </div>
-                          <div class="songs">
-                            <div class="left-icons">
-                              <span>02</span>
-                              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQZKzZivSaOr5mZe8I4qMJNTv8z50FuvaQaDg&usqp=CAU" alt="artist-img">
-                              <i class="fas fa-caret-right"></i>
-                              <h5>Mirage</h5>
-                            </div>
-                            <p>Else Twin</p>
-                            <p>4:34</p>
-                            <i class="fas fa-heart"></i>
-                          </div>
-                          <div class="songs">
-                            <div class="left-icons">
-                              <span>03</span>
-                              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSj1wMrincniCRlhXJ1MXnddy28SRhlSZSg_g&usqp=CAU" alt="artist-img">
-                              <i class="fas fa-caret-right"></i>
-                              <h5>Troye Sivan</h5>
-                            </div>
-                            <p>NF Real Music</p>
-                            <p>3:20</p>
-                            <i class="fas fa-heart red"></i>
-                          </div>
-                          <div class="songs">
-                            <div class="left-icons">
-                              <span>04</span>
-                              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ-KMC0KVfyWngrjtfB8h2toyBfP-Ycja8LBQ&usqp=CAU" alt="artist-img">
-              
-                              <i class="fas fa-caret-right"></i>
-                              <h5>The Hills </h5>
-                            </div>
-                            <p>Pop King</p>
-                            <p>5:20</p>
-                            <i class="fas fa-heart "></i>
-                          </div>
-                          <div class="songs">
-                            <div class="left-icons">
-                              <span>05</span>
-                              <img src="https://waylandstudentpress.com/wp-content/uploads/2019/09/Image-from-iOS-900x600.jpg" alt="artist-img">
-                              <i class="fas fa-caret-right"></i>
-                              <h5>Paralzed</h5>
-                            </div>
-                            <p>The Weekend</p>
-                            <p>5:33</p>
-                            <i class="fas fa-heart red"></i>
-                          </div>
-                          <div class="songs">
-                            <div class="left-icons">
-                              <span>06</span>
-                              <img src="https://laistassets.scprdev.org/i/7a60f234bb4c3900e2ae73025fe7b04a/5b2c52d64488b3000927d39b-original.jpg" alt="artist-img">
-                              <i class="fas fa-caret-right"></i>
-                              <h5>Timeless</h5>
-                            </div>
-                            <p>Ludcidious</p>
-                            <p>3:50</p>
-                            <i class="fas fa-heart "></i>
-                          </div>
-                    </div>
-                </div>
-                <!-- <div id="now-playing-wrapper">
-                    <h3>Now Playing</h3>
-                    <p class="songs-no">55 Items on the list</p>
-                    <div class="background-card">
-                        <div class="playing-song-card">
-                            <img src="https://imgix.bustle.com/inverse/30/73/24/3c/1222/490c/8172/20fc7e131358/chance-the-rapper-coloring-book-2-chainz-lil-wayne-download-mixtape.jpeg"
-                                alt="playing-img">
-                            <h4>Chance The Rapper</h4>
-                            <p>Pop King</p>
-                            <div class="line"></div>
-                            <div class="time-wrapper">
-                                <span class="a">2:10</span>
-                                <span class="b">-3:56</span>
-                            </div>
-                        </div>
-                        <div class="playing-controls-wrapper">
-                            <i class="fas fa-random"></i>
-                            <i class="fas fa-backward"></i>
-                            <i class="fas fa-pause pause-active"></i>
-                            <i class="fas fa-forward"></i>
-
-                            <i class="fas fa-redo"></i>
-
-                        </div>
-                    </div>
-                </div> -->
-            </section>
+              </section>
+            <app-today-top-hits-playlist></app-today-top-hits-playlist>
 
         </section>
 
