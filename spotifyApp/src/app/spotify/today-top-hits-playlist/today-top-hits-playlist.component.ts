@@ -1,6 +1,4 @@
 import { AfterViewInit, Component, ViewChild } from '@angular/core';
-import { MatPaginator } from '@angular/material/paginator';
-import { MatTableDataSource } from '@angular/material/table';
 import { ActivatedRoute } from '@angular/router';
 import { SpotifyPlaylist } from 'src/app/model/SpotifyPlaylist';
 import { MusicDataService } from 'src/app/service/data/music-data.service';
@@ -17,13 +15,11 @@ export class TodayTopHitsPlaylistComponent implements AfterViewInit {
 
 
   spotifyPlaylist!: SpotifyPlaylist; // Adjust the type accordingly
-  dataSource: MatTableDataSource<any> | undefined;
   pageSize = 10;
   pageSizeOptions = [5, 10, 25, 50];
   displayedColumns= ['index', 'name', 'artists', 'duration', 'action']
 
 
-  @ViewChild(MatPaginator) paginator!: MatPaginator;
 
   constructor(private route: ActivatedRoute, private musicService: MusicDataService) {}
 
@@ -42,8 +38,6 @@ export class TodayTopHitsPlaylistComponent implements AfterViewInit {
       next: (v) => {
         this.spotifyPlaylist = v;
         console.log(v.tracks.items[0].added_at)
-        this.dataSource = new MatTableDataSource(this.spotifyPlaylist.tracks.items);
-        this.dataSource.paginator = this.paginator;
       },
       error: (e) => console.error(e),
       complete: () => console.info('complete')

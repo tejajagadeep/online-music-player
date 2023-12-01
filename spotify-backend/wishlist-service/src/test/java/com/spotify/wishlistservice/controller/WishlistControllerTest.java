@@ -51,12 +51,10 @@ class WishListControllerTest {
         when(authService.validateToken("abcdefghijklm")).thenReturn(info);
         List<TrackDto> list=new ArrayList<>();
         TrackDto trackDto=new TrackDto();
-        trackDto.setHref( "https://api.spotify.com/v1/tracks/5DgY6Ab0vpyUMKnY9ubFOF");
         trackDto.setId("5DgY6Ab0vpyUMKnY9ubFOF");
         trackDto.setName( "Hukum - Thalaivar Alappara");
         trackDto.setPreviewUrl("https://p.scdn.co/mp3-preview/25de2a42aced5bd37e33eab44d0aa5aba04305e8?cid=cfdbd6448f364fca80b7aa03228c64c9");
         trackDto.setType("track");
-        trackDto.setUri("spotify:track:5DgY6Ab0vpyUMKnY9ubFOF");
 
         list.add(1,trackDto);
         WishlistDto wishlistDto=new WishlistDto();
@@ -65,7 +63,7 @@ class WishListControllerTest {
 
         when(wishlistService.getUserWishlist(username)).thenReturn(wishlistDto);
 
-        ResponseEntity<Object> response=wishlistController.getUserWishLisl("abcdefghijk",username);
+        ResponseEntity<Object> response=wishlistController.getUserWishlist("abcdefghijk",username);
 
         assertEquals(HttpStatus.OK, response.getStatusCode());
         assertEquals(wishlistDto, response.getBody());
@@ -82,12 +80,10 @@ class WishListControllerTest {
         when(authService.validateToken("abcdefghijklm")).thenReturn(info);
 
         TrackDto trackDto=new TrackDto();
-        trackDto.setHref( "https://api.spotify.com/v1/tracks/5DgY6Ab0vpyUMKnY9ubFOF");
         trackDto.setId("5DgY6Ab0vpyUMKnY9ubFOF");
         trackDto.setName( "Hukum - Thalaivar Alappara");
         trackDto.setPreviewUrl("https://p.scdn.co/mp3-preview/25de2a42aced5bd37e33eab44d0aa5aba04305e8?cid=cfdbd6448f364fca80b7aa03228c64c9");
         trackDto.setType("track");
-        trackDto.setUri("spotify:track:5DgY6Ab0vpyUMKnY9ubFOF");
 
         ResponseEntity<Object> response=wishlistController.saveTrackToWishlist("abcdefghijk",username,trackDto);
 

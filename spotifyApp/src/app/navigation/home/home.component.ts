@@ -1,4 +1,7 @@
-import { Component, Renderer2, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { SpotifyPlaylist } from 'src/app/model/SpotifyPlaylist';
+import { MusicDataService } from 'src/app/service/data/music-data.service';
 
 @Component({
   selector: 'app-home',
@@ -6,17 +9,37 @@ import { Component, Renderer2, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  constructor(private renderer: Renderer2) {}
-  ngOnInit() {
-    this.loadScript('https://kit.fontawesome.com/cf98ff2373.js');
+  spotifyPlaylistBillBoard: SpotifyPlaylist | any;
+  spotifyPlaylistHot100: SpotifyPlaylist | any;
+  constructor( private route: ActivatedRoute, private musicService: MusicDataService) {}
+
+  ngOnInit(): void {
+    this.billBoard();
+    this.hot100();
   }
 
-  private loadScript(scriptUrl: string) {
-    const script = this.renderer.createElement('script');
-    script.src = scriptUrl;
-    script.async = true;
-    script.defer = true;
-
-    this.renderer.appendChild(document.body, script);
+  billBoard() {
+    this.musicService.billBoard100Playlist().subscribe(
+      {
+        next: (v) => {this.spotifyPlaylistBillBoard=v
+        },
+        error: (e) => console.error(e),
+        complete: () => console.info('complete') 
+    }
+    )
   }
+  
+  hot100() {
+    this.musicService.getTodayTopHitsPlaylist().subscribe({
+      next: (v) => {
+        this.spotifyPlaylistHot100 = v;
+        console.log(v);
+      },
+      error: (e) => console.error(e),
+      complete: () => console.info('complete')
+    });
+  }
+
+
+  
 }

@@ -1,6 +1,6 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { map } from 'rxjs';
+import { Observable, map } from 'rxjs';
 import { API_URL_AUTH } from 'src/app/app-constants';
 import { AuthAccessToken } from 'src/app/model/AuthAccessToken';
 
@@ -13,8 +13,14 @@ export class AuthenticationService {
 
   authAccessToken!: AuthAccessToken
 
-  authenticate(username: string, password: string) {
-    return this.httpClient.post<AuthAccessToken>(`${API_URL_AUTH}/login`, { username, password }).pipe(
+  authenticate(username: string, password: string): Observable<AuthAccessToken> {
+    // Construct the query parameters
+    const params = new HttpParams()
+      .set('username', username)
+      .set('password', password);
+
+    // Include the query parameters in the request
+    return this.httpClient.post<AuthAccessToken>(`${API_URL_AUTH}/login`, {}, { params }).pipe(
       map(
         authAccessToken => {
           localStorage.setItem('authenticatedUser', authAccessToken.username);

@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 public class Artist {
 
     @JsonProperty("external_urls")
-    private ExternalUrls external_urls;
+    private ExternalUrls externalUrls;
 
 
     @JsonProperty("id")

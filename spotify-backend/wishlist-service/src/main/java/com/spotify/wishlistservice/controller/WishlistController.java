@@ -42,7 +42,7 @@ public class WishlistController {
     @Cacheable(value = "wishlist", key = "#username")
     @Operation(summary = "Get User's Favorite Playlist")
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "200", description = "Found Top Hits  Playlist",
+            @ApiResponse(responseCode = "200", description = "Found User  Playlist",
                     content = { @Content(mediaType = "application/json",
                             schema = @Schema(implementation = WishlistDto.class)) }),
             @ApiResponse(responseCode = "404", description = "Wishlist not found",
@@ -50,8 +50,8 @@ public class WishlistController {
             @ApiResponse(responseCode = "401", description = "Unauthorized user",
                     content = @Content) })
     @SecurityRequirement(name = "Bearer Authentication")
-    @GetMapping("/getUserWishLisl")
-    public ResponseEntity<Object> getUserWishLisl(@RequestHeader("Authorization") String token, @RequestParam String username){
+    @GetMapping("/userWishList")
+    public ResponseEntity<Object> getUserWishlist(@RequestHeader("Authorization") String token, @RequestParam String username){
         log.trace("Controller getUserWishList: "+username);
         Map<String,String> info= authService.validateToken(token);
         log.info(info+"------inside method getUserWishList-----");
@@ -63,6 +63,31 @@ public class WishlistController {
         throw new UnAuthorizedException("Please check User details");
 
     }
+
+//    @Cacheable(value = "wishlist", key = "#username")
+//    @Operation(summary = "Check if user's exists")
+//    @ApiResponses(value = {
+//            @ApiResponse(responseCode = "200", description = "Found Users Tracks",
+//                    content = { @Content(mediaType = "application/json",
+//                            schema = @Schema(implementation = WishlistDto.class)) }),
+//            @ApiResponse(responseCode = "404", description = "Wishlist not found",
+//                    content = @Content),
+//            @ApiResponse(responseCode = "401", description = "Unauthorized user",
+//                    content = @Content) })
+//    @SecurityRequirement(name = "Bearer Authentication")
+//    @GetMapping("/favoriteExists")
+//    public ResponseEntity<Boolean> favoriteExists(@RequestHeader("Authorization") String token, @RequestParam String username, @RequestParam String trackId){
+//        log.trace("Controller getUserWishList: "+username);
+//        Map<String,String> info= authService.validateToken(token);
+//        log.info(info+"------inside method getUserWishList-----");
+//        if(info.containsKey(username)) {
+//            log.error(token + "inside method getUserWishList-----__---");
+//            return new ResponseEntity<>(wishListService.favoriteExists(username, trackId), HttpStatus.OK);
+//
+//        }
+//        throw new UnAuthorizedException("Please check User details");
+//
+//    }
 
     @Caching(evict = {
             @CacheEvict(value = "wishlist", key = "#username"),

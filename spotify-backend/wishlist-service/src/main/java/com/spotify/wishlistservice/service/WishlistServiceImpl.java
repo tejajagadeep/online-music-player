@@ -38,6 +38,12 @@ public class WishlistServiceImpl implements WishlistService {
         return modelMapper.map(wishlistRepository.findById(username).orElseThrow(() -> new ResourceNotFoundException("Entity not found with ID: " + username)), WishlistDto.class);
     }
 
+    @Override
+    public Boolean favoriteExists(String username, String trackId) {
+        log.info(wishlistRepository.existsByUsernameAndTrackId(username, trackId)+"");
+        return wishlistRepository.existsByUsernameAndTrackId(username, trackId);
+    }
+
 
     @Override
     @Observed(name = "save.track.to.wishlist")
