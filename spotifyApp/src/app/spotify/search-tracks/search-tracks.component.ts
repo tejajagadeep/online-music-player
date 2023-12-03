@@ -1,4 +1,5 @@
 import { AfterViewInit, Component } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { SpotifyTracks } from 'src/app/model/SpotifyTracks';
 import { MusicDataService } from 'src/app/service/data/music-data.service';
 
@@ -11,16 +12,11 @@ export class SearchTracksComponent implements AfterViewInit{
 
   spotifyTracks!: SpotifyTracks; // Adjust the type accordingly
   searchQuery: string = '';
-
+  
   constructor(private musicService: MusicDataService) {}
 
-  ngOnInit(): void {
-    
-  }
-
-  
   ngAfterViewInit(): void {
-    this.searchTracks("leo");
+    // this.searchTracks("leo");
   }
 
   redirectToLink(link: string) {
@@ -39,6 +35,5 @@ export class SearchTracksComponent implements AfterViewInit{
       complete: () => console.info('complete')
     });
   }
-
 
 }

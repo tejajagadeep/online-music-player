@@ -11,6 +11,7 @@ import { FooterComponent } from './navigation/footer/footer.component';
 import { SearchTracksComponent } from './spotify/search-tracks/search-tracks.component';
 import { SearchPlaylistsComponent } from './spotify/search-playlists/search-playlists.component';
 import { SearchPlaylistsTracksComponent } from './spotify/search-playlists-tracks/search-playlists-tracks.component';
+import { TopBarComponent } from './navigation/top-bar/top-bar.component';
 
 
 
@@ -26,6 +27,7 @@ const routes: Routes = [
   { path: 'discover-weekly-playlist', component: DiscoverWeeklyPlaylistComponent}, //
   { path: 'top-hits-playlist', component: TodayTopHitsPlaylistComponent},
   { path: 'favorites', component: FavoriteListComponent },
+  { path: 'bar', component: TopBarComponent },
   // { path: '**', redirectTo: 'home', pathMatch: 'full' }
 ];
 

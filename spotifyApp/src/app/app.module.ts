@@ -25,6 +25,7 @@ import { SearchTracksComponent } from './spotify/search-tracks/search-tracks.com
 import { FormsModule } from '@angular/forms';
 import { SearchPlaylistsComponent } from './spotify/search-playlists/search-playlists.component';
 import { SearchPlaylistsTracksComponent } from './spotify/search-playlists-tracks/search-playlists-tracks.component';
+import { TopBarComponent } from './navigation/top-bar/top-bar.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { SearchPlaylistsTracksComponent } from './spotify/search-playlists-track
     FooterComponent,
     SearchTracksComponent,
     SearchPlaylistsComponent,
-    SearchPlaylistsTracksComponent
+    SearchPlaylistsTracksComponent,
+    TopBarComponent
   ],
   imports: [
     BrowserModule,

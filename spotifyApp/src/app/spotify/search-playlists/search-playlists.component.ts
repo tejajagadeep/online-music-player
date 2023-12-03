@@ -20,7 +20,7 @@ export class SearchPlaylistsComponent implements AfterViewInit{
 
   
   ngAfterViewInit(): void {
-    this.searchTracks("leo");
+    // this.searchTracks("leo");
   }
 
   redirectToLink(link: string) {

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { AuthenticationService } from '../service/data/authentication.service';
 import { UserProfileDataService } from '../service/data/user-profile-data.service';
 import { UserProfile } from '../model/UserProfile';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-login',
@@ -9,6 +10,9 @@ import { UserProfile } from '../model/UserProfile';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
+
+  private searchSubscription!: Subscription;
+  
   username: string = '';
   password: string = '';
   email: string = '';
@@ -34,8 +38,6 @@ export class LoginComponent {
 
   login() {
     // Handle the form submission, e.g., send data to the server
-    console.log('Username:', this.username);
-    console.log('Password:', this.password);
     this.authService.authenticate(this.username, this.password).subscribe({
       next: (v) => {localStorage.setItem('token',v.jwt_token);},
       error: (e) => this.errorMessage = 'Authentication failed. Please check your credentials.',
