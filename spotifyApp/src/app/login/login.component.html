@@ -5,9 +5,15 @@
     <div class="signup">
       <form>
         <label for="chk" aria-hidden="true">Sign up</label>
-        <input type="text" name="txt" placeholder="User name" required="" [(ngModel)]="username">
-        <input type="email" name="email" placeholder="Email" required="" [(ngModel)]="email">
-        <input type="password" name="pswd" placeholder="Password" required="" [(ngModel)]="password">
+        <input type="text" name="txt" placeholder="User name" required [(ngModel)]="username">
+        <input type="email" name="email" placeholder="Email" required [(ngModel)]="email">
+        <input type="password" name="pswd" placeholder="Password" required [(ngModel)]="password">
+        <div *ngIf="successMessage" class="success-message">
+          <p class="success-message">Successfully registered.</p>
+        </div>
+        <div *ngIf="errorMessage2" class="error-message">
+          <p class="error-message">UserName or password already exists.</p>
+        </div>
         <button (click)="signUp()">Sign up</button>
       </form>
     </div>
@@ -15,8 +21,11 @@
     <div class="login">
       <form>
         <label for="chk" aria-hidden="true">Login</label>
-        <input type="email" name="email" placeholder="Email" required="" [(ngModel)]="loginEmail">
-        <input type="password" name="pswd" placeholder="Password" required="" [(ngModel)]="loginPassword">
+        <input type="email" name="email" placeholder="Email" required="" [(ngModel)]="username">
+        <input type="password" name="pswd" placeholder="Password" required="" [(ngModel)]="password">
+        <div *ngIf="errorMessage" class="error-message">
+          <p class="error-message">Please enter a valid email and password.</p>
+        </div>
         <button (click)="login()">Login</button>
       </form>
     </div>

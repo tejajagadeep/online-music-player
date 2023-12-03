@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
+
+.background {
+    min-height: 100vh;
+    min-width: 100vw;
+    background: linear-gradient(to top right, rgba(100, 213, 251, 0.3), rgba(228, 166, 249, 0.5)) fixed;
+    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#cbccc8');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+body {
+    margin: 0;
+}
+
+.card-container {
+    max-width: 100%;
+    width: 860px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(222px, 1fr));
+    grid-gap: 20px;
+}
+
+
+.card-container> :nth-child(-n+3) {
+    margin-top: 20px;
+}
+
+.card {
+    width: 100%;
+    max-width: 222px;
+    height: 315px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 13px 15px 0px rgba(0, 0, 0, 0.05);
+    transition: ease all 0.2s;
+}
+
+.card:hover {
+    transform: scale(1.2) translateY(-20px);
+}
+
+#back {
+    width: 100%;
+    max-width: 222px;
+    height: 315px;
+    overflow: hidden;
+    position: absolute;
+    border-radius: 10px;
+}
+
+#back img {
+    width: 100%;
+    height: 100%;
+    filter: blur(30px);
+    opacity: 0.9;
+}
+
+#art {
+    position: relative;
+    border-radius: 50%;
+    width: 176px;
+    height: 176px;
+    margin: 23px;
+    box-shadow: 0px 15px 15px 0px rgba(0, 0, 0, 0.05);
+    transition: ease all 0.2s;
+}
+
+#title,
+#artist {
+    margin: 0 17px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+#title {
+    margin-top: 31px;
+    font-family: Montserrat;
+    font-weight: bold;
+    font-size: 20px;
+    color: #393939;
+}
+
+#artist {
+    font-family: 'Segoe UI';
+    font-size: 14px;
+    color: #707070;
+}
+
+@media (max-width: 600px) {
+    .card-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+.btn {
+    background-color: #eeeee4;
+    position: absolute;
+    width: 27px;
+    height: 27px;
+    right: 10px;
+    bottom: 10px;
+    border-radius: 9px;
+    transition: all 100ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0px 1px 2px white, 0px 2px 1px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    border: none;
+    opacity: 0.9;
+}
+
+.btn:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    z-index: 2;
+}
+
+.btn:active {
+    box-shadow: 0 5px 50px rgba(0, 0, 0, 0.02);
+}
+
+.btn:active:after {
+    box-shadow: inset 0px 2px 3px white, inset 0px 2px 0px rgba(0, 0, 0, 0.1);
+}
+
+.btn.active.play-pause .icon.pause {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+}
+
+.btn.active.play-pause .icon.play {
+    opacity: 0;
+}
+
+.bigPlay .btn {
+    top: 100%;
+    left: 100%;
+    width: 100%;
+    height: 100%;
+    border-radius: 18px;
+}
+
+.player-bg .btn {
+    bottom: 100%;
+    width: 100%;
+    height: 100%;
+    right: 100%;
+}
+
+
+.playlist-icon {
+    width: 11px;
+    position: absolute;
+    left: 28px;
+    top: -6px;
+    cursor: pointer;
+}
+
+.icon.play.bigger-play {
+    width: 22px;
+    top: 11px;
+    left: 13px;
+}
+
+.icon.pause.bigger-pause {
+    width: 20px;
+    left: 22px;
+    top: 23px;
+}
+
+.pause {
+    width: 12px;
+    opacity: 0;
+    position: absolute;
+    left: 14px;
+    top: 15px;
+}
+
+.small-pause {
+    width: 10px;
+    left: 12px;
+    top: 13px;
+}
+
+.lines.grey {
+    border-left: 2px solid #e8e9f4;
+}
+
+.grey-detail {
+    background-color: #eff3f8;
+    width: 205px;
+    height: 90px;
+    border-radius: 50%;
+    margin-top: -100px;
+    margin-left: 13px;
+}
+
+.grey-detail-sec {
+    background-color: #dae3f0;
+    width: 176px;
+    height: 130px;
+    border-radius: 50%;
+    margin-top: -110px;
+    margin-left: 29px;
+}
+
+.bigPlay .btn {
+    top: 90px;
+    left: 96px;
+    width: 44px;
+    height: 44px;
+    border-radius: 18px;
+}

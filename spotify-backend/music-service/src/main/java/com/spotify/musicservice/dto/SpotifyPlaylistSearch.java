@@ -10,5 +10,5 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class SpotifyPlaylistSearch {
     @JsonProperty("playlists")
-    private PlaylistSearch playlistSearch;
+    private PlaylistSearch playlists;
 }

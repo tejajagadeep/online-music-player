@@ -93,18 +93,6 @@ public class SpotifyController {
         log.trace("Inside SpotifyController getDiscoverWeeklyPlaylist");
         return new ResponseEntity<>(spotifyService.getPlaylist(playlistId), HttpStatus.OK);
     }
-    @Operation(summary = "Get Album")
-    @ApiResponses(value = {
-            @ApiResponse(responseCode = "200", description = "Found Album",
-                    content = { @Content(mediaType = "application/json",
-                            schema = @Schema(implementation = SpotifyPlaylist.class)) }),
-            @ApiResponse(responseCode = "404", description = "Album not found",
-                    content = @Content) })
-    @GetMapping("/album")
-    public ResponseEntity<Object> getAlbum(@RequestParam String albumId) {
-        log.trace("Inside SpotifyController getDiscoverWeeklyPlaylist");
-        return new ResponseEntity<>(spotifyService.getAlbum(albumId), HttpStatus.OK);
-    }
 
     @Operation(summary = "Get a track by its id")
     @ApiResponses(value = {
@@ -143,16 +131,5 @@ public class SpotifyController {
         log.trace("Inside SpotifyController search");
         return new ResponseEntity<>(spotifyService.searchPlaylists(query), HttpStatus.OK);
     }
-    @Operation(summary = "Search Playlists by name")
-    @ApiResponses(value = {
-            @ApiResponse(responseCode = "200", description = "Found Playlists by name",
-                    content = { @Content(mediaType = "application/json",
-                            schema = @Schema(implementation = SpotifyTracksSearch.class)) }),
-            @ApiResponse(responseCode = "404", description = "Playlists Not Found",
-                    content = @Content) })
-    @GetMapping("/searchAlbums")
-    public ResponseEntity<Object> searchAlbums(@RequestParam String query) {
-        log.trace("Inside SpotifyController search");
-        return new ResponseEntity<>(spotifyService.searchAlbums(query), HttpStatus.OK);
-    }
+
 }

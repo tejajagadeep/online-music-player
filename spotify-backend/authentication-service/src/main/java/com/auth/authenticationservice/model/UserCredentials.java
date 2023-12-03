@@ -13,7 +13,6 @@ import lombok.ToString;
 @NoArgsConstructor
 public class UserCredentials {
     @Id
-    private int userid;
     private String username;
     private String password;
     private String role;

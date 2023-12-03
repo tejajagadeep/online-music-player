@@ -34,6 +34,9 @@ public class TrackDto {
     @JsonProperty("preview_url")
     private String previewUrl;
 
+    @JsonProperty("duration_ms")
+    private long durationMs;
+
     @JsonProperty("type")
     private String type;
 

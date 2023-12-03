@@ -8,16 +8,13 @@ import { MusicDataService } from 'src/app/service/data/music-data.service';
 import { WishlistDataService } from 'src/app/service/data/wishlist-data.service';
 
 @Component({
-  selector: 'app-today-top-hits-playlist',
-  templateUrl: './today-top-hits-playlist.component.html',
-  styleUrls: ['./today-top-hits-playlist.component.css']
+  selector: 'app-search-playlists-tracks',
+  templateUrl: './search-playlists-tracks.component.html',
+  styleUrls: ['./search-playlists-tracks.component.css']
 })
+export class SearchPlaylistsTracksComponent implements AfterViewInit {
 
-
-
-export class TodayTopHitsPlaylistComponent implements AfterViewInit {
-
-
+  playlistId!: string;
   spotifyPlaylist!: SpotifyPlaylist; // Adjust the type accordingly
   pageSize = 10;
   pageSizeOptions = [5, 10, 25, 50];
@@ -38,17 +35,18 @@ export class TodayTopHitsPlaylistComponent implements AfterViewInit {
 
 
   ngAfterViewInit(): void {
-    this.hot100();
-    
+    this.playlistId = this.route.snapshot.params['playlistId'];
+    this.getPlaylistSearch(this.playlistId)
+    this.dataSource.paginator = this.paginator;
+
   }
 
 
-  hot100() {
-    this.musicService.getTodayTopHitsPlaylist().subscribe({
+  getPlaylistSearch(playlistId: string) {
+    this.musicService.getPlaylist(playlistId).subscribe({
       next: (v) => {
         this.spotifyPlaylist = v;
         this.dataSource = new MatTableDataSource(v.tracks.items);
-        this.dataSource.paginator = this.paginator;
         console.log(v.tracks.items[0].added_at)
         this.afterDataLoaded();
         this.cdr.detectChanges();
@@ -102,7 +100,6 @@ export class TodayTopHitsPlaylistComponent implements AfterViewInit {
     const length = event.length;
 
     // You can perform actions based on the page change, for example, fetching new data
-    this.hot100();
   }
   playTrack(item: Item) {
     // Implement your play track logic here

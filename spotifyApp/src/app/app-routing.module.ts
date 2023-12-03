@@ -9,6 +9,8 @@ import { TodayTopHitsPlaylistComponent } from './spotify/today-top-hits-playlist
 import { DiscoverWeeklyPlaylistComponent } from './spotify/discover-weekly-playlist/discover-weekly-playlist.component';
 import { FooterComponent } from './navigation/footer/footer.component';
 import { SearchTracksComponent } from './spotify/search-tracks/search-tracks.component';
+import { SearchPlaylistsComponent } from './spotify/search-playlists/search-playlists.component';
+import { SearchPlaylistsTracksComponent } from './spotify/search-playlists-tracks/search-playlists-tracks.component';
 
 
 
@@ -18,10 +20,12 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent},
   { path: 'test-ui', component: FooterComponent},
   { path: 'search-tracks', component: SearchTracksComponent},
+  { path: 'search-playlists', component: SearchPlaylistsComponent},
+  { path: 'playlist-track/:playlistId', component: SearchPlaylistsTracksComponent},
   { path: 'billboard-hot-100-playlist', component: BillBoard100PlaylistComponent},
   { path: 'discover-weekly-playlist', component: DiscoverWeeklyPlaylistComponent}, //
   { path: 'top-hits-playlist', component: TodayTopHitsPlaylistComponent},
-  { path: 'favorites', component: FavoriteListComponent, canActivate: [canActivateTeam] },
+  { path: 'favorites', component: FavoriteListComponent },
   // { path: '**', redirectTo: 'home', pathMatch: 'full' }
 ];
 

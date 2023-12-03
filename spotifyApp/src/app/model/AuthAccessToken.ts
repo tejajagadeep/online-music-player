@@ -1,6 +1,6 @@
 export class AuthAccessToken {
     message!: string;
-    jwtToken!: string;
+    jwt_token!: string;
     role!: string;
     username!: string;
     /*

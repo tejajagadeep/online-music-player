@@ -24,7 +24,7 @@ export class AuthenticationService {
       map(
         authAccessToken => {
           localStorage.setItem('authenticatedUser', authAccessToken.username);
-          let tokenStr = 'Bearer ' + authAccessToken.jwtToken;
+          let tokenStr = 'Bearer ' + authAccessToken.jwt_token;
           localStorage.setItem('token', tokenStr);
           return authAccessToken;
         }

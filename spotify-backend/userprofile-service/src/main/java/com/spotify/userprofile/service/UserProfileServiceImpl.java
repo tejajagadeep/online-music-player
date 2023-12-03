@@ -61,10 +61,6 @@ public class UserProfileServiceImpl implements UserProfileService {
             throw new ResourceAlreadyExistsException("Email Already exists");
         }
 
-        if (usersProfileRepository.existsByNumber(userProfile.getNumber())) {
-            throw new ResourceAlreadyExistsException("Number Already exists");
-        }
-
         return modelMapper.map(usersProfileRepository.save(userProfile), UserProfileDto.class);
     }
 
@@ -79,13 +75,9 @@ public class UserProfileServiceImpl implements UserProfileService {
             throw new ResourceAlreadyExistsException("Email Already exists");
         }
 
-        if (usersProfileRepository.existsByNumber(userProfile.getNumber())) {
-            throw new ResourceAlreadyExistsException("Number Already exists");
-        }
         userProfile.setEmail(userProfileDto.getEmail());
         userProfile.setFirstName(userProfileDto.getFirstName());
         userProfile.setLastName(userProfileDto.getLastName());
-        userProfile.setNumber(userProfileDto.getNumber());
         userProfile.setDateOfBirth(userProfileDto.getDateOfBirth());
 
         usersProfileRepository.save(userProfile);

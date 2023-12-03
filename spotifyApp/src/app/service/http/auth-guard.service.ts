@@ -16,7 +16,7 @@ export class AuthGuardService {
     this.isActivated = this.canActivate();
   }
   canActivate(): boolean {
-    if (this.authService.authAccessToken.jwtToken === localStorage.getItem('authAccessToken')) {
+    if (this.authService.authAccessToken.jwt_token === localStorage.getItem('authAccessToken')) {
       return true;
     } else {
       this.router.navigate(['/login']);

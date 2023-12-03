@@ -23,6 +23,8 @@ import { DiscoverWeeklyPlaylistComponent } from './spotify/discover-weekly-playl
 import { FooterComponent } from './navigation/footer/footer.component';
 import { SearchTracksComponent } from './spotify/search-tracks/search-tracks.component';
 import { FormsModule } from '@angular/forms';
+import { SearchPlaylistsComponent } from './spotify/search-playlists/search-playlists.component';
+import { SearchPlaylistsTracksComponent } from './spotify/search-playlists-tracks/search-playlists-tracks.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +39,9 @@ import { FormsModule } from '@angular/forms';
     RemoveTimePipe,
     DiscoverWeeklyPlaylistComponent,
     FooterComponent,
-    SearchTracksComponent
+    SearchTracksComponent,
+    SearchPlaylistsComponent,
+    SearchPlaylistsTracksComponent
   ],
   imports: [
     BrowserModule,

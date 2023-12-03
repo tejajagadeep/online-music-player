@@ -17,7 +17,6 @@ public class UserProfileDto {
         private String firstName;
         private String lastName;
         private String password;
-        private long number;
         private Date dateOfBirth;
 
         private String email;
