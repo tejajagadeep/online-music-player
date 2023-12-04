@@ -1,36 +1,66 @@
-<!-- <main *ngIf="spotifyPlaylist">
-  <h1><span class="blue">&lt;</span>Table<span class="blue">&gt;</span> <span class="yellow">Responsive</span></h1>
-  <h2>Created with love by <a href="https://github.com/pablorgarcia" target="_blank">Pablo García</a></h2>
+<div id="most-popular-wrapper" *ngIf="spotifyPlaylist">
+  <h3>{{spotifyPlaylist.name}}</h3>
+  <p class="songs-no">{{spotifyPlaylist.tracks.items.length}} Songs</p>
+  <div class="song-list-wrapper" style="padding-top: 0;">
+      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
-  <table mat-table [dataSource]="spotifyPlaylist.tracks.items" class="mat-elevation-z8">
+          <!-- Position Column -->
+          <ng-container matColumnDef="position">
+              <th mat-header-cell *matHeaderCellDef> # </th>
+              <td mat-cell *matCellDef="let element; let i = index"> {{i + 1}} </td>
+          </ng-container>
 
-    <ng-container class="container" matColumnDef="album">
-      <th mat-header-cell *matHeaderCellDef><h1>Album</h1></th>
-      <td mat-cell *matCellDef="let item">{{ item.track.album.name }}</td>
-    </ng-container>
-  
-    <ng-container matColumnDef="song">
-      <th mat-header-cell *matHeaderCellDef><h1>Song</h1></th>
-      <td mat-cell *matCellDef="let item">{{ item.track.name }}</td>
-    </ng-container>
-  
-    <ng-container matColumnDef="artist">
-      <th mat-header-cell *matHeaderCellDef><h1>Artist</h1></th>
-      <td mat-cell *matCellDef="let item">{{ item.track.artists[0].name }}</td>
-    </ng-container>
-  
-    <ng-container matColumnDef="time">
-      <th mat-header-cell *matHeaderCellDef><h1>Time</h1></th>
-      <td mat-cell *matCellDef="let item">{{ item.track.duration_ms | millisecondsToMinutes }}</td>
-    </ng-container>
-  
-    <ng-container matColumnDef="spotify">
-      <th mat-header-cell *matHeaderCellDef><h1>Spotify</h1></th>
-      <td mat-cell *matCellDef="let item">play</td>
-    </ng-container>
-  
-    <tr mat-header-row *matHeaderRowDef="['album', 'song', 'artist', 'time', 'spotify']"></tr>
-    <tr mat-row *matRowDef="let row; columns: ['album', 'song', 'artist', 'time', 'spotify'];"></tr>
-  </table>
-  
-</main> -->
+
+          <!-- Image Column -->
+          <ng-container matColumnDef="image">
+              <th mat-header-cell *matHeaderCellDef> Image </th>
+              <td mat-cell *matCellDef="let element">
+                  <img [src]="element.track.album.images[0].url" alt="artist-img" width="25" height="25">
+              </td>
+          </ng-container>
+
+          <!-- Name Column -->
+          <ng-container matColumnDef="name">
+              <th mat-header-cell *matHeaderCellDef> Name </th>
+              <td mat-cell *matCellDef="let element"> {{element.track.name}} </td>
+          </ng-container>
+
+          <!-- Artist Column -->
+          <ng-container matColumnDef="artist">
+              <th mat-header-cell *matHeaderCellDef> Artist </th>
+              <td mat-cell *matCellDef="let element"> {{element.track.artists[0].name}} </td>
+          </ng-container>
+
+          <!-- Duration Column -->
+          <ng-container matColumnDef="duration">
+              <th mat-header-cell *matHeaderCellDef> Duration </th>
+              <td mat-cell *matCellDef="let element"> {{element.track.duration_ms | millisecondsToMinutes}} </td>
+          </ng-container>
+
+          <!-- Play Song on Spotify -->
+          <ng-container matColumnDef="play">
+              <th mat-header-cell *matHeaderCellDef> Play </th>
+              <td mat-cell *matCellDef="let element">
+                  <i class="fas fa-play" style="
+                  transition: transform 1s ease; cursor: pointer;" (click)="playTrack(element)"></i>
+              </td>
+          </ng-container>
+
+          <!-- Action Column -->
+          <ng-container matColumnDef="action">
+              <th mat-header-cell *matHeaderCellDef> Action </th>
+              <td mat-cell *matCellDef="let element">
+                  <i (click)="saveTrackToWishList(element.track.id)" class="fas fa-heart red" style="color: rgb(255, 49, 70);
+                  transition: transform 1s ease; cursor: pointer;"></i>
+              </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+      <!-- ... (previous code) ... -->
+
+      <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+
+  </div>
+</div>

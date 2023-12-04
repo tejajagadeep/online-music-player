@@ -27,7 +27,7 @@ export class SearchPlaylistsTracksComponent implements AfterViewInit {
   constructor(private route: ActivatedRoute, 
     private musicService: MusicDataService,
     private wishList: WishlistDataService,
-    private cdr: ChangeDetectorRef) { }
+    ) { }
 
   ngOnInit(): void {
 
@@ -38,7 +38,14 @@ export class SearchPlaylistsTracksComponent implements AfterViewInit {
     this.playlistId = this.route.snapshot.params['playlistId'];
     this.getPlaylistSearch(this.playlistId)
     this.dataSource.paginator = this.paginator;
+    setTimeout(() => {
+      this.afterDataLoaded();
+    }, 2000);
+  }
 
+  afterDataLoaded(){
+    this.dataSource = new MatTableDataSource(this.spotifyPlaylist.tracks.items);
+    this.dataSource.paginator = this.paginator;
   }
 
 
@@ -47,17 +54,12 @@ export class SearchPlaylistsTracksComponent implements AfterViewInit {
       next: (v) => {
         this.spotifyPlaylist = v;
         this.dataSource = new MatTableDataSource(v.tracks.items);
+        this.dataSource.paginator = this.paginator;
         console.log(v.tracks.items[0].added_at)
-        this.afterDataLoaded();
-        this.cdr.detectChanges();
       },
       error: (e) => console.error(e),
       complete: () => console.info('complete')
     });
-  }
-
-  afterDataLoaded(){
-    console.log(this.dataSource);
   }
 
   saveTrackToWishList(id: string){

@@ -5,15 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a2504401-f241-4a58-ab09-902bb2951c1e" name="Changes" comment="Commit message [date: %Y-%m-%d] [time: %H:%M:%S]">
-      <change afterPath="$PROJECT_DIR$/music-service/src/test/java/com/spotify/musicservice/repository/SpotifyAccessTokenRepositoryTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wishlist-service/src/test/java/com/spotify/wishlistservice/controller/WishlistControllerTest2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/music-service/src/main/java/com/spotify/musicservice/dto/SpotifyPlaylist.java" beforeDir="false" afterPath="$PROJECT_DIR$/music-service/src/main/java/com/spotify/musicservice/dto/SpotifyPlaylist.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/music-service/src/main/java/com/spotify/musicservice/dto/TrackTracks.java" beforeDir="false" afterPath="$PROJECT_DIR$/music-service/src/main/java/com/spotify/musicservice/dto/TrackTracks.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/music-service/src/main/java/com/spotify/musicservice/dto/Tracks.java" beforeDir="false" afterPath="$PROJECT_DIR$/music-service/src/main/java/com/spotify/musicservice/dto/Tracks.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/music-service/src/test/java/com/spotify/musicservice/service/SpotifyServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/music-service/src/test/java/com/spotify/musicservice/service/SpotifyServiceImplTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wishlist-service/src/main/java/com/spotify/wishlistservice/repository/WishlistRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/wishlist-service/src/main/java/com/spotify/wishlistservice/repository/WishlistRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wishlist-service/src/test/java/com/spotify/wishlistservice/repository/WishlistRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/wishlist-service/src/test/java/com/spotify/wishlistservice/repository/WishlistRepositoryTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
