@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Data
@@ -13,6 +14,6 @@ import java.util.List;
 public class Tracks {
 
     @JsonProperty("items")
-    private List<Item> items;
+    private List<Item> items = new ArrayList<>();
 
 }

@@ -5,35 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a2504401-f241-4a58-ab09-902bb2951c1e" name="Changes" comment="Commit message [date: %Y-%m-%d] [time: %H:%M:%S]">
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/0/206ee6e571caf549781f272c50987dd4b8b68df5" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/0/206ee6e571caf549781f272c50987dd4b8b68df5" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/d/7dcd00c312af65c8c0af18847cb08ac2a0e243d6" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/d/7dcd00c312af65c8c0af18847cb08ac2a0e243d6" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/music-service/src/test/java/com/spotify/musicservice/repository/SpotifyAccessTokenRepositoryTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wishlist-service/src/test/java/com/spotify/wishlistservice/controller/WishlistControllerTest2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/music-service/src/main/java/com/spotify/musicservice/dto/AlbumItemSearch.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/music-service/src/main/java/com/spotify/musicservice/dto/AlbumSearch.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/music-service/src/main/java/com/spotify/musicservice/dto/SpotifyAlbumSearch.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/music-service/src/main/java/com/spotify/musicservice/service/SpotifyService.java" beforeDir="false" afterPath="$PROJECT_DIR$/music-service/src/main/java/com/spotify/musicservice/service/SpotifyService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/music-service/src/main/java/com/spotify/musicservice/service/SpotifyServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/music-service/src/main/java/com/spotify/musicservice/service/SpotifyServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/music-service/src/test/java/com/spotify/musicservice/model/SpotifyAccessTokenTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wishlist-service/src/main/java/com/spotify/wishlistservice/controller/WishlistController.java" beforeDir="false" afterPath="$PROJECT_DIR$/wishlist-service/src/main/java/com/spotify/wishlistservice/controller/WishlistController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wishlist-service/src/main/java/com/spotify/wishlistservice/dto/AlbumDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/wishlist-service/src/main/java/com/spotify/wishlistservice/dto/AlbumDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wishlist-service/src/main/java/com/spotify/wishlistservice/dto/ArtistDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/wishlist-service/src/main/java/com/spotify/wishlistservice/dto/ArtistDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wishlist-service/src/main/java/com/spotify/wishlistservice/dto/TrackDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/wishlist-service/src/main/java/com/spotify/wishlistservice/dto/TrackDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wishlist-service/src/main/java/com/spotify/wishlistservice/model/Album.java" beforeDir="false" afterPath="$PROJECT_DIR$/wishlist-service/src/main/java/com/spotify/wishlistservice/model/Album.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wishlist-service/src/main/java/com/spotify/wishlistservice/model/Artist.java" beforeDir="false" afterPath="$PROJECT_DIR$/wishlist-service/src/main/java/com/spotify/wishlistservice/model/Artist.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wishlist-service/src/main/java/com/spotify/wishlistservice/model/Track.java" beforeDir="false" afterPath="$PROJECT_DIR$/wishlist-service/src/main/java/com/spotify/wishlistservice/model/Track.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wishlist-service/src/main/java/com/spotify/wishlistservice/service/WishlistServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/wishlist-service/src/main/java/com/spotify/wishlistservice/service/WishlistServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wishlist-service/src/test/java/com/spotify/wishlistservice/filter/JWTFilterTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wishlist-service/src/test/java/com/spotify/wishlistservice/kafka/DataPublisherServiceImplTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wishlist-service/src/test/java/com/spotify/wishlistservice/kafka/kafkaConfigTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wishlist-service/src/test/java/com/spotify/wishlistservice/model/AlbumTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wishlist-service/src/test/java/com/spotify/wishlistservice/model/ArtistTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wishlist-service/src/test/java/com/spotify/wishlistservice/model/ExternalUrlsTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wishlist-service/src/test/java/com/spotify/wishlistservice/model/ImageTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wishlist-service/src/test/java/com/spotify/wishlistservice/model/TrackTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wishlist-service/src/test/java/com/spotify/wishlistservice/model/WishlistTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wishlist-service/src/test/java/com/spotify/wishlistservice/response/ResponseHandlerTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wishlist-service/src/test/java/com/spotify/wishlistservice/service/WishlistServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/wishlist-service/src/test/java/com/spotify/wishlistservice/service/WishlistServiceImplTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spotifyApp/src/app/navigation/top-bar/top-bar.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../spotifyApp/src/app/navigation/top-bar/top-bar.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/music-service/src/main/java/com/spotify/musicservice/dto/SpotifyPlaylist.java" beforeDir="false" afterPath="$PROJECT_DIR$/music-service/src/main/java/com/spotify/musicservice/dto/SpotifyPlaylist.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/music-service/src/main/java/com/spotify/musicservice/dto/TrackTracks.java" beforeDir="false" afterPath="$PROJECT_DIR$/music-service/src/main/java/com/spotify/musicservice/dto/TrackTracks.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/music-service/src/main/java/com/spotify/musicservice/dto/Tracks.java" beforeDir="false" afterPath="$PROJECT_DIR$/music-service/src/main/java/com/spotify/musicservice/dto/Tracks.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/music-service/src/test/java/com/spotify/musicservice/service/SpotifyServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/music-service/src/test/java/com/spotify/musicservice/service/SpotifyServiceImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wishlist-service/src/main/java/com/spotify/wishlistservice/repository/WishlistRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/wishlist-service/src/main/java/com/spotify/wishlistservice/repository/WishlistRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wishlist-service/src/test/java/com/spotify/wishlistservice/repository/WishlistRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/wishlist-service/src/test/java/com/spotify/wishlistservice/repository/WishlistRepositoryTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,8 +29,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JUnit5 Test Class" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -105,11 +85,11 @@
       <recent name="" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.spotify.wishlistservice.controller" />
       <recent name="com.spotify.musicservice.service" />
+      <recent name="com.spotify.musicservice.repository" />
+      <recent name="com.spotify.wishlistservice.repository" />
       <recent name="com.spotify.musicservice.model" />
-      <recent name="com.spotify.musicservice.controller" />
-      <recent name="com.spotify.userprofile.service" />
-      <recent name="com.spotify.userprofile.repository" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.spotify.wishlistservice.service" />
@@ -119,13 +99,13 @@
       <recent name="com.spotify.wishlistservice.dto" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ApiGatewayApplication">
-    <configuration name="ApiGatewayApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.spotify.apigateway.ApiGatewayApplication" />
-      <module name="api-gateway" />
+  <component name="RunManager" selected="Application.MusicserviceApplication">
+    <configuration name="MusicserviceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.spotify.musicservice.MusicserviceApplication" />
+      <module name="music-service" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.spotify.apigateway.*" />
+          <option name="PATTERN" value="com.spotify.musicservice.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -133,12 +113,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AuthenticationServiceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.auth.authenticationservice.AuthenticationServiceApplication" />
-      <module name="authentication-service" />
+    <configuration name="WishlistserviceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.spotify.wishlistservice.WishlistserviceApplication" />
+      <module name="wishlist-service" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.auth.authenticationservice.*" />
+          <option name="PATTERN" value="com.spotify.wishlistservice.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -146,33 +126,23 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ConfigServerApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.sshalem.configserver.ConfigServerApplication" />
-      <module name="config-server" />
+    <configuration name="SpotifyServiceImplTest.testGetBillBoard100PlaylistIntegration" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="music-service" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.sshalem.configserver.*" />
+          <option name="PATTERN" value="com.spotify.musicservice.service.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="com.spotify.musicservice.service" />
+      <option name="MAIN_CLASS_NAME" value="com.spotify.musicservice.service.SpotifyServiceImplTest" />
+      <option name="METHOD_NAME" value="testGetBillBoard100PlaylistIntegration" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="EurekaServerApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.university.eurekaserver.EurekaServerApplication" />
-      <module name="eureka-server" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.university.eurekaserver.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="WishListControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="YourControllerTest.testGetUserWishlist" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="wishlist-service" />
       <extension name="coverage">
         <pattern>
@@ -181,19 +151,36 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.spotify.wishlistservice.controller" />
-      <option name="MAIN_CLASS_NAME" value="com.spotify.wishlistservice.controller.WishListControllerTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="MAIN_CLASS_NAME" value="com.spotify.wishlistservice.controller.YourControllerTest" />
+      <option name="METHOD_NAME" value="testGetUserWishlist" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="YourControllerTest.testGetUserWishlistUnauthorized" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="wishlist-service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.spotify.wishlistservice.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.spotify.wishlistservice.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.spotify.wishlistservice.controller.YourControllerTest" />
+      <option name="METHOD_NAME" value="testGetUserWishlistUnauthorized" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.ApiGatewayApplication" />
-        <item itemvalue="Application.AuthenticationServiceApplication" />
-        <item itemvalue="Application.ConfigServerApplication" />
-        <item itemvalue="Application.EurekaServerApplication" />
-        <item itemvalue="JUnit.WishListControllerTest" />
+        <item itemvalue="Application.MusicserviceApplication" />
+        <item itemvalue="Application.WishlistserviceApplication" />
+        <item itemvalue="JUnit.YourControllerTest.testGetUserWishlistUnauthorized" />
+        <item itemvalue="JUnit.YourControllerTest.testGetUserWishlist" />
+        <item itemvalue="JUnit.SpotifyServiceImplTest.testGetBillBoard100PlaylistIntegration" />
       </list>
     </recent_temporary>
   </component>
@@ -226,6 +213,9 @@
     <SUITE FILE_PATH="coverage/spotify_backend$All_in_wishlist_service.ic" NAME="All in wishlist-service Coverage Results" MODIFIED="1700919084397" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/spotify_backend$WishListControllerTest.ic" NAME="WishListControllerTest Coverage Results" MODIFIED="1701662139113" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.spotify.wishlistservice.controller.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/spotify_backend$WishlistRepositoryTest.ic" NAME="WishlistRepositoryTest Coverage Results" MODIFIED="1701663249036" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.spotify.wishlistservice.repository.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/spotify_backend$WishlistServiceImplTest2.ic" NAME="WishlistServiceImplTest2 Coverage Results" MODIFIED="1701662086866" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.spotify.wishlistservice.service.*</FILTER>

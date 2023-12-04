@@ -3,6 +3,7 @@ import { AuthenticationService } from '../service/data/authentication.service';
 import { UserProfileDataService } from '../service/data/user-profile-data.service';
 import { UserProfile } from '../model/UserProfile';
 import { Subscription } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -22,7 +23,7 @@ export class LoginComponent {
   errorMessage2!: string
   successMessage!: string
   userProfile!: UserProfile;
-  constructor(private authService: AuthenticationService, private userService: UserProfileDataService){
+  constructor(private router: Router, private authService: AuthenticationService, private userService: UserProfileDataService){
   }
 
   signUp() {
@@ -39,7 +40,9 @@ export class LoginComponent {
   login() {
     // Handle the form submission, e.g., send data to the server
     this.authService.authenticate(this.username, this.password).subscribe({
-      next: (v) => {localStorage.setItem('token',v.jwt_token);},
+      next: (v) => {localStorage.setItem('token','Bearer '+ v.jwt_token);
+      this.router.navigate(['/home']);
+    },
       error: (e) => this.errorMessage = 'Authentication failed. Please check your credentials.',
       complete: () => console.info('complete') 
   }

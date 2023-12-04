@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Data
@@ -22,7 +23,7 @@ public class SpotifyPlaylist {
     private String id;
 
     @JsonProperty("images")
-    private List<Image> images;
+    private List<Image> images = new ArrayList<>();
 
     @JsonProperty("name")
     private String name;
