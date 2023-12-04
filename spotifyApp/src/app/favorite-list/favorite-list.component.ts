@@ -45,14 +45,13 @@ export class FavoriteListComponent implements AfterViewInit {
     this.wishList.getUserWishList().subscribe({
       next: (v) => {
         this.tracks = v.tracks;
-        this.dataSource = new MatTableDataSource(v.tracks);
-        this.dataSource.paginator = this.paginator;
         console.log(v.tracks[0].name)
         this.afterDataLoaded();
         this.cdr.detectChanges();
       },
       error: (e) => console.error(e),
-      complete: () => console.info('complete')
+      complete: () => {console.info('complete'), this.dataSource = new MatTableDataSource(this.tracks);
+      this.dataSource.paginator = this.paginator;}
     });
   }
 
@@ -67,7 +66,7 @@ export class FavoriteListComponent implements AfterViewInit {
         this.wishlists();
       },
       error: (e) => console.error(e),
-      complete: () => {console.info('complete'); this.wishlists();}
+      complete: () => {console.info('track deleted'); this.wishlists();}
     });
 
 

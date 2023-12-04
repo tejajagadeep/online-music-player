@@ -93,3 +93,20 @@ body {
         grid-template-columns: 1fr;
     }
 }
+
+.track-item {
+    position: relative;
+    display: inline-block;
+}
+
+i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px;
+    cursor: pointer;
+    font-size: 50px;
+    /* Adjust padding as needed */
+}
+

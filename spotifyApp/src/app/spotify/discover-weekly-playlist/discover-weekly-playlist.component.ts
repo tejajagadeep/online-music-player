@@ -1,4 +1,5 @@
 import { AfterViewInit, Component, ViewChild } from '@angular/core';
+import { Item } from 'src/app/model/Item';
 import { SpotifyPlaylist } from 'src/app/model/SpotifyPlaylist';
 import { MusicDataService } from 'src/app/service/data/music-data.service';
 
@@ -33,4 +34,9 @@ export class DiscoverWeeklyPlaylistComponent implements AfterViewInit{
     });
   }
 
+  playTrack(item: Item) {
+    // Implement your play track logic here
+    const link = item.track.external_urls.spotify;
+    window.open(link, '_blank');
+  }
 }

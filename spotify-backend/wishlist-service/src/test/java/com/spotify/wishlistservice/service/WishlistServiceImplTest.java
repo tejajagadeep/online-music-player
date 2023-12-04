@@ -104,7 +104,12 @@ class WishlistServiceImplTest {
     void getUserWishlist_UserExists_ShouldReturnWishListDto() {
         // Arrange
 
+
+        Wishlist wishlist1 = new Wishlist();
+        wishlist1.setUsername("jagadeep");
+//        wishlist1.setTracks(List.of());
         System.out.println(wishlist.getUsername());
+        wishlistRepository.save(wishlist1);
         when(wishlistRepository.findById("jagadeep")).thenReturn(Optional.of(wishlist));
 //        when(modelMapper.map(wishlist, WishlistDto.class)).thenReturn(wishlistDto);
 

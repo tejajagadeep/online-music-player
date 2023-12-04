@@ -27,19 +27,17 @@ export class TodayTopHitsPlaylistComponent implements AfterViewInit {
   dataSource!: MatTableDataSource<any>;
   displayedColumns: string[] = ['position', 'image', 'name', 'artist', 'duration', 'play', 'action'];
 
+  isExists: boolean = false;
 
   constructor(private route: ActivatedRoute, 
     private musicService: MusicDataService,
     private wishList: WishlistDataService,
     private cdr: ChangeDetectorRef) { }
 
-  ngOnInit(): void {
-
-  }
 
   ngAfterViewInit(): void {
     this.todayTopHitsPlaylist();
-
+    this.favoriteIsExists("4KULAymBBJcPRpk1yO4dOG")
     // setTimeout(() => {
     //   this.afterDataLoaded();
     // }, 1000);
@@ -59,8 +57,12 @@ export class TodayTopHitsPlaylistComponent implements AfterViewInit {
         console.log(v.tracks.items[0].added_at)
         this.cdr.detectChanges();
       },
-      error: (e) => console.error(e),
-      complete: () => console.info('complete')
+      error: (e) => {console.error('e'),
+      this.dataSource = new MatTableDataSource(this.spotifyPlaylist.tracks.items);
+      this.dataSource.paginator = this.paginator;},
+      complete: () => {console.info('complete'),
+      this.dataSource = new MatTableDataSource(this.spotifyPlaylist.tracks.items);
+      this.dataSource.paginator = this.paginator;}
     });
   }
 
@@ -77,24 +79,41 @@ export class TodayTopHitsPlaylistComponent implements AfterViewInit {
           error: (e) => console.error(e),
           complete: () => console.info('complete')
         });;
-        this.dataSource = new MatTableDataSource(this.spotifyPlaylist.tracks.items);
-        this.dataSource.paginator = this.paginator;
+        
         console.log(v.name)
       },
       error: (e) => console.error(e),
-      complete: () => console.info('complete')
+      complete: () => {console.info('complete'), this.dataSource = new MatTableDataSource(this.spotifyPlaylist.tracks.items);
+      this.dataSource.paginator = this.paginator;}
     });
   }
 
 
+  deleteTrackToWishList(id: string) {
+
+    this.wishList.deleteTrackByUsernameAndTrackId(id).subscribe({
+      next: (a) => {
+        this.todayTopHitsPlaylist();
+      },
+      error: (e) => console.error(e),
+      complete: () => {console.info('complete'); this.todayTopHitsPlaylist();}
+    });
+
+
+  }
+
   favoriteIsExists(trackId: string){
     this.wishList.favoriteExists(trackId).subscribe({
       next: (a) => {
-        return a;
+        this.isExists =a;
+        console.log(a);
       },
       error: (e) => console.error(e),
-      complete: () => console.info('complete')
+      complete: () => this.isExists
     })
+    // console.log(this.isExists)
+    return this.isExists;
+    
   }
 
   playTrack(item: Item) {

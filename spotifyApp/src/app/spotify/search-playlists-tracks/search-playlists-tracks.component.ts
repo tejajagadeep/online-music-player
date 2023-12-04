@@ -1,4 +1,4 @@
-import { AfterViewInit, ChangeDetectorRef, Component, ViewChild } from '@angular/core';
+import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { ActivatedRoute } from '@angular/router';
@@ -10,7 +10,8 @@ import { WishlistDataService } from 'src/app/service/data/wishlist-data.service'
 @Component({
   selector: 'app-search-playlists-tracks',
   templateUrl: './search-playlists-tracks.component.html',
-  styleUrls: ['./search-playlists-tracks.component.css']
+  styleUrls: ['./search-playlists-tracks.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SearchPlaylistsTracksComponent implements AfterViewInit {
 
@@ -27,6 +28,7 @@ export class SearchPlaylistsTracksComponent implements AfterViewInit {
   constructor(private route: ActivatedRoute, 
     private musicService: MusicDataService,
     private wishList: WishlistDataService,
+    private cdr: ChangeDetectorRef
     ) { }
 
   ngOnInit(): void {
@@ -37,10 +39,6 @@ export class SearchPlaylistsTracksComponent implements AfterViewInit {
   ngAfterViewInit(): void {
     this.playlistId = this.route.snapshot.params['playlistId'];
     this.getPlaylistSearch(this.playlistId)
-    this.dataSource.paginator = this.paginator;
-    setTimeout(() => {
-      this.afterDataLoaded();
-    }, 2000);
   }
 
   afterDataLoaded(){
@@ -53,12 +51,13 @@ export class SearchPlaylistsTracksComponent implements AfterViewInit {
     this.musicService.getPlaylist(playlistId).subscribe({
       next: (v) => {
         this.spotifyPlaylist = v;
-        this.dataSource = new MatTableDataSource(v.tracks.items);
-        this.dataSource.paginator = this.paginator;
         console.log(v.tracks.items[0].added_at)
+        this.cdr.detectChanges();
       },
       error: (e) => console.error(e),
-      complete: () => console.info('complete')
+      complete: () => {console.info('complete'),
+      this.dataSource = new MatTableDataSource(this.spotifyPlaylist.tracks.items);
+      this.dataSource.paginator = this.paginator;}
     });
   }
 
@@ -80,8 +79,6 @@ export class SearchPlaylistsTracksComponent implements AfterViewInit {
       error: (e) => console.error(e),
       complete: () => console.info('complete')
     });
-
-    
   }
 
   favoriteIsExists(trackId: string){
@@ -93,16 +90,7 @@ export class SearchPlaylistsTracksComponent implements AfterViewInit {
       complete: () => console.info('complete')
     })
   }
-
-
-  onPageChange(event: any): void {
-    // Handle page changes if needed
-    const pageIndex = event.pageIndex;
-    const pageSize = event.pageSize;
-    const length = event.length;
-
-    // You can perform actions based on the page change, for example, fetching new data
-  }
+  
   playTrack(item: Item) {
     // Implement your play track logic here
     const link = item.track.external_urls.spotify;
