@@ -121,20 +121,6 @@ public class SpotifyServiceImpl implements SpotifyService{
     }
 
     @Override
-    public Album getAlbum(String albumId) {
-        HttpHeaders headers = httpHeaders();
-        URI uri = UriComponentsBuilder.fromUriString(apiUrl + "/albums/{albumId}")
-                .buildAndExpand(albumId)
-                .toUri();
-        log.info(uri.toString());
-        RequestEntity<Void> requestEntity = RequestEntity
-                .get(uri)
-                .headers(headers)
-                .build();
-        return restTemplate.exchange(requestEntity, Album.class).getBody();
-    }
-
-    @Override
     @Observed(name = "search")
     public Object searchTracks(String query) {
         log.trace("Inside SpotifyServiceImpl search");
@@ -147,12 +133,6 @@ public class SpotifyServiceImpl implements SpotifyService{
         log.trace("Inside searchPlaylists search");
         log.info("search Playlist: "+query);
         return restTemplate.exchange(searchRequest(query, "playlist"), SpotifyPlaylistSearch.class).getBody();
-    }
-    @Override
-    public Object searchAlbums(String query) {
-        log.trace("Inside searchPlaylists search");
-        log.info("search Playlist: "+query);
-        return restTemplate.exchange(searchRequest(query, "album"), SpotifyAlbumSearch.class).getBody();
     }
 
     private RequestEntity<Void> searchRequest(String query, String type){

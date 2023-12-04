@@ -22,7 +22,7 @@ public class AlbumDto {
     private List<Artist> artists = new ArrayList<>();
 
     @JsonProperty("external_urls")
-    private ExternalUrls external_urls;
+    private ExternalUrls externalUrls;
 
 
     @JsonProperty("id")

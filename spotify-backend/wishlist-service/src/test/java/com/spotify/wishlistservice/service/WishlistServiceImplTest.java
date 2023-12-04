@@ -56,7 +56,6 @@ class WishlistServiceImplTest {
         mockTrack.setName("Work Out");
         mockTrack.setId("2wAJTrFhCnQyNSD3oUgTZO");
         mockTrack.setType("track");
-        mockTrack.setUri("spotify:track:2wAJTrFhCnQyNSD3oUgTZO");
         mockTrack.setExternalUrls(externalUrls);
 
 
@@ -66,7 +65,6 @@ class WishlistServiceImplTest {
         mockAlbum.setId("0fhmJYVhW0e4i33pCLPA5i");
         mockAlbum.setType("album");
         mockAlbum.setReleaseDate("2011-09-27");
-        mockAlbum.setUri("spotify:album:0fhmJYVhW0e4i33pCLPA5i");
         mockAlbum.setExternalUrls(externalUrls);
         mockTrack.setAlbum(mockAlbum);
 
@@ -74,7 +72,6 @@ class WishlistServiceImplTest {
         mockArtist.setName("J. Cole");
         mockArtist.setId("6l3HvQ5sa6mXTsMTB19rO5");
         mockArtist.setType("artist");
-        mockArtist.setUri("spotify:artist:6l3HvQ5sa6mXTsMTB19rO5");
         mockArtist.setExternalUrls(externalUrls);
         mockTrack.setArtists(List.of(mockArtist));
 
@@ -138,15 +135,21 @@ class WishlistServiceImplTest {
 //        Wishlist existingWishlist = new Wishlist();
 //        existingWishlist.setUsername(username);
 
-        when(wishlistRepository.findById("jagadeep")).thenReturn(Optional.of(wishlist));
-        when(modelMapper.map(eq(mockTrackDto), eq(Track.class))).thenReturn(mockTrack);
+        String username = "testUser";
+        TrackDto trackDto = new TrackDto();
+        trackDto.setId("track123");
+        Wishlist wishlist = new Wishlist();
+        wishlist.setUsername(username);
+
+        when(wishlistRepository.findById(username)).thenReturn(Optional.of(wishlist));
+
         // Act
-        TrackDto savedTrack = wishlistService.saveTrackToWishlist("jagadeep", mockTrackDto);
+        TrackDto result = wishlistService.saveTrackToWishlist(username, trackDto);
 
         // Assert
-        assertNotNull(savedTrack);
-        assertEquals(mockTrack, savedTrack);
-        verify(wishlistRepository, times(1)).save(wishlist);
+        assertNotNull(result);
+        assertEquals("track123", result.getId());
+        assertTrue(wishlist.getTracks().stream().anyMatch(track -> "track123".equals(track.getId())));
     }
 
     @Test

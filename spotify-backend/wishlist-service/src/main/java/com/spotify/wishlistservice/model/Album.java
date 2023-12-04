@@ -21,7 +21,7 @@ public class Album {
     private List<Artist> artists;
 
     @JsonProperty("external_urls")
-    private ExternalUrls external_urls;
+    private ExternalUrls externalUrls;
 
     @JsonProperty("id")
     private String id;

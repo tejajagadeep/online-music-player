@@ -18,12 +18,8 @@ public interface SpotifyService {
 
     Track getTrack(String trackId);
 
-    Album getAlbum(String albumId);
-
     Object searchTracks(String query);
 
     Object searchPlaylists(String query);
-
-    Object searchAlbums(String query);
 
 }

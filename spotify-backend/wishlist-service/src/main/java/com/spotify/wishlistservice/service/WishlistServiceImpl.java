@@ -114,7 +114,7 @@ public class WishlistServiceImpl implements WishlistService {
                         existingTrack.setPreviewUrl(newTrack.getPreviewUrl());
                         existingTrack.setDurationMs(newTrack.getDurationMs());
                         existingTrack.setAlbum(newTrack.getAlbum());
-                        existingTrack.setExternal_urls(newTrack.getExternal_urls());
+                        existingTrack.setExternalUrls(newTrack.getExternalUrls());
                         existingTrack.setArtists(newTrack.getArtists());
                         existingTrack.setType(newTrack.getType());
                         // Update other attributes as needed

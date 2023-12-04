@@ -23,7 +23,7 @@ public class Track {
     private List<Artist> artists = new ArrayList<>();
 
     @JsonProperty("external_urls")
-    private ExternalUrls external_urls;
+    private ExternalUrls externalUrls;
 
     @Id
     @JsonProperty("id")
