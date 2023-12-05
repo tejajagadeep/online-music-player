@@ -1,5 +1,6 @@
 @import url('https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css');
 @import url('https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/3.6.95/css/materialdesignicons.css');
+
 body {
     background-color: #f9f9fa
 }
@@ -14,8 +15,8 @@ body {
 
 .card {
     border-radius: 5px;
-    -webkit-box-shadow: 0 1px 20px 0 rgba(69,90,100,0.08);
-    box-shadow: 0 1px 20px 0 rgba(69,90,100,0.08);
+    -webkit-box-shadow: 0 1px 20px 0 rgba(69, 90, 100, 0.08);
+    box-shadow: 0 1px 20px 0 rgba(69, 90, 100, 0.08);
     border: none;
     margin-bottom: 30px;
 }
@@ -33,7 +34,7 @@ body {
 }
 
 .bg-c-lite-green {
-        background: -webkit-gradient(linear, left top, right top, from(#f29263), to(#ee5a6f));
+    background: -webkit-gradient(linear, left top, right top, from(#f29263), to(#ee5a6f));
     background: linear-gradient(to right, #ee5a6f, #f29263);
 }
 
@@ -54,7 +55,7 @@ body {
 }
 
 
- 
+
 h6 {
     font-size: 14px;
 }
@@ -63,10 +64,10 @@ h6 {
     line-height: 25px;
 }
 
-@media only screen and (min-width: 1400px){
-p {
-    font-size: 14px;
-}
+@media only screen and (min-width: 1400px) {
+    p {
+        font-size: 14px;
+    }
 }
 
 .card-block {
@@ -140,4 +141,6 @@ p {
     margin-top: 10%;
     margin-left: 10%;
 }
-
+a{
+    color: white;
+}

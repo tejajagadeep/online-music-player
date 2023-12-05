@@ -233,7 +233,25 @@ body {
 
 #grid {
     display: flex;
-    overflow: auto;
+    overflow-x: auto;
+}
+
+/* For WebKit browsers (Chrome, Safari, etc.) */
+#grid::-webkit-scrollbar {
+    width: 10px;
+    height: 7px;
+    /* Set the width of the scrollbar */
+}
+
+#grid::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    background-color: #d55959;
+}
+
+#grid::-webkit-scrollbar-track {
+    border-radius: 8px;
+    background-color: #e7e7e7;
+    border: 1px solid #cacaca;
 }
 
 .popstar-cards {
@@ -266,6 +284,7 @@ body {
 
 #topchart-section {
     margin-left: 80px;
+    margin-bottom: 5px;
 }
 
 .popstar-cards p {
@@ -511,9 +530,11 @@ body {
     }
 }
 
-
+.seven{
+    margin-top: 20px;
+}
 .seven h1 {
-    margin-top: 13px;
+    
     text-align: center;
     font-size: 30px;
     font-weight: 300;

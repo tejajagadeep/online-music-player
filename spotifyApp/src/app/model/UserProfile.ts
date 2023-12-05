@@ -3,7 +3,7 @@ export class UserProfile{
     firstName!:string;
     lastName!:string;
     password!:string;
-    number!:number;
     dateOfBirth!:Date;
+    gender!:string;
     email!:string;
 }

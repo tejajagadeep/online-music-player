@@ -5,13 +5,18 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatCardModule } from '@angular/material/card';
+import { MatRadioModule } from '@angular/material/radio';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { HttpInterceptorBasicAuthService } from './service/http/http-interceptor-basic-auth.service';
 import { FavoriteListComponent as FavoriteListComponent } from './favorite-list/favorite-list.component';
-import { HomeComponent } from './navigation/home/home.component';
+import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { TodayTopHitsPlaylistComponent } from './spotify/today-top-hits-playlist/today-top-hits-playlist.component';
 import { BillBoard100PlaylistComponent } from './spotify/bill-board100-playlist/bill-board100-playlist.component';
@@ -22,7 +27,7 @@ import { RemoveTimePipe } from './app-parsers/pipe-remove';
 import { DiscoverWeeklyPlaylistComponent } from './spotify/discover-weekly-playlist/discover-weekly-playlist.component';
 import { FooterComponent } from './navigation/footer/footer.component';
 import { SearchTracksComponent } from './spotify/search-tracks/search-tracks.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SearchPlaylistsComponent } from './spotify/search-playlists/search-playlists.component';
 import { SearchPlaylistsTracksComponent } from './spotify/search-playlists-tracks/search-playlists-tracks.component';
 import { SideBarComponent } from './navigation/side-bar/side-bar.component';
@@ -61,6 +66,12 @@ import { UpdateProfileComponent } from './users/update-profile/update-profile.co
     MatButtonModule,
     MatPaginatorModule,
     FormsModule,
+    MatInputModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatCardModule,
+    ReactiveFormsModule,
+    MatRadioModule
   ],
   providers: [{
 

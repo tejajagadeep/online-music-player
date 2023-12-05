@@ -7,28 +7,28 @@
       </div>
       <section id="topchart-section" *ngIf="spotifyPlaylistBillBoard">
         <div class="heading-part">
-          <h3>{{spotifyPlaylistBillBoard.name}}</h3>
-          <div class="angles">
-            <i class="fas fa-angle-left" (click)="scrollCards('left')"></i>
-            <i class="fas fa-angle-right" (click)="scrollCards('right')"></i>
-          </div>
+          <h3>{{ spotifyPlaylistBillBoard.name }}</h3>
         </div>
-        <div id="grid" class="cards-container  scroll-container">
+        <div id="grid" class="cards-container scroll-container">
           <div class="popstar-cards" *ngFor="let item of spotifyPlaylistBillBoard.tracks.items">
             <div class="pop-img" (click)="playTrack(item.track.external_urls.spotify)">
-              <img src="{{item.track.album.images[0].url}}" alt="pop-img">
+              <img src="{{ item.track.album.images[0].url }}" alt="pop-img">
             </div>
-            <h4>{{item.track.name}}</h4>
-            <p>{{item.track.artists[0].name}}</p>
+            <h4>{{ item.track.name }}</h4>
+            <p>{{ item.track.artists[0].name }}</p>
           </div>
         </div>
       </section>
-      <div *ngIf="tracks; else topHits">
+      
+      <div *ngIf="tracks">
+        <div *ngIf="tracks.length>5; else topHits">
         <app-favorite-list></app-favorite-list>
       </div>
       <ng-template #topHits>
         <app-today-top-hits-playlist></app-today-top-hits-playlist>
       </ng-template>
+      </div>
+
     </section>
 
   </main>

@@ -25,6 +25,7 @@ public class UserProfile {
     private Date dateOfBirth;
     @NotNull
     private String email;
+    private String gender;
 
 
 }

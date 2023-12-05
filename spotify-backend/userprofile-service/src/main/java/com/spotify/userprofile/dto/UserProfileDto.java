@@ -20,6 +20,7 @@ public class UserProfileDto {
         private String password;
         private Date dateOfBirth;
         private String email;
+        private String gender;
 
     }
 

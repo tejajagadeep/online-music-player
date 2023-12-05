@@ -13,7 +13,9 @@
                         alt="User-Profile-Image">
                     </div>
                     <h6 class="f-w-600">{{userProfile.firstName}} {{userProfile.lastName}}</h6>
-                    <i class=" mdi mdi-square-edit-outline feather icon-edit m-t-10 f-16"></i>
+                    <a [routerLink]="['/update-profile']">
+                      <i class="mdi mdi-square-edit-outline feather icon-edit m-t-10 f-16"></i>
+                    </a>
                   </div>
                 </div>
                 <div class="col-sm-8">
@@ -29,16 +31,19 @@
                         <h6 class="text-muted f-w-400">{{ userProfile.dateOfBirth | date:'yyyy-MM-dd'}}</h6>
                       </div>
                     </div>
-                    <div *ngIf="tracks; else noTracks">
-                      <h6 class="m-b-20 m-t-40 p-b-5 b-b-default f-w-600">Favorites</h6>
-                      <div class="row">
-                        <div class="col-sm-6">
-                          <p class="m-b-10 f-w-600">Recent</p>
-                          <h6 class="text-muted f-w-400">{{tracks[tracks.length-1].name}} - {{tracks[tracks.length-1].artists[0].name}}</h6>
-                        </div>
-                        <div class="col-sm-6">
-                          <p class="m-b-10 f-w-600">Total</p>
-                          <h6 class="text-muted f-w-400">{{ tracks.length}}</h6>
+                    <div *ngIf="tracks">
+                      <div *ngIf="tracks.length>5; else noTracks">
+                        <h6 class="m-b-20 m-t-40 p-b-5 b-b-default f-w-600">Favorites</h6>
+                        <div class="row">
+                          <div class="col-sm-6">
+                            <p class="m-b-10 f-w-600">Recent</p>
+                            <h6 class="text-muted f-w-400">{{tracks[tracks.length-1].name}} -
+                              {{tracks[tracks.length-1].artists[0].name}}</h6>
+                          </div>
+                          <div class="col-sm-6">
+                            <p class="m-b-10 f-w-600">Total</p>
+                            <h6 class="text-muted f-w-400">{{ tracks.length}}</h6>
+                          </div>
                         </div>
                       </div>
                     </div>
