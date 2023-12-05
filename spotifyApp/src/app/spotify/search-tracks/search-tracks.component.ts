@@ -2,7 +2,6 @@ import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, V
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { ActivatedRoute } from '@angular/router';
-import { Subscription } from 'rxjs';
 import { SpotifyTracks } from 'src/app/model/SpotifyTracks';
 import { MusicDataService } from 'src/app/service/data/music-data.service';
 import { WishlistDataService } from 'src/app/service/data/wishlist-data.service';
@@ -27,7 +26,7 @@ export class SearchTracksComponent implements AfterViewInit{
   spotifyTracks!: SpotifyTracks; // Adjust the type accordingly
   searchQuery: string = '';
   
-  constructor(private route: ActivatedRoute, 
+  constructor(
     private musicService: MusicDataService,
     private wishList: WishlistDataService,
     private cdr: ChangeDetectorRef) {}
@@ -72,8 +71,6 @@ export class SearchTracksComponent implements AfterViewInit{
       error: (e) => console.error(e),
       complete: () => console.info('complete')
     });
-
-    
   }
 
   playTrack(link: URL) {

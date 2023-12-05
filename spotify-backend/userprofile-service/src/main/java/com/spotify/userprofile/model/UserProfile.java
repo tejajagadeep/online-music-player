@@ -1,5 +1,6 @@
 package com.spotify.userprofile.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.validation.constraints.NotNull;
@@ -17,13 +18,13 @@ public class UserProfile {
 
     @Id
     private String username;
-    @NotNull
-    private String email;
-    @NotNull
-    private String password;
     private String firstName;
     private String lastName;
+    @NotNull
+    private String password;
     private Date dateOfBirth;
+    @NotNull
+    private String email;
 
 
 }

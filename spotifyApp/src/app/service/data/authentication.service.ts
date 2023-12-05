@@ -40,5 +40,16 @@ export class AuthenticationService {
     return this.httpClient.post<Map<String, String>>(`${API_URL_AUTH}/validate`, { headers });
   }
   
+  tokenValidate(){
+    let token = 'Bearer '+ localStorage.getItem('token')
+    this.validateToken(token).subscribe({
+      next: (v) => {
+      },
+      error: (e) => {console.error('e') , localStorage.removeItem('token')},
+      complete: () => {console.info('complete')}
+     });
+
+    return token;
+  }
 
 }

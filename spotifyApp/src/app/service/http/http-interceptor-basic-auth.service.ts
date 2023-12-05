@@ -12,7 +12,7 @@ export class HttpInterceptorBasicAuthService  implements HttpInterceptor {
   intercept(request: HttpRequest<any>, next: HttpHandler) {
     let basicAuthHeaderString = localStorage.getItem('authenticatedUser');
     let token = 'Bearer '+ localStorage.getItem('token')
-
+    
     if (basicAuthHeaderString && token) {
       request = request.clone({
         setHeaders: {

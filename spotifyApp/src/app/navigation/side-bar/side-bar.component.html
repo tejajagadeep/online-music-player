@@ -3,54 +3,50 @@
     <nav class="main-menu">
       <ul>
         <li>
-          <a  [routerLink]="['/search-playlists']">
+          <a  [routerLink]="['/home']">
             <i class="fa fa-home fa-2x"></i>
             <span class="nav-text">
-              Community Dashboard
+              Home
             </span>
           </a>
-  
         </li>
         <li class="has-subnav">
-          <a  [routerLink]="['/home']">
-            <i class="fa fa-globe fa-2x"></i>
+          <a  [routerLink]="['/search-playlists']">
+            <i class="fa fa-search-plus fa-2x"></i>
             <span class="nav-text">
-              Global Surveyors
+              Search Playlists
             </span>
           </a>
-  
         </li>
         <li class="has-subnav">
-          <a  [routerLink]="['/home']">
-            <i class="fa fa-comments fa-2x"></i>
+          <a  [routerLink]="['/search-tracks']">
+            <i class="fa fa-search fa-2x"></i>
             <span class="nav-text">
-              Group Hub Forums
+              Search Tracks
             </span>
           </a>
-  
         </li>
         <li class="has-subnav">
-          <a  [routerLink]="['/home']">
-            <i class="fa fa-camera-retro fa-2x"></i>
+          <a  [routerLink]="['/workout-playlist']">
+            <i class="fa fa-bicycle fa-2x"></i>
             <span class="nav-text">
-              Survey Photos
-            </span>
-          </a>
-  
-        </li>
-        <li>
-          <a  [routerLink]="['/home']">
-            <i class="fa fa-film fa-2x"></i>
-            <span class="nav-text">
-              Surveying Tutorials
+              Workout Playlist
             </span>
           </a>
         </li>
-        <li>
-          <a  [routerLink]="['/home']">
-            <i class="fa fa-book fa-2x"></i>
+        <li class="has-subnav">
+          <a  [routerLink]="['/top-hits-playlist']">
+            <i class="fa fa-music fa-2x"></i>
             <span class="nav-text">
-              Surveying Jobs
+              top Hits Playlist
+            </span>
+          </a>
+        </li>
+        <li class="has-subnav">
+          <a  [routerLink]="['/billboard-hot-100-playlist']">
+            <i class="fa fa-bold fa-2x"></i>
+            <span class="nav-text">
+              billboard Hot 100
             </span>
           </a>
         </li>
@@ -64,25 +60,25 @@
         </li>
         <li>
           <a  [routerLink]="['/favorites']">
-            <i class="fa fa-map-marker fa-2x"></i>
+            <i class="fa fa-heart fa-2x"></i>
             <span class="nav-text">
-              Member Map
-            </span>
-          </a>
-        </li>
-        <li>
-          <a  [routerLink]="['/top-hits-playlist']">
-            <i class="fa fa-info fa-2x"></i>
-            <span class="nav-text">
-              Documentation
+              Favorites
             </span>
           </a>
         </li>
       </ul>
+      <li>
+        <a  [routerLink]="['/profile']">
+          <i class="fa fa-user fa-2x"></i>
+          <span class="nav-text">
+            Profile
+          </span>
+        </a>
+      </li>
   
       <ul class="logout">
         <li>
-          <a  [routerLink]="['/home']">
+          <a  [routerLink]="['/logout']">
             <i class="fa fa-power-off fa-2x"></i>
             <span class="nav-text">
               Logout

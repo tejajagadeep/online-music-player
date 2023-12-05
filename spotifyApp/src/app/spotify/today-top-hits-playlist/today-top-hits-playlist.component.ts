@@ -60,14 +60,10 @@ ngOnInit() {
     this.musicService.getTodayTopHitsPlaylist().subscribe({
       next: (v) => {
         this.spotifyPlaylist = v;
-        this.dataSource = new MatTableDataSource(v.tracks.items);
-        this.dataSource.paginator = this.paginator;
         console.log(v.tracks.items[0].added_at)
         this.cdr.detectChanges();
       },
-      error: (e) => {console.error('e'),
-      this.dataSource = new MatTableDataSource(this.spotifyPlaylist.tracks.items);
-      this.dataSource.paginator = this.paginator;},
+      error: (e) => {console.error('e')},
       complete: () => {console.info('complete'),
       this.dataSource = new MatTableDataSource(this.spotifyPlaylist.tracks.items);
       this.dataSource.paginator = this.paginator;}

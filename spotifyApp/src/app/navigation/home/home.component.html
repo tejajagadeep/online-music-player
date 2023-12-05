@@ -1,17 +1,6 @@
 <body>
     <main id="main-container">
         <section id="right-container">
-            <div id="nav-bar">
-                <div class="search-wrapper">
-                    <input class="input-box" type="search" name="search" placeholder="Search for song,artist etc...">
-                    <i class="fas fa-search"></i>
-                </div>
-                <div class="icons-button">
-                    <i class="far fa-bell"></i>
-                    <i class="fas fa-cog setting-icon"></i>
-                    <!-- <button class="upgrad-btn">Upgrade Plan</button> -->
-                </div>
-            </div>
             <section id="topchart-section" *ngIf="spotifyPlaylistBillBoard">
                 <div class="heading-part">
                   <h3>{{spotifyPlaylistBillBoard.name}}</h3>
@@ -22,7 +11,7 @@
                 </div>
                 <div id="grid" class="cards-container  scroll-container">
                   <div class="popstar-cards" *ngFor="let item of spotifyPlaylistBillBoard.tracks.items">
-                    <div class="pop-img">
+                    <div class="pop-img" (click)="playTrack(item.track.external_urls.spotify)">
                       <img src="{{item.track.album.images[0].url}}" alt="pop-img">
                     </div>
                     <h4>{{item.track.name}}</h4>

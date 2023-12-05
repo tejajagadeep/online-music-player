@@ -1,5 +1,6 @@
 package com.spotify.userprofile.dto;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -18,7 +19,6 @@ public class UserProfileDto {
         private String lastName;
         private String password;
         private Date dateOfBirth;
-
         private String email;
 
     }

@@ -25,9 +25,10 @@ import { SearchTracksComponent } from './spotify/search-tracks/search-tracks.com
 import { FormsModule } from '@angular/forms';
 import { SearchPlaylistsComponent } from './spotify/search-playlists/search-playlists.component';
 import { SearchPlaylistsTracksComponent } from './spotify/search-playlists-tracks/search-playlists-tracks.component';
-import { TopBarComponent } from './navigation/top-bar/top-bar.component';
 import { SideBarComponent } from './navigation/side-bar/side-bar.component';
 import { LogoutComponent } from './logout/logout.component';
+import { ProfileComponent } from './users/profile/profile.component';
+import { UpdateProfileComponent } from './users/update-profile/update-profile.component';
 
 @NgModule({
   declarations: [
@@ -45,9 +46,10 @@ import { LogoutComponent } from './logout/logout.component';
     SearchTracksComponent,
     SearchPlaylistsComponent,
     SearchPlaylistsTracksComponent,
-    TopBarComponent,
     SideBarComponent,
-    LogoutComponent
+    LogoutComponent,
+    ProfileComponent,
+    UpdateProfileComponent
   ],
   imports: [
     BrowserModule,

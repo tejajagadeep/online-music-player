@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, Renderer2, ViewChild } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, Renderer2, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { ActivatedRoute } from '@angular/router';
@@ -27,6 +27,7 @@ export class BillBoard100PlaylistComponent implements AfterViewInit {
   constructor(private route: ActivatedRoute, 
     private musicService: MusicDataService,
     private wishList: WishlistDataService,
+    private cdr: ChangeDetectorRef
    ) { }
 
   ngOnInit(): void {
@@ -47,15 +48,16 @@ export class BillBoard100PlaylistComponent implements AfterViewInit {
   }
 
   todayTopHitsPlaylist() {
-    this.musicService.getTodayTopHitsPlaylist().subscribe({
+    this.musicService.billBoard100Playlist().subscribe({
       next: (v) => {
         this.spotifyPlaylist = v;
-        this.dataSource = new MatTableDataSource(v.tracks.items);
-        this.dataSource.paginator = this.paginator;
         console.log(v.tracks.items[0].added_at)
+        this.cdr.detectChanges();
       },
-      error: (e) => console.error(e),
-      complete: () => console.info('complete')
+      error: (e) => {console.error('e')},
+      complete: () => {console.info('complete'),
+      this.dataSource = new MatTableDataSource(this.spotifyPlaylist.tracks.items);
+      this.dataSource.paginator = this.paginator;}
     });
   }
 

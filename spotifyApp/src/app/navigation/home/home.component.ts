@@ -51,6 +51,8 @@ export class HomeComponent implements OnInit {
       container.scrollLeft += scrollAmount;
     }
   }
-
+  playTrack(link: string) {
+    window.open(link, '_blank');
+  }
   
 }

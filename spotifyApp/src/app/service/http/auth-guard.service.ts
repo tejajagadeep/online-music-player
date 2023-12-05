@@ -1,8 +1,5 @@
 import { Injectable, inject } from '@angular/core';
-import { AuthenticationService } from '../data/authentication.service';
-import { AuthAccessToken } from 'src/app/model/AuthAccessToken';
-import { ActivatedRouteSnapshot, CanActivateFn, Route, Router, RouterStateSnapshot, UrlTree } from '@angular/router';
-import { Observable, map, take } from 'rxjs';
+import {  CanActivateFn,Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -19,6 +16,18 @@ export const AuthGuard: CanActivateFn = (route, state) => {
     return true;
   } else {
     router.navigate(['/login']);
+    return false;
+  }
+};
+
+
+export const LoginGuard: CanActivateFn = (route, state) => {
+  const token = localStorage.getItem('token');
+  const router = inject(Router);
+  if (token===null) {
+    return true;
+  } else {
+    router.navigate(['/home']);
     return false;
   }
 };

@@ -17,7 +17,7 @@ export class LoginComponent {
   username: string = '';
   password: string = '';
   email: string = '';
-  loginEmail: string = '';
+  loginUsername: string = '';
   loginPassword: string = '';
   errorMessage!: string
   errorMessage2!: string
@@ -39,7 +39,7 @@ export class LoginComponent {
 
   login() {
     // Handle the form submission, e.g., send data to the server
-    this.authService.authenticate(this.username, this.password).subscribe({
+    this.authService.authenticate(this.loginUsername, this.loginPassword).subscribe({
       next: (v) => {localStorage.setItem('token',v.jwt_token);
       this.router.navigate(['/home']);
     },

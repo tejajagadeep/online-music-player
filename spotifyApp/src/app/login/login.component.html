@@ -29,14 +29,14 @@
     <div class="login">
       <form #loginForm="ngForm">
         <label for="chk" aria-hidden="true">Login</label>
-        <input type="email" name="email" placeholder="Email" required="" [(ngModel)]="username">
-        <input type="password" name="pswd" placeholder="Password" required="" [(ngModel)]="password">
+        <input type="text" name="txt" placeholder="User Name" required="" [(ngModel)]="loginUsername">
+        <input type="password" name="pswd" placeholder="password" required="" [(ngModel)]="loginPassword">
         <div *ngIf="loginForm.invalid && (loginForm.dirty || loginForm.touched); else removeErrorLogin" class="error-message">
           <p class="error-message">Please fill out all required fields.</p>
         </div>
         <ng-template #removeErrorLogin>
         <div *ngIf="errorMessage" class="error-message">
-          <p class="error-message">Please enter a valid email and password.</p>
+          <p class="error-message">Please enter a valid User Name and password.</p>
         </div>
       </ng-template>
         <button (click)="login()" [disabled]="loginForm.invalid">Login</button>
