@@ -26,7 +26,6 @@ export class FavoriteListComponent implements AfterViewInit {
 
 
   constructor(private route: ActivatedRoute,
-    private musicService: MusicDataService,
     private wishList: WishlistDataService,
     private cdr: ChangeDetectorRef) { }
 
@@ -45,18 +44,12 @@ export class FavoriteListComponent implements AfterViewInit {
     this.wishList.getUserWishList().subscribe({
       next: (v) => {
         this.tracks = v.tracks;
-        console.log(v.tracks[0].name)
-        this.afterDataLoaded();
         this.cdr.detectChanges();
       },
       error: (e) => console.error(e),
-      complete: () => {console.info('complete'), this.dataSource = new MatTableDataSource(this.tracks);
+      complete: () => {console.info('wishlist tracks'), this.dataSource = new MatTableDataSource(this.tracks);
       this.dataSource.paginator = this.paginator;}
     });
-  }
-
-  afterDataLoaded() {
-    console.log(this.dataSource);
   }
 
   deleteTrackToWishList(id: string) {
@@ -73,26 +66,6 @@ export class FavoriteListComponent implements AfterViewInit {
 
   }
 
-  favoriteIsExists(trackId: string) {
-    this.wishList.favoriteExists(trackId).subscribe({
-      next: (a) => {
-        return a;
-      },
-      error: (e) => console.error(e),
-      complete: () => console.info('complete')
-    })
-  }
-
-
-  onPageChange(event: any): void {
-    // Handle page changes if needed
-    const pageIndex = event.pageIndex;
-    const pageSize = event.pageSize;
-    const length = event.length;
-
-    // You can perform actions based on the page change, for example, fetching new data
-    this.wishlists();
-  }
   playTrack(track: Track) {
     // Implement your play track logic here
     const link = track.external_urls.spotify;

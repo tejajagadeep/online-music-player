@@ -54,6 +54,7 @@ ngOnInit() {
     // setTimeout(() => {
     //   this.afterDataLoaded();
     // }, 1000);
+    this.runcons();
   }
 
   todayTopHitsPlaylist() {
@@ -70,10 +71,11 @@ ngOnInit() {
     });
   }
 
- 
+  runcons(){
+    console.log(this.spotifyPlaylist)
+  }
 
   saveTrackToWishList(id: string){
-
     this.musicService.getTrack(id).subscribe({
       next: (v) => {
         this.wishList.saveTrackToWishlist(v).subscribe({
@@ -92,7 +94,6 @@ ngOnInit() {
     });
   }
 
-
   deleteTrackToWishList(id: string) {
 
     this.wishList.deleteTrackByUsernameAndTrackId(id).subscribe({
@@ -102,8 +103,6 @@ ngOnInit() {
       error: (e) => console.error(e),
       complete: () => {console.info('complete'); this.todayTopHitsPlaylist();}
     });
-
-
   }
 
   favoriteIsExists(trackId: string){

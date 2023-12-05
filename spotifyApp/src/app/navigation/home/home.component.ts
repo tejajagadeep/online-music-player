@@ -1,7 +1,9 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { SpotifyPlaylist } from 'src/app/model/SpotifyPlaylist';
+import { Track } from 'src/app/model/Track';
 import { MusicDataService } from 'src/app/service/data/music-data.service';
+import { WishlistDataService } from 'src/app/service/data/wishlist-data.service';
 
 @Component({
   selector: 'app-home',
@@ -12,12 +14,14 @@ export class HomeComponent implements OnInit {
   spotifyPlaylistBillBoard: SpotifyPlaylist | any;
   spotifyPlaylistHot100: SpotifyPlaylist | any;
   @ViewChild('cardsContainer') cardsContainer!: ElementRef;
+
+  tracks!: Track[];
   
-  constructor( private route: ActivatedRoute, private musicService: MusicDataService) {}
+  constructor( private wishlist: WishlistDataService, private musicService: MusicDataService) {}
 
   ngOnInit(): void {
     this.billBoard();
-    this.hot100();
+    this.wishlists();
   }
 
   billBoard() {
@@ -30,17 +34,19 @@ export class HomeComponent implements OnInit {
     }
     )
   }
-  
-  hot100() {
-    this.musicService.getTodayTopHitsPlaylist().subscribe({
+
+  wishlists() {
+    this.wishlist.getUserWishList().subscribe({
       next: (v) => {
-        this.spotifyPlaylistHot100 = v;
-        console.log(v);
+        this.tracks = v.tracks;
       },
       error: (e) => console.error(e),
-      complete: () => console.info('complete')
+      complete: () => {console.info('complete')}
     });
   }
+
+  
+  
   scrollCards(direction: 'left' | 'right'): void {
     const container = this.cardsContainer.nativeElement;
     const scrollAmount = 300; // Adjust the scroll amount as needed
