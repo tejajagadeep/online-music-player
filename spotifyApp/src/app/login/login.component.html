@@ -3,30 +3,43 @@
     <input type="checkbox" id="chk" aria-hidden="true">
 
     <div class="signup">
-      <form>
+      <form #signupForm="ngForm">
         <label for="chk" aria-hidden="true">Sign up</label>
         <input type="text" name="txt" placeholder="User name" required [(ngModel)]="username">
         <input type="email" name="email" placeholder="Email" required [(ngModel)]="email">
         <input type="password" name="pswd" placeholder="Password" required [(ngModel)]="password">
+        
+        <div *ngIf="signupForm.invalid && (signupForm.dirty || signupForm.touched); else removeError" class="error-message">
+          <p class="error-message">Please fill out all required fields.</p>
+        </div>
+      <ng-template #removeError>
         <div *ngIf="successMessage" class="success-message">
           <p class="success-message">Successfully registered.</p>
         </div>
+      
         <div *ngIf="errorMessage2" class="error-message">
           <p class="error-message">UserName or password already exists.</p>
         </div>
-        <button (click)="signUp()">Sign up</button>
+      </ng-template>
+        <button (click)="signUp()" [disabled]="signupForm.invalid">Sign up</button>
       </form>
+      
     </div>
 
     <div class="login">
-      <form>
+      <form #loginForm="ngForm">
         <label for="chk" aria-hidden="true">Login</label>
         <input type="email" name="email" placeholder="Email" required="" [(ngModel)]="username">
         <input type="password" name="pswd" placeholder="Password" required="" [(ngModel)]="password">
+        <div *ngIf="loginForm.invalid && (loginForm.dirty || loginForm.touched); else removeErrorLogin" class="error-message">
+          <p class="error-message">Please fill out all required fields.</p>
+        </div>
+        <ng-template #removeErrorLogin>
         <div *ngIf="errorMessage" class="error-message">
           <p class="error-message">Please enter a valid email and password.</p>
         </div>
-        <button (click)="login()">Login</button>
+      </ng-template>
+        <button (click)="login()" [disabled]="loginForm.invalid">Login</button>
       </form>
     </div>
   </div>

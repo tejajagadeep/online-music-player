@@ -23,7 +23,7 @@ export class MusicDataService {
   }
   
   getDiscoverWeeklyPlaylist(): Observable<SpotifyPlaylist>{
-    return this.httpClient.get<SpotifyPlaylist>(`${API_URL_MUSIC}/discoverWeeklyPlaylist`);
+    return this.httpClient.get<SpotifyPlaylist>(`${API_URL_MUSIC}/personalPlaylists`);
   }
 
   

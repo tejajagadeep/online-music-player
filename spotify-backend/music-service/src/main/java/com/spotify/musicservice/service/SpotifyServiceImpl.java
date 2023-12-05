@@ -98,8 +98,8 @@ public class SpotifyServiceImpl implements SpotifyService{
 
     @Override
     @Observed(name = "get.discover.weekly.playlist")
-    public SpotifyPlaylist getDiscoverWeeklyPlaylist() {
-        String playlistId="1mjrbWPCpQdNcohvou99aJ";
+    public SpotifyPlaylist personalPlaylists() {
+        String playlistId="4WkYp9ae6VbWllzPt4eW9I";
         log.trace("Inside SpotifyServiceImpl getDiscoverWeeklyPlaylist");
         RequestEntity<Void> requestEntity = playListRequest(playlistId);
         return restTemplate.exchange(requestEntity, SpotifyPlaylist.class).getBody();

@@ -6,6 +6,8 @@ import { Item } from 'src/app/model/Item';
 import { SpotifyPlaylist } from 'src/app/model/SpotifyPlaylist';
 import { MusicDataService } from 'src/app/service/data/music-data.service';
 import { WishlistDataService } from 'src/app/service/data/wishlist-data.service';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+
 
 @Component({
   selector: 'app-today-top-hits-playlist',
@@ -29,10 +31,21 @@ export class TodayTopHitsPlaylistComponent implements AfterViewInit {
 
   isExists: boolean = false;
 
+  isSmallScreen = true;
+
+ngOnInit() {
+  this.breakpointObserver.observe([Breakpoints.Handset, Breakpoints.Small])
+    .subscribe(result => {
+      this.isSmallScreen = result.matches;
+    });
+}
+
+  
   constructor(private route: ActivatedRoute, 
     private musicService: MusicDataService,
     private wishList: WishlistDataService,
-    private cdr: ChangeDetectorRef) { }
+    private cdr: ChangeDetectorRef,
+    private breakpointObserver: BreakpointObserver) { }
 
 
   ngAfterViewInit(): void {
@@ -41,11 +54,6 @@ export class TodayTopHitsPlaylistComponent implements AfterViewInit {
     // setTimeout(() => {
     //   this.afterDataLoaded();
     // }, 1000);
-  }
-
-  afterDataLoaded(){
-    this.dataSource = new MatTableDataSource(this.spotifyPlaylist.tracks.items);
-        this.dataSource.paginator = this.paginator;
   }
 
   todayTopHitsPlaylist() {
@@ -107,17 +115,16 @@ export class TodayTopHitsPlaylistComponent implements AfterViewInit {
       next: (a) => {
         this.isExists =a;
         console.log(a);
+        this.cdr.detectChanges();
       },
       error: (e) => console.error(e),
       complete: () => this.isExists
     })
-    // console.log(this.isExists)
     return this.isExists;
     
   }
 
   playTrack(item: Item) {
-    // Implement your play track logic here
     const link = item.track.external_urls.spotify;
     window.open(link, '_blank');
   }

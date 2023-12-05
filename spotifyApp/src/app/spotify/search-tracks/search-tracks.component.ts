@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ViewChild } from '@angular/core';
+import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { ActivatedRoute } from '@angular/router';
@@ -10,7 +10,8 @@ import { WishlistDataService } from 'src/app/service/data/wishlist-data.service'
 @Component({
   selector: 'app-search-tracks',
   templateUrl: './search-tracks.component.html',
-  styleUrls: ['./search-tracks.component.css']
+  styleUrls: ['./search-tracks.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SearchTracksComponent implements AfterViewInit{
 
@@ -28,7 +29,8 @@ export class SearchTracksComponent implements AfterViewInit{
   
   constructor(private route: ActivatedRoute, 
     private musicService: MusicDataService,
-    private wishList: WishlistDataService,) {}
+    private wishList: WishlistDataService,
+    private cdr: ChangeDetectorRef) {}
 
   ngAfterViewInit(): void {
     // this.searchTracks("leo");
@@ -38,16 +40,17 @@ export class SearchTracksComponent implements AfterViewInit{
     // Navigate to the provided HTTPS link
     window.open(link, '_blank');
   }
-
+  
   searchTracks(query: string) {
     this.musicService.searchTracks(query).subscribe({
       next: (v) => {
         this.spotifyTracks = v;
-        console.log(v.tracks.items[0].external_urls.spotify)
-        console.log(v.tracks.items[0].external_urls.spotify)
+        this.cdr.detectChanges();
       },
       error: (e) => console.error(e),
-      complete: () => console.info('complete')
+      complete: () => {console.info('complete'),
+      this.dataSource = new MatTableDataSource(this.spotifyTracks.tracks.items);
+      this.dataSource.paginator = this.paginator;}
     });
   }
 

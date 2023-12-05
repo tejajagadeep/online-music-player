@@ -24,7 +24,7 @@ export class DiscoverWeeklyPlaylistComponent implements AfterViewInit{
 
 
   hot100() {
-    this.musicService.getTodayTopHitsPlaylist().subscribe({
+    this.musicService.getDiscoverWeeklyPlaylist().subscribe({
       next: (v) => {
         this.spotifyPlaylist = v;
         console.log(v.tracks.items[0].track.album.images[1].url)

@@ -12,6 +12,7 @@ import { SearchTracksComponent } from './spotify/search-tracks/search-tracks.com
 import { SearchPlaylistsComponent } from './spotify/search-playlists/search-playlists.component';
 import { SearchPlaylistsTracksComponent } from './spotify/search-playlists-tracks/search-playlists-tracks.component';
 import { TopBarComponent } from './navigation/top-bar/top-bar.component';
+import { SideBarComponent } from './navigation/side-bar/side-bar.component';
 
 
 
@@ -28,6 +29,7 @@ const routes: Routes = [
   { path: 'top-hits-playlist', component: TodayTopHitsPlaylistComponent},
   { path: 'favorites', component: FavoriteListComponent },
   { path: 'bar', component: TopBarComponent },
+  { path: 'side-bar', component: SideBarComponent },
   // { path: '**', redirectTo: 'home', pathMatch: 'full' }
 ];
 

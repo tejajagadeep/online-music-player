@@ -76,10 +76,10 @@ public class SpotifyController {
                             schema = @Schema(implementation = SpotifyPlaylist.class)) }),
             @ApiResponse(responseCode = "404", description = "Playlist not found",
                     content = @Content) })
-    @GetMapping("/discoverWeeklyPlaylist")
-    public ResponseEntity<Object> getDiscoverWeeklyPlaylist() {
+    @GetMapping("/personalPlaylists")
+    public ResponseEntity<Object> personalPlaylists() {
         log.trace("Inside SpotifyController getDiscoverWeeklyPlaylist");
-        return new ResponseEntity<>(spotifyService.getDiscoverWeeklyPlaylist(), HttpStatus.OK);
+        return new ResponseEntity<>(spotifyService.personalPlaylists(), HttpStatus.OK);
     }
     @Operation(summary = "Get Playlist")
     @ApiResponses(value = {

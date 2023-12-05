@@ -1,9 +1,7 @@
 package com.spotify.musicservice.service;
 
-import com.spotify.musicservice.dto.Album;
 import com.spotify.musicservice.dto.SpotifyPlaylist;
 import com.spotify.musicservice.dto.Track;
-import com.spotify.musicservice.model.SpotifyAccessToken;
 
 public interface SpotifyService {
     String getSpotifyAccessToken();
@@ -12,7 +10,7 @@ public interface SpotifyService {
 
     SpotifyPlaylist getTodayTopHitsPlaylist();
 
-    SpotifyPlaylist getDiscoverWeeklyPlaylist();
+    SpotifyPlaylist personalPlaylists();
 
     SpotifyPlaylist getPlaylist(String playlistId);
 

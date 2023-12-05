@@ -1,0 +1,27 @@
+/* app-side-bar.component.css */
+aside {
+    width: 100%;
+    /* Adjust the width as needed */
+    background-color: #f0f0f0;
+    /* Adjust the background color */
+    padding: 10px;
+    left: 0;
+    margin-left: 50px;
+    position: fixed;
+}
+
+#most-popular-wrapper {
+    background-color: #ffffff;
+    /* Adjust the background color */
+    padding: 10px;
+    border: 1px solid #ccc;
+    /* Add borders or adjust as needed */
+}
+
+/* Add any additional styles for the rest of your side bar content */
+/* your-component.component.css */
+@media (max-width: 800px) {
+    .hide-on-small-screen {
+        display: none;
+    }
+}

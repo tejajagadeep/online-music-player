@@ -1,4 +1,9 @@
 
-J
-java:S2699
-"-Add at least one assertion to this test case.(Éş¼“8áããü¿1
+;
+java:S5786"Remove this 'public' modifier.(“ÃÂñ8¡Ÿ˜Ã1
+@
+java:S5786'"Remove this 'public' modifier.(ğ—Æ’øÿÿÿÿ8¡Ÿ˜Ã1
+@
+java:S57860"Remove this 'public' modifier.(ÉÇ°´üÿÿÿÿ8¡Ÿ˜Ã1
+;
+java:S5786"Remove this 'public' modifier.(…’î©8¡Ÿ˜Ã1
