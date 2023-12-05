@@ -128,7 +128,6 @@ public class UserProfileController {
             return new ResponseEntity<>(userProfileService.updateUserProfile(userProfileDto, username),HttpStatus.OK);
         }
         throw new UnAuthorizedException("Un Authorized Please check user the details to update.");
-
     }
 
 

@@ -12,10 +12,13 @@ export class UpdateProfileComponent implements OnInit {
 
   userProfile!: UserProfile;
 
-  emailExists: boolean = false;
-
   constructor(private userProfileService: UserProfileDataService, private fb: FormBuilder) {
-    
+    // this.userProfileForm = this.fb.group({
+    //   firstName: ['', Validators.required],
+    //   lastName: ['', Validators.required],
+    //   dateOfBirth: [null, Validators.required],
+    //   email: ['', [Validators.required, Validators.email]],
+    // });
   }
 
   profileForm = this.fb.group({
@@ -23,41 +26,24 @@ export class UpdateProfileComponent implements OnInit {
     lastName:[''],
     email:[''],
     dateOfBirth:[''],
-    // gender:['']
+    gender:['']
   });
  
   saveForm(){
     console.log('Form data is ', this.profileForm.value);
-    
-    this.userProfileService.updateuser(this.profileForm.value).subscribe({
-      next: (v) => {
-        console.log(v.email)
-      },
-      error: (e) => {console.error('e')},
-      complete: () => console.info('complete')
-    });
   }
 
   ngOnInit(): void {
     this.getUserProfile()
-    // Disable the email input field
-    
-
   }
   
   getUserProfile(){
     this.userProfileService.getUserById().subscribe({
       next: (v) => {
-        console.log(v)
-        
-        this.profileForm = this.fb.group({
-          firstName:v.firstName,
-          lastName:v.lastName,
-          email:v.email,
-          dateOfBirth:v.dateOfBirth,
-          // gender:v.gender
-        });
-
+        this.profileForm.value.firstName = v.firstName;
+        this.profileForm.value.lastName = v.lastName;
+        this.profileForm.value.email = v.email;
+        this.profileForm.value.gender = v.gender;
       },
       error: (e) => {console.error('e')},
       complete: () => console.info('complete')
@@ -65,7 +51,5 @@ export class UpdateProfileComponent implements OnInit {
 
     console.log(this.profileForm.value)
   }
-
-  
 
 }

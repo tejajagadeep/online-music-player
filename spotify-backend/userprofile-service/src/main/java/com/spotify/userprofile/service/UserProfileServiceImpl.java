@@ -71,11 +71,7 @@ public class UserProfileServiceImpl implements UserProfileService {
                 .orElseThrow(() ->
                         new ResourceNotFoundException("Entity not found with ID: " + username)
                        );
-        if (usersProfileRepository.existsByEmail(userProfile.getEmail())) {
-            throw new ResourceAlreadyExistsException("Email Already exists");
-        }
 
-        userProfile.setEmail(userProfileDto.getEmail());
         userProfile.setFirstName(userProfileDto.getFirstName());
         userProfile.setLastName(userProfileDto.getLastName());
         userProfile.setDateOfBirth(userProfileDto.getDateOfBirth());

@@ -1,0 +1,64 @@
+<!-- registration-form.component.html -->
+<div style="text-align:center">
+    <h1>
+      Welcome to Angular Validation Form Exercise!
+    </h1>
+  </div>
+<form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="firstName">First Name</label>
+      <input type="text" id="firstName" formControlName="firstName">
+      <div class="error-message" *ngIf="registrationForm.get('firstName')?.hasError('required') && registrationForm.get('firstName')?.touched">
+        First Name is required.
+      </div>
+      <div class="error-message" *ngIf="registrationForm.get('firstName')?.hasError('textOnly') && registrationForm.get('firstName')?.touched">
+        First Name should contain only letters.
+      </div>
+    </div>
+  
+    <div>
+      <label for="lastName">Last Name</label>
+      <input type="text" id="lastName" formControlName="lastName">
+      <div class="error-message" *ngIf="registrationForm.get('lastName')?.hasError('required') && registrationForm.get('lastName')?.touched">
+        Last Name is required.
+      </div>
+      <div class="error-message" *ngIf="registrationForm.get('lastName')?.hasError('textOnly') && registrationForm.get('lastName')?.touched">
+        Last Name should contain only letters.
+      </div>
+    </div>
+  
+    <div>
+      <label for="email">Email</label>
+      <input type="email" id="email" formControlName="email">
+      <div class="error-message" *ngIf="registrationForm.get('email')?.hasError('required') && registrationForm.get('email')?.touched">
+        Email is required.
+      </div>
+      <div class="error-message" *ngIf="registrationForm.get('email')?.hasError('email') && registrationForm.get('email')?.touched">
+        Invalid email address.
+      </div>
+    </div>
+  
+    <div>
+      <label for="password">Password</label>
+      <input type="password" id="password" formControlName="password">
+      <div class="error-message" *ngIf="registrationForm.get('password')?.hasError('required') && registrationForm.get('password')?.touched">
+        Password is required.
+      </div>
+      <div class="error-message" *ngIf="registrationForm.get('password')?.hasError('minlength') && registrationForm.get('password')?.touched">
+        Password should be at least 8 characters.
+      </div>
+      <div class="error-message" *ngIf="registrationForm.get('password')?.hasError('uppercase') && registrationForm.get('password')?.touched">
+        Password should contain at least one uppercase letter.
+      </div>
+      <div class="error-message" *ngIf="registrationForm.get('password')?.hasError('specialCharacter') && registrationForm.get('password')?.touched">
+        Password should contain at least one special character.
+      </div>
+    </div>
+  
+   
+  
+    <div>
+      <button type="submit" [disabled]="!registrationForm.valid">Submit</button>
+    </div>
+  </form>
+  

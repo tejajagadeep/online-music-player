@@ -23,4 +23,9 @@ export class UserProfileDataService {
     
      return this.httpClient.get<UserProfile>(`${API_URL_USERPROFILE}/getUserById/${username}`);
   }
+
+  updateuser(user: any): Observable<UserProfile> {
+    const username = localStorage.getItem('authenticatedUser');
+    return this.httpClient.put<UserProfile>(`${API_URL_USERPROFILE}/update/${username}`, user);
+  }
 }
