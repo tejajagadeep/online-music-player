@@ -143,7 +143,7 @@ public class AuthenticationController
             return ResponseEntity.status(HttpStatus.OK).body(userInfo);
         } else {
             log.info("-------***********-------");
-            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid token");
+            throw new CustomUnAuthorizedException("Invalid Token");
         }
     }
 }

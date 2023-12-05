@@ -115,10 +115,10 @@ class WishlistServiceImplTest2 {
         when(wishlistRepository.findById(username)).thenReturn(Optional.of(wishlist));
 
         // Act
-        String result = wishlistService.deleteTrackByUsernameAndTrackId(username, trackId);
+        WishlistDto result = wishlistService.deleteTrackByUsernameAndTrackId(username, trackId);
 
         // Assert
-        assertEquals("Track with Id: track123 deleted.", result);
+        assertEquals("testUser", result.getUsername());
 
         // Verify that the repository's save method was called with the updated wishlist
         ArgumentCaptor<Wishlist> wishlistCaptor = ArgumentCaptor.forClass(Wishlist.class);

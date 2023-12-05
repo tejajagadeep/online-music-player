@@ -7,11 +7,11 @@ import { HttpHandler, HttpInterceptor, HttpRequest } from '@angular/common/http'
 })
 export class HttpInterceptorBasicAuthService  implements HttpInterceptor {
 
-  constructor() { }
+  constructor(private authService: AuthenticationService) { }
 
   intercept(request: HttpRequest<any>, next: HttpHandler) {
     let basicAuthHeaderString = localStorage.getItem('authenticatedUser');
-    let token = localStorage.getItem('token')
+    let token = 'Bearer '+ localStorage.getItem('token')
 
     if (basicAuthHeaderString && token) {
       request = request.clone({

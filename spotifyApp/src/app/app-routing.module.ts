@@ -1,6 +1,5 @@
 import { NgModule, inject } from '@angular/core';
 import { RouterModule, RouterStateSnapshot, Routes } from '@angular/router';
-import { canActivateTeam } from './service/http/auth-guard.service';
 import { FavoriteListComponent } from './favorite-list/favorite-list.component';
 import { HomeComponent } from './navigation/home/home.component';
 import { LoginComponent } from './login/login.component';
@@ -13,6 +12,7 @@ import { SearchPlaylistsComponent } from './spotify/search-playlists/search-play
 import { SearchPlaylistsTracksComponent } from './spotify/search-playlists-tracks/search-playlists-tracks.component';
 import { TopBarComponent } from './navigation/top-bar/top-bar.component';
 import { SideBarComponent } from './navigation/side-bar/side-bar.component';
+import { AuthGuard } from './service/http/auth-guard.service';
 
 
 
@@ -25,8 +25,8 @@ const routes: Routes = [
   { path: 'search-playlists', component: SearchPlaylistsComponent},
   { path: 'playlist-track/:playlistId', component: SearchPlaylistsTracksComponent},
   { path: 'billboard-hot-100-playlist', component: BillBoard100PlaylistComponent},
-  { path: 'discover-weekly-playlist', component: DiscoverWeeklyPlaylistComponent}, //
-  { path: 'top-hits-playlist', component: TodayTopHitsPlaylistComponent},
+  { path: 'workout-playlist', component: DiscoverWeeklyPlaylistComponent}, //
+  { path: 'top-hits-playlist', component: TodayTopHitsPlaylistComponent, canActivate: [AuthGuard]},
   { path: 'favorites', component: FavoriteListComponent },
   { path: 'bar', component: TopBarComponent },
   { path: 'side-bar', component: SideBarComponent },

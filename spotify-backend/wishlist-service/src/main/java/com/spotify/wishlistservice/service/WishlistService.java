@@ -10,6 +10,6 @@ public interface WishlistService {
 
     TrackDto saveTrackToWishlist(String username, TrackDto trackDto);
 
-    String deleteTrackByUsernameAndTrackId(String username, String trackId);
+    WishlistDto deleteTrackByUsernameAndTrackId(String username, String trackId);
 
 }

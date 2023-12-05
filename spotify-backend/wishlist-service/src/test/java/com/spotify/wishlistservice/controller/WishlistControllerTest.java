@@ -99,8 +99,10 @@ class WishListControllerTest {
         Map<String,String> info=new HashMap<>();
         info.put(username,"abcdefghijklm");
         when(authService.validateToken("abcdefghijklm")).thenReturn(info);
+        WishlistDto wishlistDto = new WishlistDto();
+        wishlistDto.setUsername(username);
 
-        when(wishlistService.deleteTrackByUsernameAndTrackId(username,trackId)).thenReturn("Track with Id: "+trackId+" deleted.");
+        when(wishlistService.deleteTrackByUsernameAndTrackId(username,trackId)).thenReturn(wishlistDto);
 
         ResponseEntity<Object> response=wishlistController.deleteTrackByUsernameAndTrackId("abcdefghijklm",username,trackId);
 

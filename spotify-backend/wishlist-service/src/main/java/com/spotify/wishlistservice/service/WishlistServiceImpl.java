@@ -71,7 +71,7 @@ public class WishlistServiceImpl implements WishlistService {
 
     @Override
     @Observed(name = "delete.track.by.username.and.track.id")
-    public String deleteTrackByUsernameAndTrackId(String username, String trackId) {
+    public WishlistDto deleteTrackByUsernameAndTrackId(String username, String trackId) {
         log.info("Service deleteTrackByUsername: " + username);
 
         Wishlist wishlist = wishlistRepository.findById(username)
@@ -90,7 +90,7 @@ public class WishlistServiceImpl implements WishlistService {
         wishlistRepository.save(wishlist);
 
         log.info("Service Track deleted with Id: " + trackId);
-        return "Track with Id: " + trackId + " deleted.";
+        return modelMapper.map(wishlistRepository.findById(username).orElseThrow(() -> new ResourceNotFoundException("Entity not found with ID: " + username)), WishlistDto.class);
     }
 
 

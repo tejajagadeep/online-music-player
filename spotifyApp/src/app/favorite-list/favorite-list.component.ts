@@ -63,10 +63,11 @@ export class FavoriteListComponent implements AfterViewInit {
 
     this.wishList.deleteTrackByUsernameAndTrackId(id).subscribe({
       next: (a) => {
-        this.wishlists();
+        console.log(a.username)
       },
       error: (e) => console.error(e),
-      complete: () => {console.info('track deleted'); this.wishlists();}
+      complete: () => {console.info('track deleted'); this.wishlists();
+      }
     });
 
 

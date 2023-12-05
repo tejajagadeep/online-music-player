@@ -27,6 +27,7 @@ import { SearchPlaylistsComponent } from './spotify/search-playlists/search-play
 import { SearchPlaylistsTracksComponent } from './spotify/search-playlists-tracks/search-playlists-tracks.component';
 import { TopBarComponent } from './navigation/top-bar/top-bar.component';
 import { SideBarComponent } from './navigation/side-bar/side-bar.component';
+import { LogoutComponent } from './logout/logout.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { SideBarComponent } from './navigation/side-bar/side-bar.component';
     SearchPlaylistsComponent,
     SearchPlaylistsTracksComponent,
     TopBarComponent,
-    SideBarComponent
+    SideBarComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,

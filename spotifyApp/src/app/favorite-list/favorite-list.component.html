@@ -1,66 +1,70 @@
-<div id="most-popular-wrapper" *ngIf="tracks">
-    <h3>Favorite Tracks</h3>
-    <p class="songs-no">{{tracks.length}} Songs</p>
-    <div class="song-list-wrapper" style="padding-top: 0;">
-        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+<aside>
+    <div id="most-popular-wrapper" *ngIf="tracks">
+        <div class="nine">
+            <h1>Favorite Tracks<span>{{tracks.length}} Songs</span></h1>
+        </div>
+        <div class="song-list-wrapper" style="padding-top: 0;">
+            <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
-            <!-- Position Column -->
-            <ng-container matColumnDef="position">
-                <th mat-header-cell *matHeaderCellDef> # </th>
-                <td mat-cell *matCellDef="let element; let i = index"> {{i + 1}} </td>
-            </ng-container>
+                <!-- Position Column -->
+                <ng-container matColumnDef="position">
+                    <th mat-header-cell *matHeaderCellDef> # </th>
+                    <td mat-cell *matCellDef="let element; let i = index"> {{i + 1}} </td>
+                </ng-container>
 
 
-            <!-- Image Column -->
-            <ng-container matColumnDef="image">
-                <th mat-header-cell *matHeaderCellDef> Image </th>
-                <td mat-cell *matCellDef="let element">
-                    <img [src]="element.album.images[0].url" alt="artist-img" width="40" height="40">
-                </td>
-            </ng-container>
+                <!-- Image Column -->
+                <ng-container matColumnDef="image">
+                    <th mat-header-cell *matHeaderCellDef> Image </th>
+                    <td mat-cell *matCellDef="let element">
+                        <img [src]="element.album.images[0].url" alt="artist-img" width="40" height="40">
+                    </td>
+                </ng-container>
 
-            <!-- Name Column -->
-            <ng-container matColumnDef="name">
-                <th mat-header-cell *matHeaderCellDef> Name </th>
-                <td mat-cell *matCellDef="let element"> {{element.name}} </td>
-            </ng-container>
+                <!-- Name Column -->
+                <ng-container matColumnDef="name">
+                    <th mat-header-cell *matHeaderCellDef> Name </th>
+                    <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+                </ng-container>
 
-            <!-- Artist Column -->
-            <ng-container matColumnDef="artist">
-                <th mat-header-cell *matHeaderCellDef> Artist </th>
-                <td mat-cell *matCellDef="let element"> {{element.artists[0].name}} </td>
-            </ng-container>
+                <!-- Artist Column -->
+                <ng-container matColumnDef="artist">
+                    <th mat-header-cell *matHeaderCellDef> Artist </th>
+                    <td mat-cell *matCellDef="let element"> {{element.artists[0].name}} </td>
+                </ng-container>
 
-            <!-- Duration Column -->
-            <ng-container matColumnDef="duration">
-                <th mat-header-cell *matHeaderCellDef> Duration </th>
-                <td mat-cell *matCellDef="let element"> {{element.duration_ms | millisecondsToMinutes}} </td>
-            </ng-container>
+                <!-- Duration Column -->
+                <ng-container matColumnDef="duration">
+                    <th mat-header-cell *matHeaderCellDef> Duration </th>
+                    <td mat-cell *matCellDef="let element"> {{element.duration_ms | millisecondsToMinutes}} </td>
+                </ng-container>
 
-            <!-- Play Song on Spotify -->
-            <ng-container matColumnDef="play">
-                <th mat-header-cell *matHeaderCellDef> Play </th>
-                <td mat-cell *matCellDef="let element">
-                    <i class="fas fa-play" style="
+                <!-- Play Song on Spotify -->
+                <ng-container matColumnDef="play">
+                    <th mat-header-cell *matHeaderCellDef> Play </th>
+                    <td mat-cell *matCellDef="let element">
+                        <i class="fas fa-play" style="
                     transition: transform 1s ease; cursor: pointer;" (click)="playTrack(element)"></i>
-                </td>
-            </ng-container>
+                    </td>
+                </ng-container>
 
-            <!-- Action Column -->
-            <ng-container matColumnDef="action">
-                <th mat-header-cell *matHeaderCellDef> Remove </th>
-                <td mat-cell *matCellDef="let element">
-                    <i (click)="deleteTrackToWishList(element.id)" style="color: rgb(0, 0, 0); text-align: center;
+                <!-- Action Column -->
+                <ng-container matColumnDef="action">
+                    <th mat-header-cell *matHeaderCellDef> Remove </th>
+                    <td mat-cell *matCellDef="let element">
+                        <i (click)="deleteTrackToWishList(element.id)" style="color: rgb(0, 0, 0); text-align: center;
                     transition: transform 1s ease; cursor: pointer;"><mat-icon>delete</mat-icon></i>
-                </td>
-            </ng-container>
+                    </td>
+                </ng-container>
 
-            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-        </table>
-        <!-- ... (previous code) ... -->
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+            <!-- ... (previous code) ... -->
 
-        <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+            <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
 
+        </div>
     </div>
-</div>
+</aside>
+<app-side-bar></app-side-bar>

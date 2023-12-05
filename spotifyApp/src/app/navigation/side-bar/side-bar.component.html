@@ -1,9 +1,9 @@
-<body>
+<div class="container-body">
     <div class="area"></div>
     <nav class="main-menu">
       <ul>
         <li>
-          <a href="https://jbfarrow.com">
+          <a  [routerLink]="['/search-playlists']">
             <i class="fa fa-home fa-2x"></i>
             <span class="nav-text">
               Community Dashboard
@@ -12,7 +12,7 @@
   
         </li>
         <li class="has-subnav">
-          <a href="#">
+          <a  [routerLink]="['/home']">
             <i class="fa fa-globe fa-2x"></i>
             <span class="nav-text">
               Global Surveyors
@@ -21,7 +21,7 @@
   
         </li>
         <li class="has-subnav">
-          <a href="#">
+          <a  [routerLink]="['/home']">
             <i class="fa fa-comments fa-2x"></i>
             <span class="nav-text">
               Group Hub Forums
@@ -30,7 +30,7 @@
   
         </li>
         <li class="has-subnav">
-          <a href="#">
+          <a  [routerLink]="['/home']">
             <i class="fa fa-camera-retro fa-2x"></i>
             <span class="nav-text">
               Survey Photos
@@ -39,7 +39,7 @@
   
         </li>
         <li>
-          <a href="#">
+          <a  [routerLink]="['/home']">
             <i class="fa fa-film fa-2x"></i>
             <span class="nav-text">
               Surveying Tutorials
@@ -47,7 +47,7 @@
           </a>
         </li>
         <li>
-          <a href="#">
+          <a  [routerLink]="['/home']">
             <i class="fa fa-book fa-2x"></i>
             <span class="nav-text">
               Surveying Jobs
@@ -55,7 +55,7 @@
           </a>
         </li>
         <li>
-          <a href="#">
+          <a  [routerLink]="['/home']">
             <i class="fa fa-cogs fa-2x"></i>
             <span class="nav-text">
               Tools & Resources
@@ -63,7 +63,7 @@
           </a>
         </li>
         <li>
-          <a href="#">
+          <a  [routerLink]="['/favorites']">
             <i class="fa fa-map-marker fa-2x"></i>
             <span class="nav-text">
               Member Map
@@ -71,7 +71,7 @@
           </a>
         </li>
         <li>
-          <a href="#">
+          <a  [routerLink]="['/top-hits-playlist']">
             <i class="fa fa-info fa-2x"></i>
             <span class="nav-text">
               Documentation
@@ -82,7 +82,7 @@
   
       <ul class="logout">
         <li>
-          <a href="#">
+          <a  [routerLink]="['/home']">
             <i class="fa fa-power-off fa-2x"></i>
             <span class="nav-text">
               Logout
@@ -91,4 +91,4 @@
         </li>
       </ul>
     </nav>
-  </body>
+  </div>

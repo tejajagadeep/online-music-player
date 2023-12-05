@@ -221,7 +221,7 @@ class WishlistServiceImplTest {
         when(wishlistRepository.findById(username)).thenReturn(Optional.of(mockWishlist));
 
         // Act
-        String result = wishlistService.deleteTrackByUsernameAndTrackId(username, trackIdToDelete);
+        WishlistDto result = wishlistService.deleteTrackByUsernameAndTrackId(username, trackIdToDelete);
 
         // Assert
         verify(wishlistRepository, never()).save(any());

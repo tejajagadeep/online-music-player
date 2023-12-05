@@ -32,4 +32,13 @@ export class AuthenticationService {
     );
   }
 
+  validateToken(token: string): Observable<any> {
+    const headers = new HttpHeaders({
+      'Authorization': token
+    });
+  
+    return this.httpClient.post<Map<String, String>>(`${API_URL_AUTH}/validate`, { headers });
+  }
+  
+
 }
