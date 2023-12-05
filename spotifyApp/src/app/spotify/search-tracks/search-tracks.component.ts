@@ -32,7 +32,6 @@ export class SearchTracksComponent implements AfterViewInit{
     private cdr: ChangeDetectorRef) {}
 
   ngAfterViewInit(): void {
-    this.searchTracks("leo");
   }
 
   redirectToLink(link: string) {
