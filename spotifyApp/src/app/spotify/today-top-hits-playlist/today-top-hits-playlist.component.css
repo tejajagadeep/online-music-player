@@ -86,3 +86,10 @@ h1 em {
 	height: 5px;
 	background-color: #f8f8f8;
 }
+
+
+/* Add this style to your component's CSS or in your global styles.css */
+td.mat-cell {
+	font-size: 30px; /* Adjust the size as needed */
+  }
+  
