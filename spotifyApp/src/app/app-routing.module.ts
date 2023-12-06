@@ -13,13 +13,15 @@ import { AuthGuard, LoginGuard } from './service/http/auth-guard.service';
 import { LogoutComponent } from './logout/logout.component';
 import { ProfileComponent } from './users/profile/profile.component';
 import { UpdateProfileComponent } from './users/update-profile/update-profile.component';
+import { SearchTracksQueryComponent } from './spotify/search-tracks-query/search-tracks-query.component';
 
 
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full'},
   { path: 'home', component: HomeComponent, canActivate: [AuthGuard]},
-  { path: 'search-tracks', component: SearchTracksComponent, canActivate: [AuthGuard]},
+  { path: 'search-tracks', component: SearchTracksQueryComponent, canActivate: [AuthGuard]},
+  { path: 'search-tracks/:query', component: SearchTracksComponent, canActivate: [AuthGuard]},
   { path: 'search-playlists', component: SearchPlaylistsComponent, canActivate: [AuthGuard]},
   { path: 'playlist-track/:playlistId', component: SearchPlaylistsTracksComponent, canActivate: [AuthGuard]},
   { path: 'billboard-hot-100-playlist', component: BillBoard100PlaylistComponent, canActivate: [AuthGuard]},

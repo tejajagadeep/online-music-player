@@ -24,18 +24,6 @@ export class WishlistDataService {
     return this.httpClient.get<Wishlist>(`${API_URL_WISHLIST}/userWishList`, {params})
   }
 
-  favoriteExists(trackId: string): Observable<boolean>{
-    const username = localStorage.getItem('authenticatedUser');
-    let params = new HttpParams()
-      .set('username', 'username')
-      .set('trackId', trackId);
-    if (username !== null) {
-      params = new HttpParams()
-      .set('username', username)
-      .set('trackId', trackId);
-    } 
-    return this.httpClient.get<boolean>(`${API_URL_WISHLIST}/favoriteExists`, {params});
-  }
 
   saveTrackToWishlist(track: Track): Observable<Track>{
     const username = localStorage.getItem('authenticatedUser');

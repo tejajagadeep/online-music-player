@@ -19,6 +19,7 @@ export class SearchPlaylistsTracksComponent implements AfterViewInit {
   spotifyPlaylist!: SpotifyPlaylist; // Adjust the type accordingly
   pageSize = 10;
   pageSizeOptions = [5, 10, 25, 50];
+  trackIds: string[] = [];
   
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   dataSource!: MatTableDataSource<any>;
@@ -39,11 +40,27 @@ export class SearchPlaylistsTracksComponent implements AfterViewInit {
   ngAfterViewInit(): void {
     this.playlistId = this.route.snapshot.params['playlistId'];
     this.getPlaylistSearch(this.playlistId)
+    this.wishListTracks()
+  }
+  deleteTrackToWishList(id: string) {
+
+    this.wishList.deleteTrackByUsernameAndTrackId(id).subscribe({
+      next: (a) => {
+        this.getPlaylistSearch(this.playlistId)
+      },
+      error: (e) => console.error(e),
+      complete: () => {console.info('complete'); this.getPlaylistSearch(this.playlistId);}
+    });
   }
 
-  afterDataLoaded(){
-    this.dataSource = new MatTableDataSource(this.spotifyPlaylist.tracks.items);
-    this.dataSource.paginator = this.paginator;
+  wishListTracks(){
+    this.wishList.getUserWishList().subscribe({
+      next: (a) => {
+        a.tracks.forEach(track => this.trackIds.push(track.id))
+      },
+      error: (e) => console.error(e),
+      complete: () => console.log('tracks added to wishlist')
+    })
   }
 
 
@@ -79,16 +96,6 @@ export class SearchPlaylistsTracksComponent implements AfterViewInit {
       error: (e) => console.error(e),
       complete: () => console.info('complete')
     });
-  }
-
-  favoriteIsExists(trackId: string){
-    this.wishList.favoriteExists(trackId).subscribe({
-      next: (a) => {
-        return a;
-      },
-      error: (e) => console.error(e),
-      complete: () => console.info('complete')
-    })
   }
   
   playTrack(item: Item) {

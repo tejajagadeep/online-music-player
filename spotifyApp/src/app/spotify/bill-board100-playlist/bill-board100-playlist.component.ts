@@ -18,6 +18,7 @@ export class BillBoard100PlaylistComponent implements AfterViewInit {
   spotifyPlaylist!: SpotifyPlaylist; // Adjust the type accordingly
   pageSize = 10;
   pageSizeOptions = [5, 10, 25, 50];
+  trackIds: String[] = [];
   
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   dataSource!: MatTableDataSource<any>;
@@ -36,16 +37,33 @@ export class BillBoard100PlaylistComponent implements AfterViewInit {
 
   ngAfterViewInit(): void {
     this.todayTopHitsPlaylist();
+    this.wishListTracks()
+  }
+  deleteTrackToWishList(id: string) {
 
-    setTimeout(() => {
-      this.afterDataLoaded();
-    }, 1000);
+    this.wishList.deleteTrackByUsernameAndTrackId(id).subscribe({
+      next: (a) => {
+        this.todayTopHitsPlaylist();
+      },
+      error: (e) => console.error(e),
+      complete: () => {console.info('complete'); this.todayTopHitsPlaylist();}
+    });
   }
 
-  afterDataLoaded(){
-    this.dataSource = new MatTableDataSource(this.spotifyPlaylist.tracks.items);
-        this.dataSource.paginator = this.paginator;
+  printFavorites(id: string) {
+    let tracks1 = ['123','123','234']
+    console.log(id);
   }
+  wishListTracks(){
+    this.wishList.getUserWishList().subscribe({
+      next: (a) => {
+        a.tracks.forEach(track => this.trackIds.push(track.id))
+      },
+      error: (e) => console.error(e),
+      complete: () => console.log('tracks added to wishlist')
+    })
+  }
+
 
   todayTopHitsPlaylist() {
     this.musicService.billBoard100Playlist().subscribe({
@@ -83,16 +101,6 @@ export class BillBoard100PlaylistComponent implements AfterViewInit {
     });
   }
 
-
-  favoriteIsExists(trackId: string){
-    this.wishList.favoriteExists(trackId).subscribe({
-      next: (a) => {
-        return a;
-      },
-      error: (e) => console.error(e),
-      complete: () => console.info('complete')
-    })
-  }
 
   playTrack(item: Item) {
     // Implement your play track logic here

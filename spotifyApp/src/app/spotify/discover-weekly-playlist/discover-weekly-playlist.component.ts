@@ -18,7 +18,7 @@ export class DiscoverWeeklyPlaylistComponent implements AfterViewInit {
   spotifyPlaylist!: SpotifyPlaylist; // Adjust the type accordingly
   pageSize = 10;
   pageSizeOptions = [5, 10, 25, 50];
-  
+  trackIds: String[] = [];
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   dataSource!: MatTableDataSource<any>;
   displayedColumns: string[] = ['position', 'image', 'name', 'artist', 'duration', 'play', 'action'];
@@ -36,8 +36,28 @@ export class DiscoverWeeklyPlaylistComponent implements AfterViewInit {
 
   ngAfterViewInit(): void {
     this.todayTopHitsPlaylist();
+    this.wishListTracks()
+  }
+  deleteTrackToWishList(id: string) {
+
+    this.wishList.deleteTrackByUsernameAndTrackId(id).subscribe({
+      next: (a) => {
+        this.todayTopHitsPlaylist();
+      },
+      error: (e) => console.error(e),
+      complete: () => {console.info('complete'); this.todayTopHitsPlaylist();}
+    });
   }
 
+  wishListTracks(){
+    this.wishList.getUserWishList().subscribe({
+      next: (a) => {
+        a.tracks.forEach(track => this.trackIds.push(track.id))
+      },
+      error: (e) => console.error(e),
+      complete: () => console.log('tracks added to wishlist')
+    })
+  }
   todayTopHitsPlaylist() {
     this.musicService.getDiscoverWeeklyPlaylist().subscribe({
       next: (v) => {
@@ -73,17 +93,6 @@ export class DiscoverWeeklyPlaylistComponent implements AfterViewInit {
       error: (e) => console.error(e),
       complete: () => console.info('complete')
     });
-  }
-
-
-  favoriteIsExists(trackId: string){
-    this.wishList.favoriteExists(trackId).subscribe({
-      next: (a) => {
-        return a;
-      },
-      error: (e) => console.error(e),
-      complete: () => console.info('complete')
-    })
   }
 
   playTrack(item: Item) {

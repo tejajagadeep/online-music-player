@@ -24,6 +24,8 @@ export class TodayTopHitsPlaylistComponent implements AfterViewInit {
   spotifyPlaylist!: SpotifyPlaylist; // Adjust the type accordingly
   pageSize = 10;
   pageSizeOptions = [5, 10, 25, 50];
+
+  trackIds: String[] = [];
   
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   dataSource!: MatTableDataSource<any>;
@@ -31,13 +33,8 @@ export class TodayTopHitsPlaylistComponent implements AfterViewInit {
 
   isExists: boolean = false;
 
-  isSmallScreen = true;
 
 ngOnInit() {
-  this.breakpointObserver.observe([Breakpoints.Handset, Breakpoints.Small])
-    .subscribe(result => {
-      this.isSmallScreen = result.matches;
-    });
 }
 
   
@@ -50,11 +47,8 @@ ngOnInit() {
 
   ngAfterViewInit(): void {
     this.todayTopHitsPlaylist();
-    this.favoriteIsExists("4KULAymBBJcPRpk1yO4dOG")
-    // setTimeout(() => {
-    //   this.afterDataLoaded();
-    // }, 1000);
     this.runcons();
+    this.wishListTracks();
   }
 
   todayTopHitsPlaylist() {
@@ -89,8 +83,7 @@ ngOnInit() {
         console.log(v.name)
       },
       error: (e) => console.error(e),
-      complete: () => {console.info('complete'), this.dataSource = new MatTableDataSource(this.spotifyPlaylist.tracks.items);
-      this.dataSource.paginator = this.paginator;}
+      complete: () => {this.todayTopHitsPlaylist()}
     });
   }
 
@@ -105,18 +98,15 @@ ngOnInit() {
     });
   }
 
-  favoriteIsExists(trackId: string){
-    this.wishList.favoriteExists(trackId).subscribe({
+
+  wishListTracks(){
+    this.wishList.getUserWishList().subscribe({
       next: (a) => {
-        this.isExists =a;
-        console.log(a);
-        this.cdr.detectChanges();
+        a.tracks.forEach(track => this.trackIds.push(track.id))
       },
       error: (e) => console.error(e),
-      complete: () => this.isExists
+      complete: () => console.log('tracks added to wishlist')
     })
-    return this.isExists;
-    
   }
 
   playTrack(item: Item) {

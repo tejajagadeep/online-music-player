@@ -5,9 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a2504401-f241-4a58-ab09-902bb2951c1e" name="Changes" comment="Commit message [date: %Y-%m-%d] [time: %H:%M:%S]">
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/0/0079f9ebdfd8d76f545c1e67d264698f6fac8e84" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/0/0079f9ebdfd8d76f545c1e67d264698f6fac8e84" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/3/0318d3c9a8bf8f28921f52b6810f7eaa2e8c67e5" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/3/0318d3c9a8bf8f28921f52b6810f7eaa2e8c67e5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/2/c2917126a81e58e518965fd536208354365e17fb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/2/c2917126a81e58e518965fd536208354365e17fb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/userprofile-service/src/main/java/com/spotify/userprofile/controller/UserProfileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/userprofile-service/src/main/java/com/spotify/userprofile/controller/UserProfileController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/userprofile-service/src/main/java/com/spotify/userprofile/dto/UserProfileDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/userprofile-service/src/main/java/com/spotify/userprofile/dto/UserProfileDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wishlist-service/src/main/java/com/spotify/wishlistservice/controller/WishlistController.java" beforeDir="false" afterPath="$PROJECT_DIR$/wishlist-service/src/main/java/com/spotify/wishlistservice/controller/WishlistController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wishlist-service/src/main/java/com/spotify/wishlistservice/service/WishlistService.java" beforeDir="false" afterPath="$PROJECT_DIR$/wishlist-service/src/main/java/com/spotify/wishlistservice/service/WishlistService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wishlist-service/src/main/java/com/spotify/wishlistservice/service/WishlistServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/wishlist-service/src/main/java/com/spotify/wishlistservice/service/WishlistServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,6 +98,19 @@
     </key>
   </component>
   <component name="RunManager" selected="Application.UserprofileApplication">
+    <configuration name="ApiGatewayApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.spotify.apigateway.ApiGatewayApplication" />
+      <module name="api-gateway" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.spotify.apigateway.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="AuthenticationServiceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.auth.authenticationservice.AuthenticationServiceApplication" />
       <module name="authentication-service" />
@@ -146,28 +163,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="WishlistServiceImplTest2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="wishlist-service" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.spotify.wishlistservice.service.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.spotify.wishlistservice.service" />
-      <option name="MAIN_CLASS_NAME" value="com.spotify.wishlistservice.service.WishlistServiceImplTest2" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.UserprofileApplication" />
-        <item itemvalue="Application.AuthenticationServiceApplication" />
-        <item itemvalue="JUnit.WishlistServiceImplTest2" />
         <item itemvalue="Application.WishlistserviceApplication" />
         <item itemvalue="Application.MusicserviceApplication" />
+        <item itemvalue="Application.AuthenticationServiceApplication" />
+        <item itemvalue="Application.ApiGatewayApplication" />
       </list>
     </recent_temporary>
   </component>

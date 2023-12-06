@@ -6,8 +6,6 @@ import com.spotify.wishlistservice.dto.WishlistDto;
 public interface WishlistService {
     WishlistDto getUserWishlist(String username);
 
-    Boolean favoriteExists(String username, String trackId);
-
     TrackDto saveTrackToWishlist(String username, TrackDto trackDto);
 
     WishlistDto deleteTrackByUsernameAndTrackId(String username, String trackId);

@@ -1,28 +1,28 @@
 /* app-side-bar.component.css */
 aside {
-    width: 95%;
-    /* Adjust the width as needed */
-    background-color: #f0f0f0;
-    /* Adjust the background color */
-    padding: 10px;
-    left: 0;
-    margin-left: 50px;
+	width: 95%;
+	/* Adjust the width as needed */
+	background-color: #f0f0f0;
+	/* Adjust the background color */
+	padding: 10px;
+	left: 0;
+	margin-left: 50px;
 }
 
 #most-popular-wrapper {
-    background-color: #ffffff;
-    /* Adjust the background color */
-    padding: 10px;
-    border: 1px solid #ccc;
-    /* Add borders or adjust as needed */
+	background-color: #ffffff;
+	/* Adjust the background color */
+	padding: 10px;
+	border: 1px solid #ccc;
+	/* Add borders or adjust as needed */
 }
 
 /* Add any additional styles for the rest of your side bar content */
 /* your-component.component.css */
 @media (max-width: 800px) {
-    .hide-on-small-screen {
-        display: none;
-    }
+	.hide-on-small-screen {
+		display: none;
+	}
 }
 
 h1 {
@@ -90,6 +90,15 @@ h1 em {
 
 /* Add this style to your component's CSS or in your global styles.css */
 td.mat-cell {
-	font-size: 30px; /* Adjust the size as needed */
-  }
-  
+	font-size: 30px;
+	/* Adjust the size as needed */
+}
+
+.curved-image {
+	margin-top: 2px;
+	margin-bottom: 2px;
+	border-radius: 20px;
+	/* Adjust the value to control the curve amount */
+	overflow: hidden;
+	/* Ensure the curved corners are visible */
+}

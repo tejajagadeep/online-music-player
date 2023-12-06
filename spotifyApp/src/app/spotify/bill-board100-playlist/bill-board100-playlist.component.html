@@ -17,7 +17,7 @@
                 <ng-container matColumnDef="image">
                     <th mat-header-cell *matHeaderCellDef style="font-size: 20px; font-weight: 400;"> Image </th>
                     <td mat-cell *matCellDef="let element" style="font-size: 16px;">
-                        <img [src]="element.track.album.images[0].url" alt="artist-img" width="70" height="70">
+                        <img class="curved-image" [src]="element.track.album.images[0].url" alt="artist-img" width="70" height="70">
                     </td>
                 </ng-container>
 
@@ -57,14 +57,15 @@
                 <ng-container matColumnDef="action">
                     <th mat-header-cell *matHeaderCellDef style="font-size: 20px; font-weight: 400;"> Action </th>
                     <td mat-cell *matCellDef="let element" style="font-size: 16px; font-weight: 400;">
-                        <!-- <div *ngIf="favoriteIsExists(element.track.id)">
-                        <i (click)="deleteTrackToWishList(element.track.id)" class="fas fa-heart red" style="color: rgb(0, 0, 0);
+                        <div *ngIf="!trackIds.includes(element.track.id)">
+                        <i (click)="saveTrackToWishList(element.track.id)" class="fas fa-heart red" style="color: rgb(0, 0, 0);
                         transition: transform 1s ease; cursor: pointer;"></i>
-                    </div> -->
-                        <!-- <div *ngIf="favoriteIsExists(element.track.id)"> -->
-                        <i (click)="saveTrackToWishList(element.track.id)" class="fas fa-heart red" style="color: rgb(255, 49, 70);
+                    </div>
+                        <!-- <i *ngIf="">a</i> -->
+                        <div *ngIf="trackIds.includes(element.track.id)">
+                        <i (click)="deleteTrackToWishList(element.track.id)" class="fas fa-heart red" style="color: rgb(255, 49, 70);
                          cursor: pointer;"></i>
-                        <!-- </div> -->
+                        </div>
                     </td>
                 </ng-container>
 

@@ -29,11 +29,12 @@ import { FooterComponent } from './navigation/footer/footer.component';
 import { SearchTracksComponent } from './spotify/search-tracks/search-tracks.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SearchPlaylistsComponent } from './spotify/search-playlists/search-playlists.component';
-import { SearchPlaylistsTracksComponent } from './spotify/search-playlists-tracks/search-playlists-tracks.component';
 import { SideBarComponent } from './navigation/side-bar/side-bar.component';
 import { LogoutComponent } from './logout/logout.component';
 import { ProfileComponent } from './users/profile/profile.component';
 import { UpdateProfileComponent } from './users/update-profile/update-profile.component';
+import { SearchPlaylistsTracksComponent } from './spotify/search-playlists-tracks/search-playlists-tracks.component';
+import { SearchTracksQueryComponent } from './spotify/search-tracks-query/search-tracks-query.component';
 
 @NgModule({
   declarations: [
@@ -50,11 +51,12 @@ import { UpdateProfileComponent } from './users/update-profile/update-profile.co
     FooterComponent,
     SearchTracksComponent,
     SearchPlaylistsComponent,
-    SearchPlaylistsTracksComponent,
     SideBarComponent,
     LogoutComponent,
     ProfileComponent,
-    UpdateProfileComponent
+    UpdateProfileComponent,
+    SearchPlaylistsTracksComponent,
+    SearchTracksQueryComponent
   ],
   imports: [
     BrowserModule,

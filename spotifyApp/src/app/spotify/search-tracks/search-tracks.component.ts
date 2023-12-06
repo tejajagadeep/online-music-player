@@ -17,6 +17,7 @@ export class SearchTracksComponent implements AfterViewInit{
   playlistId!: string;
   pageSize = 10;
   pageSizeOptions = [5, 10, 25, 50];
+  trackIds: String[] = [];
   
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   dataSource!: MatTableDataSource<any>;
@@ -25,13 +26,41 @@ export class SearchTracksComponent implements AfterViewInit{
 
   spotifyTracks!: SpotifyTracks; // Adjust the type accordingly
   searchQuery: string = '';
+  query=''
   
   constructor(
+    private route: ActivatedRoute, 
     private musicService: MusicDataService,
     private wishList: WishlistDataService,
     private cdr: ChangeDetectorRef) {}
 
   ngAfterViewInit(): void {
+    this.query = this.route.snapshot.params['query'];
+    this.searchTracks(this.query)
+    this.wishListTracks();
+  }
+
+  
+
+  deleteTrackToWishList(id: string) {
+
+    this.wishList.deleteTrackByUsernameAndTrackId(id).subscribe({
+      next: (a) => {
+      },
+      error: (e) => console.error(e),
+      complete: () => {console.info('complete'); }
+    });
+  }
+
+
+  wishListTracks(){
+    this.wishList.getUserWishList().subscribe({
+      next: (a) => {
+        a.tracks.forEach(track => this.trackIds.push(track.id))
+      },
+      error: (e) => console.error(e),
+      complete: () => console.log('tracks added to wishlist')
+    })
   }
 
   redirectToLink(link: string) {

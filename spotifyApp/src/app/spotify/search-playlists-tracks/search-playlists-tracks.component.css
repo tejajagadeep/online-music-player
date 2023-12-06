@@ -10,16 +10,13 @@ aside {
     /* Adjust the width as needed */
     background-color: #f0f0f0;
     /* Adjust the background color */
-    padding: 10px;
     left: 0;
-    margin-left: 50px;
+    margin-left: 55px;
 }
 
 #most-popular-wrapper {
     background-color: #ffffff;
     /* Adjust the background color */
-    padding: 10px;
-    border: 1px solid #ccc;
     /* Add borders or adjust as needed */
 }
 
@@ -91,4 +88,13 @@ h1 em {
 	border-top: 1px solid #ccc;
 	height: 5px;
 	background-color: #f8f8f8;
+}
+
+.curved-image {
+	margin-top: 2px;
+	margin-bottom: 2px;
+	border-radius: 20px;
+	/* Adjust the value to control the curve amount */
+	overflow: hidden;
+	/* Ensure the curved corners are visible */
 }
