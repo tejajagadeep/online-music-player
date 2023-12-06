@@ -31,7 +31,15 @@ export class LoginComponent {
     this.userService.register(this.username, this.password, this.email).subscribe({
       next: (v) => {this.userProfile=v, this.successMessage="Your Are Register";
     this.errorMessage2=''},
-      error: (e) => {this.errorMessage2 = "User ALready Exists", this.successMessage=''},
+      error: (e) => {
+      this.successMessage='';
+      if (e.status === 409){
+        this.errorMessage2 = "Username or Email incorrect";
+      }
+      if (e.status === 503){
+        this.errorMessage2 = "Service Error"
+      }
+    },
       complete: () => console.info('complete') 
     })
     // Add your sign-up logic here using this.userName, this.email, this.password

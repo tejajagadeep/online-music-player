@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface UserRepo extends JpaRepository<UserDetails,Integer> {
+public interface UserRepo extends JpaRepository<UserDetails,String> {
 
 //    @Query(value="select u from UserDetails u where u.username= :username and u.password= :password")
 //    public UserDetails validateUser(String username, String password);//login

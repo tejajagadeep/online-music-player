@@ -54,7 +54,11 @@
               </mat-card-content>
               <mat-card-actions>
                 <button (click)="saveForm()" mat-raised-button color="primary"  [disabled]="profileForm.invalid">Save</button>
+                <div *ngIf="message">
+                  <p class="success-message" style="margin-left: 10px;">Details saved successfully!</p>
+                </div>
               </mat-card-actions>
+              
             </mat-card>
           </form>
           

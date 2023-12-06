@@ -13,6 +13,7 @@ export class UpdateProfileComponent implements OnInit {
   userProfile!: UserProfile;
 
   emailExists: boolean = false;
+  message='';
 
   constructor(private userProfileService: UserProfileDataService, private fb: FormBuilder) {
     
@@ -34,7 +35,7 @@ export class UpdateProfileComponent implements OnInit {
         console.log(v.email)
       },
       error: (e) => {console.error('e')},
-      complete: () => console.info('complete')
+      complete: () => {this.message = "Details updated"}
     });
   }
 

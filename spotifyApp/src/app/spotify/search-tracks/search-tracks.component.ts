@@ -2,6 +2,7 @@ import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, V
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { ActivatedRoute } from '@angular/router';
+import { heartAnimation } from 'src/app/app-parsers/animation-trigger';
 import { SpotifyTracks } from 'src/app/model/SpotifyTracks';
 import { MusicDataService } from 'src/app/service/data/music-data.service';
 import { WishlistDataService } from 'src/app/service/data/wishlist-data.service';
@@ -11,6 +12,7 @@ import { WishlistDataService } from 'src/app/service/data/wishlist-data.service'
   templateUrl: './search-tracks.component.html',
   styleUrls: ['./search-tracks.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush,
+  animations: [heartAnimation]
 })
 export class SearchTracksComponent implements AfterViewInit{
 
@@ -18,6 +20,7 @@ export class SearchTracksComponent implements AfterViewInit{
   pageSize = 10;
   pageSizeOptions = [5, 10, 25, 50];
   trackIds: String[] = [];
+  heartStates: { [key: string]: string } = {};
   
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   dataSource!: MatTableDataSource<any>;
@@ -40,7 +43,31 @@ export class SearchTracksComponent implements AfterViewInit{
     this.wishListTracks();
   }
 
-  
+  toggleHeartState(trackId: string): void {
+    if (!this.trackIds.includes(trackId)){
+    if (this.heartStates[trackId] === 'active') {
+      this.heartStates[trackId as any] = 'inactive';
+    } else {
+      this.heartStates[trackId as any] = 'active'
+    }
+    this.saveTrackToWishList(trackId);
+  } else {
+    if (this.heartStates[trackId] === 'inactive') {
+      this.heartStates[trackId as any] = 'active';
+    } else {
+      this.heartStates[trackId as any] = 'inactive'
+    }
+    this.deleteTrackToWishList(trackId);
+  }
+    
+  }
+  getHeartState(trackId: string): string {
+    if (this.trackIds.includes(trackId)) {
+      return this.heartStates[trackId] || 'active';
+    } else {
+      return this.heartStates[trackId] || 'inactive';
+    }
+  }
 
   deleteTrackToWishList(id: string) {
 

@@ -6,7 +6,7 @@ import { Item } from 'src/app/model/Item';
 import { SpotifyPlaylist } from 'src/app/model/SpotifyPlaylist';
 import { MusicDataService } from 'src/app/service/data/music-data.service';
 import { WishlistDataService } from 'src/app/service/data/wishlist-data.service';
-import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { heartAnimation } from 'src/app/app-parsers/animation-trigger';
 
 
 @Component({
@@ -14,6 +14,8 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
   templateUrl: './today-top-hits-playlist.component.html',
   styleUrls: ['./today-top-hits-playlist.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush,
+  animations: [heartAnimation]
+
 })
 
 
@@ -26,23 +28,19 @@ export class TodayTopHitsPlaylistComponent implements AfterViewInit {
   pageSizeOptions = [5, 10, 25, 50];
 
   trackIds: String[] = [];
-  
+
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   dataSource!: MatTableDataSource<any>;
   displayedColumns: string[] = ['position', 'image', 'name', 'artist', 'duration', 'play', 'action'];
 
-  isExists: boolean = false;
+  heartStates: { [key: string]: string } = {};
 
 
-ngOnInit() {
-}
 
-  
-  constructor(private route: ActivatedRoute, 
+  constructor(private route: ActivatedRoute,
     private musicService: MusicDataService,
     private wishList: WishlistDataService,
-    private cdr: ChangeDetectorRef,
-    private breakpointObserver: BreakpointObserver) { }
+    private cdr: ChangeDetectorRef,) { }
 
 
   ngAfterViewInit(): void {
@@ -50,7 +48,33 @@ ngOnInit() {
     this.runcons();
     this.wishListTracks();
   }
+  toggleHeartState(trackId: string): void {
+    if (!this.trackIds.includes(trackId)) {
+      if (this.heartStates[trackId] === 'active') {
+        this.heartStates[trackId as any] = 'inactive';
+      } else {
+        this.heartStates[trackId as any] = 'active'
+      }
+      this.saveTrackToWishList(trackId);
+    } else {
+      if (this.heartStates[trackId] === 'inactive') {
+        this.heartStates[trackId as any] = 'active';
+      } else {
+        this.heartStates[trackId as any] = 'inactive'
+      }
+      this.deleteTrackToWishList(trackId);
+    }
 
+  }
+
+  getHeartState(trackId: string): string {
+    if (this.trackIds.includes(trackId)) {
+      return this.heartStates[trackId] || 'active';
+    } else {
+      return this.heartStates[trackId] || 'inactive';
+    }
+  }
+  
   todayTopHitsPlaylist() {
     this.musicService.getTodayTopHitsPlaylist().subscribe({
       next: (v) => {
@@ -58,18 +82,20 @@ ngOnInit() {
         console.log(v.tracks.items[0].added_at)
         this.cdr.detectChanges();
       },
-      error: (e) => {console.error('e')},
-      complete: () => {console.info('complete'),
-      this.dataSource = new MatTableDataSource(this.spotifyPlaylist.tracks.items);
-      this.dataSource.paginator = this.paginator;}
+      error: (e) => { console.error('e') },
+      complete: () => {
+        console.info('complete'),
+        this.dataSource = new MatTableDataSource(this.spotifyPlaylist.tracks.items);
+        this.dataSource.paginator = this.paginator;
+      }
     });
   }
 
-  runcons(){
+  runcons() {
     console.log(this.spotifyPlaylist)
   }
 
-  saveTrackToWishList(id: string){
+  saveTrackToWishList(id: string) {
     this.musicService.getTrack(id).subscribe({
       next: (v) => {
         this.wishList.saveTrackToWishlist(v).subscribe({
@@ -79,11 +105,11 @@ ngOnInit() {
           error: (e) => console.error(e),
           complete: () => console.info('complete')
         });;
-        
+
         console.log(v.name)
       },
       error: (e) => console.error(e),
-      complete: () => {this.todayTopHitsPlaylist()}
+      complete: () => { this.todayTopHitsPlaylist() }
     });
   }
 
@@ -94,12 +120,12 @@ ngOnInit() {
         this.todayTopHitsPlaylist();
       },
       error: (e) => console.error(e),
-      complete: () => {console.info('complete'); this.todayTopHitsPlaylist();}
+      complete: () => { console.info('complete'); this.todayTopHitsPlaylist(); }
     });
   }
 
 
-  wishListTracks(){
+  wishListTracks() {
     this.wishList.getUserWishList().subscribe({
       next: (a) => {
         a.tracks.forEach(track => this.trackIds.push(track.id))

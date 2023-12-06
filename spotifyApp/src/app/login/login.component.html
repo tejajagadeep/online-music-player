@@ -18,7 +18,7 @@
         </div>
       
         <div *ngIf="errorMessage2" class="error-message">
-          <p class="error-message">UserName or password already exists.</p>
+          <p class="error-message">{{errorMessage2}}</p>
         </div>
       </ng-template>
         <button (click)="signUp()" [disabled]="signupForm.invalid">Sign up</button>

@@ -20,7 +20,7 @@
         </div>
       </section>
       
-      <div *ngIf="tracks">
+      <div *ngIf="tracks; else noTrack">
         <div *ngIf="tracks.length>5; else topHits">
         <app-favorite-list></app-favorite-list>
       </div>
@@ -29,6 +29,9 @@
       </ng-template>
       </div>
 
+      <ng-template #noTrack>
+        <app-today-top-hits-playlist></app-today-top-hits-playlist>
+      </ng-template>
     </section>
 
   </main>
