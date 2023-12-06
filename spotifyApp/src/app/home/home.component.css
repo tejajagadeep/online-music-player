@@ -142,26 +142,12 @@ body {
 /* main big section code */
 
 #right-container {
-    width: 95%;
+    width: 100%;
 }
 
 #nav-bar {
     display: flex;
     justify-content: space-between;
-}
-
-.search-wrapper {
-    position: relative;
-    width: 350px;
-}
-
-.search-wrapper i {
-    position: absolute;
-    color: rgb(12, 11, 11, 0.6);
-    left: 10px;
-    bottom: 12px;
-    padding: 0 5px;
-    cursor: pointer;
 }
 
 .input-box {
@@ -203,7 +189,7 @@ body {
 }
 
 .heading-part {
-    margin-top: 10px;
+    /* margin-top: 10px; */
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -278,13 +264,13 @@ body {
 }
 
 .popstar-cards h4 {
+    margin-top: 4px;
     font-size: 14px;
     margin-bottom: 0;
 }
 
 #topchart-section {
     margin-left: 80px;
-    /* margin-bottom: 5px; */
     margin-bottom: 5px;
 }
 

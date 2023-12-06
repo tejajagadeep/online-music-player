@@ -66,6 +66,7 @@ html {
   min-height: 46px;
   display: flex;
   align-items: center;
+  cursor: pointer;
   justify-content: center;
   border-radius: var(--border-radius);
   margin-right: 12px;

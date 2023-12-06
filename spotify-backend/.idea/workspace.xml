@@ -5,12 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a2504401-f241-4a58-ab09-902bb2951c1e" name="Changes" comment="Commit message [date: %Y-%m-%d] [time: %H:%M:%S]">
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_h2database_h2_2_1_214.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authentication-service/src/main/java/com/auth/authenticationservice/model/UserDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/authentication-service/src/main/java/com/auth/authenticationservice/model/UserDetails.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authentication-service/src/main/java/com/auth/authenticationservice/repository/UserRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/authentication-service/src/main/java/com/auth/authenticationservice/repository/UserRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spotifyApp/src/app/spotify/today-top-hits-playlist/today-top-hits-playlist.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../spotifyApp/src/app/spotify/today-top-hits-playlist/today-top-hits-playlist.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spotifyApp/src/app/spotify/today-top-hits-playlist/today-top-hits-playlist.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../spotifyApp/src/app/spotify/today-top-hits-playlist/today-top-hits-playlist.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spotifyApp/src/app/spotify/today-top-hits-playlist/today-top-hits-playlist.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../spotifyApp/src/app/spotify/today-top-hits-playlist/today-top-hits-playlist.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/music-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/music-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/music-service/src/main/java/com/spotify/musicservice/model/SpotifyAccessToken.java" beforeDir="false" afterPath="$PROJECT_DIR$/music-service/src/main/java/com/spotify/musicservice/model/SpotifyAccessToken.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/music-service/src/main/java/com/spotify/musicservice/repository/SpotifyAccessTokenRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/music-service/src/main/java/com/spotify/musicservice/repository/SpotifyAccessTokenRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spotifyApp/src/app/home/home.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../spotifyApp/src/app/home/home.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spotifyApp/src/app/spotify/search-playlists/search-playlists.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../spotifyApp/src/app/spotify/search-playlists/search-playlists.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spotifyApp/src/app/spotify/search-tracks-query/search-tracks-query.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../spotifyApp/src/app/spotify/search-tracks-query/search-tracks-query.component.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,7 +98,7 @@
       <recent name="com.spotify.wishlistservice.dto" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.UserprofileApplication">
+  <component name="RunManager" selected="Application.MusicserviceApplication">
     <configuration name="ApiGatewayApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.spotify.apigateway.ApiGatewayApplication" />
       <module name="api-gateway" />
@@ -164,10 +166,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.MusicserviceApplication" />
         <item itemvalue="Application.UserprofileApplication" />
         <item itemvalue="Application.AuthenticationServiceApplication" />
         <item itemvalue="Application.WishlistserviceApplication" />
-        <item itemvalue="Application.MusicserviceApplication" />
         <item itemvalue="Application.ApiGatewayApplication" />
       </list>
     </recent_temporary>
