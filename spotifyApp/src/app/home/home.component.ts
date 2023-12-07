@@ -4,6 +4,7 @@ import { SpotifyPlaylist } from 'src/app/model/SpotifyPlaylist';
 import { Track } from 'src/app/model/Track';
 import { MusicDataService } from 'src/app/service/data/music-data.service';
 import { WishlistDataService } from 'src/app/service/data/wishlist-data.service';
+import { PlayDialogService } from '../service/component/play-dialog.service';
 
 @Component({
   selector: 'app-home',
@@ -17,7 +18,13 @@ export class HomeComponent implements OnInit {
 
   tracks!: Track[];
   
-  constructor( private wishlist: WishlistDataService, private musicService: MusicDataService) {}
+  constructor( private wishlist: WishlistDataService, private musicService: MusicDataService,
+    private playDialogService: PlayDialogService
+    ) { }
+
+    openPlayDialog(trackId: string): void {
+      this.playDialogService.openPlayDialog(trackId);
+    } 
 
   ngOnInit(): void {
     this.billBoard();

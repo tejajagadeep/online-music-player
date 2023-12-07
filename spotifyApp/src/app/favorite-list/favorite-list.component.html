@@ -44,8 +44,14 @@
                     <ng-container matColumnDef="play">
                         <th mat-header-cell *matHeaderCellDef> Play </th>
                         <td mat-cell *matCellDef="let element">
-                            <i class="fas fa-play" style="
-                    transition: transform 1s ease; cursor: pointer;" (click)="playTrack(element)"></i>
+                            <div *ngIf="element.preview_url; else redirectUrl">
+                                <i class="fas fa-play" style="transition: transform 1s ease; cursor: pointer;"
+                                    (click)="openPlayDialog(element.id)"></i>
+                            </div>
+                            <ng-template #redirectUrl>
+                                <i class="fa fa-external-link" style="transition: transform 1s ease; cursor: pointer;"
+                                    (click)="playTrack(element)"></i>
+                            </ng-template>
                         </td>
                     </ng-container>
 

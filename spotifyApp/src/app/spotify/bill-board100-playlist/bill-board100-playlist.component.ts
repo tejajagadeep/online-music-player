@@ -4,6 +4,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { heartAnimation } from 'src/app/app-parsers/animation-trigger';
 import { Item } from 'src/app/model/Item';
 import { SpotifyPlaylist } from 'src/app/model/SpotifyPlaylist';
+import { PlayDialogService } from 'src/app/service/component/play-dialog.service';
 import { MusicDataService } from 'src/app/service/data/music-data.service';
 import { WishlistDataService } from 'src/app/service/data/wishlist-data.service';
 
@@ -30,8 +31,13 @@ export class BillBoard100PlaylistComponent implements AfterViewInit {
   constructor(
     private musicService: MusicDataService,
     private wishList: WishlistDataService,
-    private cdr: ChangeDetectorRef
-   ) { }
+    private cdr: ChangeDetectorRef,
+    private playDialogService: PlayDialogService
+    ) { }
+
+    openPlayDialog(trackId: string): void {
+      this.playDialogService.openPlayDialog(trackId);
+    }
 
   ngOnInit(): void {
 

@@ -20,7 +20,6 @@ body * {
 #boxes * {
     border: 1px solid transparent;
 }
-
 #boxes {
     display: grid;
     grid-template-columns: max-content max-content;
@@ -40,7 +39,6 @@ body * {
 #player01 .wrapper {
     width: 190px;
 }
-
 
 #player01 img {
     width: 190px;
@@ -85,7 +83,6 @@ body * {
     border-radius: 10px;
 }
 
-
 .info {
     color: #E1E1E6;
 }
@@ -107,7 +104,6 @@ body * {
     padding-bottom: 7px;
 }
 
-
 .controls {
     display: flex;
     justify-content: space-between;
@@ -117,36 +113,31 @@ body * {
 .track {
     padding-top: 28px;
     position: relative;
-
 }
 
-.track::before {
+.track::before,
+.track::after {
     content: '';
     height: 6px;
-    width: 100%;
     display: block;
     background: #D9D9D9;
-    opacity: 0.3;
     border-radius: 10px;
     position: absolute;
 }
 
+.track::before {
+    width: 100%;
+    opacity: 0.3;
+}
+
 .track::after {
-    content: '';
-    height: 6px;
     width: 85%;
-    display: block;
-    background: #D9D9D9;
-    border-radius: 10px;
-
-
 }
 
 .time {
     opacity: 0.7;
     font-size: 14px;
     color: gainsboro;
-
     display: flex;
     justify-content: space-between;
     padding-top: 9.6px;
@@ -156,15 +147,42 @@ body * {
     #boxes {
         display: flex;
         flex-direction: column;
-
         max-width: 270px;
         margin: auto;
-
-
         height: auto;
         padding-block: 60px;
     }
 
+    #player01,
+    #player02,
+    #player03 {
+        width: 100%;
+        text-align: center;
+        padding: 0;
+        margin-bottom: 20px;
+    }
 
+    #player01 .wrapper,
+    #player01 img,
+    #player01 .info {
+        width: 100%;
+    }
 
+    .player img {
+        width: 60px;
+        height: 60px;
+    }
 }
+
+
+.track-time{
+    margin-top: 20px;
+}
+
+
+audio {
+    width: 100%; /* Make the audio player take the full width of its container */
+    margin-top: 10px; /* Add some top margin for spacing */
+  }
+  
+  

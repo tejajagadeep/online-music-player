@@ -29,11 +29,11 @@ const routes: Routes = [
   { path: 'workout-playlist', component: DiscoverWeeklyPlaylistComponent, canActivate: [AuthGuard]}, //
   { path: 'top-hits-playlist', component: TodayTopHitsPlaylistComponent, canActivate: [AuthGuard]},
   { path: 'favorites', component: FavoriteListComponent , canActivate: [AuthGuard]},
-  { path: 'track/:id', component: PlayMusicComponent , canActivate: [AuthGuard]},
   { path: 'profile', component: ProfileComponent , canActivate: [AuthGuard]},
   { path: 'update-profile', component: UpdateProfileComponent , canActivate: [AuthGuard]},
   { path: 'logout', component: LogoutComponent},
   { path: 'login', component: LoginComponent , canActivate: [LoginGuard]},
+  { path: '**', redirectTo: 'home'}
 
 ];
 

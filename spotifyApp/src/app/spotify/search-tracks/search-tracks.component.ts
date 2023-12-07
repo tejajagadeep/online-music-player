@@ -4,6 +4,8 @@ import { MatTableDataSource } from '@angular/material/table';
 import { ActivatedRoute } from '@angular/router';
 import { heartAnimation } from 'src/app/app-parsers/animation-trigger';
 import { SpotifyTracks } from 'src/app/model/SpotifyTracks';
+import { Track } from 'src/app/model/Track';
+import { PlayDialogService } from 'src/app/service/component/play-dialog.service';
 import { MusicDataService } from 'src/app/service/data/music-data.service';
 import { WishlistDataService } from 'src/app/service/data/wishlist-data.service';
 
@@ -35,7 +37,13 @@ export class SearchTracksComponent implements AfterViewInit{
     private route: ActivatedRoute, 
     private musicService: MusicDataService,
     private wishList: WishlistDataService,
-    private cdr: ChangeDetectorRef) {}
+    private cdr: ChangeDetectorRef,
+    private playDialogService: PlayDialogService
+    ) { }
+
+    openPlayDialog(trackId: string): void {
+      this.playDialogService.openPlayDialog(trackId);
+    }
 
   ngAfterViewInit(): void {
     this.query = this.route.snapshot.params['query'];
@@ -128,7 +136,8 @@ export class SearchTracksComponent implements AfterViewInit{
     });
   }
 
-  playTrack(link: URL) {
+  playTrack(track: Track) {
+    const link = track.external_urls.spotify
     // Implement your play track logic here
     window.open(link, '_blank');
   }

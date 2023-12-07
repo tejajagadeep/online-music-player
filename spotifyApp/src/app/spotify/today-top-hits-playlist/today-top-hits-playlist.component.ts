@@ -44,6 +44,9 @@ export class TodayTopHitsPlaylistComponent implements AfterViewInit {
     private playDialogService: PlayDialogService
     ) { }
 
+    openPlayDialog(trackId: string): void {
+      this.playDialogService.openPlayDialog(trackId);
+    }
 
   ngAfterViewInit(): void {
     this.todayTopHitsPlaylist();
@@ -52,9 +55,6 @@ export class TodayTopHitsPlaylistComponent implements AfterViewInit {
   }
 
   
-    openPlayDialog(trackId: string): void {
-      this.playDialogService.openPlayDialog(trackId);
-    }
 
   toggleHeartState(trackId: string): void {
     if (!this.trackIds.includes(trackId)) {

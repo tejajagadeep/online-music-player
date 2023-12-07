@@ -11,7 +11,8 @@ export class PlayDialogService {
 
   openPlayDialog(trackId: string): void {
     this.dialog.open(PlayMusicComponent, {
-      data: { trackId }
+      data: { id:trackId },
+      width: '70%', // Adjust the width as needed
     });
   }
 }

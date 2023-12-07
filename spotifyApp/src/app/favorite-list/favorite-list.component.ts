@@ -7,6 +7,7 @@ import { MusicDataService } from '../service/data/music-data.service';
 import { WishlistDataService } from '../service/data/wishlist-data.service';
 import { Item } from '../model/Item';
 import { Track } from '../model/Track';
+import { PlayDialogService } from '../service/component/play-dialog.service';
 
 @Component({
   selector: 'app-favorite-list',
@@ -27,7 +28,13 @@ export class FavoriteListComponent implements AfterViewInit {
 
   constructor(private route: ActivatedRoute,
     private wishList: WishlistDataService,
-    private cdr: ChangeDetectorRef) { }
+    private cdr: ChangeDetectorRef,
+    private playDialogService: PlayDialogService
+    ) { }
+
+    openPlayDialog(trackId: string): void {
+      this.playDialogService.openPlayDialog(trackId);
+    }
 
   ngOnInit(): void {
 
