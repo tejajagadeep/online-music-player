@@ -5,6 +5,7 @@ import { ActivatedRoute } from '@angular/router';
 import { heartAnimation } from 'src/app/app-parsers/animation-trigger';
 import { Item } from 'src/app/model/Item';
 import { SpotifyPlaylist } from 'src/app/model/SpotifyPlaylist';
+import { Track } from 'src/app/model/Track';
 import { PlayDialogService } from 'src/app/service/component/play-dialog.service';
 import { MusicDataService } from 'src/app/service/data/music-data.service';
 import { WishlistDataService } from 'src/app/service/data/wishlist-data.service';
@@ -37,7 +38,7 @@ export class SearchPlaylistsTracksComponent implements AfterViewInit {
     private playDialogService: PlayDialogService
     ) { }
 
-    openPlayDialog(trackId: string): void {
+    openPlayDialog(trackId: Track): void {
       this.playDialogService.openPlayDialog(trackId);
     }
 

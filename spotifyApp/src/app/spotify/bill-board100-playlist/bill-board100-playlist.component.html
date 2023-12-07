@@ -50,7 +50,7 @@
                     <td mat-cell *matCellDef="let element" style="font-size: 16px; font-weight: 400;">
                         <div *ngIf="element.track.preview_url; else redirectUrl">
                             <i class="fas fa-play" style="transition: transform 1s ease; cursor: pointer;"
-                                (click)="openPlayDialog(element.track.id)"></i>
+                                (click)="openPlayDialog(element.track)"></i>
                         </div>
                         <ng-template #redirectUrl>
                             <i class="fa fa-external-link" style="transition: transform 1s ease; cursor: pointer;"

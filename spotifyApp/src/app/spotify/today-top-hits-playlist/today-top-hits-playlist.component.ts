@@ -7,6 +7,7 @@ import { MusicDataService } from 'src/app/service/data/music-data.service';
 import { WishlistDataService } from 'src/app/service/data/wishlist-data.service';
 import { heartAnimation } from 'src/app/app-parsers/animation-trigger';
 import { PlayDialogService } from 'src/app/service/component/play-dialog.service';
+import { Track } from 'src/app/model/Track';
 
 
 @Component({
@@ -44,7 +45,7 @@ export class TodayTopHitsPlaylistComponent implements AfterViewInit {
     private playDialogService: PlayDialogService
     ) { }
 
-    openPlayDialog(trackId: string): void {
+    openPlayDialog(trackId: Track): void {
       this.playDialogService.openPlayDialog(trackId);
     }
 

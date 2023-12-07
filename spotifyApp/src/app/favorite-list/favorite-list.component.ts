@@ -32,8 +32,8 @@ export class FavoriteListComponent implements AfterViewInit {
     private playDialogService: PlayDialogService
     ) { }
 
-    openPlayDialog(trackId: string): void {
-      this.playDialogService.openPlayDialog(trackId);
+    openPlayDialog(track: Track): void {
+      this.playDialogService.openPlayDialog(track);
     }
 
   ngOnInit(): void {

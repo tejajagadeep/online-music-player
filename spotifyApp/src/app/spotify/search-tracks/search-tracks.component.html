@@ -9,15 +9,15 @@
 
                     <!-- Position Column -->
                     <ng-container matColumnDef="position">
-                        <th mat-header-cell *matHeaderCellDef style="color: black;"> # </th>
-                        <td mat-cell *matCellDef="let element; let i = index" style="color: black;"> {{i + 1}} </td>
+                        <th mat-header-cell *matHeaderCellDef > # </th>
+                        <td mat-cell *matCellDef="let element; let i = index" > {{i + 1}} </td>
                     </ng-container>
 
 
                     <!-- Image Column -->
                     <ng-container matColumnDef="image">
-                        <th mat-header-cell *matHeaderCellDef style="color: black;"> Image </th>
-                        <td mat-cell *matCellDef="let element" style="color: black;">
+                        <th mat-header-cell *matHeaderCellDef > Image </th>
+                        <td mat-cell *matCellDef="let element" >
                             <img class="curved-image" [src]="element.album.images[0].url" alt="artist-img" width="70"
                                 height="70">
                         </td>
@@ -25,45 +25,45 @@
 
                     <!-- Name Column -->
                     <ng-container matColumnDef="name">
-                        <th mat-header-cell *matHeaderCellDef style="color: black;"> Title </th>
-                        <td mat-cell *matCellDef="let element" style="color: black;"> {{element.name}} -
+                        <th mat-header-cell *matHeaderCellDef > Title </th>
+                        <td mat-cell *matCellDef="let element" > {{element.name}} -
                             {{element.artists[0].name}} </td>
                     </ng-container>
 
                     <!-- Artist Column -->
                     <ng-container matColumnDef="artist">
-                        <th mat-header-cell *matHeaderCellDef style="color: black;"> Album </th>
-                        <td mat-cell *matCellDef="let element" style="color: black;"> {{element.album.name}} </td>
+                        <th mat-header-cell *matHeaderCellDef > Album </th>
+                        <td mat-cell *matCellDef="let element" > {{element.album.name}} </td>
                     </ng-container>
 
                     <!-- Duration Column -->
                     <ng-container matColumnDef="duration">
-                        <th mat-header-cell *matHeaderCellDef style="color: black;"> Duration </th>
-                        <td mat-cell *matCellDef="let element" style="color: black;"> {{element.duration_ms |
+                        <th mat-header-cell *matHeaderCellDef > Duration </th>
+                        <td mat-cell *matCellDef="let element" > {{element.duration_ms |
                             millisecondsToMinutes}} </td>
                     </ng-container>
 
                     <!-- Play Song on Spotify -->
                     <ng-container matColumnDef="play">
-                        <th mat-header-cell *matHeaderCellDef style="color: black;"> Play </th>
-                        <td mat-cell *matCellDef="let element" style="color: black;">
+                        <th mat-header-cell *matHeaderCellDef > Play </th>
+                        <td mat-cell *matCellDef="let element" >
                             <div *ngIf="element.preview_url; else externalUrl">
                                 <i class="fas fa-play" style="
-                    transition: transform 1s ease; cursor: pointer;" (click)="openPlayDialog(element.id)"
-                                    style="color: black;"></i>
+                    transition: transform 1s ease; cursor: pointer;" (click)="openPlayDialog(element)"
+                                    ></i>
                             </div>
                             <ng-template #externalUrl>
                                 <i class="fa fa-external-link" style="
                     transition: transform 1s ease; cursor: pointer;" (click)="playTrack(element)"
-                                    style="color: black;"></i>
+                                    ></i>
                             </ng-template>
                         </td>
                     </ng-container>
 
                     <!-- Action Column -->
                     <ng-container matColumnDef="action">
-                        <th mat-header-cell *matHeaderCellDef style="color: black;"> Action </th>
-                        <td mat-cell *matCellDef="let element" style="color: black;">
+                        <th mat-header-cell *matHeaderCellDef > Action </th>
+                        <td mat-cell *matCellDef="let element" >
                             <i (click)="toggleHeartState(element.id)" class="fas fa-heart red"
                                 [@heartAnimation]="getHeartState(element.id)" style="cursor: pointer;"></i>
                         </td>

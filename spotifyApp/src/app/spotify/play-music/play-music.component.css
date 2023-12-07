@@ -5,7 +5,18 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
-
+/* In your component's CSS or SCSS file */
+.blurred-background {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    backdrop-filter: blur(2px);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Adjust the blur radius as needed */
+  }
+  
 body {
     background-repeat: no-repeat;
     background-size: cover;

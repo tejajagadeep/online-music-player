@@ -46,7 +46,7 @@
                         <td mat-cell *matCellDef="let element">
                             <div *ngIf="element.preview_url; else redirectUrl">
                                 <i class="fas fa-play" style="transition: transform 1s ease; cursor: pointer;"
-                                    (click)="openPlayDialog(element.id)"></i>
+                                    (click)="openPlayDialog(element)"></i>
                             </div>
                             <ng-template #redirectUrl>
                                 <i class="fa fa-external-link" style="transition: transform 1s ease; cursor: pointer;"

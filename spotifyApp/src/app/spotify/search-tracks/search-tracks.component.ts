@@ -41,7 +41,7 @@ export class SearchTracksComponent implements AfterViewInit{
     private playDialogService: PlayDialogService
     ) { }
 
-    openPlayDialog(trackId: string): void {
+    openPlayDialog(trackId: Track): void {
       this.playDialogService.openPlayDialog(trackId);
     }
 
