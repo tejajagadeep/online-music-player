@@ -1,4 +1,5 @@
-import { Component, Renderer2, OnInit } from '@angular/core';
+import { Component, Renderer2, OnInit, VERSION } from '@angular/core';
+import { debounceTime, fromEvent, map, tap } from 'rxjs';
 
 @Component({
   selector: 'app-footer',
@@ -6,17 +7,26 @@ import { Component, Renderer2, OnInit } from '@angular/core';
   styleUrls: ['./footer.component.css']
 })
 export class FooterComponent implements OnInit {
-  constructor(private renderer: Renderer2) {}
-  ngOnInit() {
-    this.loadScript('https://kit.fontawesome.com/7d35781f0a.js');
+
+  name = 'Angular ' + VERSION.major;
+
+  showBtn$ = fromEvent(document, 'scroll').pipe(
+    debounceTime(50),
+    map(() => window.scrollY > 500),
+    tap(() => console.log('sas'))
+  );
+
+  // not Cross browsing (works on chrome - firefox)
+  gotoTop() {
+    window.scroll({
+      top: 0,
+      left: 0,
+      behavior: 'smooth',
+    });
   }
 
-  private loadScript(scriptUrl: string) {
-    const script = this.renderer.createElement('script');
-    script.src = scriptUrl;
-    script.async = true;
-    script.defer = true;
+  constructor() { }
 
-    this.renderer.appendChild(document.body, script);
+  ngOnInit(): void {
   }
 }

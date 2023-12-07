@@ -1,128 +1,94 @@
-body {
-    padding: 0;
-    margin: 0;
-    background: #e0e5ec;
-    font-family: "Roboto", sans-serif;
-}
-
-.container {
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.iphone {
-    width: 312px;
-    height: 612px;
-    background: #e0e5ec;
-    border-radius: 2em;
-    box-sizing: border-box;
-    padding: 2em;
-    display: flex;
-    flex-direction: column;
-}
-
-.iphone .title {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    font-size: 0.75em;
-    margin-bottom: 2em;
-}
-
-.iphone .album-cover {
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-}
-
-.iphone .album-cover .album-overlay {
-    background: #fff;
-    width: 248px;
-    height: 248px;
-    z-index: 2;
-    border-radius: 15px;
-    position: absolute;
-    opacity: 0.35;
-    -webkit-clip-path: ellipse(61% 64% at 82% 56%);
-    clip-path: ellipse(61% 64% at 82% 56%);
-}
-
-.iphone .album-cover img {
+.footer {
+    overflow: hidden;
+    background-color: #000000;
+    position: fixed;
+    /* Set the footer to fixed position */
+    bottom: 0;
+    /* Position the footer at the top of the page */
     width: 100%;
-    border-radius: 15px;
+    /* Full width */
 }
 
-.iphone .album-cover .song-title {
+
+/* Change background on mouse-over */
+.footer a:hover {
+    background: #ddd;
+    color: black;
+}
+
+/* Main content */
+.main {
+    margin-bottom: 30px;
+    /* Add a top margin to avoid content overlay */
+}
+
+p {
+    font-family: Lato;
+}
+
+.top-btn {
+    position: fixed;
+    bottom: 20px;
+    /* Place the button at the bottom of the page */
+    right: 30px;
+    /* Place the button 30px from the right */
+    font-size: 5px;
     text-align: center;
-    padding-bottom: 0;
-    margin-bottom: 0;
-    color: #65717e;
-}
-
-.iphone .album-cover .artist-title {
-    text-align: center;
-    padding: 1em 0;
-    margin: 0;
-    font-size: 0.85em;
-    color: #65717e;
-}
-
-.iphone .track {
-    margin-top: 1em;
-    height: 10px;
-}
-
-.iphone .track div {
-    width: 42%;
-    height: 100%;
-    background: #7e8a98;
-    opacity: 0.75;
-    border-radius: 15px;
-}
-
-.iphone .buttons {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    padding: 1em 0;
-}
-
-.iphone .lyrics {
-    color: #7e8a98;
-    margin-top: 2em;
-    text-align: center;
-    font-size: 0.75em;
-    display: flex;
-    flex-direction: column;
-}
-
-.neu {
-    box-shadow: -5px -5px 15px 0px #ffffff9e, 5px 5px 15px 0px #a3b1c6a8;
-    background: #e0e5ec;
-    border-radius: 2em;
-    border: 0;
-}
-
-.btn {
-    padding: 15px;
-    border-radius: 30px;
-    color: #7e8a98;
+    border-radius: 5px;
     outline: none;
+    z-index: 99 !important;
+    border: none;
+    /* Remove borders */
+    outline: none;
+    /* Remove outline */
+    background-color: rgb(0, 0, 0);
+    /* Set a background color */
+    color: white;
+    /* Text color */
     cursor: pointer;
+    opacity: 0.8;
+    padding: 15px;
+    /* Some padding */
+    /* border-radius: 10px;  Rounded corners */
+    font-size: 18px;
+    /* Increase font size */
 }
 
-.btn.lg {
-    font-size: 1em;
-}
-
-.btn:active {
+#myBtn {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Fixed/sticky position */
+    bottom: 20px;
+    /* Place the button at the bottom of the page */
+    right: 30px;
+    /* Place the button 30px from the right */
+    z-index: 99;
+    /* Make sure it does not overlap */
+    border: none;
+    /* Remove borders */
+    outline: none;
+    /* Remove outline */
+    background-color: red;
+    /* Set a background color */
+    color: white;
+    /* Text color */
     cursor: pointer;
-    box-shadow: inset -5px -5px 15px 0px #ffffff9e, inset 5px 5px 15px 0px #a3b1c6a8;
+    /* Add a mouse pointer on hover */
+    padding: 15px;
+    /* Some padding */
+    border-radius: 10px;
+    /* Rounded corners */
+    font-size: 18px;
+    /* Increase font size */
 }
 
-.red {
-    color: #e22d49;
+#myBtn:hover {
+    background-color: #555;
+    /* Add a dark-grey background on hover */
+}
+
+img {
+    width: 5px;
+    height: 5px;
 }

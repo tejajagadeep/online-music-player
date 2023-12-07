@@ -13,7 +13,6 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 @SpringBootApplication
 @EnableDiscoveryClient
 @EnableFeignClients
-@EnableCaching
 @OpenAPIDefinition(info = @Info(title = "Wishlist-SERVICE API", version = "1.0", description = "A wishlist for saving your favorite tracks from Spotify"))
 @SecurityScheme(
 		name = "Bearer Authentication",

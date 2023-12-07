@@ -45,7 +45,7 @@ public class SpotifyServiceImpl implements SpotifyService{
     }
 
     @Override
-    @Scheduled(fixedRate = 3599000)
+    @Scheduled(fixedRate = 990000)
     @Observed(name = "get.spotify.access.token")
     public String getSpotifyAccessToken() {
 
