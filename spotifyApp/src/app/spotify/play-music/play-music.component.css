@@ -64,7 +64,7 @@ body * {
 
 #player02 {
     grid-area: B;
-    width: 400px;
+    min-width: 400px;
     height: fit-content;
 }
 
