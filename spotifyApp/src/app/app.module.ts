@@ -35,6 +35,9 @@ import { ProfileComponent } from './users/profile/profile.component';
 import { UpdateProfileComponent } from './users/update-profile/update-profile.component';
 import { SearchPlaylistsTracksComponent } from './spotify/search-playlists-tracks/search-playlists-tracks.component';
 import { SearchTracksQueryComponent } from './spotify/search-tracks-query/search-tracks-query.component';
+import { RouterModule } from '@angular/router';
+import { PlayMusicComponent } from './spotify/play-music/play-music.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -56,7 +59,8 @@ import { SearchTracksQueryComponent } from './spotify/search-tracks-query/search
     ProfileComponent,
     UpdateProfileComponent,
     SearchPlaylistsTracksComponent,
-    SearchTracksQueryComponent
+    SearchTracksQueryComponent,
+    PlayMusicComponent
   ],
   imports: [
     BrowserModule,
@@ -73,7 +77,10 @@ import { SearchTracksQueryComponent } from './spotify/search-tracks-query/search
     MatNativeDateModule,
     MatCardModule,
     ReactiveFormsModule,
-    MatRadioModule
+    MatRadioModule,
+    RouterModule,
+    MatDialogModule
+
   ],
   providers: [{
 

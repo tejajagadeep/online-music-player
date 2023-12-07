@@ -1,7 +1,6 @@
 import { AfterViewInit, ChangeDetectorRef, Component, Renderer2, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
-import { ActivatedRoute } from '@angular/router';
 import { heartAnimation } from 'src/app/app-parsers/animation-trigger';
 import { Item } from 'src/app/model/Item';
 import { SpotifyPlaylist } from 'src/app/model/SpotifyPlaylist';
@@ -28,7 +27,7 @@ export class BillBoard100PlaylistComponent implements AfterViewInit {
   displayedColumns: string[] = ['position', 'image', 'name', 'artist', 'duration', 'play', 'action'];
 
 
-  constructor(private route: ActivatedRoute, 
+  constructor(
     private musicService: MusicDataService,
     private wishList: WishlistDataService,
     private cdr: ChangeDetectorRef

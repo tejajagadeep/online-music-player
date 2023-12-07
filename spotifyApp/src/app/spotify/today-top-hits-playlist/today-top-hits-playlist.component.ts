@@ -1,12 +1,12 @@
 import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
-import { ActivatedRoute } from '@angular/router';
 import { Item } from 'src/app/model/Item';
 import { SpotifyPlaylist } from 'src/app/model/SpotifyPlaylist';
 import { MusicDataService } from 'src/app/service/data/music-data.service';
 import { WishlistDataService } from 'src/app/service/data/wishlist-data.service';
 import { heartAnimation } from 'src/app/app-parsers/animation-trigger';
+import { PlayDialogService } from 'src/app/service/component/play-dialog.service';
 
 
 @Component({
@@ -37,10 +37,12 @@ export class TodayTopHitsPlaylistComponent implements AfterViewInit {
 
 
 
-  constructor(private route: ActivatedRoute,
+  constructor(
     private musicService: MusicDataService,
     private wishList: WishlistDataService,
-    private cdr: ChangeDetectorRef,) { }
+    private cdr: ChangeDetectorRef,
+    private playDialogService: PlayDialogService
+    ) { }
 
 
   ngAfterViewInit(): void {
@@ -48,6 +50,12 @@ export class TodayTopHitsPlaylistComponent implements AfterViewInit {
     this.runcons();
     this.wishListTracks();
   }
+
+  
+    openPlayDialog(trackId: string): void {
+      this.playDialogService.openPlayDialog(trackId);
+    }
+
   toggleHeartState(trackId: string): void {
     if (!this.trackIds.includes(trackId)) {
       if (this.heartStates[trackId] === 'active') {

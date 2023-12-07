@@ -100,3 +100,13 @@ td.mat-cell {
 	overflow: hidden;
 	/* Ensure the curved corners are visible */
 }
+
+footer
+{
+    font-family: Raleway;
+    margin: 0 auto;
+  padding: 5em 3em;
+  text-align: center;
+    background: #555;
+}
+

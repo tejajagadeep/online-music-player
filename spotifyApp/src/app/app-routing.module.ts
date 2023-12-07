@@ -14,6 +14,7 @@ import { LogoutComponent } from './logout/logout.component';
 import { ProfileComponent } from './users/profile/profile.component';
 import { UpdateProfileComponent } from './users/update-profile/update-profile.component';
 import { SearchTracksQueryComponent } from './spotify/search-tracks-query/search-tracks-query.component';
+import { PlayMusicComponent } from './spotify/play-music/play-music.component';
 
 
 
@@ -28,6 +29,7 @@ const routes: Routes = [
   { path: 'workout-playlist', component: DiscoverWeeklyPlaylistComponent, canActivate: [AuthGuard]}, //
   { path: 'top-hits-playlist', component: TodayTopHitsPlaylistComponent, canActivate: [AuthGuard]},
   { path: 'favorites', component: FavoriteListComponent , canActivate: [AuthGuard]},
+  { path: 'track/:id', component: PlayMusicComponent , canActivate: [AuthGuard]},
   { path: 'profile', component: ProfileComponent , canActivate: [AuthGuard]},
   { path: 'update-profile', component: UpdateProfileComponent , canActivate: [AuthGuard]},
   { path: 'logout', component: LogoutComponent},

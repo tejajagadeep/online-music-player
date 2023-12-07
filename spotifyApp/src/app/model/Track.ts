@@ -8,18 +8,19 @@ export class Track{
     external_urls!: ExternalUrls;
     id!: string;
     name!: string;
-    previewUrl!: string;
+    preview_url!: string;
     type!: string;
     duration_ms!: number;
-    /*
-    constructor(
-        public album: Album,
-        public artists: Artist[],
-        public ExternalUrls: ExternalUrls,
-        public id: string,
-        public name: string,
-        public previewUrl: string,
-        public type: string
-    ) {}
-    */
+    
+    // constructor(
+    //     public album: Album,
+    //     public artists: Artist[],
+    //     public external_urls: ExternalUrls,
+    //     public id: string,
+    //     public name: string,
+    //     public preview_url: string,
+    //     public type: string,
+    //     public duration_ms: number
+    // ) {}
+    
 }
