@@ -64,6 +64,7 @@ body * {
 
 #player02 {
     grid-area: B;
+    width: 400px;
     height: fit-content;
 }
 
@@ -188,6 +189,8 @@ body * {
 
 .track-time{
     margin-top: 20px;
+    margin-left: 5px;
+    margin-right: 5px;
 }
 
 
