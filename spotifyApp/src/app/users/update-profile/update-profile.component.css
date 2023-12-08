@@ -28,6 +28,16 @@ aside {
     margin-left:10px;
 }
 
-.form-container{
-    margin: 100px;
-}
+.form-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px; /* Set your desired square size */
+    height: 400px; /* Set your desired square size */
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    /* Add additional styling as needed */
+  }
+  

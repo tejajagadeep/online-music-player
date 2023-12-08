@@ -38,7 +38,17 @@ export class UpdateProfileComponent implements OnInit {
       complete: () => {this.message = "Details updated"}
     });
   }
+  OnlyAlbhabets(event: any): boolean {
 
+    const charCode = (event.which) ? event.which : event.keyCode;
+
+    if (charCode == 32 || ((charCode > 64 && charCode < 91) || (charCode > 96 && charCode < 123))) {
+      return true
+    }
+
+
+    return false;
+  }
   ngOnInit(): void {
     this.getUserProfile()
     // Disable the email input field
