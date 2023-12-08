@@ -3,7 +3,10 @@
 
     <div id="boxes">
         <div id="player02" class="player horizontal">
+
             <div class="wrapper">
+            <div class="close-button" (click)="onCloseClick()">X</div>
+
                 <div class="info-wrapper">
                     <img [src]="track.album.images[0].url" alt="LogoMusicImage">
                     <div class="info">
@@ -14,7 +17,7 @@
 
                 <div class="track-time">
 
-                    <audio controls *ngIf="track.preview_url" autoplay>
+                    <audio controls *ngIf="track.preview_url" autoplay [controlsList]="'nodownload'">
                         <source [src]="track.preview_url" type="audio/mpeg">
                         <a>Your browser does not support the audio tag.</a>
                     </audio>

@@ -1,3 +1,4 @@
+
 * {
     margin: 0;
     padding: 0;
@@ -5,6 +6,7 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
+
 /* In your component's CSS or SCSS file */
 .blurred-background {
     background-position: center;
@@ -14,9 +16,10 @@
     height: 100vh;
     display: flex;
     justify-content: center;
-    align-items: center; /* Adjust the blur radius as needed */
-  }
-  
+    align-items: center;
+    /* Adjust the blur radius as needed */
+}
+
 body {
     background-repeat: no-repeat;
     background-size: cover;
@@ -31,6 +34,7 @@ body * {
 #boxes * {
     border: 1px solid transparent;
 }
+
 #boxes {
     display: grid;
     grid-template-columns: max-content max-content;
@@ -187,7 +191,7 @@ body * {
 }
 
 
-.track-time{
+.track-time {
     margin-top: 20px;
     margin-left: 5px;
     margin-right: 5px;
@@ -195,8 +199,20 @@ body * {
 
 
 audio {
-    width: 100%; /* Make the audio player take the full width of its container */
-    margin-top: 10px; /* Add some top margin for spacing */
+    width: 100%;
+    /* Make the audio player take the full width of its container */
+    margin-top: 10px;
+    /* Add some top margin for spacing */
+}
+
+.close-button {
+    position: absolute;
+    top: 10px; /* Adjust the top distance as needed */
+    right: 10px; /* Adjust the right distance as needed */
+    cursor: pointer;
+    font-size: 18px;
+    color: #fff; 
+    font-family: 'Roboto', sans-serif;/* Set the color as needed */
   }
-  
-  
+
+  @import url(https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap);

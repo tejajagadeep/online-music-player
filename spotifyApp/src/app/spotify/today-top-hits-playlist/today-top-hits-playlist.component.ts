@@ -51,7 +51,6 @@ export class TodayTopHitsPlaylistComponent implements AfterViewInit {
 
   ngAfterViewInit(): void {
     this.todayTopHitsPlaylist();
-    this.runcons();
     this.wishListTracks();
   }
 
@@ -100,9 +99,6 @@ export class TodayTopHitsPlaylistComponent implements AfterViewInit {
     });
   }
 
-  runcons() {
-    console.log(this.spotifyPlaylist)
-  }
 
   saveTrackToWishList(id: string) {
     this.musicService.getTrack(id).subscribe({
