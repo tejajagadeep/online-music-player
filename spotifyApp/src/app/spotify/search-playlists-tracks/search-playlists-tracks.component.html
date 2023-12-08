@@ -1,5 +1,5 @@
 <aside>
-    <div id="most-popular-wrapper" *ngIf="spotifyPlaylist">
+    <div id="most-popular-wrapper" *ngIf="spotifyPlaylist; else noTracks">
         <div class="nine">
             <h1>{{spotifyPlaylist.name}}<span>{{spotifyPlaylist.tracks.items.length}} Songs</span></h1>
         </div>
@@ -9,8 +9,7 @@
                 <!-- Position Column -->
                 <ng-container matColumnDef="position">
                     <th mat-header-cell *matHeaderCellDef style="font-size: 20px; font-weight: 400;"> # </th>
-                    <td mat-cell *matCellDef="let element; let i = index" style="font-size: 16px; font-weight: 400;">
-                        {{i + 1}} </td>
+                    <td mat-cell *matCellDef="let element; let i = index" style="font-size: 16px; font-weight: 400;"> {{i + 1}} </td>
                 </ng-container>
 
 
@@ -18,8 +17,7 @@
                 <ng-container matColumnDef="image">
                     <th mat-header-cell *matHeaderCellDef style="font-size: 20px; font-weight: 400;"> Image </th>
                     <td mat-cell *matCellDef="let element" style="font-size: 16px;">
-                        <img class="curved-image" [src]="element.track.album.images[0].url" alt="artist-img" width="70"
-                            height="70">
+                        <img class="curved-image" [src]="element.track.album.images[0].url" alt="artist-img" width="70" height="70">
                     </td>
                 </ng-container>
 
@@ -36,15 +34,13 @@
                 <!-- Artist Column -->
                 <ng-container matColumnDef="artist">
                     <th mat-header-cell *matHeaderCellDef style="font-size: 20px; font-weight: 400;"> Album </th>
-                    <td mat-cell *matCellDef="let element" style="font-size: 16px; font-weight: 400;">
-                        {{element.track.album.name}} </td>
+                    <td mat-cell *matCellDef="let element" style="font-size: 16px; font-weight: 400;"> {{element.track.album.name}} </td>
                 </ng-container>
 
                 <!-- Duration Column -->
                 <ng-container matColumnDef="duration">
                     <th mat-header-cell *matHeaderCellDef style="font-size: 20px; font-weight: 400;"> Duration </th>
-                    <td mat-cell *matCellDef="let element" style="font-size: 16px; font-weight: 400;">
-                        {{element.track.duration_ms | millisecondsToMinutes}} </td>
+                    <td mat-cell *matCellDef="let element" style="font-size: 16px; font-weight: 400;"> {{element.track.duration_ms | millisecondsToMinutes}} </td>
                 </ng-container>
 
 
@@ -60,6 +56,7 @@
                             <i class="fa fa-external-link" style="transition: transform 1s ease; cursor: pointer;"
                                 (click)="playTrack(element)"></i>
                         </ng-template>
+                    </td>
                 </ng-container>
 
                 <!-- Action Column -->
@@ -81,5 +78,27 @@
         </div>
     </div>
 </aside>
+<ng-template #noTracks>
+    <div id="container-empty">
+        
+        <div id="error-box">
+            <div class="dot"></div>
+            <div class="dot two"></div>
+            <div class="face2">
+                <div class="eye"></div>
+                <div class="eye right"></div>
+                <div class="mouth sad"></div>
+            </div>
+            <div class="shadow move"></div>
+            <div class="message">
+                <h1 class="alert">Empty!</h1>
+                <p>Something went wrong...</p>
+            </div>
+            <button class="button-box" [routerLink]="['/home']">
+                <h1 class="red">home</h1>
+            </button>
+        </div>
+    </div>
+</ng-template>
 <app-side-bar></app-side-bar>
 <app-footer></app-footer>

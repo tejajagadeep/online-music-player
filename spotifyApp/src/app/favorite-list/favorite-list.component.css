@@ -1,28 +1,26 @@
 /* app-side-bar.component.css */
 aside {
-    width: 100%;
-    /* Adjust the width as needed */
-    background-color: #f0f0f0;
-    /* Adjust the background color */
-    /* padding: 10px; */
-    left: 0;
-    margin-left: 60px;
+	width: 95%;
+	/* Adjust the width as needed */
+	background-color: #f0f0f0;
+	/* Adjust the background color */
+	left: 0;
+	margin-left: 57px;
 }
 
 #most-popular-wrapper {
-    background-color: #ffffff;
-    /* Adjust the background color */
-    /* padding: 10px; */
-    border: 1px solid #ccc;
-    /* Add borders or adjust as needed */
+	background-color: #ffffff;
+	/* Adjust the background color */
+	border: 1px solid #ccc;
+	/* Add borders or adjust as needed */
 }
 
 /* Add any additional styles for the rest of your side bar content */
 /* your-component.component.css */
 @media (max-width: 800px) {
-    .hide-on-small-screen {
-        display: none;
-    }
+	.hide-on-small-screen {
+		display: none;
+	}
 }
 
 h1 {
@@ -87,6 +85,33 @@ h1 em {
 	background-color: #f8f8f8;
 }
 
+
+/* Add this style to your component's CSS or in your global styles.css */
+td.mat-cell {
+	font-size: 30px;
+	/* Adjust the size as needed */
+}
+
+.curved-image {
+	margin-top: 2px;
+	margin-bottom: 2px;
+	border-radius: 10px;
+	/* Adjust the value to control the curve amount */
+	overflow: hidden;
+	/* Ensure the curved corners are visible */
+}
+
+footer
+{
+    font-family: Raleway;
+    margin: 0 auto;
+  padding: 5em 3em;
+  text-align: center;
+    background: #555;
+}
+
+
+
 @import url("https://fonts.googleapis.com/css?family=Lato:400,700");
 html {
   display: grid;
@@ -102,14 +127,15 @@ body {
 }
 
 #container-empty {
-  position: relative;
-  margin: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   overflow: hidden;
   width: 700px;
   height: 250px;
-  margin-top: 13%;
-  margin-bottom: 15%;
 }
+
 
 h1 {
   font-size: 0.9em;
