@@ -1,5 +1,5 @@
 <aside>
-    <div id="most-popular-wrapper" *ngIf="tracks">
+    <div id="most-popular-wrapper" *ngIf="tracks; else noTracks">
         <div *ngIf="tracks.length>0; else noTracks">
             <div class="nine">
                 <h1>Favorite Tracks<span>{{tracks.length}} Songs</span></h1>
