@@ -1,4 +1,4 @@
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpBackend, HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { API_URL_USERPROFILE } from 'src/app/app-constants';
@@ -9,14 +9,20 @@ import { UserProfile } from 'src/app/model/UserProfile';
 })
 export class UserProfileDataService {
 
-  constructor(private httpClient: HttpClient) { }
+  private http: HttpClient;
+  constructor(
+    private httpClient: HttpClient,
+    private handler: HttpBackend,
+  ) {
+    this.http = new HttpClient(handler);
+  }
 
   register(username: string, password: string, email: string): Observable<UserProfile> {
    const user = new UserProfile();
     user.username = username;
     user.password = password;
     user.email = email;
-    return this.httpClient.post<UserProfile>(`${API_URL_USERPROFILE}/addUser`, user);
+    return this.http.post<UserProfile>(`${API_URL_USERPROFILE}/addUser`, user);
   }
   getUserById(): Observable<UserProfile> {
     const username = localStorage.getItem('authenticatedUser');
