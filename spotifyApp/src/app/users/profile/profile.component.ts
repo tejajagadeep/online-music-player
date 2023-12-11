@@ -21,7 +21,6 @@ export class ProfileComponent implements OnInit {
   ngOnInit(): void {
     this.getUserProfile()
     this.getWishlist()
-    this.verifyToken();
   }
 
   verifyToken(){

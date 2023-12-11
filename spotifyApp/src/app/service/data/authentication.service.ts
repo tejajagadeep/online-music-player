@@ -37,7 +37,7 @@ export class AuthenticationService {
       'Authorization': token
     });
   
-    return this.httpClient.post<Map<String, String>>(`${API_URL_AUTH}/validate`, { headers });
+    return this.httpClient.post<any>(`${API_URL_AUTH}/validate`, { headers });
   }
   
   tokenValidate(){

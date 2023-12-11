@@ -55,7 +55,6 @@ export class UpdateProfileComponent implements OnInit {
   ngOnInit(): void {
     this.getUserProfile()
     
-    this.verifyToken();
   }
 
   verifyToken(){

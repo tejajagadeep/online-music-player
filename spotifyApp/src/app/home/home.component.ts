@@ -5,7 +5,6 @@ import { Track } from 'src/app/model/Track';
 import { MusicDataService } from 'src/app/service/data/music-data.service';
 import { WishlistDataService } from 'src/app/service/data/wishlist-data.service';
 import { PlayDialogService } from '../service/component/play-dialog.service';
-import { AuthenticationService } from '../service/data/authentication.service';
 
 @Component({
   selector: 'app-home',
@@ -19,7 +18,7 @@ export class HomeComponent implements OnInit {
 
   tracks!: Track[];
   
-  constructor(private authService: AuthenticationService ,private wishlist: WishlistDataService, private musicService: MusicDataService,
+  constructor( private wishlist: WishlistDataService, private musicService: MusicDataService,
     private playDialogService: PlayDialogService
     ) { }
 
@@ -30,18 +29,6 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.billBoard();
     this.wishlists();
-    this.verifyToken();
-  }
-
-  verifyToken(){
-    const token = localStorage.getItem('token')+'';
-    this.authService.validateToken(token).subscribe({
-      next: (v) => {
-        console.log(v);
-      },
-      error: (e) => {console.error(e); localStorage.removeItem('token'), localStorage.removeItem('authenticatedUser')},
-      complete: () => console.info('complete')
-    });
   }
 
   billBoard() {

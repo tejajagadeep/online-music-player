@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { isChecker } from 'src/app/model/isChecker';
 import { AuthenticationService } from 'src/app/service/data/authentication.service';
 
 @Component({
@@ -9,21 +10,26 @@ import { AuthenticationService } from 'src/app/service/data/authentication.servi
 export class SideBarComponent implements OnInit {
 
   username!: string;
-
-  constructor(private authService: AuthenticationService) {}
+  isC!: isChecker;
+  constructor(private authService: AuthenticationService) { }
 
   ngOnInit(): void {
-    this.username = localStorage.getItem('authenticatedUser')+'';
+    this.username = localStorage.getItem('authenticatedUser') + '';
     this.verifyToken();
   }
 
-  verifyToken(){
-    const token = localStorage.getItem('token')+'';
+  verifyToken() {
+    const isCheck: Map<string, string> = new Map<string, string>();
+    isCheck.set(this.username, 'User');
+    this.isC = new isChecker();
+    const token = localStorage.getItem('token') + '';
     this.authService.validateToken(token).subscribe({
       next: (v) => {
-        console.log(v);
+        this.isC = v;
+        console.log('conso')
+        console.log(this.isC)
       },
-      error: (e) => {console.error(e); localStorage.removeItem('token'), localStorage.removeItem('authenticatedUser')},
+      error: (e) => { console.error(e); localStorage.removeItem('token'), localStorage.removeItem('authenticatedUser') },
       complete: () => console.info('complete')
     });
   }
