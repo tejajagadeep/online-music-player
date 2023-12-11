@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UserProfile } from 'src/app/model/UserProfile';
+import { AuthenticationService } from 'src/app/service/data/authentication.service';
 import { UserProfileDataService } from 'src/app/service/data/user-profile-data.service';
 
 @Component({
@@ -14,8 +15,9 @@ export class UpdateProfileComponent implements OnInit {
 
   emailExists: boolean = false;
   message='';
+  errorA!: string;
 
-  constructor(private userProfileService: UserProfileDataService, private fb: FormBuilder) {
+  constructor(private authService: AuthenticationService, private userProfileService: UserProfileDataService, private fb: FormBuilder) {
     
   }
 
@@ -46,14 +48,25 @@ export class UpdateProfileComponent implements OnInit {
       return true
     }
 
+    this.errorA = 'Please enter only letters and spaces.'; 
 
     return false;
   }
   ngOnInit(): void {
     this.getUserProfile()
-    // Disable the email input field
     
+    this.verifyToken();
+  }
 
+  verifyToken(){
+    const token = localStorage.getItem('token')+'';
+    this.authService.validateToken(token).subscribe({
+      next: (v) => {
+        console.log(v);
+      },
+      error: (e) => {console.error(e); localStorage.removeItem('token'), localStorage.removeItem('authenticatedUser')},
+      complete: () => console.info('complete')
+    });
   }
   
   getUserProfile(){
