@@ -6,7 +6,10 @@
       <form #signupForm="ngForm">
         <label for="chk" aria-hidden="true">Sign up</label>
         <input type="text" name="txt" placeholder="User name" required [(ngModel)]="username">
-        <input type="email" name="email" placeholder="Email" required [(ngModel)]="email">
+        <input type="email" name="email" placeholder="Email" required [(ngModel)]="email" #emailInput="ngModel">
+        <div *ngIf="emailInput.invalid && emailInput.errors?.['email']; else validEmail">
+          <p class="error-message">Please enter a valid email address.</p>
+        </div>
         <input type="password" name="pswd-signup" placeholder="Password" required [(ngModel)]="password">
         
         <div *ngIf="signupForm.invalid && (signupForm.dirty || signupForm.touched); else removeError" class="error-message">

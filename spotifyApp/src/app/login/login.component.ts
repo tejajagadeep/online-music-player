@@ -1,9 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, TemplateRef } from '@angular/core';
 import { AuthenticationService } from '../service/data/authentication.service';
 import { UserProfileDataService } from '../service/data/user-profile-data.service';
 import { UserProfile } from '../model/UserProfile';
 import { Subscription } from 'rxjs';
 import { Router } from '@angular/router';
+import { NgIfContext } from '@angular/common';
 
 @Component({
   selector: 'app-login',
@@ -23,7 +24,14 @@ export class LoginComponent {
   errorMessage2!: string
   successMessage!: string
   userProfile!: UserProfile;
+validEmail!: TemplateRef<NgIfContext<any>>|null;
   constructor(private router: Router, private authService: AuthenticationService, private userService: UserProfileDataService){
+  }
+
+  isValidEmailFormat(email: string): boolean {
+    // Regular expression to validate email format
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
   }
 
   signUp() {

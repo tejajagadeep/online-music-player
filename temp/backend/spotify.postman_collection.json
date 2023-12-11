@@ -14,17 +14,8 @@
 					"request": {
 						"method": "POST",
 						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n        \"username\": \"jagadeep\",\r\n        \"password\":\"Abcabc@123\"\r\n    }",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
 						"url": {
-							"raw": "http://localhost:9090/api/v1.0/auth/login",
+							"raw": "http://localhost:9090/api/v1.0/auth/login?username=anushsh&password=ABCabc@123",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -35,8 +26,26 @@
 								"v1.0",
 								"auth",
 								"login"
+							],
+							"query": [
+								{
+									"key": "username",
+									"value": "anushsh"
+								},
+								{
+									"key": "password",
+									"value": "ABCabc@123"
+								}
 							]
 						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "GET",
+						"header": []
 					},
 					"response": []
 				}
@@ -85,7 +94,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtZWdoYW5hIiwicm9sZSI6IlVzZXIiLCJpYXQiOjE3MDA3NTUyNTksImV4cCI6MTcwMDc1ODg1OX0.pXFyECQN2GlZyRnvVZpdtI2up0TkhSIdl3cjMdNUYHE",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqYWdhZGVlcCIsInJvbGUiOiJVc2VyIiwiaWF0IjoxNzAxNzc2MjUwfQ.TvICP6Me81egaCFbR1FyheNTiX7exBsQRYVZ5Gpd0cE",
 									"type": "string"
 								}
 							]
@@ -93,7 +102,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:9090/api/v1.0/userProfile/getUserById/meghana",
+							"raw": "http://localhost:9090/api/v1.0/userProfile/getUserById/jagadeep",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -104,7 +113,7 @@
 								"v1.0",
 								"userProfile",
 								"getUserById",
-								"meghana"
+								"jagadeep"
 							]
 						}
 					},
@@ -117,7 +126,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n        \"username\": \"meghana\",\r\n        \"firstName\": \"meghana\",\r\n        \"lastName\": \"priya\",\r\n        \"number\": 7893649285,\r\n        \"dateOfBirth\": \"1989-12-31T18:30:00.000+00:00\",\r\n        \"email\": \"meghana.priya@example.com\",\r\n        \"password\":\"Abcabc@123\"\r\n}",
+							"raw": "{\r\n        \"username\": \"jagadeep\",\r\n        \"firstName\": \"laswick\",\r\n        \"lastName\": \"teja\",\r\n        \"dateOfBirth\": \"1978-10-26T18:30:00.000+00:00\",\r\n        \"email\": \"123meghanapriya.2s31hd@example.com\",\r\n        \"password\":\"ABCabc@123\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -140,6 +149,48 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "update user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqYWdhZGVlcCIsInJvbGUiOiJVc2VyIiwiaWF0IjoxNzAxNzc2MjUwfQ.TvICP6Me81egaCFbR1FyheNTiX7exBsQRYVZ5Gpd0cE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"jagadeep\",\r\n    \"firstName\": \"jagadeep\",\r\n    \"lastName\": \"teja\",\r\n    \"dateOfBirth\": \"1947-12-31T18:30:00.000+00:00\",\r\n    \"gender\": \"male\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9090/api/v1.0/userProfile/update/jagadeep",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"v1.0",
+								"userProfile",
+								"update",
+								"jagadeep"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
@@ -154,15 +205,22 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqYWdhZGVlcCIsInJvbGUiOiJVc2VyIiwiaWF0IjoxNzAwNzU3OTE3LCJleHAiOjE3MDA3NjE1MTd9.3HsuhhfTwr9U_nTkc1rrQ1VQrN6ii-BpdqHRi7hRBLg",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqYWdhZGVlcCIsInJvbGUiOiJVc2VyIiwiaWF0IjoxNzAxOTUzMTAyfQ.TaakbCifWKvvpRUWYcBXyTMAaf0tP8p8GtB13SXPAEM",
 									"type": "string"
 								}
 							]
 						},
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "1NTkyLCJleHAiOjE3MDE2OTkxOTJ9.vAFGoLD45Pr4aRvvL04pSPTYaVHphiOSqplKEFgPC5",
+								"type": "text",
+								"disabled": true
+							}
+						],
 						"url": {
-							"raw": "http://localhost:9090/api/v1.0/wishlist/get-user-wishlist?username=meghana",
+							"raw": "http://localhost:9090/api/v1.0/wishlist/userWishList?username=jagadeep",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -172,12 +230,54 @@
 								"api",
 								"v1.0",
 								"wishlist",
-								"get-user-wishlist"
+								"userWishList"
 							],
 							"query": [
 								{
 									"key": "username",
-									"value": "meghana"
+									"value": "jagadeep"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "existsWishList",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqYWdhZGVlcCIsInJvbGUiOiJVc2VyIiwiaWF0IjoxNzAxNjk1NTkyLCJleHAiOjE3MDE2OTkxOTJ9.vAFGoLD45Pr4aRvvL04pSPTYaVHphiOSqplKEFgPC5Q",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/api/v1.0/wishlist/favoriteExists?username=jagadeep&trackId=4tzx5af2qpwgyjG6JQGthj",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"v1.0",
+								"wishlist",
+								"favoriteExists"
+							],
+							"query": [
+								{
+									"key": "username",
+									"value": "jagadeep"
+								},
+								{
+									"key": "trackId",
+									"value": "4tzx5af2qpwgyjG6JQGthj"
 								}
 							]
 						}
@@ -192,7 +292,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqYWdhZGVlcCIsInJvbGUiOiJVc2VyIiwiaWF0IjoxNzAwNzU4MzA5LCJleHAiOjE3MDA3NjE5MDl9.zQC6FVryIWf5c5VLDPtdedCUagVtFTc-_JwjYen9pBM",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqYWdhZGVlcCIsInJvbGUiOiJVc2VyIiwiaWF0IjoxNzAxNzU1MDAyLCJleHAiOjE3MDE3NTg2MDJ9.xwQ-nOfVMRrKZFeug37-HU6LS8z8aWHd6PItxKunqfw",
 									"type": "string"
 								}
 							]
@@ -200,7 +300,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:9090/api/v1.0/wishlist/remove-track?username=jagadeep&trackId=5DgY6Ab0vpyUMKnY9ubFOF",
+							"raw": "http://localhost:9090/api/v1.0/wishlist/removeTrack?username=jagadeep&trackId=6aQIGqAo9PxRKjUkhYtR6R",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -210,7 +310,7 @@
 								"api",
 								"v1.0",
 								"wishlist",
-								"remove-track"
+								"removeTrack"
 							],
 							"query": [
 								{
@@ -219,7 +319,7 @@
 								},
 								{
 									"key": "trackId",
-									"value": "5DgY6Ab0vpyUMKnY9ubFOF"
+									"value": "6aQIGqAo9PxRKjUkhYtR6R"
 								}
 							]
 						}
@@ -229,11 +329,21 @@
 				{
 					"name": "saveTrackToWishList",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtZWdoYW5hcHJpeWEyMiIsInJvbGUiOiJVc2VyIiwiaWF0IjoxNzAxNjk3MDM0LCJleHAiOjE3MDE3MDA2MzR9.g2UBMIlGStHZN-KL1omM9q5YRZEZ1f9J9VaptNlzmKQ",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"album\": {\r\n        \"album_type\": \"album\",\r\n        \"artists\": [\r\n            {\r\n                \"external_urls\": {\r\n                    \"spotify\": \"https://open.spotify.com/artist/4zCH9qm4R2DADamUHMCa6O\"\r\n                },\r\n                \"href\": \"https://api.spotify.com/v1/artists/4zCH9qm4R2DADamUHMCa6O\",\r\n                \"id\": \"4zCH9qm4R2DADamUHMCa6O\",\r\n                \"name\": \"Anirudh Ravichander\",\r\n                \"type\": \"artist\",\r\n                \"uri\": \"spotify:artist:4zCH9qm4R2DADamUHMCa6O\"\r\n            }\r\n        ],\r\n        \"external_urls\": {\r\n            \"spotify\": \"https://open.spotify.com/album/0zRUzTXH7GtGLxt6uVdARD\"\r\n        },\r\n        \"href\": \"https://api.spotify.com/v1/albums/0zRUzTXH7GtGLxt6uVdARD\",\r\n        \"id\": \"0zRUzTXH7GtGLxt6uVdARD\",\r\n        \"images\": [\r\n            {\r\n                \"height\": 640,\r\n                \"url\": \"https://i.scdn.co/image/ab67616d0000b2736d7009c6abdb966deac1fa86\",\r\n                \"width\": 640\r\n            },\r\n            {\r\n                \"height\": 300,\r\n                \"url\": \"https://i.scdn.co/image/ab67616d00001e026d7009c6abdb966deac1fa86\",\r\n                \"width\": 300\r\n            },\r\n            {\r\n                \"height\": 64,\r\n                \"url\": \"https://i.scdn.co/image/ab67616d000048516d7009c6abdb966deac1fa86\",\r\n                \"width\": 64\r\n            }\r\n        ],\r\n        \"name\": \"Jailer (Original Motion Picture Soundtrack)\",\r\n        \"release_date\": \"2023-07-28\",\r\n        \"type\": \"album\",\r\n        \"uri\": \"spotify:album:0zRUzTXH7GtGLxt6uVdARD\"\r\n    },\r\n    \"artists\": [\r\n        {\r\n            \"external_urls\": {\r\n                \"spotify\": \"https://open.spotify.com/artist/4zCH9qm4R2DADamUHMCa6O\"\r\n            },\r\n            \"href\": \"https://api.spotify.com/v1/artists/4zCH9qm4R2DADamUHMCa6O\",\r\n            \"id\": \"4zCH9qm4R2DADamUHMCa6O\",\r\n            \"name\": \"Anirudh Ravichander\",\r\n            \"type\": \"artist\",\r\n            \"uri\": \"spotify:artist:4zCH9qm4R2DADamUHMCa6O\"\r\n        },\r\n        {\r\n            \"external_urls\": {\r\n                \"spotify\": \"https://open.spotify.com/artist/6sXT8Cggm4tmoxhVjaUVs0\"\r\n            },\r\n            \"href\": \"https://api.spotify.com/v1/artists/6sXT8Cggm4tmoxhVjaUVs0\",\r\n            \"id\": \"6sXT8Cggm4tmoxhVjaUVs0\",\r\n            \"name\": \"Super Subu\",\r\n            \"type\": \"artist\",\r\n            \"uri\": \"spotify:artist:6sXT8Cggm4tmoxhVjaUVs0\"\r\n        }\r\n    ],\r\n    \"external_urls\": {\r\n        \"spotify\": \"https://open.spotify.com/track/5DgY6Ab0vpyUMKnY9ubFOF\"\r\n    },\r\n    \"href\": \"https://api.spotify.com/v1/tracks/5DgY6Ab0vpyUMKnY9ubFOF\",\r\n    \"id\": \"5DgY6Ab0vpyUMKnY9ubFOF\",\r\n    \"name\": \"Hukum - Thalaivar Alappara\",\r\n    \"preview_url\": \"https://p.scdn.co/mp3-preview/25de2a42aced5bd37e33eab44d0aa5aba04305e8?cid=cfdbd6448f364fca80b7aa03228c64c9\",\r\n    \"type\": \"track\",\r\n    \"uri\": \"spotify:track:5DgY6Ab0vpyUMKnY9ubFOF\"\r\n}",
+							"raw": "{\r\n    \"album\": {\r\n        \"album_type\": \"album\",\r\n        \"artists\": [\r\n            {\r\n                \"external_urls\": {\r\n                    \"spotify\": \"https://open.spotify.com/artist/40ZNYROS4zLfyyBSs2PGe2\"\r\n                },\r\n                \"id\": \"40ZNYROS4zLfyyBSs2PGe2\",\r\n                \"name\": \"Zach Bryan\",\r\n                \"type\": \"artist\"\r\n            }\r\n        ],\r\n        \"external_urls\": {\r\n            \"spotify\": \"https://open.spotify.com/album/6PbnGueEO6LGodPfvNldYf\"\r\n        },\r\n        \"images\": [\r\n            {\r\n                \"height\": 640,\r\n                \"url\": \"https://i.scdn.co/image/ab67616d0000b273e5a25ed08d1e7e0fbb440cef\",\r\n                \"width\": 640\r\n            },\r\n            {\r\n                \"height\": 300,\r\n                \"url\": \"https://i.scdn.co/image/ab67616d00001e02e5a25ed08d1e7e0fbb440cef\",\r\n                \"width\": 300\r\n            },\r\n            {\r\n                \"height\": 64,\r\n                \"url\": \"https://i.scdn.co/image/ab67616d00004851e5a25ed08d1e7e0fbb440cef\",\r\n                \"width\": 64\r\n            }\r\n        ],\r\n        \"id\": \"6PbnGueEO6LGodPfvNldYf\",\r\n        \"name\": \"Zach Bryan\",\r\n        \"release_date\": \"2023-08-25\",\r\n        \"type\": \"album\"\r\n    },\r\n    \"artists\": [\r\n        {\r\n            \"external_urls\": {\r\n                \"spotify\": \"https://open.spotify.com/artist/40ZNYROS4zLfyyBSs2PGe2\"\r\n            },\r\n            \"id\": \"40ZNYROS4zLfyyBSs2PGe2\",\r\n            \"name\": \"Zach Bryan\",\r\n            \"type\": \"artist\"\r\n        },\r\n        {\r\n            \"external_urls\": {\r\n                \"spotify\": \"https://open.spotify.com/artist/70kkdajctXSbqSMJbQO424\"\r\n            },\r\n            \"id\": \"70kkdajctXSbqSMJbQO424\",\r\n            \"name\": \"Kacey Musgraves\",\r\n            \"type\": \"artist\"\r\n        }\r\n    ],\r\n    \"external_urls\": {\r\n        \"spotify\": \"https://open.spotify.com/track/4KULAymBBJcPRpk1yO4dOG\"\r\n    },\r\n    \"id\": \"4KULAymBBJcPRpk1yO4dOG\",\r\n    \"name\": \"I Remember Everything (feat. Kacey Musgraves)\",\r\n    \"release_date\": null,\r\n    \"preview_url\": \"https://p.scdn.co/mp3-preview/22b240f7ef2eff38bd12fb0c94dfea5e1d70e20a?cid=cfdbd6448f364fca80b7aa03228c64c9\",\r\n    \"duration_ms\": 227195,\r\n    \"type\": \"track\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -241,7 +351,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:9090/api/v1.0/wishlist/save-track-to-wishList?username=meghana",
+							"raw": "http://localhost:9090/api/v1.0/wishlist/saveTrackToWishlist?username=meghanapriya22",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -251,12 +361,12 @@
 								"api",
 								"v1.0",
 								"wishlist",
-								"save-track-to-wishList"
+								"saveTrackToWishlist"
 							],
 							"query": [
 								{
 									"key": "username",
-									"value": "meghana"
+									"value": "meghanapriya22"
 								}
 							]
 						}
@@ -291,12 +401,53 @@
 					"response": []
 				},
 				{
-					"name": "search",
+					"name": "search-tracks",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var template = `\r",
+									"<style type=\"text/css\">\r",
+									"    .tftable {font-size:14px;color:#333333;width:100%;border-width: 1px;border-color: #87ceeb;border-collapse: collapse;}\r",
+									"    .tftable th {font-size:18px;background-color:#87ceeb;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;text-align:left;}\r",
+									"    .tftable tr {background-color:#ffffff;}\r",
+									"    .tftable td {font-size:14px;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;}\r",
+									"    .tftable tr:hover {background-color:#e0ffff;}\r",
+									"</style>\r",
+									"\r",
+									"<table class=\"tftable\" border=\"1\">\r",
+									"    <tr>\r",
+									"        <th>Track Name</th>\r",
+									"        <th>Artist Name</th>\r",
+									"        <th>Album Name</th>\r",
+									"    </tr>\r",
+									"    \r",
+									"    {{#each response.tracks.items}}\r",
+									"        <tr>\r",
+									"            <td>{{name}}</td>\r",
+									"            <td>{{artists.[0].name}}</td>\r",
+									"            <td>{{album.name}}</td>\r",
+									"        </tr>\r",
+									"    {{/each}}\r",
+									"</table>\r",
+									"`;\r",
+									"\r",
+									"function constructVisualizerPayload() {\r",
+									"    return {response: pm.response.json()}\r",
+									"}\r",
+									"\r",
+									"pm.visualizer.set(template, constructVisualizerPayload());"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:9090/api/v1.0/music/search?query=leo",
+							"raw": "http://localhost:9090/api/v1.0/music/searchTracks?query=leo",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -306,7 +457,63 @@
 								"api",
 								"v1.0",
 								"music",
-								"search"
+								"searchTracks"
+							],
+							"query": [
+								{
+									"key": "query",
+									"value": "leo"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "search-playlist",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/api/v1.0/music/searchPlaylists?query=leo",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"v1.0",
+								"music",
+								"searchPlaylists"
+							],
+							"query": [
+								{
+									"key": "query",
+									"value": "leo"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "search-albums",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/api/v1.0/music/searchAlbums?query=leo",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"v1.0",
+								"music",
+								"searchAlbums"
 							],
 							"query": [
 								{
@@ -320,11 +527,58 @@
 				},
 				{
 					"name": "billboard-hot-100-playlist",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var template = `\r",
+									"<style type=\"text/css\">\r",
+									"    .tftable {font-size:14px;color:#333333;width:100%;border-width: 1px;border-color: #87ceeb;border-collapse: collapse;}\r",
+									"    .tftable th {font-size:18px;background-color:#87ceeb;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;text-align:left;}\r",
+									"    .tftable tr {background-color:#ffffff;}\r",
+									"    .tftable td {font-size:14px;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;}\r",
+									"    .tftable tr:hover {background-color:#e0ffff;}\r",
+									"</style>\r",
+									"\r",
+									"<table class=\"tftable\" border=\"1\">\r",
+									"    <tr>\r",
+									"        <th>Track</th>\r",
+									"        <th>Artist</th>\r",
+									"        <th>Album</th>\r",
+									"        <th>Release Date</th>\r",
+									"        <th>Preview URL</th>\r",
+									"    </tr>\r",
+									"    \r",
+									"    {{#each response.tracks.items}}\r",
+									"        <tr>\r",
+									"            <td>{{track.name}}</td>\r",
+									"            <td>{{track.artists.[0].name}}</td>\r",
+									"            <td>{{track.album.name}}</td>\r",
+									"            <td>{{track.album.release_date}}</td>\r",
+									"            <td>{{track.preview_url}}</td>\r",
+									"        </tr>\r",
+									"    {{/each}}\r",
+									"</table>\r",
+									"`;\r",
+									"\r",
+									"function constructVisualizerPayload() {\r",
+									"    var res = pm.response.json();\r",
+									"    \r",
+									"    return {response: res};\r",
+									"}\r",
+									"\r",
+									"pm.visualizer.set(template, constructVisualizerPayload());"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:9090/api/v1.0/music/bill-board-100-playlist",
+							"raw": "http://localhost:9090/api/v1.0/music/billBoard100Playlist",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -334,7 +588,7 @@
 								"api",
 								"v1.0",
 								"music",
-								"bill-board-100-playlist"
+								"billBoard100Playlist"
 							]
 						}
 					},
@@ -346,7 +600,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:9090/api/v1.0/music/today-top-hits-playlist",
+							"raw": "http://localhost:9090/api/v1.0/music/todayTopHitsPlaylist",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -356,7 +610,29 @@
 								"api",
 								"v1.0",
 								"music",
-								"today-top-hits-playlist"
+								"todayTopHitsPlaylist"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "personalPlaylists",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/api/v1.0/music/personalPlaylists",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"v1.0",
+								"music",
+								"personalPlaylists"
 							]
 						}
 					},
@@ -368,7 +644,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:9090/api/v1.0/music/get-track?trackId=2wAJTrFhCnQyNSD3oUgTZO",
+							"raw": "http://localhost:9090/api/v1.0/music/track?trackId=4KULAymBBJcPRpk1yO4dOG",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -378,12 +654,68 @@
 								"api",
 								"v1.0",
 								"music",
-								"get-track"
+								"track"
 							],
 							"query": [
 								{
 									"key": "trackId",
-									"value": "2wAJTrFhCnQyNSD3oUgTZO"
+									"value": "4KULAymBBJcPRpk1yO4dOG"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-playlist",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/api/v1.0/music/playlist?playlistId=7ez9vmkMiajhCOK76NqSWJ",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"v1.0",
+								"music",
+								"playlist"
+							],
+							"query": [
+								{
+									"key": "playlistId",
+									"value": "7ez9vmkMiajhCOK76NqSWJ"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-album",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/api/v1.0/music/playlist?playlistId=7ez9vmkMiajhCOK76NqSWJ",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"v1.0",
+								"music",
+								"playlist"
+							],
+							"query": [
+								{
+									"key": "playlistId",
+									"value": "7ez9vmkMiajhCOK76NqSWJ"
 								}
 							]
 						}
@@ -393,72 +725,143 @@
 			]
 		},
 		{
-			"name": "beartoken",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:9090/home",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "9090",
-					"path": [
-						"home"
-					]
+			"name": "demospotify",
+			"item": [
+				{
+					"name": "postplaylist",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8901/api/v1.0/music",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8901",
+							"path": [
+								"api",
+								"v1.0",
+								"music"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "billboard",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "tophits",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "discoverWeekly",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "search",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "track",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
 				}
-			},
-			"response": []
+			]
 		},
 		{
-			"name": "externallinks",
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "BQATFM0xomLm4sYMX3YmMkwLFvlYDwR9pb0Vzrg7DUs5cR0YcTVAks4Yusu0qwXD1IjExtl7cYxiNkdfAAPZ5cLpQFEZiWfj0DB4nBRR3nceKPhiMwo",
-							"type": "string"
+			"name": "externa;",
+			"item": [
+				{
+					"name": "beartoken",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/home",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"home"
+							]
 						}
-					]
+					},
+					"response": []
 				},
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "https://api.spotify.com/v1/search?query=leo&type=track&offset=0&limit=2",
-					"protocol": "https",
-					"host": [
-						"api",
-						"spotify",
-						"com"
-					],
-					"path": [
-						"v1",
-						"search"
-					],
-					"query": [
-						{
-							"key": "query",
-							"value": "leo"
+				{
+					"name": "externallinks",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "BQBwbqk0b6wNq2yTAw_yO7FKp2zvVvcqjTJ5wV7Q4e8jlV6Gvf0UGcc67_8-4CA3enpd_V7bO07-tlvw5hAnodgR4-dOh6gRV1Mvp-a1WmYBBlsp8sg",
+									"type": "string"
+								}
+							]
 						},
-						{
-							"key": "type",
-							"value": "track"
-						},
-						{
-							"key": "offset",
-							"value": "0"
-						},
-						{
-							"key": "limit",
-							"value": "2"
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.spotify.com/v1/search?query=leo&type=playlist&offset=0&limit=2",
+							"protocol": "https",
+							"host": [
+								"api",
+								"spotify",
+								"com"
+							],
+							"path": [
+								"v1",
+								"search"
+							],
+							"query": [
+								{
+									"key": "query",
+									"value": "leo"
+								},
+								{
+									"key": "type",
+									"value": "playlist"
+								},
+								{
+									"key": "offset",
+									"value": "0"
+								},
+								{
+									"key": "limit",
+									"value": "2"
+								}
+							]
 						}
-					]
+					},
+					"response": []
 				}
-			},
-			"response": []
+			]
 		}
 	]
 }
