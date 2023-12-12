@@ -104,7 +104,10 @@ export class BillBoard100PlaylistComponent implements AfterViewInit {
     this.musicService.billBoard100Playlist().subscribe({
       next: (v) => {
         this.spotifyPlaylist = v;
-        console.log(v.tracks.items[0].added_at)
+        console.log(v.tracks.items[0].added_at);
+        this.spotifyPlaylist.tracks.items.forEach((track, index) => {
+          track.track.index = index + 1;
+        });
         this.cdr.detectChanges();
       },
       error: (e) => {console.error('e')},

@@ -106,6 +106,9 @@ export class SearchPlaylistsTracksComponent implements AfterViewInit {
       next: (v) => {
         this.spotifyPlaylist = v;
         console.log(v.tracks.items[0].added_at)
+        this.spotifyPlaylist.tracks.items.forEach((track, index) => {
+          track.track.index = index + 1;
+        });
         this.cdr.detectChanges();
       },
       error: (e) => console.error(e),

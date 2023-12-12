@@ -11,22 +11,23 @@
           <p class="error-message">Please enter a valid email address.</p>
         </div>
         <input type="password" name="pswd-signup" placeholder="Password" required [(ngModel)]="password">
-        
-        <div *ngIf="signupForm.invalid && (signupForm.dirty || signupForm.touched); else removeError" class="error-message">
+
+        <div *ngIf="signupForm.invalid && (signupForm.dirty || signupForm.touched); else removeError"
+          class="error-message">
           <p class="error-message">Please fill out all required fields.</p>
         </div>
-      <ng-template #removeError>
-        <div *ngIf="successMessage" class="success-message">
-          <p class="success-message">Successfully registered.</p>
-        </div>
-      
-        <div *ngIf="errorMessage2" class="error-message">
-          <p class="error-message">{{errorMessage2}}</p>
-        </div>
-      </ng-template>
+        <ng-template #removeError>
+          <div *ngIf="successMessage" class="success-message">
+            <p class="success-message">Successfully registered.</p>
+          </div>
+
+          <div *ngIf="errorMessage2" class="error-message">
+            <p class="error-message">{{errorMessage2}}</p>
+          </div>
+        </ng-template>
         <button (click)="signUp()" [disabled]="signupForm.invalid">Sign up</button>
       </form>
-      
+
     </div>
 
     <div class="login">
@@ -34,14 +35,15 @@
         <label for="chk" aria-hidden="true">Login</label>
         <input type="text" name="txt" placeholder="User Name" required="" [(ngModel)]="loginUsername">
         <input type="password" name="pswd" placeholder="password" required="" [(ngModel)]="loginPassword">
-        <div *ngIf="loginForm.invalid && (loginForm.dirty || loginForm.touched); else removeErrorLogin" class="error-message">
+        <div *ngIf="loginForm.invalid && (loginForm.dirty || loginForm.touched); else removeErrorLogin"
+          class="error-message">
           <p class="error-message">Please fill out all required fields.</p>
         </div>
         <ng-template #removeErrorLogin>
-        <div *ngIf="errorMessage" class="error-message">
-          <p class="error-message">Please enter a valid User Name and password.</p>
-        </div>
-      </ng-template>
+          <div *ngIf="errorMessage" class="error-message">
+            <p class="error-message">Please enter a valid User Name and password.</p>
+          </div>
+        </ng-template>
         <button (click)="login()" [disabled]="loginForm.invalid">Login</button>
       </form>
     </div>

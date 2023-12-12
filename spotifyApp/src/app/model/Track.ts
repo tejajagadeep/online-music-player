@@ -11,7 +11,7 @@ export class Track{
     preview_url!: string;
     type!: string;
     duration_ms!: number;
-    
+    index!: number;
     // constructor(
     //     public album: Album,
     //     public artists: Artist[],

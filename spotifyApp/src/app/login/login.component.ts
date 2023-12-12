@@ -5,6 +5,27 @@ import { UserProfile } from '../model/UserProfile';
 import { Subscription } from 'rxjs';
 import { Router } from '@angular/router';
 import { NgIfContext } from '@angular/common';
+import { Directive } from '@angular/core';
+import { AbstractControl, NG_VALIDATORS, ValidationErrors, Validator, ValidatorFn } from '@angular/forms';
+
+@Directive({
+  selector: '[appEmailFormat]',
+  providers: [{ provide: NG_VALIDATORS, useExisting: EmailFormatDirective, multi: true }]
+})
+export class EmailFormatDirective implements Validator {
+
+  validate(control: AbstractControl): ValidationErrors | null {
+    return emailFormatValidator()(control);
+  }
+}
+
+export function emailFormatValidator(): ValidatorFn {
+  return (control: AbstractControl): ValidationErrors | null => {
+    const emailRegex = /@\.com$/; // Adjust the regex pattern based on your requirement
+    const isValid = emailRegex.test(control.value);
+    return isValid ? null : { emailFormat: true };
+  };
+}
 
 @Component({
   selector: 'app-login',

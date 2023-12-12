@@ -14,6 +14,9 @@
                       <mat-error *ngIf="profileForm.get('firstName')?.hasError('required')">
                         First Name is required
                       </mat-error>
+                      <mat-error *ngIf="profileForm.get('firstName')?.hasError('hasNumber')">
+                        First Name cannot contain numbers
+                      </mat-error>
                     </mat-form-field>
                   </div>
                   <div class="col-md-6">

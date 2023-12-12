@@ -29,6 +29,7 @@ export class TodayTopHitsPlaylistComponent implements AfterViewInit {
   pageSizeOptions = [5, 10, 25, 50];
 
   trackIds: String[] = [];
+  indexI!: number[];
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   dataSource!: MatTableDataSource<any>;
@@ -52,6 +53,7 @@ export class TodayTopHitsPlaylistComponent implements AfterViewInit {
   ngAfterViewInit(): void {
     this.todayTopHitsPlaylist();
     this.wishListTracks();
+    this.pageSizeOptions.push(...Array.from({ length: this.spotifyPlaylist.tracks.items.length }, (_, i) => i + 1));
   }
 
   
@@ -86,9 +88,13 @@ export class TodayTopHitsPlaylistComponent implements AfterViewInit {
   todayTopHitsPlaylist() {
     this.musicService.getTodayTopHitsPlaylist().subscribe({
       next: (v) => {
+        
         this.spotifyPlaylist = v;
         console.log(v.tracks.items[0].added_at)
         this.cdr.detectChanges();
+        this.spotifyPlaylist.tracks.items.forEach((track, index) => {
+          track.track.index = index + 1;
+        });
       },
       error: (e) => { console.error('e') },
       complete: () => {

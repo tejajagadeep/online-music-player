@@ -1,9 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormControl, FormGroup, ValidationErrors, Validators } from '@angular/forms';
 import { UserProfile } from 'src/app/model/UserProfile';
 import { AuthenticationService } from 'src/app/service/data/authentication.service';
 import { UserProfileDataService } from 'src/app/service/data/user-profile-data.service';
 
+export function hasNumberValidator(control: AbstractControl): ValidationErrors | null {
+  const hasNumber = /\d/.test(control.value);
+  return hasNumber ? null : { hasNumber: true };
+}
 @Component({
   selector: 'app-update-profile',
   templateUrl: './update-profile.component.html',
@@ -22,12 +26,19 @@ export class UpdateProfileComponent implements OnInit {
   }
 
   profileForm = this.fb.group({
-    firstName:[''],
+    firstName:['', Validators.required, hasNumberValidator],
     lastName:[''],
     email:[''],
     dateOfBirth:[''],
     // gender:['']
   });
+
+  noNumbersValidator() {
+    return (control: FormControl) => {
+      const hasNumber = /\d/.test(control.value);
+      return hasNumber ? { hasNumber: true } : null;
+    };
+  }
  
   saveForm(){
     console.log('Form data is ', this.profileForm.value);

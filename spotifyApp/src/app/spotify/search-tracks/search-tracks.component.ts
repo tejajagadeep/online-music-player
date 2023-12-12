@@ -107,6 +107,9 @@ export class SearchTracksComponent implements AfterViewInit{
     this.musicService.searchTracks(query).subscribe({
       next: (v) => {
         this.spotifyTracks = v;
+        this.spotifyTracks.tracks.items.forEach((track, index) => {
+          track.index = index + 1;
+        });
         this.cdr.detectChanges();
       },
       error: (e) => console.error(e),
