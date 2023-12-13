@@ -6,21 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="a2504401-f241-4a58-ab09-902bb2951c1e" name="Changes" comment="Commit message [date: %Y-%m-%d] [time: %H:%M:%S]">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spotifyApp/src/app/login/login.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../spotifyApp/src/app/login/login.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spotifyApp/src/app/login/login.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../spotifyApp/src/app/login/login.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spotifyApp/src/app/model/Track.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../spotifyApp/src/app/model/Track.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spotifyApp/src/app/spotify/bill-board100-playlist/bill-board100-playlist.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../spotifyApp/src/app/spotify/bill-board100-playlist/bill-board100-playlist.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spotifyApp/src/app/spotify/bill-board100-playlist/bill-board100-playlist.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../spotifyApp/src/app/spotify/bill-board100-playlist/bill-board100-playlist.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spotifyApp/src/app/spotify/discover-weekly-playlist/discover-weekly-playlist.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../spotifyApp/src/app/spotify/discover-weekly-playlist/discover-weekly-playlist.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spotifyApp/src/app/spotify/discover-weekly-playlist/discover-weekly-playlist.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../spotifyApp/src/app/spotify/discover-weekly-playlist/discover-weekly-playlist.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spotifyApp/src/app/spotify/search-playlists-tracks/search-playlists-tracks.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../spotifyApp/src/app/spotify/search-playlists-tracks/search-playlists-tracks.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spotifyApp/src/app/spotify/search-playlists-tracks/search-playlists-tracks.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../spotifyApp/src/app/spotify/search-playlists-tracks/search-playlists-tracks.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spotifyApp/src/app/spotify/search-tracks/search-tracks.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../spotifyApp/src/app/spotify/search-tracks/search-tracks.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spotifyApp/src/app/spotify/search-tracks/search-tracks.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../spotifyApp/src/app/spotify/search-tracks/search-tracks.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spotifyApp/src/app/spotify/today-top-hits-playlist/today-top-hits-playlist.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../spotifyApp/src/app/spotify/today-top-hits-playlist/today-top-hits-playlist.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spotifyApp/src/app/spotify/today-top-hits-playlist/today-top-hits-playlist.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../spotifyApp/src/app/spotify/today-top-hits-playlist/today-top-hits-playlist.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spotifyApp/src/app/users/update-profile/update-profile.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../spotifyApp/src/app/users/update-profile/update-profile.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spotifyApp/src/app/users/update-profile/update-profile.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../spotifyApp/src/app/users/update-profile/update-profile.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
