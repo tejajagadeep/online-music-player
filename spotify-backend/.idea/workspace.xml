@@ -5,7 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a2504401-f241-4a58-ab09-902bb2951c1e" name="Changes" comment="Commit message [date: %Y-%m-%d] [time: %H:%M:%S]">
+      <change afterPath="$PROJECT_DIR$/wishlist-service/src/main/java/com/spotify/wishlistservice/controller/CustomController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config-server/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/config-server/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/music-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/music-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/music-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/music-service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/music-service/src/test/java/com/spotify/musicservice/controller/SpotifyControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/music-service/src/test/java/com/spotify/musicservice/controller/SpotifyControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/music-service/src/test/java/com/spotify/musicservice/repository/SpotifyAccessTokenRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/music-service/src/test/java/com/spotify/musicservice/repository/SpotifyAccessTokenRepositoryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/music-service/src/test/java/com/spotify/musicservice/service/SpotifyServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/music-service/src/test/java/com/spotify/musicservice/service/SpotifyServiceImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wishlist-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/wishlist-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wishlist-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/wishlist-service/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,7 +103,7 @@
       <recent name="com.spotify.wishlistservice.dto" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.WishlistserviceApplication">
+  <component name="RunManager" selected="Application.UserprofileApplication">
     <configuration name="ApiGatewayApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.spotify.apigateway.ApiGatewayApplication" />
       <module name="api-gateway" />
@@ -105,12 +117,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="EurekaServerApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.university.eurekaserver.EurekaServerApplication" />
-      <module name="eureka-server" />
+    <configuration name="AuthenticationServiceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.auth.authenticationservice.AuthenticationServiceApplication" />
+      <module name="authentication-service" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.university.eurekaserver.*" />
+          <option name="PATTERN" value="com.auth.authenticationservice.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -118,12 +130,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MusicserviceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.spotify.musicservice.MusicserviceApplication" />
-      <module name="music-service" />
+    <configuration name="EurekaServerApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.university.eurekaserver.EurekaServerApplication" />
+      <module name="eureka-server" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.spotify.musicservice.*" />
+          <option name="PATTERN" value="com.university.eurekaserver.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -159,11 +171,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.WishlistserviceApplication" />
-        <item itemvalue="Application.MusicserviceApplication" />
-        <item itemvalue="Application.ApiGatewayApplication" />
-        <item itemvalue="Application.EurekaServerApplication" />
         <item itemvalue="Application.UserprofileApplication" />
+        <item itemvalue="Application.AuthenticationServiceApplication" />
+        <item itemvalue="Application.EurekaServerApplication" />
+        <item itemvalue="Application.WishlistserviceApplication" />
+        <item itemvalue="Application.ApiGatewayApplication" />
       </list>
     </recent_temporary>
   </component>
