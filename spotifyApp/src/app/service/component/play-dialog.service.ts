@@ -16,4 +16,11 @@ export class PlayDialogService {
       width: '70%',
     });
   }
+
+  openDetailsDialog(data: any): void {
+    this.dialog.open(PlayMusicComponent, {
+      width: '400px',
+      data,
+    });
+  }
 }

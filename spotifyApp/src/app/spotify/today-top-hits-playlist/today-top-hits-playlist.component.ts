@@ -55,7 +55,11 @@ export class TodayTopHitsPlaylistComponent implements AfterViewInit {
     this.wishListTracks();
     this.pageSizeOptions.push(...Array.from({ length: this.spotifyPlaylist.tracks.items.length }, (_, i) => i + 1));
   }
-
+  openDetailsDialog(element: any): void {
+    // Pass the next row's data to the dialog
+    this.playDialogService.openDetailsDialog(element);
+    // this.playDialogService.getPlaylistSearch(this.spotifyPlaylist.id)
+  }
   
 
   toggleHeartState(trackId: string): void {
