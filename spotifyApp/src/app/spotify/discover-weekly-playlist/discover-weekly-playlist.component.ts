@@ -35,7 +35,13 @@ export class DiscoverWeeklyPlaylistComponent implements AfterViewInit {
     ) { }
 
     openPlayDialog(trackId: Track): void {
-      this.playDialogService.openPlayDialog(trackId);
+      let tracksList: Track[] = [];
+
+      this.spotifyPlaylist.tracks.items.forEach(element => {
+        tracksList.push(element.track)
+      });
+
+      this.playDialogService.openPlayDialog(trackId,tracksList);
     }
 
   ngOnInit(): void {

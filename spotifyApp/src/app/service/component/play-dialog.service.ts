@@ -10,17 +10,19 @@ import { PlayMusicComponent } from 'src/app/spotify/play-music/play-music.compon
 export class PlayDialogService {
   constructor(private dialog: MatDialog) {}
 
-  openPlayDialog(tracks: Track): void {
+  openPlayDialog(tracks: Track, trackList : Track[]): void {
     this.dialog.open(PlayMusicComponent, {
-      data: { track:tracks },
+      data: { track:tracks, playlistId:trackList },
       width: '70%',
     });
   }
 
-  openDetailsDialog(data: any): void {
-    this.dialog.open(PlayMusicComponent, {
-      width: '400px',
-      data,
-    });
-  }
+  // openDetailsDialog(data: any): void {
+  //   this.dialog.open(PlayMusicComponent, {
+  //     width: '400px',
+  //     data,
+  //   });
+  // }
+
+  
 }

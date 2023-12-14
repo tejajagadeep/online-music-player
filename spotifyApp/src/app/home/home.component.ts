@@ -23,7 +23,7 @@ export class HomeComponent implements OnInit {
     ) { }
 
     openPlayDialog(trackId: Track): void {
-      this.playDialogService.openPlayDialog(trackId);
+      this.playDialogService.openPlayDialog(trackId, this.spotifyPlaylistBillBoard.id);
     } 
 
   ngOnInit(): void {

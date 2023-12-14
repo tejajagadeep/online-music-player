@@ -42,7 +42,12 @@ export class SearchTracksComponent implements AfterViewInit{
     ) { }
 
     openPlayDialog(trackId: Track): void {
-      this.playDialogService.openPlayDialog(trackId);
+      let tracksList: Track[] = [];
+      this.spotifyTracks.tracks.items.forEach(element => {
+        tracksList.push(element)
+      });
+
+      this.playDialogService.openPlayDialog(trackId,tracksList);
     }
 
   ngAfterViewInit(): void {

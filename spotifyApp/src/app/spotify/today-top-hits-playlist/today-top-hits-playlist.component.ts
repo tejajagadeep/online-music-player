@@ -8,6 +8,8 @@ import { WishlistDataService } from 'src/app/service/data/wishlist-data.service'
 import { heartAnimation } from 'src/app/app-parsers/animation-trigger';
 import { PlayDialogService } from 'src/app/service/component/play-dialog.service';
 import { Track } from 'src/app/model/Track';
+import { PlayMusicComponent } from '../play-music/play-music.component';
+import { PlaylistGetService } from 'src/app/service/component/playlist-get.service';
 
 
 @Component({
@@ -43,22 +45,23 @@ export class TodayTopHitsPlaylistComponent implements AfterViewInit {
     private musicService: MusicDataService,
     private wishList: WishlistDataService,
     private cdr: ChangeDetectorRef,
-    private playDialogService: PlayDialogService
+    private playDialogService: PlayDialogService,
+    private playlistget: PlaylistGetService,
     ) { }
 
     openPlayDialog(trackId: Track): void {
-      this.playDialogService.openPlayDialog(trackId);
+      let tracksList: Track[] = [];
+
+      this.spotifyPlaylist.tracks.items.forEach(element => {
+        tracksList.push(element.track)
+      });
+
+      this.playDialogService.openPlayDialog(trackId,tracksList);
     }
 
   ngAfterViewInit(): void {
     this.todayTopHitsPlaylist();
     this.wishListTracks();
-    this.pageSizeOptions.push(...Array.from({ length: this.spotifyPlaylist.tracks.items.length }, (_, i) => i + 1));
-  }
-  openDetailsDialog(element: any): void {
-    // Pass the next row's data to the dialog
-    this.playDialogService.openDetailsDialog(element);
-    // this.playDialogService.getPlaylistSearch(this.spotifyPlaylist.id)
   }
   
 
