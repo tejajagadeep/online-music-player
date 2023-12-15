@@ -59,21 +59,21 @@ export class SearchPlaylistsTracksComponent implements AfterViewInit {
     this.wishListTracks()
   }
 
-  toggleHeartState(trackId: string): void {
-    if (!this.trackIds.includes(trackId)) {
-      if (this.heartStates[trackId] === 'active') {
-        this.heartStates[trackId as any] = 'inactive';
+  toggleHeartState(trackId: Track): void {
+    if (!this.trackIds.includes(trackId.id)) {
+      if (this.heartStates[trackId.id] === 'active') {
+        this.heartStates[trackId.id as any] = 'inactive';
       } else {
-        this.heartStates[trackId as any] = 'active'
+        this.heartStates[trackId.id as any] = 'active'
       }
-      this.saveTrackToWishList(trackId);
+      this.saveTrackToWishList1(trackId);
     } else {
-      if (this.heartStates[trackId] === 'inactive') {
-        this.heartStates[trackId as any] = 'active';
+      if (this.heartStates[trackId.id] === 'inactive') {
+        this.heartStates[trackId.id as any] = 'active';
       } else {
-        this.heartStates[trackId as any] = 'inactive'
+        this.heartStates[trackId.id as any] = 'inactive'
       }
-      this.deleteTrackToWishList(trackId);
+      this.deleteTrackToWishList(trackId.id);
     }
 
   }
@@ -85,15 +85,26 @@ export class SearchPlaylistsTracksComponent implements AfterViewInit {
       return this.heartStates[trackId] || 'inactive';
     }
   }
+  
   deleteTrackToWishList(id: string) {
 
     this.wishList.deleteTrackByUsernameAndTrackId(id).subscribe({
       next: (a) => {
-        this.getPlaylistSearch(this.playlistId)
+        console.log('track deleted')
       },
       error: (e) => console.error(e),
-      complete: () => {console.info('complete'); this.getPlaylistSearch(this.playlistId);}
+      complete: () => { console.info('complete');  }
     });
+  }
+
+  saveTrackToWishList1(id: Track) {
+    this.wishList.saveTrackToWishlist(id).subscribe({
+      next: (a) => {
+        console.log(a)
+      },
+      error: (e) => console.error(e),
+      complete: () => console.info('complete')
+    });;
   }
 
   wishListTracks(){

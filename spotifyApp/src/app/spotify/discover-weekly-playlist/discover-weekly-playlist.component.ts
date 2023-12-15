@@ -15,58 +15,62 @@ import { WishlistDataService } from 'src/app/service/data/wishlist-data.service'
   styleUrls: ['./discover-weekly-playlist.component.css'],
   animations: [heartAnimation]
 })
-export class DiscoverWeeklyPlaylistComponent implements AfterViewInit {
+export class DiscoverWeeklyPlaylistComponent  implements AfterViewInit {
 
 
   spotifyPlaylist!: SpotifyPlaylist; // Adjust the type accordingly
   pageSize = 10;
   pageSizeOptions = [5, 10, 25, 50];
+
   trackIds: String[] = [];
+  indexI!: number[];
+
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   dataSource!: MatTableDataSource<any>;
   displayedColumns: string[] = ['position', 'image', 'name', 'artist', 'duration', 'play', 'action'];
+
   heartStates: { [key: string]: string } = {};
+
+
 
   constructor(
     private musicService: MusicDataService,
     private wishList: WishlistDataService,
     private cdr: ChangeDetectorRef,
-    private playDialogService: PlayDialogService
-    ) { }
+    private playDialogService: PlayDialogService,
+  ) { }
 
-    openPlayDialog(trackId: Track): void {
-      let tracksList: Track[] = [];
+  openPlayDialog(trackId: Track): void {
+    let tracksList: Track[] = [];
 
-      this.spotifyPlaylist.tracks.items.forEach(element => {
-        tracksList.push(element.track)
-      });
+    this.spotifyPlaylist.tracks.items.forEach(element => {
+      tracksList.push(element.track)
+    });
 
-      this.playDialogService.openPlayDialog(trackId,tracksList);
-    }
-
-  ngOnInit(): void {
-
+    this.playDialogService.openPlayDialog(trackId, tracksList);
   }
 
   ngAfterViewInit(): void {
     this.todayTopHitsPlaylist();
-    this.wishListTracks()
+    this.wishListTracks();
   }
-  toggleHeartState(trackId: string): void {
-    if (!this.trackIds.includes(trackId)) {
-      if (this.heartStates[trackId] === 'active') {
-        this.heartStates[trackId as any] = 'inactive';
+
+
+  toggleHeartState(trackId: Track): void {
+    if (!this.trackIds.includes(trackId.id)) {
+      if (this.heartStates[trackId.id] === 'active') {
+        this.heartStates[trackId.id as any] = 'inactive';
       } else {
-        this.heartStates[trackId as any] = 'active'
+        this.heartStates[trackId.id as any] = 'active'
       }
-      this.saveTrackToWishList(trackId);
+      this.saveTrackToWishList1(trackId);
     } else {
-      if (this.heartStates[trackId] === 'inactive') {
-        this.heartStates[trackId as any] = 'active';
+      if (this.heartStates[trackId.id] === 'inactive') {
+        this.heartStates[trackId.id as any] = 'active';
       } else {
-        this.heartStates[trackId as any] = 'inactive'
+        this.heartStates[trackId.id as any] = 'inactive'
       }
-      this.deleteTrackToWishList(trackId);
+      this.deleteTrackToWishList(trackId.id);
     }
 
   }
@@ -78,19 +82,55 @@ export class DiscoverWeeklyPlaylistComponent implements AfterViewInit {
       return this.heartStates[trackId] || 'inactive';
     }
   }
-
+  
   deleteTrackToWishList(id: string) {
 
     this.wishList.deleteTrackByUsernameAndTrackId(id).subscribe({
       next: (a) => {
-        this.todayTopHitsPlaylist();
+        console.log('track deleted')
       },
       error: (e) => console.error(e),
-      complete: () => {console.info('complete'); this.todayTopHitsPlaylist();}
+      complete: () => { console.info('complete');  }
     });
   }
 
-  wishListTracks(){
+  saveTrackToWishList1(id: Track) {
+    this.wishList.saveTrackToWishlist(id).subscribe({
+      next: (a) => {
+        console.log(a)
+      },
+      error: (e) => console.error(e),
+      complete: () => console.info('complete')
+    });;
+  }
+
+
+  todayTopHitsPlaylist() {
+    this.musicService.getDiscoverWeeklyPlaylist().subscribe({
+      next: (v) => {
+
+        this.spotifyPlaylist = v;
+        console.log(v.tracks.items[0].added_at)
+        this.cdr.detectChanges();
+        this.spotifyPlaylist.tracks.items.forEach((track, index) => {
+          track.track.index = index + 1;
+        });
+      },
+      error: (e) => { console.error('e') },
+      complete: () => {
+        console.info('complete'),
+          this.dataSource = new MatTableDataSource(this.spotifyPlaylist.tracks.items);
+        this.dataSource.paginator = this.paginator;
+      }
+    });
+  }
+
+
+  
+
+
+
+  wishListTracks() {
     this.wishList.getUserWishList().subscribe({
       next: (a) => {
         a.tracks.forEach(track => this.trackIds.push(track.id))
@@ -99,48 +139,8 @@ export class DiscoverWeeklyPlaylistComponent implements AfterViewInit {
       complete: () => console.log('tracks added to wishlist')
     })
   }
-  todayTopHitsPlaylist() {
-    this.musicService.getDiscoverWeeklyPlaylist().subscribe({
-      next: (v) => {
-        this.spotifyPlaylist = v;
-        console.log(v.tracks.items[0].added_at);
-        this.spotifyPlaylist.tracks.items.forEach((track, index) => {
-          track.track.index = index + 1;
-        });
-        this.cdr.detectChanges();
-      },
-      error: (e) => console.error(e),
-      complete: () => {console.info('complete'),
-    
-      this.dataSource = new MatTableDataSource(this.spotifyPlaylist.tracks.items);
-      this.dataSource.paginator = this.paginator;}
-    });
-  }
-
- 
-
-  saveTrackToWishList(id: string){
-
-    this.musicService.getTrack(id).subscribe({
-      next: (v) => {
-        this.wishList.saveTrackToWishlist(v).subscribe({
-          next: (a) => {
-            console.log(a)
-          },
-          error: (e) => console.error(e),
-          complete: () => console.info('complete')
-        });;
-        this.dataSource = new MatTableDataSource(this.spotifyPlaylist.tracks.items);
-        this.dataSource.paginator = this.paginator;
-        console.log(v.name)
-      },
-      error: (e) => console.error(e),
-      complete: () => console.info('complete')
-    });
-  }
 
   playTrack(item: Item) {
-    // Implement your play track logic here
     const link = item.track.external_urls.spotify;
     window.open(link, '_blank');
   }

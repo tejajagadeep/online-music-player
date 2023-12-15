@@ -47,41 +47,50 @@ export class TodayTopHitsPlaylistComponent implements AfterViewInit {
     private cdr: ChangeDetectorRef,
     private playDialogService: PlayDialogService,
     private playlistget: PlaylistGetService,
-    ) { }
+  ) { }
 
-    openPlayDialog(trackId: Track): void {
-      let tracksList: Track[] = [];
+  openPlayDialog(trackId: Track): void {
+    let tracksList: Track[] = [];
 
-      this.spotifyPlaylist.tracks.items.forEach(element => {
-        tracksList.push(element.track)
-      });
+    this.spotifyPlaylist.tracks.items.forEach(element => {
+      tracksList.push(element.track)
+    });
 
-      this.playDialogService.openPlayDialog(trackId,tracksList);
-    }
+    this.playDialogService.openPlayDialog(trackId, tracksList);
+  }
 
   ngAfterViewInit(): void {
     this.todayTopHitsPlaylist();
     this.wishListTracks();
   }
-  
 
-  toggleHeartState(trackId: string): void {
-    if (!this.trackIds.includes(trackId)) {
-      if (this.heartStates[trackId] === 'active') {
-        this.heartStates[trackId as any] = 'inactive';
+
+  toggleHeartState(trackId: Track): void {
+    if (!this.trackIds.includes(trackId.id)) {
+      if (this.heartStates[trackId.id] === 'active') {
+        this.heartStates[trackId.id as any] = 'inactive';
       } else {
-        this.heartStates[trackId as any] = 'active'
+        this.heartStates[trackId.id as any] = 'active'
       }
-      this.saveTrackToWishList(trackId);
+      this.saveTrackToWishList1(trackId);
     } else {
-      if (this.heartStates[trackId] === 'inactive') {
-        this.heartStates[trackId as any] = 'active';
+      if (this.heartStates[trackId.id] === 'inactive') {
+        this.heartStates[trackId.id as any] = 'active';
       } else {
-        this.heartStates[trackId as any] = 'inactive'
+        this.heartStates[trackId.id as any] = 'inactive'
       }
-      this.deleteTrackToWishList(trackId);
+      this.deleteTrackToWishList(trackId.id);
     }
 
+  }
+  saveTrackToWishList1(id: Track) {
+    this.wishList.saveTrackToWishlist(id).subscribe({
+      next: (a) => {
+        console.log(a)
+      },
+      error: (e) => console.error(e),
+      complete: () => console.info('complete')
+    });;
   }
 
   getHeartState(trackId: string): string {
@@ -91,11 +100,11 @@ export class TodayTopHitsPlaylistComponent implements AfterViewInit {
       return this.heartStates[trackId] || 'inactive';
     }
   }
-  
+
   todayTopHitsPlaylist() {
     this.musicService.getTodayTopHitsPlaylist().subscribe({
       next: (v) => {
-        
+
         this.spotifyPlaylist = v;
         console.log(v.tracks.items[0].added_at)
         this.cdr.detectChanges();
@@ -106,39 +115,22 @@ export class TodayTopHitsPlaylistComponent implements AfterViewInit {
       error: (e) => { console.error('e') },
       complete: () => {
         console.info('complete'),
-        this.dataSource = new MatTableDataSource(this.spotifyPlaylist.tracks.items);
+          this.dataSource = new MatTableDataSource(this.spotifyPlaylist.tracks.items);
         this.dataSource.paginator = this.paginator;
       }
     });
   }
 
 
-  saveTrackToWishList(id: string) {
-    this.musicService.getTrack(id).subscribe({
-      next: (v) => {
-        this.wishList.saveTrackToWishlist(v).subscribe({
-          next: (a) => {
-            console.log(a)
-          },
-          error: (e) => console.error(e),
-          complete: () => console.info('complete')
-        });;
-
-        console.log(v.name)
-      },
-      error: (e) => console.error(e),
-      complete: () => { this.todayTopHitsPlaylist() }
-    });
-  }
+  
 
   deleteTrackToWishList(id: string) {
 
     this.wishList.deleteTrackByUsernameAndTrackId(id).subscribe({
       next: (a) => {
-        this.todayTopHitsPlaylist();
       },
       error: (e) => console.error(e),
-      complete: () => { console.info('complete'); this.todayTopHitsPlaylist(); }
+      complete: () => { console.info('complete') }
     });
   }
 

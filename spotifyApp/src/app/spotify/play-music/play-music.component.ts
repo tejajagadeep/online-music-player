@@ -28,9 +28,13 @@ export class PlayMusicComponent implements OnInit {
 
   ngOnInit(): void {
     this.track = this.data.track
-    this.trackIndex = this.track.index-1
+    this.trackIndex = this.track.index - 1
     this.trackList = this.data.playlistId
-    
+    console.log(this.trackIndex)
+
+    console.log(this.trackList.length)
+    console.log(this.trackList)
+
   }
 
 
@@ -48,8 +52,8 @@ export class PlayMusicComponent implements OnInit {
 
   playCurrentTrack() {
 
-    if (this.trackList[this.trackIndex].preview_url===null){
-      this.onNextPlay();
+    if (this.trackList[this.trackIndex].preview_url === null) {
+      this.onNextPlay()
     }
     this.track = this.trackNull;
     setTimeout(() => {
@@ -72,15 +76,16 @@ export class PlayMusicComponent implements OnInit {
   }
   onNextClick(): void {
 
-    console.log(this.track.preview_url)
-    
+    // console.log(this.track.preview_url)
+    console.log("hello print")
+
 
     if (this.trackIndex === this.trackList.length) {
       this.trackIndex = -1
     }
     this.trackIndex = (this.trackIndex + 1) % this.trackList.length;
     console.log(this.trackIndex)
-    
+
 
     this.playCurrentTrack();
 
@@ -89,9 +94,9 @@ export class PlayMusicComponent implements OnInit {
     window.open(link, '_blank');
   }
 
-  onNextPlay(){
+  onNextPlay() {
     setTimeout(() => {
       this.onNextClick();
-    }, 4000);
+    }, 5000);
   }
 }

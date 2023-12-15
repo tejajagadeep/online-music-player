@@ -33,8 +33,6 @@ export class FavoriteListComponent implements AfterViewInit {
     ) { }
 
     openPlayDialog(trackId: Track): void {
-      
-
       this.playDialogService.openPlayDialog(trackId,this.tracks);
     }
 
@@ -53,6 +51,9 @@ export class FavoriteListComponent implements AfterViewInit {
     this.wishList.getUserWishList().subscribe({
       next: (v) => {
         this.tracks = v.tracks;
+        v.tracks.forEach((track, index) => {
+          track.index = index + 1;
+        });
         this.cdr.detectChanges();
       },
       error: (e) => console.error(e),
