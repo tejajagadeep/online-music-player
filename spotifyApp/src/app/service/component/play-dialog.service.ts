@@ -13,7 +13,7 @@ export class PlayDialogService {
   openPlayDialog(tracks: Track, trackList : Track[]): void {
     this.dialog.open(PlayMusicComponent, {
       data: { track:tracks, playlistId:trackList },
-      width: '70%',
+      width: '80%',
     });
   }
 

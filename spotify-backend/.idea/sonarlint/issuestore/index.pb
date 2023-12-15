@@ -257,3 +257,5 @@ Qmusic-service/src/main/java/com/spotify/musicservice/dto/PlaylistItemsSearch.ja
 emusic-service/src/test/java/com/spotify/musicservice/repository/SpotifyAccessTokenRepositoryTest.java,b\b\bbb2fed417b9c4d98540e48c0098542677e15752
 ’
 bwishlist-service/src/test/java/com/spotify/wishlistservice/controller/WishlistControllerTest2.java,c\f\cf68527bf7b9f010d2abae169afcd5d669fc9a25
+‹
+[wishlist-service/src/main/java/com/spotify/wishlistservice/controller/CustomController.java,b\8\b87d941d549af5daadd4449baa664f65899e904a

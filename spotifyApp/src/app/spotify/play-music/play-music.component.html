@@ -28,12 +28,12 @@
 
 
                         </div>
-                        <div class="mouse-c play">
+                        <div class="mouse-c play" (click)="openEternal(this.track.external_urls.spotify)">
 
                             <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path
-                                    d="M8.32137 25.586C7.9759 25.5853 7.63655 25.4948 7.33669 25.3232C6.66148 24.9406 6.24173 24.1978 6.24173 23.3915V7.07398C6.24173 6.26542 6.66148 5.52494 7.33669 5.14232C7.64369 4.96589 7.99244 4.87516 8.3465 4.87961C8.70056 4.88407 9.04692 4.98354 9.34938 5.16764L23.2952 13.5155C23.5859 13.6977 23.8255 13.9508 23.9916 14.251C24.1577 14.5511 24.2448 14.8886 24.2448 15.2316C24.2448 15.5747 24.1577 15.9121 23.9916 16.2123C23.8255 16.5125 23.5859 16.7655 23.2952 16.9478L9.34713 25.2979C9.0376 25.485 8.68307 25.5846 8.32137 25.586V25.586Z"
+                                    d="M10 6v2H5v11h11v-5h2v6a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h6zm11-3v8h-2V6.413l-7.793 7.794-1.414-1.414L17.585  5H13V3h8z"
                                     fill="#E1E1E6" />
                             </svg>
 
@@ -61,10 +61,14 @@
                     </div>
                     <div class="track-time">
 
-                        <audio controls *ngIf="track.preview_url" [autoplay]="true" [controlsList]="'nodownload'">
+                        <audio controls *ngIf="track.preview_url; else nextPlay" [autoplay]="true" (ended)="onNextClick()"  [controlsList]="'nodownload'">
                             <source [src]="track.preview_url" type="audio/mpeg">
                             <a>Your browser does not support the audio tag.</a>
                         </audio>
+
+                        <ng-template #nextPlay (click)="onNextPlay()">
+                            
+                        </ng-template>
 
                     </div>
                 </div>
