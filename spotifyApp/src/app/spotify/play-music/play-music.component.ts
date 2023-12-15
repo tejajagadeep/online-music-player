@@ -3,6 +3,7 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { Track } from 'src/app/model/Track';
 import { WishlistDataService } from 'src/app/service/data/wishlist-data.service';
 import { heartAnimation } from 'src/app/app-parsers/animation-trigger';
+import { CommunicationService } from 'src/app/service/component/communication.service';
 
 @Component({
   selector: 'app-play-music',
@@ -25,13 +26,16 @@ export class PlayMusicComponent implements OnInit {
   duration = 0;
   currentTime = 0;
 
+  isShuffle= true
+
   trackIds: String[] = [];
   indexI!: number[];
   heartStates: { [key: string]: string } = {};
 
   constructor(public dialogRef: MatDialogRef<PlayMusicComponent>,
     @Inject(MAT_DIALOG_DATA) public data: { track: any, playlistId: any },
-    private wishList: WishlistDataService
+    private wishList: WishlistDataService,
+    private communicationService: CommunicationService
   ) {
     this.track = this.trackList[this.trackIndex];
   }
@@ -94,7 +98,7 @@ export class PlayMusicComponent implements OnInit {
         console.log('track deleted')
       },
       error: (e) => console.error(e),
-      complete: () => { console.info('complete'); this.wishList }
+      complete: () => { console.info('complete'); this.communicationService.callMethod(); }
     });
   }
 
@@ -173,12 +177,24 @@ export class PlayMusicComponent implements OnInit {
     }
     this.isPlaying=false
 
-    this.track = this.trackNull;
+    // this.track = this.trackNull;
     setTimeout(() => {
       this.track = this.trackList[this.trackIndex];
     }, 1000);
 
   }
+
+  shuffleTracks(){
+    this.isShuffle=false;
+    this.trackList = shuffleArray(this.trackList);
+  }
+
+  sortTracksByIndex() {
+    this.isShuffle=true;
+    this.trackList.sort((a, b) => a.index - b.index);
+    this.trackIndex=this.track.index-1
+  }
+  
 
   onCloseClick(): void {
     this.dialogRef.close();
@@ -189,7 +205,7 @@ export class PlayMusicComponent implements OnInit {
     this.isPlaying=true;
 
     if (this.trackIndex === 0) {
-      this.trackIndex = this.trackList.length
+      this.trackIndex = 1
     }
     this.trackIndex = (this.trackIndex - 1) % this.trackList.length;
     this.playCurrentTrack();
@@ -214,12 +230,22 @@ export class PlayMusicComponent implements OnInit {
     window.open(link, '_blank');
   }
 
+
   onNextPlay() {
     setTimeout(() => {
       this.onNextClick();
     }, 3000);
+    this.trackList
   }
   playTrack(link: any) {
     window.open(link, '_blank');
   }
+}
+
+function shuffleArray(array: any[]): any[] {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
 }

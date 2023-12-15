@@ -4,11 +4,11 @@
             <div><i class="fas fa-chevron-left" (click)="onCloseClick()"></i></div>
             <div>NOW PLAYING</div>
             <div><i class="fa fa-external-link" style="transition: transform 1s ease; cursor: pointer;"
-                (click)="playTrack(track.external_urls.spotify)"></i></div>
+                    (click)="playTrack(track.external_urls.spotify)"></i></div>
         </div>
         <div class="album-cover">
             <!-- <div class="album-overlay"></div> -->
-            <img  [src]="track.album.images[0].url" alt="LogoMusicImage" class="player02-img">
+            <img [src]="track.album.images[0].url" alt="LogoMusicImage" class="player02-img">
             <h2 class="song-title">
                 {{track.name}}
             </h2>
@@ -17,9 +17,8 @@
             </h3>
         </div>
         <div class="buttons">
-            <button class="btn lg red neu">
-                <i (click)="toggleHeartState(track)" class="fas fa-heart red"
-                    [@heartAnimation]="getHeartState(track.id)" style="cursor: pointer;">
+            <button (click)="toggleHeartState(track)" class="btn lg red neu">
+                <i class="fas fa-heart red" [@heartAnimation]="getHeartState(track.id)" style="cursor: pointer;">
                 </i>
             </button>
             <button class="btn lg neu" (click)="onBackClick()"><i class="fas fa-backward"></i></button>
@@ -32,6 +31,15 @@
                 </ng-template>
             </button>
             <button class="btn lg neu" (click)="onNextClick()"><i class="fas fa-forward"></i></button>
+
+            <ng-container (click)="shuffleTracks()" *ngIf="isShuffle; else shuffleIcon">
+                <button class="btn lg neu" (click)="shuffleTracks()"><i class="fas fa-random"></i></button>
+
+            </ng-container>
+            <ng-template #shuffleIcon>
+                <button class="btn lg neu" (click)="sortTracksByIndex()"><i class="fas fa-refresh"></i></button>
+
+            </ng-template>
         </div>
         <div>
             <audio #audioPlayer *ngIf="track.preview_url" [src]="track.preview_url" [autoplay]="true" controls
@@ -41,8 +49,7 @@
 
             <div class="track-t">
                 <div class="progress">
-                    <progress [max]="trackDuration" [value]="currentTime"
-                        (click)="seekTo($event)"></progress>
+                    <progress [max]="trackDuration" [value]="currentTime" (click)="seekTo($event)"></progress>
                 </div>
                 <div class="time">
                     <div class="total-time">{{getCurrentTime()}}</div>

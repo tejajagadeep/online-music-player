@@ -1,4 +1,4 @@
-import { AfterViewInit, ChangeDetectorRef, Component, ViewChild } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, OnDestroy, ViewChild } from '@angular/core';
 import { SpotifyPlaylist } from '../model/SpotifyPlaylist';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
@@ -8,13 +8,16 @@ import { WishlistDataService } from '../service/data/wishlist-data.service';
 import { Item } from '../model/Item';
 import { Track } from '../model/Track';
 import { PlayDialogService } from '../service/component/play-dialog.service';
+import { CommunicationService } from '../service/component/communication.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-favorite-list',
   templateUrl: './favorite-list.component.html',
   styleUrls: ['./favorite-list.component.css']
 })
-export class FavoriteListComponent implements AfterViewInit {
+export class FavoriteListComponent implements AfterViewInit,OnDestroy {
+  private subscription: Subscription;
 
 
   tracks!: Track[]; // Adjust the type accordingly
@@ -29,8 +32,16 @@ export class FavoriteListComponent implements AfterViewInit {
   constructor(private route: ActivatedRoute,
     private wishList: WishlistDataService,
     private cdr: ChangeDetectorRef,
-    private playDialogService: PlayDialogService
-    ) { }
+    private playDialogService: PlayDialogService,
+    private communicationService: CommunicationService) {
+      this.subscription = this.communicationService.methodCalled$.subscribe(() => {
+        this.wishlists();
+      });
+    }
+  
+    ngOnDestroy() {
+      this.subscription.unsubscribe();
+    }
 
     openPlayDialog(trackId: Track): void {
       this.playDialogService.openPlayDialog(trackId,this.tracks);

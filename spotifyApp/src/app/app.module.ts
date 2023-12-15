@@ -39,6 +39,7 @@ import { RouterModule } from '@angular/router';
 import { PlayMusicComponent } from './spotify/play-music/play-music.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { SearchPlaylistQueryComponent } from './spotify/search-playlist-query/search-playlist-query.component';
+import { CommunicationService } from './service/component/communication.service';
 
 @NgModule({
   declarations: [
@@ -62,7 +63,8 @@ import { SearchPlaylistQueryComponent } from './spotify/search-playlist-query/se
     SearchPlaylistsTracksComponent,
     SearchTracksQueryComponent,
     PlayMusicComponent,
-    SearchPlaylistQueryComponent
+    SearchPlaylistQueryComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -92,7 +94,8 @@ import { SearchPlaylistQueryComponent } from './spotify/search-playlist-query/se
   
     multi: true
   
-  }],
+  },
+  CommunicationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { 
