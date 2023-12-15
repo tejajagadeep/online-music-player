@@ -24,12 +24,12 @@ export class DiscoverWeeklyPlaylistComponent  implements AfterViewInit {
 
   trackIds: String[] = [];
   indexI!: number[];
+  heartStates: { [key: string]: string } = {};
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   dataSource!: MatTableDataSource<any>;
   displayedColumns: string[] = ['position', 'image', 'name', 'artist', 'duration', 'play', 'action'];
 
-  heartStates: { [key: string]: string } = {};
 
 
 
@@ -60,19 +60,20 @@ export class DiscoverWeeklyPlaylistComponent  implements AfterViewInit {
     if (!this.trackIds.includes(trackId.id)) {
       if (this.heartStates[trackId.id] === 'active') {
         this.heartStates[trackId.id as any] = 'inactive';
+        this.deleteTrackToWishList(trackId.id);
       } else {
         this.heartStates[trackId.id as any] = 'active'
+        this.saveTrackToWishList1(trackId);
       }
-      this.saveTrackToWishList1(trackId);
     } else {
       if (this.heartStates[trackId.id] === 'inactive') {
         this.heartStates[trackId.id as any] = 'active';
+        this.saveTrackToWishList1(trackId);
       } else {
         this.heartStates[trackId.id as any] = 'inactive'
+        this.deleteTrackToWishList(trackId.id);
       }
-      this.deleteTrackToWishList(trackId.id);
     }
-
   }
 
   getHeartState(trackId: string): string {

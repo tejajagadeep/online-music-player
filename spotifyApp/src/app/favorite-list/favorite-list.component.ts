@@ -43,9 +43,7 @@ export class FavoriteListComponent implements AfterViewInit {
 
   ngAfterViewInit(): void {
     this.wishlists();
-
   }
-
 
   wishlists() {
     this.wishList.getUserWishList().subscribe({

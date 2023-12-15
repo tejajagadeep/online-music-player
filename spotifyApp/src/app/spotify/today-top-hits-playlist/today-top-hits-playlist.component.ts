@@ -69,19 +69,20 @@ export class TodayTopHitsPlaylistComponent implements AfterViewInit {
     if (!this.trackIds.includes(trackId.id)) {
       if (this.heartStates[trackId.id] === 'active') {
         this.heartStates[trackId.id as any] = 'inactive';
+        this.deleteTrackToWishList(trackId.id);
       } else {
         this.heartStates[trackId.id as any] = 'active'
+        this.saveTrackToWishList1(trackId);
       }
-      this.saveTrackToWishList1(trackId);
     } else {
       if (this.heartStates[trackId.id] === 'inactive') {
         this.heartStates[trackId.id as any] = 'active';
+        this.saveTrackToWishList1(trackId);
       } else {
         this.heartStates[trackId.id as any] = 'inactive'
+        this.deleteTrackToWishList(trackId.id);
       }
-      this.deleteTrackToWishList(trackId.id);
     }
-
   }
   saveTrackToWishList1(id: Track) {
     this.wishList.saveTrackToWishlist(id).subscribe({
@@ -90,7 +91,7 @@ export class TodayTopHitsPlaylistComponent implements AfterViewInit {
       },
       error: (e) => console.error(e),
       complete: () => console.info('complete')
-    });;
+    });
   }
 
   getHeartState(trackId: string): string {
@@ -122,7 +123,7 @@ export class TodayTopHitsPlaylistComponent implements AfterViewInit {
   }
 
 
-  
+
 
   deleteTrackToWishList(id: string) {
 

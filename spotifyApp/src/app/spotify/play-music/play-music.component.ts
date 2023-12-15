@@ -1,15 +1,14 @@
-import { DatePipe } from '@angular/common';
 import { Component, ElementRef, Inject, OnInit, ViewChild } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { Track } from 'src/app/model/Track';
-import { DataService } from 'src/app/service/component/data.service';
-import { PlaylistGetService } from 'src/app/service/component/playlist-get.service';
-import { MusicDataService } from 'src/app/service/data/music-data.service';
+import { WishlistDataService } from 'src/app/service/data/wishlist-data.service';
+import { heartAnimation } from 'src/app/app-parsers/animation-trigger';
 
 @Component({
   selector: 'app-play-music',
   templateUrl: './play-music.component.html',
-  styleUrls: ['./play-music.component.css']
+  styleUrls: ['./play-music.component.css'],
+  animations: [heartAnimation]
 })
 export class PlayMusicComponent implements OnInit {
   trackIndex = 0; // Initialize with the first track
@@ -26,6 +25,88 @@ export class PlayMusicComponent implements OnInit {
   duration = 0;
   currentTime = 0;
 
+  trackIds: String[] = [];
+  indexI!: number[];
+  heartStates: { [key: string]: string } = {};
+
+  constructor(public dialogRef: MatDialogRef<PlayMusicComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: { track: any, playlistId: any },
+    private wishList: WishlistDataService
+  ) {
+    this.track = this.trackList[this.trackIndex];
+  }
+
+  ngOnInit(): void {
+    this.track = this.data.track
+    this.trackIndex = this.track.index - 1
+    this.trackList = this.data.playlistId
+    console.log(this.trackIndex)
+
+    console.log(this.trackList.length)
+    console.log(this.trackList)
+    this.wishListTracks()
+
+  }
+
+
+  toggleHeartState(trackId: Track): void {
+    if (!this.trackIds.includes(trackId.id)) {
+      if (this.heartStates[trackId.id] === 'active') {
+        this.heartStates[trackId.id as any] = 'inactive';
+        this.deleteTrackToWishList(trackId.id);
+      } else {
+        this.heartStates[trackId.id as any] = 'active'
+        this.saveTrackToWishList1(trackId);
+      }
+    } else {
+      if (this.heartStates[trackId.id] === 'inactive') {
+        this.heartStates[trackId.id as any] = 'active';
+        this.saveTrackToWishList1(trackId);
+      } else {
+        this.heartStates[trackId.id as any] = 'inactive'
+        this.deleteTrackToWishList(trackId.id);
+      }
+    }
+  }
+
+  wishListTracks() {
+    this.wishList.getUserWishList().subscribe({
+      next: (a) => {
+        a.tracks.forEach(track => this.trackIds.push(track.id))
+      },
+      error: (e) => console.error(e),
+      complete: () => console.log('tracks added to wishlist')
+    })
+  }
+
+  getHeartState(trackId: string): string {
+    if (this.trackIds.includes(trackId)) {
+      return this.heartStates[trackId] || 'active';
+    } else {
+      return this.heartStates[trackId] || 'inactive';
+    }
+  }
+  
+  deleteTrackToWishList(id: string) {
+
+    this.wishList.deleteTrackByUsernameAndTrackId(id).subscribe({
+      next: (a) => {
+        console.log('track deleted')
+      },
+      error: (e) => console.error(e),
+      complete: () => { console.info('complete'); this.wishList }
+    });
+  }
+
+  saveTrackToWishList1(id: Track) {
+    this.wishList.saveTrackToWishlist(id).subscribe({
+      next: (a) => {
+        console.log(a)
+      },
+      error: (e) => console.error(e),
+      complete: () => console.info('complete')
+    });;
+  }
   onPlayPauseClick() {
     const audio: HTMLAudioElement = this.audioPlayer.nativeElement;
 
@@ -80,63 +161,18 @@ export class PlayMusicComponent implements OnInit {
   formatTime(value: number) {
     return value < 10 ? `0${value}` : `${value}`;
   }
-  constructor(public dialogRef: MatDialogRef<PlayMusicComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: { track: any, playlistId: any },
-    // private datePipe: DatePipe
-  ) {
-    this.track = this.trackList[this.trackIndex];
-  }
-
-  ngOnInit(): void {
-    this.track = this.data.track
-    this.trackIndex = this.track.index - 1
-    this.trackList = this.data.playlistId
-    console.log(this.trackIndex)
-
-    console.log(this.trackList.length)
-    console.log(this.trackList)
-
-  }
-
-  initializeAudioPlayer() {
-    // Access the native HTML audio element
-    const audio: HTMLAudioElement = this.audioPlayer.nativeElement;
-
-    // Update progress as the audio is played
-    audio.addEventListener('timeupdate', () => {
-      // Update progress bar based on the current time and duration
-      const progress = (audio.currentTime / audio.duration) * 100;
-      // Update your progress bar style or value accordingly
-      // Example: this.progressWidth = `${progress}%`;
-    });
-
-    // Update the current time and total time when metadata is loaded
-    audio.addEventListener('loadedmetadata', () => {
-      // Access audio duration and update total time
-      const totalTime = this.formatTime(audio.duration);
-      // Update your total time span accordingly
-      // Example: this.totalTime = totalTime;
-    });
-  }
   updateTime(event: any) {
     this.currentTime = event.target.currentTime;
     this.trackDuration = event.target.duration;
   }
-
-  // formatTime(seconds: number): number {
-  //   // const date = new Date();
-  //   // date.setSeconds(seconds);
-  //   // return this.datePipe.transform(date, 'HH:mm:ss') || '';
-  //   return seconds
-  // }
-
-
 
   playCurrentTrack() {
 
     if (this.trackList[this.trackIndex].preview_url === null) {
       this.onNextPlay()
     }
+    this.isPlaying=false
+
     this.track = this.trackNull;
     setTimeout(() => {
       this.track = this.trackList[this.trackIndex];
@@ -150,6 +186,8 @@ export class PlayMusicComponent implements OnInit {
   }
 
   onBackClick(): void {
+    this.isPlaying=true;
+
     if (this.trackIndex === 0) {
       this.trackIndex = this.trackList.length
     }
@@ -157,7 +195,7 @@ export class PlayMusicComponent implements OnInit {
     this.playCurrentTrack();
   }
   onNextClick(): void {
-
+    this.isPlaying=true;
     // console.log(this.track.preview_url)
     console.log("hello print")
 
@@ -179,6 +217,9 @@ export class PlayMusicComponent implements OnInit {
   onNextPlay() {
     setTimeout(() => {
       this.onNextClick();
-    }, 5000);
+    }, 3000);
+  }
+  playTrack(link: any) {
+    window.open(link, '_blank');
   }
 }
