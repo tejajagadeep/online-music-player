@@ -1,4 +1,5 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { DatePipe } from '@angular/common';
+import { Component, ElementRef, Inject, OnInit, ViewChild } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { Track } from 'src/app/model/Track';
 import { DataService } from 'src/app/service/component/data.service';
@@ -17,11 +18,71 @@ export class PlayMusicComponent implements OnInit {
   trackNull!: Track;
   id!: string;
   currentAudio: HTMLAudioElement | null = document.querySelector('audio');
+  @ViewChild('audioPlayer') audioPlayer!: ElementRef;
 
-  audioPlayer: HTMLAudioElement = new Audio();
+  trackDuration = 0;
 
+  isPlaying = false;
+  duration = 0;
+  currentTime = 0;
+
+  onPlayPauseClick() {
+    const audio: HTMLAudioElement = this.audioPlayer.nativeElement;
+
+    if (audio.paused) {
+      audio.play();
+    } else {
+      audio.pause();
+    }
+
+    this.isPlaying = !this.isPlaying;
+  }
+
+  onTimeUpdate(event: Event) {
+    const audio: HTMLAudioElement = this.audioPlayer.nativeElement;
+    this.currentTime = audio.currentTime;
+    this.duration = audio.duration;
+  }
+
+  calculateProgress() {
+    if (this.duration === 0) {
+      return '0%';
+    }
+
+    const progress = (this.currentTime / this.duration) * 100;
+    return `${progress}%`;
+  }
+
+  getCurrentTime() {
+    const minutes = Math.floor(this.currentTime / 60);
+    const seconds = Math.floor(this.currentTime % 60);
+    return `${this.formatTime(minutes)}:${this.formatTime(seconds)}`;
+  }
+  seekTo(event: MouseEvent): void {
+    const progressBar = event.target as HTMLProgressElement;
+    const clickPosition = event.clientX - progressBar.getBoundingClientRect().left;
+    const percentClicked = clickPosition / progressBar.clientWidth;
+    const seekTime = percentClicked * this.trackDuration;
+  
+    // Set the audio's current time to the calculated time
+    if (this.audioPlayer) {
+      this.audioPlayer.nativeElement.currentTime = seekTime;
+    }
+  }
+  
+  getTotalTime() {
+    this.duration = this.trackDuration
+    const minutes = Math.floor(this.duration / 60);
+    const seconds = Math.floor(this.duration % 60);
+    return `${this.formatTime(minutes)}:${this.formatTime(seconds)}`;
+  }
+
+  formatTime(value: number) {
+    return value < 10 ? `0${value}` : `${value}`;
+  }
   constructor(public dialogRef: MatDialogRef<PlayMusicComponent>,
     @Inject(MAT_DIALOG_DATA) public data: { track: any, playlistId: any },
+    // private datePipe: DatePipe
   ) {
     this.track = this.trackList[this.trackIndex];
   }
@@ -37,18 +98,39 @@ export class PlayMusicComponent implements OnInit {
 
   }
 
+  initializeAudioPlayer() {
+    // Access the native HTML audio element
+    const audio: HTMLAudioElement = this.audioPlayer.nativeElement;
 
-  setupAudioPlayer(): void {
-    this.audioPlayer.remove()
+    // Update progress as the audio is played
+    audio.addEventListener('timeupdate', () => {
+      // Update progress bar based on the current time and duration
+      const progress = (audio.currentTime / audio.duration) * 100;
+      // Update your progress bar style or value accordingly
+      // Example: this.progressWidth = `${progress}%`;
+    });
 
-    this.audioPlayer.currentTime = 0;
-    if (this.track.preview_url !== null) {
-      this.audioPlayer.src = this.track.preview_url;
-    }
-    this.audioPlayer.load();
-    this.audioPlayer.play();
-    this.audioPlayer.addEventListener('ended', () => this.onNextClick());
+    // Update the current time and total time when metadata is loaded
+    audio.addEventListener('loadedmetadata', () => {
+      // Access audio duration and update total time
+      const totalTime = this.formatTime(audio.duration);
+      // Update your total time span accordingly
+      // Example: this.totalTime = totalTime;
+    });
   }
+  updateTime(event: any) {
+    this.currentTime = event.target.currentTime;
+    this.trackDuration = event.target.duration;
+  }
+
+  // formatTime(seconds: number): number {
+  //   // const date = new Date();
+  //   // date.setSeconds(seconds);
+  //   // return this.datePipe.transform(date, 'HH:mm:ss') || '';
+  //   return seconds
+  // }
+
+
 
   playCurrentTrack() {
 

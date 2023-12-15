@@ -5,12 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a2504401-f241-4a58-ab09-902bb2951c1e" name="Changes" comment="Commit message [date: %Y-%m-%d] [time: %H:%M:%S]">
+      <change afterPath="$PROJECT_DIR$/authentication-service/src/main/java/com/auth/authenticationservice/controller/CustomController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/music-service/src/main/java/com/spotify/musicservice/controller/CustomController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/userprofile-service/src/main/java/com/spotify/userprofile/controller/CustomController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spotifyApp/src/app/spotify/discover-weekly-playlist/discover-weekly-playlist.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../spotifyApp/src/app/spotify/discover-weekly-playlist/discover-weekly-playlist.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spotifyApp/src/app/spotify/discover-weekly-playlist/discover-weekly-playlist.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../spotifyApp/src/app/spotify/discover-weekly-playlist/discover-weekly-playlist.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spotifyApp/src/app/spotify/play-music/play-music.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../spotifyApp/src/app/spotify/play-music/play-music.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spotifyApp/src/app/spotify/today-top-hits-playlist/today-top-hits-playlist.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../spotifyApp/src/app/spotify/today-top-hits-playlist/today-top-hits-playlist.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spotifyApp/src/app/spotify/today-top-hits-playlist/today-top-hits-playlist.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../spotifyApp/src/app/spotify/today-top-hits-playlist/today-top-hits-playlist.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,14 +87,14 @@
       <recent name="com.spotify.musicservice.model" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.spotify.musicservice.controller" />
+      <recent name="com.auth.authenticationservice.controller" />
+      <recent name="com.spotify.userprofile.controller" />
       <recent name="com.spotify.wishlistservice.service" />
       <recent name="com.auth.authenticationservice.aspects" />
-      <recent name="com.spotify.userprofile.aspects" />
-      <recent name="com.spotify.wishlistservice.aspects" />
-      <recent name="com.spotify.wishlistservice.dto" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.WishlistserviceApplication">
+  <component name="RunManager" selected="Application.MusicserviceApplication">
     <configuration name="ApiGatewayApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.spotify.apigateway.ApiGatewayApplication" />
       <module name="api-gateway" />
@@ -164,10 +162,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.WishlistserviceApplication" />
-        <item itemvalue="Application.UserprofileApplication" />
         <item itemvalue="Application.MusicserviceApplication" />
         <item itemvalue="Application.AuthenticationServiceApplication" />
+        <item itemvalue="Application.UserprofileApplication" />
+        <item itemvalue="Application.WishlistserviceApplication" />
         <item itemvalue="Application.ApiGatewayApplication" />
       </list>
     </recent_temporary>

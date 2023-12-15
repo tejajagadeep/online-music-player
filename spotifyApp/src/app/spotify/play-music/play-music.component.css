@@ -194,14 +194,15 @@ body * {
     margin-top: 20px;
     margin-left: 5px;
     margin-right: 5px;
+    align-items: center;
+    width: 100%;
 }
 
-
-audio {
+progress {
+    height: 5px;
     width: 100%;
-    /* Make the audio player take the full width of its container */
-    margin-top: 10px;
-    /* Add some top margin for spacing */
+    flex-grow: 1; /* This makes the progress bar fill the available space */
+    margin-right: 10px; /* Optional: Add margin for spacing between progress bar and time */
 }
 
 .close-button {
@@ -217,8 +218,24 @@ audio {
     /* Set the color as needed */
 }
 
-.mouse-c{
+.mouse-c {
     cursor: pointer;
 }
 
+span {
+    color: #ffffff;
+}
+
 @import url(https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap);
+
+audio::-webkit-media-controls-mute-button {
+    display: none !important;
+}
+
+audio::-webkit-media-controls-volume-slider {
+    display: none !important;
+}
+
+.custom-test{
+    background-color: white;
+}
