@@ -5,10 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a2504401-f241-4a58-ab09-902bb2951c1e" name="Changes" comment="Commit message [date: %Y-%m-%d] [time: %H:%M:%S]">
-      <change afterPath="$PROJECT_DIR$/authentication-service/src/main/java/com/auth/authenticationservice/controller/CustomController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/music-service/src/main/java/com/spotify/musicservice/controller/CustomController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/userprofile-service/src/main/java/com/spotify/userprofile/controller/CustomController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spotifyApp/src/app/navigation/side-bar/side-bar.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../spotifyApp/src/app/navigation/side-bar/side-bar.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spotifyApp/src/app/spotify/play-music/play-music.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../spotifyApp/src/app/spotify/play-music/play-music.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spotifyApp/src/app/spotify/play-music/play-music.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../spotifyApp/src/app/spotify/play-music/play-music.component.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -68,6 +68,8 @@ validEmail!: TemplateRef<NgIfContext<any>>|null;
       if (e.status === 503){
         this.errorMessage2 = "Service Error"
       }
+
+      console.log(e.status)
     },
       complete: () => console.info('complete') 
     })

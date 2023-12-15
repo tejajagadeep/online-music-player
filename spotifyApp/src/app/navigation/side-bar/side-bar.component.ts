@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, afterNextRender } from '@angular/core';
 import { isChecker } from 'src/app/model/isChecker';
 import { AuthenticationService } from 'src/app/service/data/authentication.service';
 
@@ -26,8 +26,13 @@ export class SideBarComponent implements OnInit {
     this.authService.validateToken(token).subscribe({
       next: (v) => {
         this.isC = v;
-        console.log('conso')
-        console.log(this.isC)
+        const jsonString = JSON.stringify(v)
+        const a = jsonString.slice(2,-9)
+        if (this.username !== a){
+          localStorage.removeItem('authenticatedUser')
+          localStorage.removeItem('token')
+        }
+        // console.log();
       },
       error: (e) => { console.error(e); localStorage.removeItem('token'), localStorage.removeItem('authenticatedUser') },
       complete: () => console.info('complete')
