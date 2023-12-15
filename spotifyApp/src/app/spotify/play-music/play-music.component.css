@@ -1,3 +1,9 @@
+/* Add this CSS to ensure the content stays within the container */
+.container {
+    overflow: hidden;
+}
+
+/* Rest of your existing CSS styles */
 body {
     padding: 0;
     margin: 0;
@@ -17,8 +23,9 @@ body {
     top: 0;
     bottom: 0;
     margin: auto;
+    overflow: hidden;
+    /* Ensure content stays within the container */
 }
-
 
 i {
     cursor: pointer;
@@ -138,6 +145,43 @@ i {
     color: #e22d49;
 }
 
+.iphone img.player02-img {
+    display: block;
+}
+
+@media screen and (max-height: 520px) {
+    .iphone {
+        height: 100%;
+        /* set the reduced height */
+    }
+
+    /* Hide the image when the height is less than or equal to 500px */
+    .iphone img.player02-img {
+        display: none;
+    }
+
+    .iphone .album-cover{
+        font-size: 0.55em;
+    }
+}
+
+/* @media screen and (max-height: 600px) {
+    .iphone {
+        height: 500px;
+    }
+
+    .iphone .album-cover img {
+        height: 200px;
+        width: 200px;
+        border-radius: 15px;
+        display: block;
+        margin: 0 auto; 
+    }
+    .iphone .album-cover{
+        font-size: 0.65em;
+    }
+} */
+
 .time {
     opacity: 0.7;
     font-size: 14px;
@@ -149,7 +193,7 @@ i {
 
 progress {
     width: 100%;
-    flex-grow: 1; 
+    flex-grow: 1;
     margin-right: 10px;
     cursor: pointer;
 }

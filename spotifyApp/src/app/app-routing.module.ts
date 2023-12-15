@@ -15,6 +15,7 @@ import { ProfileComponent } from './users/profile/profile.component';
 import { UpdateProfileComponent } from './users/update-profile/update-profile.component';
 import { SearchTracksQueryComponent } from './spotify/search-tracks-query/search-tracks-query.component';
 import { PlayMusicComponent } from './spotify/play-music/play-music.component';
+import { SearchPlaylistQueryComponent } from './spotify/search-playlist-query/search-playlist-query.component';
 
 
 
@@ -23,7 +24,8 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent, canActivate: [AuthGuard]},
   { path: 'search-tracks', component: SearchTracksQueryComponent, canActivate: [AuthGuard]},
   { path: 'search-tracks/:query', component: SearchTracksComponent, canActivate: [AuthGuard]},
-  { path: 'search-playlists', component: SearchPlaylistsComponent, canActivate: [AuthGuard]},
+  { path: 'search-playlists', component: SearchPlaylistQueryComponent, canActivate: [AuthGuard]},
+  { path: 'search-playlists/:query', component: SearchPlaylistsComponent, canActivate: [AuthGuard]},
   { path: 'playlist-track/:playlistId', component: SearchPlaylistsTracksComponent, canActivate: [AuthGuard]},
   { path: 'billboard-hot-100-playlist', component: BillBoard100PlaylistComponent, canActivate: [AuthGuard]},
   { path: 'workout-playlist', component: DiscoverWeeklyPlaylistComponent, canActivate: [AuthGuard]}, //

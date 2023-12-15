@@ -1,4 +1,5 @@
 import { AfterViewInit, Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { SpotifyPlaylistSearch } from 'src/app/model/SpotifyPlaylistSearch';
 import { MusicDataService } from 'src/app/service/data/music-data.service';
 
@@ -11,8 +12,10 @@ export class SearchPlaylistsComponent implements AfterViewInit{
 
   spotifyTracks!: SpotifyPlaylistSearch; // Adjust the type accordingly
   searchQuery: string = '';
-
-  constructor(private musicService: MusicDataService) {}
+  query=''
+  constructor(private musicService: MusicDataService,
+    private route: ActivatedRoute, 
+    ) {}
 
   ngOnInit(): void {
     
@@ -20,7 +23,9 @@ export class SearchPlaylistsComponent implements AfterViewInit{
 
   
   ngAfterViewInit(): void {
-    // this.searchTracks("leo");
+    this.query = this.route.snapshot.params['query'];
+     this.searchTracks(this.query);
+
   }
 
   redirectToLink(link: string) {

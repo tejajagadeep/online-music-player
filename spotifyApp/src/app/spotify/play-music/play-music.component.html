@@ -3,11 +3,12 @@
         <div class="title">
             <div><i class="fas fa-chevron-left" (click)="onCloseClick()"></i></div>
             <div>NOW PLAYING</div>
-            <div><i class="fas fa-ellipsis-v"></i></div>
+            <div><i class="fa fa-external-link" style="transition: transform 1s ease; cursor: pointer;"
+                (click)="playTrack(track.external_urls.spotify)"></i></div>
         </div>
         <div class="album-cover">
-            <div class="album-overlay"></div>
-            <img [src]="track.album.images[0].url" alt="LogoMusicImage" class="player02-img">
+            <!-- <div class="album-overlay"></div> -->
+            <img  [src]="track.album.images[0].url" alt="LogoMusicImage" class="player02-img">
             <h2 class="song-title">
                 {{track.name}}
             </h2>
@@ -48,10 +49,6 @@
                     <div class="last-time">{{getTotalTime()}}</div>
                 </div>
             </div>
-        </div>
-        <div class="lyrics">
-            <i class="fa fa-external-link" style="transition: transform 1s ease; cursor: pointer;"
-                                (click)="playTrack(track.external_urls.spotify)"></i>
         </div>
     </div>
 </div>

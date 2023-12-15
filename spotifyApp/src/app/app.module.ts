@@ -38,6 +38,7 @@ import { SearchTracksQueryComponent } from './spotify/search-tracks-query/search
 import { RouterModule } from '@angular/router';
 import { PlayMusicComponent } from './spotify/play-music/play-music.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { SearchPlaylistQueryComponent } from './spotify/search-playlist-query/search-playlist-query.component';
 
 @NgModule({
   declarations: [
@@ -60,7 +61,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     UpdateProfileComponent,
     SearchPlaylistsTracksComponent,
     SearchTracksQueryComponent,
-    PlayMusicComponent
+    PlayMusicComponent,
+    SearchPlaylistQueryComponent
   ],
   imports: [
     BrowserModule,

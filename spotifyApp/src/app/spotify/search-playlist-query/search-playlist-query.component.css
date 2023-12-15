@@ -1,142 +1,29 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
 
 aside {
-  width: 100%;
+  width: 95%;
   /* Adjust the width as needed */
   background-color: #f0f0f0;
   /* Adjust the background color */
   left: 0;
   margin-left: 50px;
+  
+}
 
+.app-sidebar-container{
+  position: fixed;
 }
 
 #most-popular-wrapper {
   background-color: #ffffff;
   /* Adjust the background color */
-  border: 1px solid #b9abab;
+  border: 1px solid #ccc;
   /* Add borders or adjust as needed */
 }
 
 
-.background {
-  min-height: 100vh;
-  min-width: 100vw;
-  background: linear-gradient(to top right, rgba(100, 213, 251, 0.3), rgba(228, 166, 249, 0.5)) fixed;
-  filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#cbccc8');
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-
-}
-
-body {
-  margin: 0;
-}
-
-.card-container {
-  max-width: 100%;
-  width: 860px;
-  margin: auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(222px, 1fr));
-  grid-gap: 20px;
-}
-
-.card-container> :nth-child(-n+3) {
-  margin-top: 30px;
-}
-
-.card-container > :nth-last-child(-n+3) {
-  margin-bottom: 30px;
-}
-
-
-.card {
-  width: 100%;
-  max-width: 222px;
-  height: 315px;
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0px 13px 15px 0px rgba(0, 0, 0, 0.05);
-  transition: ease all 0.2s;
-}
-
-.card:hover {
-  transform: scale(1.2) translateY(-20px);
-}
-
-#back {
-  width: 100%;
-  max-width: 222px;
-  height: 315px;
-  overflow: hidden;
-  position: absolute;
-  border-radius: 10px;
-}
-
-#back img {
-  width: 100%;
-  height: 100%;
-  filter: blur(30px);
-  opacity: 0.9;
-}
-
-#art {
-  position: relative;
-  border-radius: 50%;
-  width: 176px;
-  height: 176px;
-  margin: 23px;
-  box-shadow: 0px 15px 15px 0px rgba(0, 0, 0, 0.05);
-  transition: ease all 0.2s;
-}
-
-#title,
-#artist {
-  margin: 0 17px;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-}
-
-#title {
-  margin-top: 31px;
-  font-family: Montserrat;
-  font-weight: bold;
-  font-size: 20px;
-  color: #393939;
-}
-
-#artist {
-  font-family: 'Segoe UI';
-  font-size: 14px;
-  color: #707070;
-}
-
-@media (max-width: 600px) {
-  .card-container {
-    grid-template-columns: 1fr;
-  }
-}
-
-.track-item {
-  position: relative;
-  display: inline-block;
-}
-
-i {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  padding: 10px;
-  cursor: pointer;
-  font-size: 50px;
-  /* Adjust padding as needed */
-}
-
 @import url("https://fonts.googleapis.com/css?family=Orbitron&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Hind&display=swap");
-
 * {
   -webkit-font-smoothing: antialiased;
   color: #acbdce;
@@ -175,30 +62,28 @@ html {
 }
 
 .Icon {
-  cursor: pointer;
   min-width: 46px;
   min-height: 46px;
   display: flex;
   align-items: center;
+  cursor: pointer;
   justify-content: center;
   border-radius: var(--border-radius);
   margin-right: 12px;
   box-shadow: -2px -2px 6px rgba(255, 255, 255, 0.6), 2px 2px 12px #c8d8e7;
 }
-
 .Icon svg {
   transform: translate(-1px, -1px);
 }
 
 .Card-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  /* Set the height to the viewport height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Set the height to the viewport height */
 }
 
-label {
+.Card-container label {
   font-family: "Hind", sans-serif;
   display: block;
   color: #3c4b66;
@@ -224,11 +109,9 @@ input {
   transition: all 240ms ease-out;
   width: 100%;
 }
-
 input::placeholder {
   color: #6d7f8f;
 }
-
 input:focus {
   outline: none;
   color: #6d7f8f;
@@ -242,9 +125,7 @@ input:focus {
   border-radius: var(--border-radius);
   overflow: hidden;
 }
-
-.InputContainer:before,
-.InputContainer:after {
+.InputContainer:before, .InputContainer:after {
   left: 0;
   top: 0;
   display: block;
@@ -254,11 +135,9 @@ input:focus {
   height: 100%;
   position: absolute;
 }
-
 .InputContainer:before {
   box-shadow: var(--bottom-shadow);
 }
-
 .InputContainer:after {
   box-shadow: var(--top-shadow);
 }
