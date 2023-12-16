@@ -24,11 +24,11 @@
         </div>
         <div class="buttons">
             <ng-container (click)="shuffleTracks()" *ngIf="isShuffle; else shuffleIcon">
-                <button class="btn lg neu" (click)="shuffleTracks()"><i class="fas fa-random"></i></button>
+                <button class="btn lg neu" (click)="shuffleTracks()"><i class="fas fa-refresh"></i></button>
 
             </ng-container>
             <ng-template #shuffleIcon>
-                <button class="btn lg neu" (click)="sortTracksByIndex()"><i class="fas fa-refresh"></i></button>
+                <button class="btn lg neu" (click)="sortTracksByIndex()"><i class="fas fa-random"></i></button>
 
             </ng-template>
             <button class="btn lg neu" (click)="onBackClick()"><i class="fas fa-backward"></i></button>
@@ -53,7 +53,7 @@
             </audio>
 
             <div class="track-t">
-                <div>
+                <div *ngIf="trackDuration">
                     <progress [max]="trackDuration" [value]="currentTime" (click)="seekTo($event)"></progress>
                 </div>
                 <div class="time">

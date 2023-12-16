@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, Inject, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, Inject, OnInit, ViewChild } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { Track } from 'src/app/model/Track';
 import { WishlistDataService } from 'src/app/service/data/wishlist-data.service';
@@ -11,7 +11,7 @@ import { CommunicationService } from 'src/app/service/component/communication.se
   styleUrls: ['./play-music.component.css'],
   animations: [heartAnimation]
 })
-export class PlayMusicComponent implements OnInit, AfterViewInit {
+export class PlayMusicComponent implements OnInit {
   trackIndex = 0; // Initialize with the first track
   trackList: any[] = [];
   track!: Track;
@@ -51,7 +51,15 @@ export class PlayMusicComponent implements OnInit, AfterViewInit {
     this.wishListTracks()
   }
 
-  ngAfterViewInit() {
+  shuffleTracks() {
+    this.isShuffle = false;
+    this.trackList = shuffleArray(this.trackList);
+  }
+
+  sortTracksByIndex() {
+    this.isShuffle = true;
+    this.trackList.sort((a, b) => a.index - b.index);
+    this.trackIndex = this.track.index - 1
   }
 
   checkTextWidth() {
@@ -123,7 +131,7 @@ export class PlayMusicComponent implements OnInit, AfterViewInit {
         console.log(a)
       },
       error: (e) => console.error(e),
-      complete: () => console.info('complete')
+      complete: () =>{ console.info('complete'); this.communicationService.callMethod(); }
     });;
   }
   onPlayPauseClick() {
@@ -199,16 +207,6 @@ export class PlayMusicComponent implements OnInit, AfterViewInit {
 
   }
 
-  shuffleTracks() {
-    this.isShuffle = false;
-    this.trackList = shuffleArray(this.trackList);
-  }
-
-  sortTracksByIndex() {
-    this.isShuffle = true;
-    this.trackList.sort((a, b) => a.index - b.index);
-    this.trackIndex = this.track.index - 1
-  }
 
 
   onCloseClick(): void {
@@ -232,14 +230,18 @@ export class PlayMusicComponent implements OnInit, AfterViewInit {
   onNextClick(): void {
     this.isPlaying = true;
     // console.log(this.track.preview_url)
-    console.log("hello print")
-
+    if (this.track.preview_url === null) {
+      this.currentTime = 0
+      this.trackDuration = 0
+    }
 
     if (this.trackIndex === this.trackList.length) {
       this.trackIndex = -1
     }
+
     this.trackIndex = (this.trackIndex + 1) % this.trackList.length;
-    console.log(this.trackIndex)
+    console.log(this.track.index)
+
 
 
     this.playCurrentTrack();

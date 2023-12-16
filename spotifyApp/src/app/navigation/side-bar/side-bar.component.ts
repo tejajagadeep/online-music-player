@@ -39,4 +39,10 @@ export class SideBarComponent implements OnInit {
     });
   }
 
+  logout(){
+    localStorage.removeItem('token');
+    localStorage.removeItem('authenticatedUser');
+    window.location.reload();
+  }
+
 }
