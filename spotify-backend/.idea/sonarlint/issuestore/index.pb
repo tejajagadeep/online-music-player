@@ -259,3 +259,9 @@ emusic-service/src/test/java/com/spotify/musicservice/repository/SpotifyAccessTo
 bwishlist-service/src/test/java/com/spotify/wishlistservice/controller/WishlistControllerTest2.java,c\f\cf68527bf7b9f010d2abae169afcd5d669fc9a25
 ‹
 [wishlist-service/src/main/java/com/spotify/wishlistservice/controller/CustomController.java,b\8\b87d941d549af5daadd4449baa664f65899e904a
+Š
+Zuserprofile-service/src/main/java/com/spotify/userprofile/controller/CustomController.java,1\0\107968d93a818814c729e45a783f5b94fbdb21bf
+”
+dauthentication-service/src/main/java/com/auth/authenticationservice/controller/CustomController.java,8\0\808d76334d336c6830ad70f7ea99ba7fb12f3804
+…
+Umusic-service/src/main/java/com/spotify/musicservice/controller/CustomController.java,1\f\1f37ae7d14e844236d170ef10ca3f4c1810f222f
