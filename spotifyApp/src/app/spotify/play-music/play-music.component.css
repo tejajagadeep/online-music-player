@@ -24,7 +24,6 @@ body {
     bottom: 0;
     margin: auto;
     overflow: hidden;
-    /* Ensure content stays within the container */
 }
 
 i {
@@ -33,13 +32,14 @@ i {
 
 .iphone {
     width: 312px;
-    height: 612px;
+    height: 580px;
     background: #e0e5ec;
     border-radius: 2em;
     box-sizing: border-box;
     padding: 2em;
     display: flex;
     flex-direction: column;
+    overflow: hidden;
 }
 
 .iphone .title {
@@ -79,6 +79,27 @@ i {
     margin-bottom: 0;
     color: #65717e;
 }
+.song-title {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.marquee {
+    display: inline-block;
+    animation: marquee 10s linear infinite;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(10%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
 
 .iphone .album-cover .artist-title {
     text-align: center;
@@ -160,8 +181,12 @@ i {
         display: none;
     }
 
+    .iphone .track-t{
+        display: none;
+    }
+
     .iphone .album-cover{
-        font-size: 0.55em;
+        font-size: 0.75em;
     }
 }
 

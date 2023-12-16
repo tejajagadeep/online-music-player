@@ -16,7 +16,8 @@ export function hasNumberValidator(control: AbstractControl): ValidationErrors |
 export class UpdateProfileComponent implements OnInit {
 
   userProfile!: UserProfile;
-
+  isNumber = false;
+  isNumber2 = false;
   emailExists: boolean = false;
   message='';
   errorA!: string;
@@ -51,17 +52,39 @@ export class UpdateProfileComponent implements OnInit {
       complete: () => {this.message = "Details updated"}
     });
   }
+
+  isnumberValidatorCheck(): boolean {
+    return true
+  }
+
   OnlyAlbhabets(event: any): boolean {
 
     const charCode = (event.which) ? event.which : event.keyCode;
 
     if (charCode == 32 || ((charCode > 64 && charCode < 91) || (charCode > 96 && charCode < 123))) {
+      this.isNumber = false;
       return true
     }
 
     this.errorA = 'Please enter only letters and spaces.'; 
-
+    this.isNumber = true;
     return false;
+
+  }
+
+  OnlyAlbhabets2(event: any): boolean {
+
+    const charCode = (event.which) ? event.which : event.keyCode;
+
+    if (charCode == 32 || ((charCode > 64 && charCode < 91) || (charCode > 96 && charCode < 123))) {
+      this.isNumber2 = false;
+      return true
+    }
+
+    this.errorA = 'Please enter only letters and spaces.'; 
+    this.isNumber2 = true;
+    return false;
+
   }
   ngOnInit(): void {
     this.getUserProfile()

@@ -31,3 +31,7 @@ aside {
 .form-container{
     margin: 100px;
 }
+.erorr-message{
+    font-size: x-small;
+    color: red;
+}

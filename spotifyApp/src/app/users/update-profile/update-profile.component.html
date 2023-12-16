@@ -14,17 +14,20 @@
                       <mat-error *ngIf="profileForm.get('firstName')?.hasError('required')">
                         First Name is required
                       </mat-error>
-                      <mat-error *ngIf="profileForm.get('firstName')?.hasError('hasNumber')">
-                        First Name cannot contain numbers
-                      </mat-error>
+                      <div class="erorr-message" *ngIf="isNumber">
+                        Only Alphabets are allowed
+                      </div>
                     </mat-form-field>
                   </div>
                   <div class="col-md-6">
                     <mat-form-field class="full-width">
-                      <input  formControlName="lastName" matInput placeholder="Last name" required (keypress)="OnlyAlbhabets($event)">
+                      <input  formControlName="lastName" matInput placeholder="Last name" required (keypress)="OnlyAlbhabets2($event)">
                       <mat-error *ngIf="profileForm.get('lastName')?.hasError('required')">
                         Last Name is required
                       </mat-error>
+                      <div class="erorr-message" *ngIf="isNumber2">
+                        Only Alphabets are allowed
+                      </div>
                     </mat-form-field>
                   </div>
                 </div>

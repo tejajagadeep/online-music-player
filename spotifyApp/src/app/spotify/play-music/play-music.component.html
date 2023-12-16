@@ -9,18 +9,28 @@
         <div class="album-cover">
             <!-- <div class="album-overlay"></div> -->
             <img [src]="track.album.images[0].url" alt="LogoMusicImage" class="player02-img">
+            
             <h2 class="song-title">
-                {{track.name}}
+                <div class="marquee">{{ track.name }} - {{track.album.name}}</div>
             </h2>
             <h3 class="artist-title">
-                {{track.artists[0].name}}
+                <div *ngFor="let artist of track.artists | slice:0:2">
+                    {{ artist.name }}
+                </div>
+                <!-- {{track.artists[0].name}}
+                <ng-component *ngIf="track.artists[1].name; else noArtist2"> {{track.artists[1].name}}</ng-component>
+                <ng-template #noArtist2>&nbsp;</ng-template> -->
             </h3>
         </div>
         <div class="buttons">
-            <button (click)="toggleHeartState(track)" class="btn lg red neu">
-                <i class="fas fa-heart red" [@heartAnimation]="getHeartState(track.id)" style="cursor: pointer;">
-                </i>
-            </button>
+            <ng-container (click)="shuffleTracks()" *ngIf="isShuffle; else shuffleIcon">
+                <button class="btn lg neu" (click)="shuffleTracks()"><i class="fas fa-random"></i></button>
+
+            </ng-container>
+            <ng-template #shuffleIcon>
+                <button class="btn lg neu" (click)="sortTracksByIndex()"><i class="fas fa-refresh"></i></button>
+
+            </ng-template>
             <button class="btn lg neu" (click)="onBackClick()"><i class="fas fa-backward"></i></button>
             <button class="btn lg neu" (click)="onPlayPauseClick()">
                 <ng-container *ngIf="isPlaying; else playIcon">
@@ -31,15 +41,10 @@
                 </ng-template>
             </button>
             <button class="btn lg neu" (click)="onNextClick()"><i class="fas fa-forward"></i></button>
-
-            <ng-container (click)="shuffleTracks()" *ngIf="isShuffle; else shuffleIcon">
-                <button class="btn lg neu" (click)="shuffleTracks()"><i class="fas fa-random"></i></button>
-
-            </ng-container>
-            <ng-template #shuffleIcon>
-                <button class="btn lg neu" (click)="sortTracksByIndex()"><i class="fas fa-refresh"></i></button>
-
-            </ng-template>
+            <button (click)="toggleHeartState(track)" class="btn lg red neu">
+                <i class="fas fa-heart red" [@heartAnimation]="getHeartState(track.id)" style="cursor: pointer;">
+                </i>
+            </button>
         </div>
         <div>
             <audio #audioPlayer *ngIf="track.preview_url" [src]="track.preview_url" [autoplay]="true" controls
@@ -48,7 +53,7 @@
             </audio>
 
             <div class="track-t">
-                <div class="progress">
+                <div>
                     <progress [max]="trackDuration" [value]="currentTime" (click)="seekTo($event)"></progress>
                 </div>
                 <div class="time">

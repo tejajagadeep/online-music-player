@@ -1,4 +1,4 @@
-import { Component, ElementRef, Inject, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, Inject, OnInit, ViewChild } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { Track } from 'src/app/model/Track';
 import { WishlistDataService } from 'src/app/service/data/wishlist-data.service';
@@ -11,7 +11,7 @@ import { CommunicationService } from 'src/app/service/component/communication.se
   styleUrls: ['./play-music.component.css'],
   animations: [heartAnimation]
 })
-export class PlayMusicComponent implements OnInit {
+export class PlayMusicComponent implements OnInit, AfterViewInit {
   trackIndex = 0; // Initialize with the first track
   trackList: any[] = [];
   track!: Track;
@@ -26,7 +26,7 @@ export class PlayMusicComponent implements OnInit {
   duration = 0;
   currentTime = 0;
 
-  isShuffle= true
+  isShuffle = true
 
   trackIds: String[] = [];
   indexI!: number[];
@@ -49,7 +49,22 @@ export class PlayMusicComponent implements OnInit {
     console.log(this.trackList.length)
     console.log(this.trackList)
     this.wishListTracks()
+  }
 
+  ngAfterViewInit() {
+  }
+
+  checkTextWidth() {
+    const marquee = document.getElementById('marquee')!;
+    const textWidth = marquee.scrollWidth;
+
+    if (textWidth > 300) {
+      marquee.classList.add('marquee');
+      marquee.style.animationDuration = (textWidth / 50) + 's'; // Adjust the speed based on text width
+    } else {
+      marquee.classList.remove('marquee');
+      marquee.style.animationDuration = '0s';
+    }
   }
 
 
@@ -90,7 +105,7 @@ export class PlayMusicComponent implements OnInit {
       return this.heartStates[trackId] || 'inactive';
     }
   }
-  
+
   deleteTrackToWishList(id: string) {
 
     this.wishList.deleteTrackByUsernameAndTrackId(id).subscribe({
@@ -148,13 +163,13 @@ export class PlayMusicComponent implements OnInit {
     const clickPosition = event.clientX - progressBar.getBoundingClientRect().left;
     const percentClicked = clickPosition / progressBar.clientWidth;
     const seekTime = percentClicked * this.trackDuration;
-  
+
     // Set the audio's current time to the calculated time
     if (this.audioPlayer) {
       this.audioPlayer.nativeElement.currentTime = seekTime;
     }
   }
-  
+
   getTotalTime() {
     this.duration = this.trackDuration
     const minutes = Math.floor(this.duration / 60);
@@ -175,7 +190,7 @@ export class PlayMusicComponent implements OnInit {
     if (this.trackList[this.trackIndex].preview_url === null) {
       this.onNextPlay()
     }
-    this.isPlaying=false
+    this.isPlaying = false
 
     // this.track = this.trackNull;
     setTimeout(() => {
@@ -184,17 +199,17 @@ export class PlayMusicComponent implements OnInit {
 
   }
 
-  shuffleTracks(){
-    this.isShuffle=false;
+  shuffleTracks() {
+    this.isShuffle = false;
     this.trackList = shuffleArray(this.trackList);
   }
 
   sortTracksByIndex() {
-    this.isShuffle=true;
+    this.isShuffle = true;
     this.trackList.sort((a, b) => a.index - b.index);
-    this.trackIndex=this.track.index-1
+    this.trackIndex = this.track.index - 1
   }
-  
+
 
   onCloseClick(): void {
     this.dialogRef.close();
@@ -202,16 +217,20 @@ export class PlayMusicComponent implements OnInit {
   }
 
   onBackClick(): void {
-    this.isPlaying=true;
+    this.isPlaying = true;
 
     if (this.trackIndex === 0) {
       this.trackIndex = 1
+      const audio: HTMLAudioElement = this.audioPlayer.nativeElement;
+      if (audio) {
+        audio.currentTime = 0;
+      }
     }
     this.trackIndex = (this.trackIndex - 1) % this.trackList.length;
     this.playCurrentTrack();
   }
   onNextClick(): void {
-    this.isPlaying=true;
+    this.isPlaying = true;
     // console.log(this.track.preview_url)
     console.log("hello print")
 
