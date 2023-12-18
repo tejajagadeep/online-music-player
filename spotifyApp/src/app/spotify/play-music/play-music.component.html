@@ -53,7 +53,7 @@
             </audio>
 
             <div class="track-t">
-                <div *ngIf="trackDuration">
+                <div >
                     <progress [max]="trackDuration" [value]="currentTime" (click)="seekTo($event)"></progress>
                 </div>
                 <div class="time">

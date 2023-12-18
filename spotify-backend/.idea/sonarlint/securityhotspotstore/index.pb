@@ -265,3 +265,9 @@ Zuserprofile-service/src/main/java/com/spotify/userprofile/controller/CustomCont
 dauthentication-service/src/main/java/com/auth/authenticationservice/controller/CustomController.java,8\0\808d76334d336c6830ad70f7ea99ba7fb12f3804
 …
 Umusic-service/src/main/java/com/spotify/musicservice/controller/CustomController.java,1\f\1f37ae7d14e844236d170ef10ca3f4c1810f222f
+v
+Fapi-gateway/src/main/java/com/spotify/apigateway/CustomController.java,e\f\ef3ec6040d22dff61937c55e625e3c0ec52ca810
+†
+Vmusic-service/src/test/java/com/spotify/musicservice/MusicserviceApplicationTests.java,3\e\3e2027009af0593f3fd9b3ddd6a4442e6c64f0bf
+H
+music-service/dockerfile,c\d\cd314e16aa3403a8aa86d7cd95f151f81c48d184

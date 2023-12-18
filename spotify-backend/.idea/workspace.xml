@@ -5,11 +5,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a2504401-f241-4a58-ab09-902bb2951c1e" name="Changes" comment="Commit message [date: %Y-%m-%d] [time: %H:%M:%S]">
+      <change afterPath="$PROJECT_DIR$/api-gateway/src/main/java/com/spotify/apigateway/CustomController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/music-service/dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wishlist-service/dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication-service/src/main/java/com/auth/authenticationservice/configuration/KafkaConsumerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/authentication-service/src/main/java/com/auth/authenticationservice/configuration/KafkaConsumerConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/authentication-service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config-server/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/config-server/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/music-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/music-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/music-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/music-service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/userprofile-service/src/main/java/com/spotify/userprofile/configuration/KafkaProducerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/userprofile-service/src/main/java/com/spotify/userprofile/configuration/KafkaProducerConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/userprofile-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/userprofile-service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wishlist-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/wishlist-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wishlist-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/wishlist-service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spotifyApp/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/../spotifyApp/angular.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../spotifyApp/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../spotifyApp/src/app/app-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spotifyApp/src/app/favorite-list/favorite-list.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../spotifyApp/src/app/favorite-list/favorite-list.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spotifyApp/src/app/home/home.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../spotifyApp/src/app/home/home.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spotifyApp/src/app/home/home.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../spotifyApp/src/app/home/home.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spotifyApp/src/app/login/login.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../spotifyApp/src/app/login/login.component.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../spotifyApp/src/app/navigation/side-bar/side-bar.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../spotifyApp/src/app/navigation/side-bar/side-bar.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spotifyApp/src/app/navigation/side-bar/side-bar.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../spotifyApp/src/app/navigation/side-bar/side-bar.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../spotifyApp/src/app/spotify/play-music/play-music.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../spotifyApp/src/app/spotify/play-music/play-music.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spotifyApp/src/app/spotify/play-music/play-music.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../spotifyApp/src/app/spotify/play-music/play-music.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spotifyApp/src/app/spotify/search-playlist-query/search-playlist-query.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../spotifyApp/src/app/spotify/search-playlist-query/search-playlist-query.component.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,28 +75,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/tejaj/Downloads/git/spotify/spotify-backend/wishlist-service/src/main/java/com/spotify/wishlistservice&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;inlay.hints&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "last_opened_file_path": "C:/Users/tejaj/Downloads/git/spotify/spotify-backend/wishlist-service",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "inlay.hints"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\tejaj\Downloads\git\spotify\spotify-backend\wishlist-service" />
       <recent name="C:\Users\tejaj\Downloads\git\spotify\spotify-backend\wishlist-service\src\main\java\com\spotify\wishlistservice" />
       <recent name="C:\Users\tejaj\Downloads\git\spotify\spotify-backend\wishlist-service\src\main\java\com\spotify\wishlistservice\exception" />
       <recent name="C:\Users\tejaj\Downloads\git\spotify\spotify-backend\authentication-service\src\main\java\com\auth\authenticationservice" />
       <recent name="C:\Users\tejaj\Downloads\git\spotify\spotify-backend\userprofile-service\src\main\java\com\spotify\userprofile" />
-      <recent name="C:\Users\tejaj\Downloads\git\spotify\spotify-backend\authentication-service\src\main\java\com\auth\authenticationservice\Configuration" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -122,12 +143,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="EurekaServerApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.university.eurekaserver.EurekaServerApplication" />
-      <module name="eureka-server" />
+    <configuration name="MusicserviceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.spotify.musicservice.MusicserviceApplication" />
+      <module name="music-service" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.university.eurekaserver.*" />
+          <option name="PATTERN" value="com.spotify.musicservice.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -166,8 +187,8 @@
         <item itemvalue="Application.UserprofileApplication" />
         <item itemvalue="Application.AuthenticationServiceApplication" />
         <item itemvalue="Application.WishlistserviceApplication" />
+        <item itemvalue="Application.MusicserviceApplication" />
         <item itemvalue="Application.ApiGatewayApplication" />
-        <item itemvalue="Application.EurekaServerApplication" />
       </list>
     </recent_temporary>
   </component>

@@ -1,24 +1,17 @@
 @import url(https://unpkg.com/bootstrap5@1.1.9/src/css/bootstrap.min.css);
 
-/* app-side-bar.component.css */
 aside {
 	width: 95%;
-	/* Adjust the width as needed */
 	background-color: #f0f0f0;
-	/* Adjust the background color */
 	left: 0;
 	margin-left: 57px;
 }
 
 #most-popular-wrapper {
 	background-color: #ffffff;
-	/* Adjust the background color */
 	border: 1px solid #ccc;
-	/* Add borders or adjust as needed */
 }
 
-/* Add any additional styles for the rest of your side bar content */
-/* your-component.component.css */
 @media (max-width: 800px) {
 	.hide-on-small-screen {
 		display: none;
@@ -88,17 +81,13 @@ h1 em {
 }
 
 
-/* Add this style to your component's CSS or in your global styles.css */
 td.mat-cell {
 	font-size: 30px;
-	/* Adjust the size as needed */
 }
 
 .curved-image {
 	border-radius: 10px;
-	/* Adjust the value to control the curve amount */
 	overflow: hidden;
-	/* Ensure the curved corners are visible */
 }
 
 footer
@@ -147,9 +136,6 @@ h1 {
   text-transform: uppercase;
 }
 
-.green {
-  color: #4ec07d;
-}
 
 .red {
   color: #e96075;
@@ -172,16 +158,7 @@ button, .dot {
   cursor: pointer;
 }
 
-#success-box {
-  position: absolute;
-  width: 35%;
-  height: 100%;
-  left: 12%;
-  background: linear-gradient(to bottom right, #B0DB7D 40%, #99DBB4 100%);
-  border-radius: 20px;
-  box-shadow: 5px 5px 20px rgba(203, 205, 211, 0.1);
-  perspective: 40px;
-}
+
 
 #error-box {
   position: absolute;
@@ -211,18 +188,7 @@ button, .dot {
   opacity: 0.5;
 }
 
-.face {
-  position: absolute;
-  width: 22%;
-  height: 22%;
-  background: #FCFCFC;
-  border-radius: 50%;
-  border: 1px solid #777777;
-  top: 21%;
-  left: 37.5%;
-  z-index: 2;
-  animation: bounce 1s ease-in infinite;
-}
+
 
 .face2 {
   position: absolute;
@@ -260,11 +226,7 @@ button, .dot {
   border-radius: 50%;
 }
 
-.happy {
-  border: 2px solid;
-  border-color: transparent #777777 #777777 transparent;
-  transform: rotate(45deg);
-}
+
 
 .sad {
   top: 49%;
@@ -285,9 +247,6 @@ button, .dot {
   z-index: 1;
 }
 
-.scale {
-  animation: scale 1s ease-in infinite;
-}
 
 .move {
   animation: move 3s ease-in-out infinite;
@@ -360,15 +319,5 @@ button, .dot {
 	margin-top: 2px;
 	margin-bottom: 2px;
 	border-radius: 10px;
-	/* Adjust the value to control the curve amount */
 	overflow: hidden;
-	/* Ensure the curved corners are visible */
 }
-
-/* th{
-  font-size: 1.10em; 
-} */
-
-/* td{
-  vertical-align: middle;
-} */

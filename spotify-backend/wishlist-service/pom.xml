@@ -149,6 +149,7 @@
 				</configuration>
 			</plugin>
 		</plugins>
+		<finalName>wishlistservice</finalName>
 	</build>
 
 </project>

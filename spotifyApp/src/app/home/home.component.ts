@@ -12,8 +12,7 @@ import { PlayDialogService } from '../service/component/play-dialog.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  spotifyPlaylistBillBoard: SpotifyPlaylist | any;
-  spotifyPlaylistHot100: SpotifyPlaylist | any;
+  spotifyPlaylistBillBoard!: SpotifyPlaylist;
   @ViewChild('cardsContainer') cardsContainer!: ElementRef;
 
   tracks!: Track[];
@@ -23,7 +22,13 @@ export class HomeComponent implements OnInit {
     ) { }
 
     openPlayDialog(trackId: Track): void {
-      this.playDialogService.openPlayDialog(trackId, this.spotifyPlaylistBillBoard.id);
+
+    let tracksList: Track[] = [];
+
+    this.spotifyPlaylistBillBoard.tracks.items.forEach(element => {
+      tracksList.push(element.track)
+    });
+      this.playDialogService.openPlayDialog(trackId, tracksList);
     } 
 
   ngOnInit(): void {

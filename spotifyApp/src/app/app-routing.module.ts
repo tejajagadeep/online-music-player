@@ -33,7 +33,7 @@ const routes: Routes = [
   { path: 'favorites', component: FavoriteListComponent , canActivate: [AuthGuard]},
   { path: 'profile', component: ProfileComponent , canActivate: [AuthGuard]},
   { path: 'update-profile', component: UpdateProfileComponent , canActivate: [AuthGuard]},
-  // { path: 'logout', component: LogoutComponent},
+  { path: 'logout', component: LogoutComponent},
   { path: 'login', component: LoginComponent , canActivate: [LoginGuard]},
   { path: '**', redirectTo: 'home'}
 

@@ -1,33 +1,29 @@
-Hi HYDTP,
-
-Today I was travelling on ORR and remembered a video which has a serier of accedents happening due to fog. So I came up with idea.
-
-How about installing 
-
-
-air india
-athiheard
-amreads
-kathre
-
-5554491101800159
-528
-
-https://forms.gle/PiwFrPAR77ZVigXL9
-101730767936
-
-7747294780 lloyds
-
 sudo dnf install java-17-amazon-corretto
 sudo dnf install java-17-amazon-corretto-devel
 
+kafka:
+
+wget https://downloads.apache.org/kafka/3.6.1/kafka_2.12-3.6.1.tgz
+
+tar -xzf kafka_2.12-3.6.1.tgz
+
+cd kafka_2.12-3.6.1
+
+./bin/zookeeper-server-start.sh ./config/zookeeper.properties
+
+./bin/kafka-server-start.sh ./config/server.properties
+
+./bin/windows/kafka-topics.bat --bootstrap-server=localhost:9092 --list
+
 export KAFKA_HEAP_OPTS="-Xmx256M -Xms128M"
+
+java:
 
 ssh -i "jd-keypair.pem" ec2-user@ec2-3-91-153-96.compute-1.amazonaws.com
 
 ssh -i "my-project-jd-keypair.pem" ec2-user@ec2-52-207-142-54.compute-1.amazonaws.com
 
-apache 
+apache :
 
 sudo yum update -y
 
@@ -49,8 +45,28 @@ sudo nano index.html
 </body>
 </html>
 
+docker: 
+
+sudo -s
+
+yum install docker -y
+
+service docker start
+
+systemctl enable docker
+
+usermod -a -G docker ec2-user
+
+chmod 666 /var/run/docker.sock
+
+docker pull //your dokcer repo
+
+docker run //yuor repo
+
 
 Play Button: Allows the user to play or pause the audio.
 Volume Control: Enables the user to adjust the volume.
 Progress Bar: Shows the progress of the audio playback.
 Timestamps: Displays the current time and total duration of the audio.
+
+208419690248
