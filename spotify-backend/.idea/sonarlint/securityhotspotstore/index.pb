@@ -271,3 +271,7 @@ Fapi-gateway/src/main/java/com/spotify/apigateway/CustomController.java,e\f\ef3
 Vmusic-service/src/test/java/com/spotify/musicservice/MusicserviceApplicationTests.java,3\e\3e2027009af0593f3fd9b3ddd6a4442e6c64f0bf
 H
 music-service/dockerfile,c\d\cd314e16aa3403a8aa86d7cd95f151f81c48d184
+K
+wishlist-service/dockerfile,4\a\4a4ae69a5d90de805c508a6ea9b91fac81d046c1
+Q
+!authentication-service/dockerfile,5\4\5499327e4e42155ecabdc560b718efaf1ff5220d
