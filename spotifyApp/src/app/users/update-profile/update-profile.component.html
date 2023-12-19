@@ -1,7 +1,7 @@
 <aside>
     <div id="most-popular-wrapper">
 
-        <form [formGroup]="profileForm" class="form-container">
+        <form [formGroup]="profileForm" class="form-container" *ngIf="errorMessage; else noProfile">
             <mat-card>
               <mat-card-header>
                 <mat-card-title>Profile Information</mat-card-title>
@@ -70,5 +70,28 @@
           
     </div>
 </aside>
+
+<ng-template #noProfile>
+  <div id="container-empty">
+      
+      <div id="error-box">
+          <div class="dot"></div>
+          <div class="dot two"></div>
+          <div class="face2">
+              <div class="eye"></div>
+              <div class="eye right"></div>
+              <div class="mouth sad"></div>
+          </div>
+          <div class="shadow move"></div>
+          <div class="message">
+              <h1 class="alert">Empty!</h1>
+              <p>Something went wrong...</p>
+          </div>
+          <button class="button-box" [routerLink]="['/home']">
+              <h1 class="red">home</h1>
+          </button>
+      </div>
+  </div>
+</ng-template>
 <app-side-bar></app-side-bar>
 <app-footer></app-footer>

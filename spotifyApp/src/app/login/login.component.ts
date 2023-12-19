@@ -64,9 +64,11 @@ validEmail!: TemplateRef<NgIfContext<any>>|null;
       this.successMessage='';
       if (e.status === 409){
         this.errorMessage2 = "Username or Email incorrect";
-      }
-      if (e.status === 503){
+      } else if
+      (e.status === 503){
         this.errorMessage2 = "Service Error"
+      } else{
+        this.errorMessage2 = "Internal Server Error"
       }
 
       console.log(e.status)
