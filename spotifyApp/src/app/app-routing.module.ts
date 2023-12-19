@@ -19,6 +19,26 @@ import { SearchPlaylistQueryComponent } from './spotify/search-playlist-query/se
 
 
 
+// const routes: Routes = [
+//   { path: '', redirectTo: 'home', pathMatch: 'full'},
+//   { path: 'home', component: HomeComponent},
+//   { path: 'search-tracks', component: SearchTracksQueryComponent},
+//   { path: 'search-tracks/:query', component: SearchTracksComponent},
+//   { path: 'search-playlists', component: SearchPlaylistQueryComponent},
+//   { path: 'search-playlists/:query', component: SearchPlaylistsComponent},
+//   { path: 'playlist-track/:playlistId', component: SearchPlaylistsTracksComponent},
+//   { path: 'billboard-hot-100-playlist', component: BillBoard100PlaylistComponent},
+//   { path: 'workout-playlist', component: DiscoverWeeklyPlaylistComponent},
+//   { path: 'top-hits-playlist', component: TodayTopHitsPlaylistComponent},
+//   { path: 'favorites', component: FavoriteListComponent},
+//   { path: 'profile', component: ProfileComponent},
+//   { path: 'update-profile', component: UpdateProfileComponent},
+//   { path: 'logout', component: LogoutComponent},
+//   { path: 'login', component: LoginComponent},
+//   { path: '**', redirectTo: 'home'}
+
+// ];
+
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full'},
   { path: 'home', component: HomeComponent, canActivate: [AuthGuard]},
@@ -28,12 +48,12 @@ const routes: Routes = [
   { path: 'search-playlists/:query', component: SearchPlaylistsComponent, canActivate: [AuthGuard]},
   { path: 'playlist-track/:playlistId', component: SearchPlaylistsTracksComponent, canActivate: [AuthGuard]},
   { path: 'billboard-hot-100-playlist', component: BillBoard100PlaylistComponent, canActivate: [AuthGuard]},
-  { path: 'workout-playlist', component: DiscoverWeeklyPlaylistComponent, canActivate: [AuthGuard]}, //
+  { path: 'workout-playlist', component: DiscoverWeeklyPlaylistComponent, canActivate: [AuthGuard]},
   { path: 'top-hits-playlist', component: TodayTopHitsPlaylistComponent, canActivate: [AuthGuard]},
   { path: 'favorites', component: FavoriteListComponent , canActivate: [AuthGuard]},
   { path: 'profile', component: ProfileComponent , canActivate: [AuthGuard]},
   { path: 'update-profile', component: UpdateProfileComponent , canActivate: [AuthGuard]},
-  { path: 'logout', component: LogoutComponent},
+  // { path: 'logout', component: LogoutComponent},
   { path: 'login', component: LoginComponent , canActivate: [LoginGuard]},
   { path: '**', redirectTo: 'home'}
 

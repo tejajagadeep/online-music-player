@@ -88,8 +88,8 @@ public class SpotifyController {
                             schema = @Schema(implementation = SpotifyPlaylist.class)) }),
             @ApiResponse(responseCode = "404", description = "Playlist not found",
                     content = @Content) })
-    @GetMapping("/playlist")
-    public ResponseEntity<Object> getPlaylist(@RequestParam String playlistId) {
+    @GetMapping("/playlist/{playlistId}")
+    public ResponseEntity<Object> getPlaylist(@PathVariable String playlistId) {
         log.trace("Inside SpotifyController getDiscoverWeeklyPlaylist");
         return new ResponseEntity<>(spotifyService.getPlaylist(playlistId), HttpStatus.OK);
     }
@@ -101,8 +101,8 @@ public class SpotifyController {
                             schema = @Schema(implementation = Track.class)) }),
             @ApiResponse(responseCode = "404", description = "Track not found",
                     content = @Content) })
-    @GetMapping("/track")
-    public ResponseEntity<Object> getTrack(@RequestParam String trackId ) {
+    @GetMapping("/track/{trackId}")
+    public ResponseEntity<Object> getTrack(@PathVariable String trackId ) {
         log.trace("Inside SpotifyController getTrack");
         return new ResponseEntity<>(spotifyService.getTrack(trackId), HttpStatus.OK);
     }
@@ -114,8 +114,8 @@ public class SpotifyController {
                             schema = @Schema(implementation = SpotifyTracksSearch.class)) }),
             @ApiResponse(responseCode = "404", description = "Track Not Found",
                     content = @Content) })
-    @GetMapping("/searchTracks")
-    public ResponseEntity<Object> searchTracks(@RequestParam String query) {
+    @GetMapping("/searchTracks/{query}")
+    public ResponseEntity<Object> searchTracks(@PathVariable String query) {
         log.trace("Inside SpotifyController search");
         return new ResponseEntity<>(spotifyService.searchTracks(query), HttpStatus.OK);
     }
@@ -126,8 +126,8 @@ public class SpotifyController {
                             schema = @Schema(implementation = SpotifyTracksSearch.class)) }),
             @ApiResponse(responseCode = "404", description = "Playlists Not Found",
                     content = @Content) })
-    @GetMapping("/searchPlaylists")
-    public ResponseEntity<Object> searchPlaylists(@RequestParam String query) {
+    @GetMapping("/searchPlaylists/{query}")
+    public ResponseEntity<Object> searchPlaylists(@PathVariable String query) {
         log.trace("Inside SpotifyController search");
         return new ResponseEntity<>(spotifyService.searchPlaylists(query), HttpStatus.OK);
     }

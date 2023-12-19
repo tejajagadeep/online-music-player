@@ -2,6 +2,7 @@ package com.auth.authenticationservice.controller;
 
 
 import com.auth.authenticationservice.dto.AuthAccessToken;
+import com.auth.authenticationservice.dto.UserProfile;
 import com.auth.authenticationservice.exception.CustomUnAuthorizedException;
 import com.auth.authenticationservice.filter.JwtUtils;
 import com.auth.authenticationservice.service.UserService;
@@ -77,8 +78,10 @@ public class AuthenticationController
 
     @Operation(summary = "Generate Token")
     @PostMapping("/login")
-    public ResponseEntity<AuthAccessToken> performLogin(@RequestParam String username, @RequestParam String password)
+    public ResponseEntity<AuthAccessToken> performLogin(@RequestBody UserProfile userProfile)
     {
+        String username = userProfile.getUsername();
+        String password = userProfile.getPassword();
         AuthAccessToken authAccessToken = new AuthAccessToken();
         log.info(username+"----");
         boolean check=userService.loginUser(username,password);
@@ -146,18 +149,4 @@ public class AuthenticationController
         }
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

@@ -29,23 +29,23 @@ export class MusicDataService {
   
   searchTracks(query: string): Observable<SpotifyTracks>{
 
-    const params = new HttpParams().set('query', query);
+    // const params = new HttpParams().set('query', query);
 
-    return this.httpClient.get<SpotifyTracks>(`${API_URL_MUSIC}/searchTracks`, { params });
+    return this.httpClient.get<SpotifyTracks>(`${API_URL_MUSIC}/searchTracks/${query}`);
   }
 
   searchPlaylists(playlistId: string): Observable<SpotifyPlaylistSearch>{
     const params = new HttpParams().set('query', playlistId);
-    return this.httpClient.get<SpotifyPlaylistSearch>(`${API_URL_MUSIC}/searchPlaylists`,{params})
+    return this.httpClient.get<SpotifyPlaylistSearch>(`${API_URL_MUSIC}/searchPlaylists/${playlistId}`)
   }
 
   getTrack(trackId: string): Observable<Track>{
     const params = new HttpParams().set('trackId', trackId);
-    return this.httpClient.get<Track>(`${API_URL_MUSIC}/track`, { params });
+    return this.httpClient.get<Track>(`${API_URL_MUSIC}/track/${trackId}`);
   }
 
   getPlaylist(playlistId: string): Observable<SpotifyPlaylist>{
     const params = new HttpParams().set('playlistId', playlistId);
-    return this.httpClient.get<SpotifyPlaylist>(`${API_URL_MUSIC}/playlist`,{params})
+    return this.httpClient.get<SpotifyPlaylist>(`${API_URL_MUSIC}/playlist/${playlistId}`)
   }
 }

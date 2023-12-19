@@ -3,12 +3,14 @@ import { Injectable } from '@angular/core';
 import { Observable, map } from 'rxjs';
 import { API_URL_AUTH } from 'src/app/app-constants';
 import { AuthAccessToken } from 'src/app/model/AuthAccessToken';
+import { User } from 'src/app/model/user';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthenticationService {
 
+  user!: User;
   constructor(private httpClient: HttpClient) { }
 
   authAccessToken!: AuthAccessToken
@@ -19,8 +21,14 @@ export class AuthenticationService {
       .set('username', username)
       .set('password', password);
 
+      
+      this.user = new User();
+
+      this.user.username = username;
+      this.user.password = password;
+
     // Include the query parameters in the request
-    return this.httpClient.post<AuthAccessToken>(`${API_URL_AUTH}/login`, {}, { params }).pipe(
+    return this.httpClient.post<AuthAccessToken>(`${API_URL_AUTH}/login`, this.user).pipe(
       map(
         authAccessToken => {
           localStorage.setItem('authenticatedUser', authAccessToken.username);
