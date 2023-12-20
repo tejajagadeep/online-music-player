@@ -102,7 +102,7 @@ public class UserProfileController {
         userDetails.setRole("User");
         log.info("------"+userDetails+"--------");
         producer.sendMessage(userDetails);
-        return new ResponseEntity<>(userProfileDto,HttpStatus.OK);
+        return new ResponseEntity<>(userProfileDto,HttpStatus.CREATED);
     }
 
     @SecurityRequirement(name = "Bearer Authentication")

@@ -17,7 +17,7 @@ public class KafkaConsumerConfig {
     @Bean
     public ConsumerFactory<String,String> consumerFactory(){
         Map<String,Object>  config=new HashMap<>();
-        config.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG,"http://ec2-54-147-163-0.compute-1.amazonaws.com:9092");
+        config.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG,"http://ec2-54-90-176-187.compute-1.amazonaws.com:9092");
         config.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG,StringDeserializer.class);
         config.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);
         return new DefaultKafkaConsumerFactory<>(config);
