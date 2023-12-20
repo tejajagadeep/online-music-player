@@ -1,3 +1,5 @@
 
-]
-java:S1612"@Replace this lambda with method reference 'String::toUpperCase'.(¯Îèÿ8ŸÔïÇ1
+e
+java:S1128"HRemove this unused import 'org.springframework.context.annotation.Bean'.(‚î‰Ş8¼ìàŠÈ1
+U
+java:S1128"8Remove this unused import 'java.util.function.Function'.(»³Í8½ìàŠÈ1

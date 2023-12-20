@@ -5,56 +5,36 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a2504401-f241-4a58-ab09-902bb2951c1e" name="Changes" comment="Commit message [date: %Y-%m-%d] [time: %H:%M:%S]">
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/4/54cda0beeaa6d08b9b7e5959b4bc660a69329e8d" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/9/a98c2e5346c80ab2d6f0a498df30af3e07a11d9d" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/c/ecae7f3a5221fa1a73f37f500614cdb34ccb21d9" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/5/4/54cda0beeaa6d08b9b7e5959b4bc660a69329e8d" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/a/9/a98c2e5346c80ab2d6f0a498df30af3e07a11d9d" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/e/c/ecae7f3a5221fa1a73f37f500614cdb34ccb21d9" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/authentication-service/src/main/java/com/auth/authenticationservice/dto/UserProfile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_amazonaws_aws_lambda_java_core_1_1_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_amazonaws_aws_lambda_java_events_2_0_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_14_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__joda_time_joda_time_2_6.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/4/04e281e1f4ac4e7b690aa39f53789fc5cb0d5a92" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/7/27bfd1aca9f58ca12cd3b4b9f55f06c47521c36f" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/5/357df59ff63e8c8fbe7fe679131f9dc48597257f" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/6/368b0c615393f828cafa7504e2d97bfb26851ea1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/1/51b9135cf49224db40ce6c3c9de9931cfff79d4b" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/2/62ef16d29f423d594437a99888393524228b106d" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/3/734cb27a72450b002c6b99684f3e265c724b89a0" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/3/734cb27a72450b002c6b99684f3e265c724b89a0" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/2/a2f46ddba97363bf304cb866ff77ef5cb14d7149" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/7/c76ee7c63a4a216f9d4fc6c729b970152646d4ac" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/9/f9049bf4f8511135db0404d2900f5c9e3eaf6a1d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/c/7ca95d19271b72e7eb7d27abd86a4e395c4ac0b8" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/0/4/04e281e1f4ac4e7b690aa39f53789fc5cb0d5a92" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/2/7/27bfd1aca9f58ca12cd3b4b9f55f06c47521c36f" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/3/5/357df59ff63e8c8fbe7fe679131f9dc48597257f" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/3/6/368b0c615393f828cafa7504e2d97bfb26851ea1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/5/1/51b9135cf49224db40ce6c3c9de9931cfff79d4b" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/6/2/62ef16d29f423d594437a99888393524228b106d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/a/2/a2f46ddba97363bf304cb866ff77ef5cb14d7149" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/c/7/c76ee7c63a4a216f9d4fc6c729b970152646d4ac" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/f/9/f9049bf4f8511135db0404d2900f5c9e3eaf6a1d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/7/c/7ca95d19271b72e7eb7d27abd86a4e395c4ac0b8" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/java/com/spotify/apigateway/ApiGatewayApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/java/com/spotify/apigateway/ApiGatewayApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api-gateway/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/authentication-service/src/main/java/com/auth/authenticationservice/configuration/KafkaConsumerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/authentication-service/src/main/java/com/auth/authenticationservice/configuration/KafkaConsumerConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authentication-service/src/main/java/com/auth/authenticationservice/controller/AuthenticationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/authentication-service/src/main/java/com/auth/authenticationservice/controller/AuthenticationController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/authentication-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/authentication-service/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config-server/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/config-server/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/music-service/src/main/java/com/spotify/musicservice/controller/SpotifyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/music-service/src/main/java/com/spotify/musicservice/controller/SpotifyController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/music-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/music-service/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/targets/api-gateway-0.0.1-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/targets/musicservice.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/targets/userprofile.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/targets/wishlistservice.jar" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/userprofile-service/src/main/java/com/spotify/userprofile/configuration/KafkaProducerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/userprofile-service/src/main/java/com/spotify/userprofile/configuration/KafkaProducerConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/userprofile-service/src/main/java/com/spotify/userprofile/controller/UserProfileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/userprofile-service/src/main/java/com/spotify/userprofile/controller/UserProfileController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/userprofile-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/userprofile-service/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wishlist-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/wishlist-service/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spotifyApp/src/app/app-constants.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../spotifyApp/src/app/app-constants.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spotifyApp/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../spotifyApp/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spotifyApp/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../spotifyApp/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spotifyApp/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../spotifyApp/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../spotifyApp/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../spotifyApp/src/app/app-routing.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spotifyApp/src/app/service/data/music-data.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../spotifyApp/src/app/service/data/music-data.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spotifyApp/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../spotifyApp/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spotifyApp/src/app/login/login.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../spotifyApp/src/app/login/login.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spotifyApp/src/app/login/login.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../spotifyApp/src/app/login/login.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spotifyApp/src/app/navigation/side-bar/side-bar.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../spotifyApp/src/app/navigation/side-bar/side-bar.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spotifyApp/src/app/spotify/today-top-hits-playlist/today-top-hits-playlist.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../spotifyApp/src/app/spotify/today-top-hits-playlist/today-top-hits-playlist.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spotifyApp/src/app/spotify/today-top-hits-playlist/today-top-hits-playlist.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../spotifyApp/src/app/spotify/today-top-hits-playlist/today-top-hits-playlist.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spotifyApp/src/app/users/profile/profile.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../spotifyApp/src/app/users/profile/profile.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spotifyApp/src/app/users/profile/profile.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../spotifyApp/src/app/users/profile/profile.component.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

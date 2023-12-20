@@ -110,7 +110,7 @@ footer {
 }
 
 
-body
+.body
 {
   background-color:#141019;
   background: radial-gradient(at 50% -20%, #908392, #0d060e) fixed;
@@ -172,3 +172,10 @@ body
 	overflow: hidden;
 	/* Ensure the curved corners are visible */
 }
+
+@media only screen and (max-width: 500px) {
+	.image-mat {
+	  display: none; /* or any other styling to hide the element */
+	}
+  }
+  

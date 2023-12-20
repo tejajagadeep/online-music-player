@@ -10,6 +10,10 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatCardModule } from '@angular/material/card';
 import { MatRadioModule } from '@angular/material/radio';
+import {MatGridListModule} from '@angular/material/grid-list';
+import { FlexLayoutModule } from '@angular/flex-layout';
+
+import {Amplify} from 'aws-amplify';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -75,6 +79,7 @@ import { CommunicationService } from './service/component/communication.service'
     MatIconModule,
     MatButtonModule,
     MatPaginatorModule,
+    MatGridListModule,
     FormsModule,
     MatInputModule,
     MatDatepickerModule,
@@ -83,8 +88,8 @@ import { CommunicationService } from './service/component/communication.service'
     ReactiveFormsModule,
     MatRadioModule,
     RouterModule,
-    MatDialogModule
-
+    MatDialogModule,
+    FlexLayoutModule
   ],
   providers: [{
 
@@ -99,5 +104,4 @@ import { CommunicationService } from './service/component/communication.service'
   bootstrap: [AppComponent]
 })
 export class AppModule { 
-
 }

@@ -8,15 +8,15 @@
 
                 <!-- Position Column -->
                 <ng-container matColumnDef="position">
-                    <th mat-header-cell *matHeaderCellDef style="font-size: 20px; font-weight: 400;"> # </th>
-                    <td mat-cell *matCellDef="let element; let i = index" style="font-size: 16px; font-weight: 400;">
+                    <th mat-header-cell *matHeaderCellDef > # </th>
+                    <td mat-cell *matCellDef="let element; let i = index" >
                         {{element.track.index}} </td>
                 </ng-container>
 
 
                 <!-- Image Column -->
-                <ng-container matColumnDef="image">
-                    <th mat-header-cell *matHeaderCellDef style="font-size: 20px; font-weight: 400;"> Image </th>
+                <ng-container matColumnDef="image" class="image-mat">
+                    <th mat-header-cell *matHeaderCellDef > Image </th>
                     <td mat-cell *matCellDef="let element" style="font-size: 16px;">
                         <img class="curved-image" [src]="element.track.album.images[0].url" alt="artist-img" width="70"
                             height="70">
@@ -26,8 +26,8 @@
                 <!-- Name Column -->
                 <!-- Name and Artist Column -->
                 <ng-container matColumnDef="name">
-                    <th mat-header-cell *matHeaderCellDef style="font-size: 20px; font-weight: 400;"> Title </th>
-                    <td mat-cell *matCellDef="let element" style="font-size: 16px; font-weight: 400;">
+                    <th mat-header-cell *matHeaderCellDef > Title </th>
+                    <td mat-cell *matCellDef="let element" >
                         {{ element.track.name }} - {{ element.track.artists[0].name }}
                     </td>
                 </ng-container>
@@ -35,23 +35,23 @@
 
                 <!-- Artist Column -->
                 <ng-container matColumnDef="artist">
-                    <th mat-header-cell *matHeaderCellDef style="font-size: 20px; font-weight: 400;"> Album </th>
-                    <td mat-cell *matCellDef="let element" style="font-size: 16px; font-weight: 400;">
+                    <th mat-header-cell *matHeaderCellDef > Album </th>
+                    <td mat-cell *matCellDef="let element" >
                         {{element.track.album.name}} </td>
                 </ng-container>
 
                 <!-- Duration Column -->
                 <ng-container matColumnDef="duration">
-                    <th mat-header-cell *matHeaderCellDef style="font-size: 20px; font-weight: 400;"> Duration </th>
-                    <td mat-cell *matCellDef="let element" style="font-size: 16px; font-weight: 400;">
+                    <th mat-header-cell *matHeaderCellDef > Duration </th>
+                    <td mat-cell *matCellDef="let element" >
                         {{element.track.duration_ms | millisecondsToMinutes}} </td>
                 </ng-container>
 
 
                 <!-- Play Song on Spotify -->
                 <ng-container matColumnDef="play">
-                    <th mat-header-cell *matHeaderCellDef style="font-size: 20px; font-weight: 400;"> Play </th>
-                    <td mat-cell *matCellDef="let element" style="font-size: 16px; font-weight: 400;">
+                    <th mat-header-cell *matHeaderCellDef > Play </th>
+                    <td mat-cell *matCellDef="let element" >
                         <div *ngIf="element.track.preview_url; else redirectUrl">
                             <i class="fas fa-play" style="transition: transform 1s ease; cursor: pointer;"
                                 (click)="openPlayDialog(element.track)"></i>
@@ -65,8 +65,8 @@
 
                 <!-- Action Column -->
                 <ng-container matColumnDef="action">
-                    <th mat-header-cell *matHeaderCellDef style="font-size: 20px; font-weight: 400;"> Action </th>
-                    <td mat-cell *matCellDef="let element" style="font-size: 16px; font-weight: 400;">
+                    <th mat-header-cell *matHeaderCellDef > Action </th>
+                    <td mat-cell *matCellDef="let element" >
                         <i (click)="toggleHeartState(element.track)" class="fas fa-heart red"
                             [@heartAnimation]="getHeartState(element.track.id)" style="cursor: pointer;"></i>
                     </td>
@@ -85,7 +85,7 @@
     </div>
 </aside>
 <ng-template #noTracks>
-    <div id="container-empty">
+    <div class="body">
         <a target="_blank" href="https://codepen.io/uiswarup/pen/dywmxmL">
             <div class="container">
                 <div class="row">

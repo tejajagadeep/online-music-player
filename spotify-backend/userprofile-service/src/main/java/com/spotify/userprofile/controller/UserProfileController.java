@@ -75,7 +75,7 @@ public class UserProfileController {
         Map<String,String> info= authService.validateToken(token);
         log.info("inside getUserProfileById----info: "+info);
         if(info.containsKey(username)) {
-            log.error(token + "inside method getUserProfileById -----__---");
+            log.info(token + "inside method getUserProfileById -----__---");
             return new ResponseEntity<>(userProfileService.getUserProfileById(username), HttpStatus.OK);
         }
         throw new UnAuthorizedException("Un Authorized Please check user the details.");
@@ -124,9 +124,10 @@ public class UserProfileController {
         Map<String,String> info= authService.validateToken(token);
         log.info("info: "+info+"inside updateUserProfile----");
         if(info.containsKey(username)) {
-            log.error(token + "inside method updateUserProfile-----__---");
+            log.info(token + "inside method updateUserProfile-----__---");
             return new ResponseEntity<>(userProfileService.updateUserProfile(userProfileDto, username),HttpStatus.OK);
         }
+        log.error(token + "inside method updateUserProfile-----__---");
         throw new UnAuthorizedException("Un Authorized Please check user the details to update.");
     }
 

@@ -84,7 +84,14 @@ validEmail!: TemplateRef<NgIfContext<any>>|null;
       next: (v) => {localStorage.setItem('token',v.jwt_token);
       this.router.navigate(['/home']);
     },
-      error: (e) => this.errorMessage = 'Authentication failed. Please check your credentials.',
+      error: (e) => {if (e.status === 401){
+        this.errorMessage = "Username or Email incorrect";
+      } else if
+      (e.status === 503){
+        this.errorMessage = "Service Error"
+      } else{
+        this.errorMessage = "Internal Server Error"
+      }},
       complete: () => console.info('complete') 
   }
   )

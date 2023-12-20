@@ -263,5 +263,7 @@ s
 Capi-gateway/src/main/java/com/spotify/apigateway/LambdaHandler.java,a\9\a98c2e5346c80ab2d6f0a498df30af3e07a11d9d
 q
 Aapi-gateway/src/main/java/com/spotify/apigateway/APIResponse.java,5\4\54cda0beeaa6d08b9b7e5959b4bc660a69329e8d
-t
-Dapi-gateway/src/main/java/com/spotify/apigateway/GatewayHandler.java,7\c\7ca95d19271b72e7eb7d27abd86a4e395c4ac0b8
+ˆ
+Xauthentication-service/src/main/java/com/auth/authenticationservice/dto/UserProfile.java,0\a\0acd2c7af47c2d0f5f241ae4ce13edc5032f620a
+ 
+pauthentication-service/src/test/java/com/shalem/authenticationservice/AuthenticationServiceApplicationTests.java,d\7\d743c02d0b4888e78ff48e85de6f0b851e10bed4

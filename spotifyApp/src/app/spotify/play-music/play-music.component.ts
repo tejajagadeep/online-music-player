@@ -211,7 +211,6 @@ export class PlayMusicComponent implements OnInit {
 
   onCloseClick(): void {
     this.dialogRef.close();
-    this.track.preview_url = ''
   }
 
   onBackClick(): void {

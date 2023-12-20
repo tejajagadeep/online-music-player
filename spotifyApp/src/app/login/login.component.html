@@ -41,7 +41,7 @@
         </div>
         <ng-template #removeErrorLogin>
           <div *ngIf="errorMessage" class="error-message">
-            <p class="error-message">Please enter a valid User Name and password.</p>
+            <p class="error-message">{{errorMessage}}</p>
           </div>
         </ng-template>
         <button (click)="login()" [disabled]="loginForm.invalid">Login</button>
