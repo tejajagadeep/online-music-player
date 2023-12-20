@@ -10,9 +10,9 @@ name: Java CI with Maven
 
 on:
   push:
-    branches: [ "spotify-backend/wishlist-service" ]
+    branches: [ "main/spotify-backend/wishlist-service" ]
   pull_request:
-    branches: [ "spotify-backend/wishlist-service" ]
+    branches: [ "main/spotify-backend/wishlist-service" ]
 
 jobs:
   build:
