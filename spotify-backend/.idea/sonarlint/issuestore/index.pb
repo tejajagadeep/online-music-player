@@ -267,3 +267,5 @@ Aapi-gateway/src/main/java/com/spotify/apigateway/APIResponse.java,5\4\54cda0be
 Xauthentication-service/src/main/java/com/auth/authenticationservice/dto/UserProfile.java,0\a\0acd2c7af47c2d0f5f241ae4ce13edc5032f620a
  
 pauthentication-service/src/test/java/com/shalem/authenticationservice/AuthenticationServiceApplicationTests.java,d\7\d743c02d0b4888e78ff48e85de6f0b851e10bed4
+€
+Papi-gateway/src/test/java/com/spotify/apigateway/ApiGatewayApplicationTests.java,d\c\dc1d32df9968db6bf079edb4df6775c8658baee4

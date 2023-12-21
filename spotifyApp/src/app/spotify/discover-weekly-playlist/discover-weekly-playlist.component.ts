@@ -16,6 +16,9 @@ import { WishlistDataService } from 'src/app/service/data/wishlist-data.service'
   animations: [heartAnimation]
 })
 export class DiscoverWeeklyPlaylistComponent  implements AfterViewInit {
+  ngOnInit() {
+    throw new Error('Method not implemented.');
+  }
 
 
   spotifyPlaylist!: SpotifyPlaylist; // Adjust the type accordingly

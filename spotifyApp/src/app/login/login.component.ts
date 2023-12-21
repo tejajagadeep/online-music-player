@@ -63,7 +63,7 @@ validEmail!: TemplateRef<NgIfContext<any>>|null;
       error: (e) => {
       this.successMessage='';
       if (e.status === 409){
-        this.errorMessage2 = "Username or Email incorrect";
+        this.errorMessage2 = "Username or Email already exists";
       } else if
       (e.status === 503){
         this.errorMessage2 = "Service Error"
