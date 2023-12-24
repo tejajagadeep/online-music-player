@@ -4,24 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a2504401-f241-4a58-ab09-902bb2951c1e" name="Changes" comment="Commit message [date: %Y-%m-%d] [time: %H:%M:%S]">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authentication-service/src/main/java/com/auth/authenticationservice/configuration/KafkaConsumerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/authentication-service/src/main/java/com/auth/authenticationservice/configuration/KafkaConsumerConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authentication-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/authentication-service/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config-server/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/config-server/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/music-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/music-service/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/userprofile-service/src/main/java/com/spotify/userprofile/configuration/KafkaProducerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/userprofile-service/src/main/java/com/spotify/userprofile/configuration/KafkaProducerConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/userprofile-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/userprofile-service/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wishlist-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/wishlist-service/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spotifyApp/src/app/app-constants.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../spotifyApp/src/app/app-constants.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spotifyApp/src/app/spotify/discover-weekly-playlist/discover-weekly-playlist.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../spotifyApp/src/app/spotify/discover-weekly-playlist/discover-weekly-playlist.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spotifyApp/src/app/spotify/search-playlists-tracks/search-playlists-tracks.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../spotifyApp/src/app/spotify/search-playlists-tracks/search-playlists-tracks.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spotifyApp/src/app/spotify/search-playlists/search-playlists.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../spotifyApp/src/app/spotify/search-playlists/search-playlists.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spotifyApp/src/app/spotify/search-tracks/search-tracks.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../spotifyApp/src/app/spotify/search-tracks/search-tracks.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spotifyApp/src/app/spotify/today-top-hits-playlist/today-top-hits-playlist.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../spotifyApp/src/app/spotify/today-top-hits-playlist/today-top-hits-playlist.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../temp/documentation/~$s-deployment.docx" beforeDir="false" />
-    </list>
+    <list default="true" id="a2504401-f241-4a58-ab09-902bb2951c1e" name="Changes" comment="Commit message [date: %Y-%m-%d] [time: %H:%M:%S]" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
