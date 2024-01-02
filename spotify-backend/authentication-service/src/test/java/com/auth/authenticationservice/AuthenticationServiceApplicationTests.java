@@ -86,7 +86,6 @@ class UserServiceImplTest {
 	void testGetRoleByUserAndPassUserNotFound() {
 		String username = "nonexistentuser";
 		String password = "testpassword";
-
 		when(userRepo.findByUsername(username)).thenReturn(null);
 
 		assertNull(userService.getRoleByUserAndPass(username, password));

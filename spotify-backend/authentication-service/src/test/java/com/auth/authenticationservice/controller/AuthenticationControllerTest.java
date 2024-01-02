@@ -72,7 +72,7 @@ class AuthenticationControllerTest {
 
         when(jwtUtils.validateJwtToken("testToken")).thenReturn(true);
         when(jwtUtils.getUserNameFromJwtToken("testToken")).thenReturn(username);
-        when(jwtUtils.getRoleFromToken("testToken")).thenReturn(role);
+        when(jwtUtils.getRoleFromToken("Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqYWdhZGVlcCIsInJvbGUiOiJVc2VyIiwiaWF0IjoxNzAyOTc2NjQ2fQ.fKutqrGMLjUnMRkZDc6uTY5RYodZc9nHDnkU0wnkVyw")).thenReturn(role);
 
         ResponseEntity<Object> response = authenticationController.validateToken(token);
 
