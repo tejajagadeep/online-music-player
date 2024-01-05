@@ -45,12 +45,8 @@ Wwishlist-service/src/main/java/com/spotify/wishlistservice/service/WishListServ
 ]wishlist-service/src/main/java/com/spotify/wishlistservice/repository/WishListRepository.java,2\1\2131a3c9ec994bb1b317e2e8adc1491d07420a18
 E
 eureka-server/pom.xml,b\3\b39ae52d769ea03b699b5602439afd875433c8a7
-E
-config-server/pom.xml,a\2\a2f9618c8ad821b143a07a29a9805fcb0b2df470
 Ñ
 Teureka-server/src/main/java/com/university/eurekaserver/EurekaServerApplication.java,9\6\96ddd3dd439aad2e5acdd22449017f3d37f0d84e
-Å
-Qconfig-server/src/main/java/com/sshalem/configserver/ConfigServerApplication.java,d\8\d8208b7decee7c0cd067d87f0b8f37d1386dd701
 Ñ
 Tmusic-service/src/main/java/com/spotify/musicservice/service/SpotifyServiceImpl.java,c\a\ca68eb9dfd5933ea4bdce7d36e38936152c74a24
 ã
@@ -265,7 +261,5 @@ q
 Aapi-gateway/src/main/java/com/spotify/apigateway/APIResponse.java,5\4\54cda0beeaa6d08b9b7e5959b4bc660a69329e8d
 à
 Xauthentication-service/src/main/java/com/auth/authenticationservice/dto/UserProfile.java,0\a\0acd2c7af47c2d0f5f241ae4ce13edc5032f620a
-†
-pauthentication-service/src/test/java/com/shalem/authenticationservice/AuthenticationServiceApplicationTests.java,d\7\d743c02d0b4888e78ff48e85de6f0b851e10bed4
 Ä
 Papi-gateway/src/test/java/com/spotify/apigateway/ApiGatewayApplicationTests.java,d\c\dc1d32df9968db6bf079edb4df6775c8658baee4
