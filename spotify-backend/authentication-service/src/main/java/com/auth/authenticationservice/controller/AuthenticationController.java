@@ -9,6 +9,7 @@ import com.auth.authenticationservice.service.UserService;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.servlet.ServletException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,7 +43,6 @@ public class AuthenticationController
         this.jwtUtils = jwtUtils;
     }
 
-    @Operation(summary = "Generate Token")
     public String generateToken(String username, String password) throws ServletException
     {
         String jwtToken;
@@ -132,6 +132,7 @@ public class AuthenticationController
 
     @Operation(summary = "Validate User")
     @PostMapping("/validate")
+    @SecurityRequirement(name = "Bearer Authentication")
     public ResponseEntity<Object> validateToken(@RequestHeader("Authorization") String token) {
         log.info(token+"---------");
         if (jwtUtils.validateJwtToken(token)) {

@@ -5,20 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a2504401-f241-4a58-ab09-902bb2951c1e" name="Changes" comment="Commit message [date: %Y-%m-%d] [time: %H:%M:%S]">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authentication-service/src/main/java/com/auth/authenticationservice/configuration/KafkaConsumerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/authentication-service/src/main/java/com/auth/authenticationservice/configuration/KafkaConsumerConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authentication-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/authentication-service/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eureka-server/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-server/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/music-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/music-service/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/userprofile-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/userprofile-service/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wishlist-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/wishlist-service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication-service/src/main/java/com/auth/authenticationservice/AuthenticationServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/authentication-service/src/main/java/com/auth/authenticationservice/AuthenticationServiceApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication-service/src/main/java/com/auth/authenticationservice/controller/AuthenticationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/authentication-service/src/main/java/com/auth/authenticationservice/controller/AuthenticationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication-service/src/main/java/com/auth/authenticationservice/controller/CustomController.java" beforeDir="false" afterPath="$PROJECT_DIR$/authentication-service/src/main/java/com/auth/authenticationservice/controller/CustomController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/music-service/src/main/java/com/spotify/musicservice/controller/CustomController.java" beforeDir="false" afterPath="$PROJECT_DIR$/music-service/src/main/java/com/spotify/musicservice/controller/CustomController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/userprofile-service/src/main/java/com/spotify/userprofile/configuration/KafkaProducerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/userprofile-service/src/main/java/com/spotify/userprofile/configuration/KafkaProducerConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/userprofile-service/src/main/java/com/spotify/userprofile/controller/CustomController.java" beforeDir="false" afterPath="$PROJECT_DIR$/userprofile-service/src/main/java/com/spotify/userprofile/controller/CustomController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wishlist-service/src/main/java/com/spotify/wishlistservice/controller/CustomController.java" beforeDir="false" afterPath="$PROJECT_DIR$/wishlist-service/src/main/java/com/spotify/wishlistservice/controller/CustomController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -172,11 +166,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.WishlistserviceApplication" />
-        <item itemvalue="Application.MusicserviceApplication" />
-        <item itemvalue="Application.ApiGatewayApplication" />
-        <item itemvalue="Application.UserprofileApplication" />
         <item itemvalue="Application.AuthenticationServiceApplication" />
+        <item itemvalue="Application.MusicserviceApplication" />
+        <item itemvalue="Application.UserprofileApplication" />
+        <item itemvalue="Application.WishlistserviceApplication" />
+        <item itemvalue="Application.ApiGatewayApplication" />
       </list>
     </recent_temporary>
   </component>
