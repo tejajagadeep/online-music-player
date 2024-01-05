@@ -16,7 +16,7 @@ on:
 
 jobs:
       
-  build_eureka_service:
+  build_eureka_server:
 
     runs-on: ubuntu-latest
 
@@ -29,7 +29,7 @@ jobs:
         distribution: 'temurin'
         cache: maven
     - name: Build Authentication Service with Maven
-      run: mvn -B package --file spotify-backend/eureka-service/pom.xml
+      run: mvn -B package --file spotify-backend/eureka-server/pom.xml
       
   build_api_gateway:
 
