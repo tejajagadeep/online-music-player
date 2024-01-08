@@ -263,3 +263,9 @@ Aapi-gateway/src/main/java/com/spotify/apigateway/APIResponse.java,5\4\54cda0be
 Xauthentication-service/src/main/java/com/auth/authenticationservice/dto/UserProfile.java,0\a\0acd2c7af47c2d0f5f241ae4ce13edc5032f620a
 Ä
 Papi-gateway/src/test/java/com/spotify/apigateway/ApiGatewayApplicationTests.java,d\c\dc1d32df9968db6bf079edb4df6775c8658baee4
+x
+Hsrc/test/java/com/sshalem/configserver/ConfigServerApplicationTests.java,f\8\f80a3aceab102b1054b9f25c3f089c2e4db82c6f
+E
+config-server/pom.xml,a\2\a2f9618c8ad821b143a07a29a9805fcb0b2df470
+Å
+Qconfig-server/src/main/java/com/sshalem/configserver/ConfigServerApplication.java,d\8\d8208b7decee7c0cd067d87f0b8f37d1386dd701
