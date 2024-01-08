@@ -12,6 +12,7 @@
         <module name="music-service" />
         <module name="api-gateway" />
         <module name="userprofile-service" />
+        <module name="config-server (1)" />
         <module name="eureka-server" />
         <module name="wishlist-service" />
       </profile>
@@ -20,6 +21,7 @@
       <module name="api-gateway" target="17" />
       <module name="authentication-service" target="17" />
       <module name="config-server" target="17" />
+      <module name="config-server (1)" target="17" />
       <module name="eureka-server" target="17" />
       <module name="music-service" target="17" />
       <module name="userprofile-service" target="17" />
@@ -31,6 +33,7 @@
       <module name="api-gateway" options="-parameters" />
       <module name="authentication-service" options="-parameters" />
       <module name="config-server" options="-parameters" />
+      <module name="config-server (1)" options="-parameters" />
       <module name="eureka-server" options="" />
       <module name="music-service" options="-parameters" />
       <module name="userprofile-service" options="-parameters" />
